@@ -6,6 +6,7 @@ import {
   runBibleCompanion,
 } from "./companion/companion-engine.js";
 import { runBiblicalReasoning } from "./reasoning/reasoning-engine.js";
+import { buildDiscipleshipPlan } from "./planning/planning-engine.js";
 import {
   AIEvents,
   AI_EVENTS,
@@ -172,6 +173,48 @@ export const AIService = Object.freeze({
           chapter: companion.chapter,
           availability: companion.availability,
           canonical_only: companion.canonical_only,
+        },
+      };
+    });
+  },
+
+  /** Offline-first personalized reading/study/discipleship plan. */
+  async plan(target = {}, options = {}) {
+    return runCapability("plan", "planning-discipleship-engine", async () => {
+      const payload = normalizeTarget(target, options);
+      const plan = await buildDiscipleshipPlan(payload);
+      return {
+        plan,
+        content: plan.title,
+        citations: plan.canonical_context?.citations || [],
+        provider: "local",
+        confidence: plan.canonical_context?.confidence || 0,
+        metadata: {
+          plan_id: plan.plan_id,
+          goal: plan.goal,
+          duration: plan.duration,
+          offline_compatible: plan.offline_compatible,
+        },
+      };
+    });
+  },
+
+  /** Recommendation projected from current local plan progress. */
+  async recommend(target = {}, options = {}) {
+    return runCapability("recommend", "planning-discipleship-engine", async () => {
+      const payload = normalizeTarget(target, options);
+      const plan = await buildDiscipleshipPlan(payload);
+      return {
+        recommendation: plan.recommendation,
+        plan_id: plan.plan_id,
+        content: plan.recommendation?.reason || "",
+        citations: plan.canonical_context?.citations || [],
+        provider: "local",
+        confidence: plan.canonical_context?.confidence || 0,
+        metadata: {
+          goal: plan.goal,
+          completion: plan.completion,
+          offline_compatible: true,
         },
       };
     });

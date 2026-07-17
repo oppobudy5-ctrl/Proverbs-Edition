@@ -1,5 +1,24 @@
 # Changelog
 
+## Phase 007 — Planning & Discipleship Engine
+
+### Perubahan
+- `src/ai/planning/goal-analyzer.js`: klasifikasi offline untuk 11 tujuan belajar dan topik lokal.
+- `src/ai/planning/planning-engine.js`: reading, daily, study, topical, dan book plan dari dataset chapter yang sudah ada.
+- `src/ai/planning/recommendation-engine.js`: rekomendasi berikutnya berdasarkan lesson aktif, progres, tema, Companion, dan reasoning metadata.
+- `src/ai/planning/milestone-engine.js`: milestone 7/14/21/31 lesson, book, theme, dan plan complete yang configurable.
+- `src/ai/ai-service.js`: facade `plan()` dan `recommend()` dengan response envelope standar.
+- `js/ui/planning.js`: Reading Plan, Study Plan, Daily Plan, Recommendation, dan Milestone memakai komponen Design System yang sudah tersedia.
+- `js/router.js` dan `index.html`: route `/plans` beserta navigasi desktop, mobile, dan footer.
+- Cache plan lokal, canonical-only fallback, dan precache Service Worker untuk operasi offline.
+- `scripts/test-planning-engine.mjs`: goal, reading/study/book/topical plan, rekomendasi, milestone, cache, offline, AIService, router, dan UI boundary.
+- Dokumentasi lengkap di `docs/ai/PLANNING_DISCIPLESHIP_ENGINE.md`.
+
+### Batas perubahan
+Tidak mengubah Bible Knowledge Base, dataset editorial, Canonical Reasoning
+Engine, AI Gateway, provider, RAG, atau prompt. Planning hanya mengorkestrasi
+kemampuan dan data yang sudah tersedia.
+
 ## Phase 006 — Biblical Reasoning Engine
 
 ### Perubahan

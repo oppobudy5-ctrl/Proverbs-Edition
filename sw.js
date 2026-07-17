@@ -10,7 +10,7 @@
    - CACHE_VERSION adalah sumber tunggal; bump ini saat app shell berubah.
    - CACHE_STATIC menyimpan shell + aset offline; cache lama dihapus di activate.
 */
-const CACHE_VERSION = "bibletime-v28-biblical-reasoning-integration";
+const CACHE_VERSION = "bibletime-v29-planning-discipleship";
 const CACHE_STATIC = `static-${CACHE_VERSION}`;
 
 const APP_SHELL = [
@@ -86,6 +86,7 @@ const APP_SHELL = [
   "./js/ui/ai-dialog.js",
   "./js/ui/ai-lesson-assist.js",
   "./js/ui/bible-companion.js",
+  "./js/ui/planning.js",
   "./js/ui/journal-insights.js",
   "./js/ui/growth-timeline.js",
   "./js/ui/save-actions.js",
@@ -109,6 +110,11 @@ const APP_SHELL = [
   "./src/ai/reasoning/canonical-validator.js",
   "./src/ai/reasoning/reasoning-formatter.js",
   "./src/ai/reasoning/reasoning-engine.js",
+  "./src/ai/planning/goal-analyzer.js",
+  "./src/ai/planning/milestone-engine.js",
+  "./src/ai/planning/recommendation-engine.js",
+  "./src/ai/planning/planning-engine.js",
+  "./src/ai/planning/index.js",
   "./src/ai/providers/provider-base.js",
   "./src/ai/providers/openai-provider.js",
   "./src/ai/providers/gemini-provider.js",

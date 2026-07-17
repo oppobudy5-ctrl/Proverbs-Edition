@@ -1,6 +1,6 @@
 // =============================================================================
 // router.js — SPA router dengan History API (PR-004).
-// Route: home | calendar | about | day | library.
+// Route: home | calendar | about | day | library | companion | planning.
 // Public API tetap: go(route, params), initRouter().
 // =============================================================================
 import { $, $$ } from "./dom.js";
@@ -9,6 +9,7 @@ import { renderCalendar } from "./ui/calendar.js";
 import { renderAbout } from "./ui/about.js";
 import { renderLibrary } from "./ui/library.js";
 import { renderBibleCompanion } from "./ui/bible-companion.js";
+import { renderPlanning } from "./ui/planning.js";
 import { runLeave } from "./lifecycle.js";
 import { announce } from "./a11y.js";
 import { planCount } from "./plan.js";
@@ -22,6 +23,7 @@ const ROUTE_META = Object.freeze({
   about: Object.freeze({ id: "about", path: "/about", title: "Tentang" }),
   day: Object.freeze({ id: "day", path: "/lesson/:day", title: "Bacaan" }),
   companion: Object.freeze({ id: "companion", path: "/companion/:book/:chapter", title: "Bible Companion" }),
+  planning: Object.freeze({ id: "planning", path: "/plans", title: "Rencana Belajar" }),
 });
 
 const routes = {
@@ -31,6 +33,7 @@ const routes = {
   day: renderDay,
   library: renderLibrary,
   companion: renderBibleCompanion,
+  planning: renderPlanning,
 };
 
 let initialized = false;
@@ -51,6 +54,7 @@ export function buildPath(route, params = {}) {
     const chapter = normalizePositiveInt(params.chapter) || 1;
     return `/companion/${encodeURIComponent(book)}/${chapter}`;
   }
+  if (id === "planning") return "/plans";
   if (id === "home") return "/";
   return ROUTE_META[id]?.path || "/";
 }
@@ -71,6 +75,9 @@ export function parsePath(pathname = "/") {
     return { route: "library", params: {} };
   }
   if (path === "/about" || path === "/profile") return { route: "about", params: {} };
+  if (path === "/plans" || path === "/planning" || path === "/discipleship") {
+    return { route: "planning", params: {} };
+  }
 
   const lesson = path.match(/^\/(?:lesson|day)\/(\d{1,2})$/i);
   if (lesson) {
@@ -216,8 +223,8 @@ function updateDocumentTitle(route, params) {
 }
 
 function restoreScroll(route, params) {
-  // Pertahankan perilaku lama: scroll ke atas untuk home/day.
-  if (route === "home" || route === "day") {
+  // Scroll ke atas untuk halaman perjalanan utama.
+  if (route === "home" || route === "day" || route === "planning") {
     if (params.resume) return; // day-runtime menangani scroll resume
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
