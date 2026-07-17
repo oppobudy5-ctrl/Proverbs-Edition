@@ -1,0 +1,14 @@
+# Cloudflare Pages SPA fallback (additive; Vercel keeps using vercel.json).
+# NOTE: The /bible/* parallel-reader proxy needs a Pages Function/Worker on
+# Cloudflare; it is intentionally NOT rewritten here. On Vercel it is handled
+# by vercel.json.
+/lesson/*    /index.html   200
+/day/*       /index.html   200
+/calendar    /index.html   200
+/library     /index.html   200
+/journal     /index.html   200
+/bookmark    /index.html   200
+/bookmarks   /index.html   200
+/about       /index.html   200
+/profile     /index.html   200
+/home        /index.html   200

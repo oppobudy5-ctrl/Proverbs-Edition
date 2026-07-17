@@ -10,7 +10,7 @@
    - CACHE_VERSION adalah sumber tunggal; bump ini saat app shell berubah.
    - CACHE_STATIC menyimpan shell + aset offline; cache lama dihapus di activate.
 */
-const CACHE_VERSION = "bibletime-v9-sw-pr002";
+const CACHE_VERSION = "bibletime-v10-rc";
 const CACHE_STATIC = `static-${CACHE_VERSION}`;
 
 const APP_SHELL = [
@@ -39,6 +39,7 @@ const APP_SHELL = [
   "./js/bible-api.js",
   "./js/search.js",
   "./js/safe-store.js",
+  "./js/utils/security.js",
   "./js/theme.js",
   "./js/settings.js",
   "./js/a11y.js",

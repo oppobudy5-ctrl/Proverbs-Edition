@@ -1,5 +1,31 @@
 # Changelog
 
+## PR-010 Production Verification & Release Candidate
+
+### Perubahan
+- `sw.js`: bump `CACHE_VERSION` `bibletime-v9-sw-pr002` → `bibletime-v10-rc` (app shell berubah sejak PR-002) dan menambahkan `js/utils/security.js` ke precache shell.
+- `_redirects` + `_headers` (baru): konfigurasi Cloudflare Pages aditif (SPA fallback + header `sw.js`/manifest); tidak memengaruhi Vercel.
+- `LICENSE` (baru): MIT, selaras dengan `package.json`.
+- `ROADMAP.md` (baru): fase produk + jejak PR produksi (PR-001…PR-010).
+- `docs/RELEASE_CANDIDATE_REPORT.md` (baru): ringkasan audit, checklist 15 kategori, analisis risiko, keputusan rilis, kompatibilitas browser, hasil offline & PWA, rekomendasi.
+- `README.md`: perbaikan penyebutan `CACHE_VERSION`, bagian Quality Gate, dan catatan deploy Cloudflare Pages.
+
+### Alasan
+Gerbang kualitas akhir sebelum Release Candidate. Perubahan dibatasi pada konfigurasi produksi & dokumentasi — tanpa mengubah fitur, UI/UX, atau business logic.
+
+### Dampak
+- Pengguna lama menerima app shell terbaru karena cache di-bump.
+- Aplikasi dapat dideploy ke Vercel maupun Cloudflare Pages (dengan catatan proxy `/bible/*`).
+- Kesiapan rilis terdokumentasi dan dapat diaudit ulang.
+
+### Kompatibilitas
+- Tidak ada perubahan API publik, storage key, atau perilaku runtime.
+- Bump cache SW hanya memicu refresh shell standar (cache lama dibersihkan saat activate).
+
+### Hasil verifikasi
+- `npm install` / `npm run build` / `npm run lint` / `npm test` → semua PASS (14 suite).
+- Keputusan: **READY FOR RELEASE CANDIDATE** — tag `v2.0.0-rc.1`. Tidak ada blocker kritis.
+
 ## PR-007 Accessibility Enhancement
 
 ### Perubahan

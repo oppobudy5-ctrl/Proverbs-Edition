@@ -8,7 +8,16 @@ const swSource = await readFile(path.join(ROOT, "sw.js"), "utf8");
 
 assert.match(swSource, /const CACHE_VERSION\s*=/, "harus punya CACHE_VERSION tunggal");
 assert.match(swSource, /const CACHE_STATIC\s*=/, "harus punya CACHE_STATIC");
-assert.match(swSource, /bibletime-v9-sw-pr002/, "cache version PR-002 harus di-bump");
+assert.match(
+  swSource,
+  /const CACHE_VERSION\s*=\s*["']bibletime-v(\d+)[^"']*["']/,
+  "CACHE_VERSION harus memakai skema bibletime-v<N> dan di-bump saat app shell berubah",
+);
+assert.doesNotMatch(
+  swSource,
+  /const CACHE_VERSION\s*=\s*["']bibletime-v9-sw-pr002["']/,
+  "cache version PR-002 lama harus sudah di-bump",
+);
 
 assert.doesNotMatch(
   swSource,

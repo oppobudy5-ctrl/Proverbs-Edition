@@ -116,7 +116,7 @@ dan menghasilkan notifikasi bahwa bookmark tersebut tidak lagi tersedia.
 
 `sw.js` mem-precache app shell, seluruh modul konten, ikon, dan data jadwal.
 Kode memakai strategi network-first, sedangkan aset statis memakai cache-first.
-Naikkan konstanta `VERSION` di `sw.js` setiap kali struktur app shell berubah.
+Naikkan konstanta `CACHE_VERSION` di `sw.js` setiap kali struktur app shell berubah.
 
 ## AI Foundation
 
@@ -189,6 +189,27 @@ vercel deploy --prod
 
 `vercel.json` menyediakan proxy `/bible/*` untuk pembaca paralel dan header
 yang diperlukan PWA.
+
+Untuk Cloudflare Pages tersedia `_redirects` (SPA fallback) dan `_headers`
+(cache `sw.js` + content-type manifest) yang bersifat aditif — tidak
+memengaruhi Vercel. Proxy `/bible/*` pada Cloudflare memerlukan Pages
+Function/Worker (tidak dapat di-proxy lewat `_redirects`).
+
+## Quality Gate
+
+Sebelum rilis, jalankan seluruh pipeline:
+
+```bash
+npm install
+npm run build
+npm run lint
+npm test
+```
+
+`npm test` mencakup validasi konten/knowledge/CIL/AI serta uji storage,
+data-validation, security, aksesibilitas, service worker, dan router.
+Ringkasan kesiapan rilis ada di
+[docs/RELEASE_CANDIDATE_REPORT.md](docs/RELEASE_CANDIDATE_REPORT.md).
 
 ## Roadmap
 

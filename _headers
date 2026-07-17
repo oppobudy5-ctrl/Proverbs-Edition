@@ -1,0 +1,5 @@
+# Cloudflare Pages headers (additive; Vercel keeps using vercel.json).
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+/manifest.webmanifest
+  Content-Type: application/manifest+json
