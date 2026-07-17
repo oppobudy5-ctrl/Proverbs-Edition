@@ -10,7 +10,7 @@
    - CACHE_VERSION adalah sumber tunggal; bump ini saat app shell berubah.
    - CACHE_STATIC menyimpan shell + aset offline; cache lama dihapus di activate.
 */
-const CACHE_VERSION = "bibletime-v27-companion-refinement";
+const CACHE_VERSION = "bibletime-v28-biblical-reasoning-integration";
 const CACHE_STATIC = `static-${CACHE_VERSION}`;
 
 const APP_SHELL = [

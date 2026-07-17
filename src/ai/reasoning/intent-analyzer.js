@@ -3,6 +3,7 @@ import { normalizeText } from "../ai-utils.js";
 export const BIBLICAL_INTENTS = Object.freeze({
   MEANING: "meaning",
   APPLICATION: "application",
+  REFLECTION: "reflection",
   DOCTRINE: "doctrine",
   HISTORICAL: "historical",
   CHARACTER: "character",
@@ -30,7 +31,8 @@ const RULES = Object.freeze([
   [BIBLICAL_INTENTS.WARNING, /\b(peringatan|larangan|bahaya|waspada|warning|jangan)\b/i],
   [BIBLICAL_INTENTS.COMMAND, /\b(perintah|ketaatan|harus kulakukan|diperintahkan|command)\b/i],
   [BIBLICAL_INTENTS.PLACE, /\b(tempat|lokasi|di mana|dimana|kota|negeri|gunung|sungai)\b/i],
-  [BIBLICAL_INTENTS.CHARACTER, /\b(siapa|tokoh|karakter|orang bernama|raja|nabi|rasul)\b/i],
+  [BIBLICAL_INTENTS.CHARACTER, /\b(studi karakter|character study|siapa|tokoh|karakter|orang bernama|raja|nabi|rasul)\b/i],
+  [BIBLICAL_INTENTS.REFLECTION, /\b(refleksi|renungan|merenungkan|reflection)\b/i],
   [BIBLICAL_INTENTS.APPLICATION, /\b(terapkan|penerapan|aplikasi|praktik|lakukan|kehidupan sehari|langkah nyata)\b/i],
   [BIBLICAL_INTENTS.WISDOM, /\b(hikmat|bijak|keputusan|nasihat|discernment|kebijaksanaan)\b/i],
   [BIBLICAL_INTENTS.THEME, /\b(tema|gagasan utama|benang merah|topik utama|theme)\b/i],

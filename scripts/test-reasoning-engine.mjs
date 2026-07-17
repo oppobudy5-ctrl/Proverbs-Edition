@@ -23,6 +23,7 @@ const { AIService } = await import("../src/ai/ai-service.js");
 const intentCases = [
   ["Apa arti ayat ini?", BIBLICAL_INTENTS.MEANING],
   ["Bagaimana penerapan praktisnya?", BIBLICAL_INTENTS.APPLICATION],
+  ["Tolong buat refleksi renungan dari pasal ini", BIBLICAL_INTENTS.REFLECTION],
   ["Apa doktrin keselamatan di sini?", BIBLICAL_INTENTS.DOCTRINE],
   ["Jelaskan latar belakang sejarahnya", BIBLICAL_INTENTS.HISTORICAL],
   ["Siapa tokoh Salomo?", BIBLICAL_INTENTS.CHARACTER],
@@ -41,7 +42,7 @@ const intentCases = [
 for (const [question, expected] of intentCases) {
   assert.equal(analyzeBiblicalIntent(question).intent, expected, question);
 }
-console.log("PASS: 15 biblical intent categories");
+console.log("PASS: 16 biblical intent categories");
 
 const themes = buildThemePath(["Takut akan Tuhan", "Hikmat", "Ketaatan", "Integritas"]);
 assert.deepEqual(themes.path.slice(0, 3), ["Takut akan Tuhan", "Hikmat", "Ketaatan"]);
@@ -89,6 +90,12 @@ assert.equal(reason.success, true);
 assert.equal(reason.source, "biblical-reasoning-engine");
 assert.equal(reason.metadata.method, "reason");
 assert.ok(reason.summary);
+assert.equal(reason.answer, reason.summary);
+assert.ok(reason.memory_verse?.ref || reason.memory_verse === null);
+assert.ok(typeof reason.next_step === "string");
+assert.ok(reason.citation || reason.citations.length > 0);
+assert.ok(reason.reasoning_metadata?.intent);
+assert.ok(Array.isArray(reason.reasoning_metadata?.reasoning_path));
 assert.ok(Array.isArray(reason.reasoning) && reason.reasoning.length >= 3);
 assert.ok(Array.isArray(reason.themes));
 assert.ok(Array.isArray(reason.cross_references));
@@ -158,4 +165,37 @@ assert.match(lessonSource, /aiReasoningBasis\(result\)/);
 assert.doesNotMatch(uiSource, /systemPrompt|prompt\.messages|KONTEKS KANONIK/);
 console.log("PASS: Dasar Jawaban UI exposes evidence only");
 
-console.log("VALID: Phase 006 intent, context reuse, theme reasoning, validation, explainability, offline, and UI.");
+const companion = await AIService.companion({
+  book: "proverbs",
+  chapter: 1,
+  llmEnabled: false,
+  cache: false,
+  persist: false,
+});
+assert.equal(companion.success, true);
+assert.ok(companion.companion?.reasoning_metadata?.intent);
+assert.equal(companion.companion?.metadata?.reasoning_engine, true);
+assert.doesNotMatch(
+  await readFile(path.join(ROOT, "src/ai/companion/companion-engine.js"), "utf8"),
+  /execute\(["']summary["']/,
+);
+console.log("PASS: Bible Companion routes through Biblical Reasoning Engine");
+
+const review = await AIService.review({
+  book: "proverbs",
+  chapter: 1,
+  day: 1,
+  text: "Refleksi singkat tentang takut akan Tuhan.",
+  llmEnabled: false,
+  cache: false,
+  persist: false,
+});
+assert.equal(review.success, true);
+assert.ok(review.review?.reasoning_metadata?.intent);
+assert.doesNotMatch(
+  await readFile(path.join(ROOT, "src/ai/review/review-engine.js"), "utf8"),
+  /executeFn\(["']reflection["']/,
+);
+console.log("PASS: Review Engine routes through Biblical Reasoning Engine");
+
+console.log("VALID: Phase 006 intent, context reuse, theme reasoning, validation, explainability, offline, Companion, Review, and UI.");

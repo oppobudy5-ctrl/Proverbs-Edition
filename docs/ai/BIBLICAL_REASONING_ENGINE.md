@@ -2,23 +2,18 @@
 
 Phase 006 adds a deterministic canonical reasoning pipeline above the existing
 Canonical Intelligence Layer (CIL). It does not replace the AI Gateway, Bible
-Knowledge Base (BKB), semantic retrieval, provider adapters, or RAG path.
+Knowledge Base (BKB), semantic retrieval, provider adapters, RAG path, or AI
+Service contract.
 
-## 1. Overview
+## 1. Purpose
 
-`AIService.ask()` and `AIService.reason()` now use the Biblical Reasoning
-Engine. The BKB remains the source of evidence; an LLM is used only to phrase a
-direct answer from the context selected by CIL.
+The Biblical Reasoning Engine ensures every AI answer passes through canonical
+evidence before language synthesis:
 
-The engine provides:
-
-- biblical intent classification
-- one canonical context build per request
-- canonical theme relationships
-- historical and cross-reference evidence
-- post-provider canonical validation
-- structured output and explainable evidence metadata
-- canonical-only fallback when the provider is unavailable
+- BKB is the primary source of truth
+- CIL selects and bounds the context
+- Reasoning Engine defines the thinking path
+- LLM only phrases language from that evidence
 
 ## 2. Architecture
 
@@ -27,167 +22,191 @@ flowchart TD
   Question --> Intent[Intent Analyzer]
   Intent --> Context[Canonical Context Builder]
   Context --> BKB[Bible Knowledge Base]
-  Context --> Semantic[Existing Semantic Search]
-  Context --> CrossRefs[Existing Cross References]
   Context --> History[Historical Context]
-  Context --> Themes[Theme Reasoning]
-  Themes --> Controller[Existing AI Controller]
+  Context --> CrossRefs[Cross References]
+  Context --> Semantic[Semantic Search]
+  Context --> Themes[Theme Analyzer]
+  Themes --> Reasoning[Reasoning Engine]
+  Reasoning --> Controller[Existing AI Controller]
   Controller --> Gateway[Existing Provider Gateway]
   Gateway --> Validator[Canonical Validator]
-  Validator --> Formatter[Structured Formatter]
-  Formatter --> AIService
-  AIService --> UI[Answer + Dasar Jawaban]
+  Validator --> Formatter[Response Formatter]
+  Formatter --> Ask[Ask]
+  Formatter --> Companion[Bible Companion]
+  Formatter --> Review[Review / Mentor]
 ```
-
-The prebuilt `CanonicalContext` is passed to `AIController.execute()`. This
-prevents the controller from performing the same CIL query a second time while
-preserving its cache, provider abstraction, citation checks, and guardrails.
 
 ## 3. Reasoning Pipeline
 
 1. Validate and normalize the question.
-2. Classify the question with the offline Intent Analyzer.
+2. Classify intent offline.
 3. Build one immutable `CanonicalContext` through CIL.
-4. Project themes, people, places, keywords, historical evidence, citations,
-   cross-references, application, and prayer.
+4. Project themes, keywords, historical evidence, citations, cross-references,
+   purpose, memory verse, application, and prayer.
 5. Connect only themes already present in canonical evidence.
-6. Reuse the existing `qa` intent and provider adapter for language synthesis.
-7. Validate provider citations and guardrail status against canonical context.
-8. Format the answer and evidence metadata.
-9. Use a local canonical fallback when the provider fails or validation blocks
-   the generated answer.
+6. Reuse the existing `qa` intent for language synthesis when online.
+7. Validate provider citations and metadata consistency.
+8. Format the standard response schema.
+9. Fall back to local canonical evidence when the provider is unavailable.
 
-The public `reasoning` field is an evidence summary. It contains pipeline
-stages, evidence labels, and validation results—not private chain-of-thought or
-internal prompt content.
+## 4. Intent Analyzer
 
-## 4. Intent Analysis
+`src/ai/reasoning/intent-analyzer.js` recognizes:
 
-`src/ai/reasoning/intent-analyzer.js` classifies:
+- Meaning
+- Application
+- Reflection
+- Historical
+- Character Study
+- Theme
+- Cross Reference
+- Promise
+- Warning
+- Command
+- Prayer
+- Wisdom
+- Timeline
+- Doctrine
+- Prophecy
+- Place
+- General Question
 
-- `meaning`
-- `application`
-- `doctrine`
-- `historical`
-- `character`
-- `place`
-- `promise`
-- `warning`
-- `command`
-- `prayer`
-- `wisdom`
-- `cross_reference`
-- `timeline`
-- `prophecy`
-- `theme`
-- `general`
-
-Classification is deterministic and offline. The result includes the primary
-intent, secondary matches, matched public markers, language, and confidence.
-Intent analysis does not call a provider.
+Unrecognized questions fall back to `general`.
 
 ## 5. Context Builder
 
-`src/ai/reasoning/reasoning-context.js` calls the existing CIL Gateway and
-projects a compact evidence object:
+`src/ai/reasoning/reasoning-context.js` reuses the existing CIL gateway once and
+projects:
 
-- book, chapter, and verse reference
-- summary
+- book, chapter, verse
+- summary and purpose
 - themes and keywords
-- people and places when present
 - historical context
-- cross-references
+- memory verse
+- cross references
 - citations
-- application and prayer
-- context sources used
-- availability and degraded state
+- application / challenge
+- prayer
+- metadata and availability
 
-The context builder does not directly modify or duplicate BKB data. Metadata-
-only books remain explicit and never inherit Proverbs content.
+No duplicate Knowledge Base query is performed when a prebuilt `canonical`
+context is supplied by Companion or Review.
 
-## 6. Canonical Validation
+## 6. Theme Analysis
 
-`src/ai/reasoning/canonical-validator.js` runs after provider synthesis and
-checks:
+`src/ai/reasoning/theme-reasoner.js` links only themes already present in the
+canonical evidence. It never invents new theological claims or editorial themes.
 
-- canonical book/chapter resolution
-- scripture citation presence
-- absence of invented references
-- existing theological guardrail status
-- allowed-citation boundaries
-- metadata-only or degraded context
+## 7. Canonical Validation
 
-Possible statuses are:
+`src/ai/reasoning/canonical-validator.js` checks:
 
-- `pass`
-- `fallback`
-- `warn`
-- `insufficient_context`
-- `blocked`
-- `invalid_context`
+- citation availability
+- chapter/book context boundaries
+- metadata consistency
+- invented reference rejection
+- theological guardrail status
+- metadata-only / degraded context
 
-`blocked` and `invalid_context` outputs never deliver unvalidated provider
-prose. The formatter uses the existing local guardrail fallback instead.
+Statuses: `pass`, `fallback`, `warn`, `insufficient_context`, `blocked`,
+`invalid_context`.
 
-## 7. Explainable AI
+## 8. Explainable AI
 
-Every successful reasoning response includes:
+Internal reasoning metadata includes:
 
-- detected intent and confidence
-- reasoning path stage names
-- canonical context sources used
-- references used
-- canonical-only and degraded flags
-- validation checks and status
+- intent and intent confidence
+- primary theme and theme list
+- knowledge source
+- historical context used
+- cross references used
+- confidence
+- reasoning path
+- context sources and references used
+- canonical-only / degraded flags
 
-The UI renders a concise **Dasar Jawaban** disclosure containing themes,
-supporting citations, context, cross-references, historical context, and
-confidence. It never renders system prompts, provider prompts, API keys,
-credentials, or hidden model reasoning.
+This metadata is internal evidence, not chain-of-thought and not a system
+prompt. The UI may show a concise **Dasar Jawaban** panel without exposing
+credentials, API keys, or prompt templates.
 
-## 8. Output Schema
+## 9. Output Schema
 
 ```js
 {
   summary: "…",
-  reasoning: [
-    { stage: "intent", explanation: "…", evidence: [] },
-    { stage: "canonical_context", explanation: "…", evidence: [] },
-    { stage: "theme_analysis", explanation: "…", evidence: [] },
-    { stage: "cross_references", explanation: "…", evidence: [] },
-    { stage: "canonical_validation", explanation: "…", evidence: [] }
-  ],
-  themes: [],
-  theme_path: [],
-  historical_context: "…",
-  cross_references: [],
+  answer: "…",
   application: "…",
+  cross_references: [],
+  historical_context: "…",
+  memory_verse: { ref: "…", text: "…" } | null,
   prayer: "…",
+  next_step: "…",
+  citation: { display: "…" } | null,
   citations: [],
   confidence: 0,
-  provider: "mock | local | …",
-  timestamp: "ISO-8601",
-  validation: { valid: true, status: "pass", checks: [] },
-  explainability: {
+  provider: "local | mock | …",
+  reasoning_metadata: {
     intent: "meaning",
-    intent_confidence: 0.78,
-    reasoning_path: [],
-    context_used: [],
-    references_used: [],
-    canonical_only: false,
-    degraded: false
-  }
+    theme: "…",
+    knowledge_source: "cil",
+    historical_context_used: true,
+    cross_references_used: 2,
+    confidence: 70,
+    reasoning_path: ["intent", "canonical_context", "…"]
+  },
+  timestamp: "ISO-8601",
+  reasoning: [],
+  themes: [],
+  validation: { valid: true, status: "pass", checks: [] },
+  explainability: { /* public evidence subset */ }
 }
 ```
 
-The standard AIService envelope (`success`, `status`, `source`, `content`,
-`metadata`, and `error`) wraps these fields without removing them.
+## 10. Integration
 
-## 9. Future Enhancement
+### Ask
 
-- Add curated chapter and verse data for books currently marked
-  `metadata-only`.
-- Expand canonical theme relationships from reviewed BKB graph edges.
-- Add explicit pericope and place DTO fields when those datasets are available.
-- Add interpretation-aware doctrine validation using reviewed metadata.
-- Support advanced/debug UI for validation checks without exposing prompts.
+`AIService.ask()` and `AIService.reason()` already route through
+`runBiblicalReasoning()`.
+
+### Bible Companion
+
+`runBibleCompanion()` builds one CIL context, then calls
+`runBiblicalReasoning()` with that prebuilt context. Companion no longer calls
+the LLM summary path directly.
+
+### Review / Mentor
+
+`runReview()` follows:
+
+Reflection → Canonical Context → Biblical Reasoning → Review formatting.
+
+Provider enrichment is mediated by the Reasoning Engine. Canonical-only output
+remains available offline.
+
+## 11. Performance
+
+- one CIL context build per request when possible
+- prebuilt `canonical` reuse for Companion and Review
+- existing controller cache/persist options remain available
+- lazy controller import inside the reasoning engine
+
+## 12. Security
+
+Never sent to the client:
+
+- system prompts
+- provider prompt templates
+- API keys
+- credentials
+- hidden chain-of-thought
+
+Public reasoning fields are evidence summaries only.
+
+## 13. Future Roadmap
+
+- curated chapter content for books currently marked `metadata-only`
+- richer theme graph edges from reviewed BKB metadata
+- pericope and place DTOs when those datasets exist
+- doctrine validation against reviewed interpretive notes
+- advanced/debug UI for validation checks without exposing prompts

@@ -228,6 +228,7 @@ const fallbackResult = await runReview({
 assertReviewOutput(fallbackResult, "provider-failure fallback");
 assert.equal(fallbackResult.canonical_only, true, "fallback harus canonical_only=true");
 assert.equal(fallbackResult.provider, "local");
+assert.ok(fallbackResult.reasoning_metadata?.intent, "review harus menyertakan reasoning metadata");
 console.log("PASS: provider failure -> canonical-only fallback (no crash)");
 
 // Test 10: missing input (no text, no chapter, no day) should throw INVALID_REQUEST

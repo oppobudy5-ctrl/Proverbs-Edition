@@ -1,13 +1,14 @@
 import { canonicalContextGateway, initCIL } from "../cil/index.js";
 import { AIError, AI_ERROR_CODES } from "../ai-utils.js";
 import { CONTENT } from "../../../data/content.js";
+import { runBiblicalReasoning } from "../reasoning/reasoning-engine.js";
 
 let chapterOverlaysPromise = null;
 
 /**
  * Multi-book Bible Companion orchestrator.
- * Reuses CIL and the existing summary intent; it does not define a new prompt
- * or provider path.
+ * Routes enrichment through the Biblical Reasoning Engine so Companion never
+ * calls the LLM provider path directly.
  */
 export async function runBibleCompanion(input = {}) {
   const bookInput = String(input.book || "").trim();
@@ -42,23 +43,29 @@ export async function runBibleCompanion(input = {}) {
 
   let prose = "";
   let provider = "local";
-  if (available && input.llmEnabled !== false) {
+  let reasoningMeta = null;
+  if (available) {
     try {
-      const execute = input._executeFn || defaultExecute();
-      const result = await execute("summary", {
+      const question = chapter
+        ? `Ringkas ${book.names?.id || book.slug} ${chapter} berdasarkan konteks kanonik yang tersedia.`
+        : `Ringkas tujuan dan tema utama kitab ${book.names?.id || book.slug} berdasarkan konteks kanonik yang tersedia.`;
+      const reasoned = await runBiblicalReasoning(question, {
         book: book.slug,
         chapter,
-        question: chapter
-          ? `Ringkas ${book.names?.id || book.slug} ${chapter} berdasarkan konteks kanonik yang tersedia.`
-          : `Ringkas tujuan dan tema utama kitab ${book.names?.id || book.slug} berdasarkan konteks kanonik yang tersedia.`,
+        canonical: context,
         cache: input.cache,
         persist: input.persist,
+        llmEnabled: input.llmEnabled,
+        _executeFn: input._executeFn,
         metadata: { serviceMethod: "companion" },
       });
-      prose = typeof result?.content === "string" ? result.content.trim() : "";
-      provider = result?.provider || provider;
+      prose = typeof reasoned?.answer === "string"
+        ? reasoned.answer.trim()
+        : (typeof reasoned?.summary === "string" ? reasoned.summary.trim() : "");
+      provider = reasoned?.provider || provider;
+      reasoningMeta = reasoned?.reasoning_metadata || null;
     } catch {
-      // Canonical-only fallback is the expected offline behaviour.
+      // Canonical-only Companion remains the expected offline behaviour.
     }
   }
 
@@ -71,6 +78,7 @@ export async function runBibleCompanion(input = {}) {
     available,
     editorial,
     overlay,
+    reasoningMeta,
   });
 }
 
@@ -99,6 +107,7 @@ function formatCompanion({
   available,
   editorial,
   overlay,
+  reasoningMeta,
 }) {
   const seenReferences = new Set();
   const crossBookReferences = (context.crossrefs || []).filter((ref) => {
@@ -176,13 +185,15 @@ function formatCompanion({
     citations: Object.freeze((context.citations || []).map((item) => Object.freeze({ ...item }))),
     confidence: context.confidence || 0,
     provider,
-    canonical_only: !prose,
+    canonical_only: !prose || provider === "local",
+    reasoning_metadata: reasoningMeta ? Object.freeze({ ...reasoningMeta }) : null,
     metadata: Object.freeze({
       canonical_id: context.chapter?.canonicalId || null,
       source: context.metadata?.source || "cil",
       availability: context.metadata?.availability || (available ? "available" : "metadata-only"),
       book_status: context.metadata?.bookStatus || book.status || "unknown",
       token_estimate: context.tokenEstimate || 0,
+      reasoning_engine: Boolean(reasoningMeta),
     }),
     timestamp: new Date().toISOString(),
   });
@@ -224,15 +235,4 @@ function normalizeChapter(value, max) {
     });
   }
   return chapter;
-}
-
-function defaultExecute() {
-  let controller = null;
-  return async (intent, payload) => {
-    if (!controller) {
-      const mod = await import("../ai-controller.js");
-      controller = mod.aiController;
-    }
-    return controller.execute(intent, payload, {});
-  };
 }

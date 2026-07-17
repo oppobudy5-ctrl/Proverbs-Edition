@@ -78,6 +78,8 @@ for (let chapter = 1; chapter <= 31; chapter += 1) {
   assert.ok(companion.structure.length);
   assert.ok(companion.metadata.canonical_id);
   assert.ok(companion.citations.length);
+  assert.ok(companion.reasoning_metadata?.intent);
+  assert.equal(companion.metadata.reasoning_engine, true);
   assert.equal(companion.status_message, "");
 
   rows.push({

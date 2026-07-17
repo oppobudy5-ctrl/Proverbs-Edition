@@ -13,24 +13,61 @@ export function formatReasoningOutput({
   const references = validation.citations.length
     ? validation.citations
     : evidence.citations;
+  const application = evidence.challenge
+    || evidence.application?.invitation
+    || evidence.application?.practices?.[0]
+    || "";
+  const nextStep = evidence.application?.practices?.[0]
+    || evidence.challenge
+    || application
+    || "";
+  const citation = references[0]
+    ? Object.freeze({ ...references[0] })
+    : null;
+  const memoryVerse = evidence.memory_verse
+    ? Object.freeze({ ...evidence.memory_verse })
+    : null;
 
   const reasoning = buildEvidencePath({ intent, evidence, themeReasoning, validation });
+  const reasoningMetadata = Object.freeze({
+    intent: intent.intent,
+    intent_confidence: intent.confidence,
+    theme: themeReasoning.themes[0] || "",
+    themes: Object.freeze([...themeReasoning.themes]),
+    knowledge_source: evidence.metadata?.source || "cil",
+    historical_context_used: Boolean(evidence.historical_context),
+    cross_references_used: evidence.cross_references.length,
+    confidence: chooseConfidence(response?.confidence, validation, evidence),
+    reasoning_path: Object.freeze(reasoning.map((step) => step.stage)),
+    context_used: Object.freeze([...evidence.context_used]),
+    references_used: Object.freeze(
+      references.map((item) => item.display || item.canonicalId).filter(Boolean),
+    ),
+    canonical_only: useFallback,
+    degraded: evidence.degraded,
+    availability: evidence.availability,
+    validation_status: validation.status,
+    question_length: String(question || "").length,
+  });
 
   return Object.freeze({
     summary,
+    answer: summary,
     reasoning,
     themes: Object.freeze([...themeReasoning.themes]),
     theme_path: Object.freeze([...themeReasoning.path]),
     historical_context: evidence.historical_context,
     cross_references: Object.freeze(evidence.cross_references.map((item) => Object.freeze({ ...item }))),
-    application: evidence.application?.invitation
-      || evidence.application?.practices?.[0]
-      || "",
+    application,
     prayer: evidence.prayer || "",
+    memory_verse: memoryVerse,
+    next_step: nextStep,
+    citation,
     citations: Object.freeze(references.map((item) => Object.freeze({ ...item }))),
-    confidence: chooseConfidence(response?.confidence, validation, evidence),
+    confidence: reasoningMetadata.confidence,
     provider: useFallback ? "local" : response?.provider || "unknown",
     timestamp: new Date().toISOString(),
+    reasoning_metadata: reasoningMetadata,
     guardrails: response?.guardrails || Object.freeze({
       status: validation.status,
       checks: validation.checks,
@@ -39,16 +76,14 @@ export function formatReasoningOutput({
     }),
     validation,
     explainability: Object.freeze({
-      intent: intent.intent,
-      intent_confidence: intent.confidence,
-      reasoning_path: Object.freeze(reasoning.map((step) => step.stage)),
-      context_used: Object.freeze([...evidence.context_used]),
-      references_used: Object.freeze(
-        references.map((item) => item.display || item.canonicalId).filter(Boolean),
-      ),
-      canonical_only: useFallback,
-      degraded: evidence.degraded,
-      question_length: String(question || "").length,
+      intent: reasoningMetadata.intent,
+      intent_confidence: reasoningMetadata.intent_confidence,
+      reasoning_path: reasoningMetadata.reasoning_path,
+      context_used: reasoningMetadata.context_used,
+      references_used: reasoningMetadata.references_used,
+      canonical_only: reasoningMetadata.canonical_only,
+      degraded: reasoningMetadata.degraded,
+      question_length: reasoningMetadata.question_length,
     }),
   });
 }
@@ -76,11 +111,25 @@ function buildEvidencePath({ intent, evidence, themeReasoning, validation }) {
       evidence: themeReasoning.themes,
     });
   }
+  if (evidence.historical_context) {
+    steps.push({
+      stage: "historical_context",
+      explanation: "Konteks historis kanonik dipakai sebagai batasan penafsiran.",
+      evidence: [evidence.historical_context],
+    });
+  }
   if (evidence.cross_references.length) {
     steps.push({
       stage: "cross_references",
       explanation: `${evidence.cross_references.length} hubungan ayat digunakan sebagai dukungan.`,
       evidence: evidence.cross_references.map((item) => `${item.source} → ${item.target}`),
+    });
+  }
+  if (evidence.memory_verse?.ref) {
+    steps.push({
+      stage: "memory_verse",
+      explanation: `Ayat pilihan: ${evidence.memory_verse.ref}.`,
+      evidence: [evidence.memory_verse.ref],
     });
   }
   steps.push({

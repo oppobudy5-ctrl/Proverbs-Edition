@@ -2,13 +2,19 @@ import { normalizeText } from "../ai-utils.js";
 
 const THEME_RELATIONS = Object.freeze({
   "takut akan tuhan": Object.freeze(["hikmat", "ketaatan", "kekudusan"]),
-  hikmat: Object.freeze(["ketaatan", "integritas", "keadilan"]),
-  ketaatan: Object.freeze(["berkat", "kesetiaan"]),
+  hikmat: Object.freeze(["ketaatan", "integritas", "keadilan", "disiplin"]),
+  ketaatan: Object.freeze(["berkat", "kesetiaan", "pengharapan"]),
   kekudusan: Object.freeze(["iman", "ketaatan"]),
-  iman: Object.freeze(["kesetiaan", "pengharapan"]),
+  iman: Object.freeze(["kesetiaan", "pengharapan", "doa"]),
   keadilan: Object.freeze(["belas kasih", "integritas"]),
   kasih: Object.freeze(["belas kasih", "keadilan"]),
-  doa: Object.freeze(["iman", "hikmat"]),
+  doa: Object.freeze(["iman", "hikmat", "pengharapan"]),
+  integritas: Object.freeze(["keadilan", "kesetiaan"]),
+  kerendahan: Object.freeze(["hikmat", "ketaatan"]),
+  kesetiaan: Object.freeze(["kasih", "iman"]),
+  disiplin: Object.freeze(["hikmat", "ketaatan"]),
+  "belas kasih": Object.freeze(["kasih", "keadilan"]),
+  pengharapan: Object.freeze(["iman", "kesetiaan"]),
 });
 
 /**
