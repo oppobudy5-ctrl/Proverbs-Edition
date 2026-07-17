@@ -84,6 +84,51 @@ function resolveLogMode(configured) {
   return hostname === "localhost" || hostname === "127.0.0.1" ? "development" : "production";
 }
 
+/**
+ * Opt-in end-to-end execution tracer for the AI pipeline (Phase 006A).
+ *
+ * DEBUG MODE is OFF by default and never affects behaviour or output.
+ * Enable it explicitly with any of:
+ *   - browser:  localStorage.setItem("ai_debug", "true")
+ *   - runtime:  globalThis.__AI_DEBUG__ = true
+ *   - node:     AI_DEBUG=true / AI_DEBUG=1 (env var)
+ *
+ * It only prints canonical stage markers (intent, context, provider, latency,
+ * validation) — never system prompts, API keys, or hidden chain-of-thought.
+ */
+export const AIDebug = {
+  enabled() {
+    if (globalThis.__AI_DEBUG__ === true) return true;
+    if (globalThis.__AI_DEBUG__ === false) return false;
+    try {
+      if (typeof localStorage !== "undefined" && localStorage.getItem("ai_debug") === "true") {
+        return true;
+      }
+    } catch {
+      /* localStorage may be unavailable (private mode / SSR) — ignore. */
+    }
+    const env = globalThis.process?.env || {};
+    return env.AI_DEBUG === "true" || env.AI_DEBUG === "1";
+  },
+
+  log(stage, detail) {
+    if (!this.enabled()) return;
+    if (detail === undefined) console.log(`[AI] ${stage}`);
+    else console.log(`[AI] ${stage}:`, detail);
+  },
+
+  /** Print the consolidated end-to-end trace block from TASK 10. */
+  trace(fields = {}) {
+    if (!this.enabled()) return;
+    const lines = ["[AI]"];
+    for (const [key, value] of Object.entries(fields)) {
+      if (value === undefined || value === null || value === "") continue;
+      lines.push(`${key}: ${value}`);
+    }
+    console.log(lines.join("\n"));
+  },
+};
+
 export function normalizeText(value) {
   return String(value || "")
     .normalize("NFD")

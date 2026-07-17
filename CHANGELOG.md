@@ -1,5 +1,36 @@
 # Changelog
 
+## Phase 006A — End-to-End AI Execution Audit
+
+### Perubahan
+- Audit menyeluruh alur AI: tombol **"Kirim pertanyaan"** → `AIService.ask()` →
+  Intent Analyzer → Context Builder → Reasoning Engine → AI Gateway → Provider
+  (atau Offline Canonical Engine) → Canonical Validation → Response Formatter →
+  UI Renderer. Semua terverifikasi memanggil pipeline nyata.
+- `src/ai/ai-utils.js`: tambah `AIDebug` — DEBUG MODE opt-in (default OFF) via
+  `localStorage.ai_debug`, `globalThis.__AI_DEBUG__`, atau env `AI_DEBUG`.
+- `src/ai/reasoning/reasoning-engine.js`: stage markers (Intent Detected,
+  Context Loaded, Knowledge Bundle Loaded, Cross References Loaded, Provider
+  Called/Returned/Failed/Skipped, Validation, Reasoning Completed) + blok trace
+  `[AI]` konsolidasi.
+- `src/ai/ai-controller.js`: log Gateway Called/Provider Returned/Gateway Failed
+  dengan alasan (offline, timeout, rate limit, quota, API error, configuration).
+- `js/ui/ai-lesson-assist.js`: marker `Response Rendered` setelah render jawaban.
+- `sw.js`: bump cache ke `bibletime-v30-ai-execution-audit`.
+- Laporan lengkap di `docs/audit/AI_EXECUTION_AUDIT.md` (11 bagian + acceptance).
+
+### Temuan
+- Tidak ada sample/dummy/placeholder **response** yang dirender UI. Semua UI
+  memakai `AIService`; tidak ada import provider/prompt/store langsung.
+- Provider default `mock` adalah offline provider deterministik (bukan stub UI)
+  dan diungkap jujur ke pengguna; offline fallback memakai canonical Knowledge
+  Bundle, bukan teks hardcoded.
+
+### Batas perubahan
+Tidak mengubah Bible Knowledge Base, dataset editorial, Canonical Intelligence
+Layer, Biblical Reasoning Engine, AI Gateway, provider, atau prompt. Hanya
+menambah logging DEBUG opt-in yang tidak memengaruhi output.
+
 ## Phase 007 — Planning & Discipleship Engine
 
 ### Perubahan

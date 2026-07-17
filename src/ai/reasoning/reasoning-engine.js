@@ -1,4 +1,4 @@
-import { AIError, AI_ERROR_CODES } from "../ai-utils.js";
+import { AIError, AI_ERROR_CODES, AIDebug } from "../ai-utils.js";
 import { theologicalGuardrails } from "../cil/theological-guardrails.js";
 import { analyzeBiblicalIntent } from "./intent-analyzer.js";
 import { buildReasoningContext } from "./reasoning-context.js";
@@ -21,7 +21,10 @@ export async function runBiblicalReasoning(question, options = {}) {
     });
   }
 
+  const startedAt = Date.now();
   const intent = analyzeBiblicalIntent(text);
+  AIDebug.log("Intent Detected", intent.intent);
+
   const { canonical, evidence } = await buildReasoningContext({
     ...options,
     question: text,
@@ -34,10 +37,19 @@ export async function runBiblicalReasoning(question, options = {}) {
     });
   }
 
+  const reference = evidence.reference
+    || `${canonical.book.slug}${canonical.chapter?.chapter ? ` ${canonical.chapter.chapter}` : ""}`;
+  AIDebug.log("Context Loaded", reference);
+  AIDebug.log("Knowledge Bundle Loaded", evidence.availability);
+  AIDebug.log("Cross References Loaded", evidence.cross_references.length);
+
   const themeReasoning = buildThemePath(evidence.themes);
   let response = null;
+  let providerError = null;
 
-  if (options.llmEnabled !== false && evidence.availability !== "metadata-only") {
+  const providerEligible = options.llmEnabled !== false && evidence.availability !== "metadata-only";
+  if (providerEligible) {
+    AIDebug.log("Provider Called", "gateway → AI controller (intent: qa)");
     try {
       const execute = options._executeFn || defaultExecute();
       response = await execute("qa", {
@@ -56,12 +68,20 @@ export async function runBiblicalReasoning(question, options = {}) {
           prebuiltCanonical: true,
         },
       });
-    } catch {
+      AIDebug.log("Provider Returned", response?.provider || "unknown");
+    } catch (error) {
+      providerError = error;
       response = null;
+      AIDebug.log("Provider Failed", error?.code || error?.message || "unknown");
     }
+  } else {
+    AIDebug.log("Provider Skipped", evidence.availability === "metadata-only"
+      ? "metadata-only context"
+      : "llm disabled → offline canonical engine");
   }
 
   const validation = validateCanonicalAnswer(response || {}, canonical);
+  AIDebug.log("Validation", validation.status);
   const canonicalFallback = theologicalGuardrails.buildSafeFallback(canonical);
 
   const output = formatReasoningOutput({
@@ -73,6 +93,19 @@ export async function runBiblicalReasoning(question, options = {}) {
     validation,
     canonicalFallback,
   });
+
+  AIDebug.log("Reasoning Completed", output.reasoning_metadata?.canonical_only ? "offline canonical" : "provider-backed");
+  AIDebug.trace({
+    Intent: intent.intent,
+    Context: reference,
+    Reasoning: "Success",
+    Gateway: providerEligible ? (providerError ? "Failed" : "Success") : "Skipped",
+    Provider: output.provider,
+    Latency: `${((Date.now() - startedAt) / 1000).toFixed(2)}s`,
+    Validation: validation.status,
+    Rendering: "Ready",
+  });
+
   options.onToken?.(output.summary, output.summary);
   options.onFinish?.(output);
   return output;

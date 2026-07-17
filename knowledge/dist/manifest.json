@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-07-17T10:20:28.722Z",
+  "generatedAt": "2026-07-17T13:39:27.778Z",
   "artifacts": [
     "knowledge.min.json",
     "search-index.json",
@@ -56,7 +56,7 @@
     "applications": 31
   },
   "checksums": {
-    "knowledge.min.json": "a8830e29354786e0",
+    "knowledge.min.json": "8e48214abeb2c561",
     "search-index.json": "832dc8c502ea2752",
     "topic-index.json": "fa044ee0a1003c9c",
     "crossref-index.json": "d75a34d885f54ce9",

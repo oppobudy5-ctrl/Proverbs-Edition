@@ -12,6 +12,7 @@ import {
   AIEvents,
   AI_EVENTS,
   AILogger,
+  AIDebug,
   toAIError,
 } from "./ai-utils.js";
 import { MockProvider } from "./providers/mock-provider.js";
@@ -81,6 +82,7 @@ export class AIController {
 
     AIEvents.emit(AI_EVENTS.STARTED, { requestId, intent, provider: provider.id, conversationId });
     AILogger.debug("request started", { requestId, intent, provider: provider.id });
+    AIDebug.log("Gateway Called", `provider=${provider.id} intent=${intent}`);
 
     try {
       await initCIL(payload.cilInit || {});
@@ -216,6 +218,7 @@ export class AIController {
         });
       }
 
+      AIDebug.log("Provider Returned", `${provider.id} · ${response.metadata.durationMs}ms · guardrails=${validation.status}`);
       callbacks.onFinish?.(response);
       AIEvents.emit(AI_EVENTS.FINISHED, { requestId, response, cached: false });
       AILogger.info("request finished", { requestId, provider: provider.id, durationMs: response.metadata.durationMs });
@@ -228,6 +231,7 @@ export class AIController {
         AIEvents.emit(AI_EVENTS.ERROR, { requestId, error: aiError });
         AILogger.error("request failed", { requestId, code: aiError.code, error });
       }
+      AIDebug.log("Gateway Failed", `${provider.id} · ${classifyGatewayFailure(aiError)}`);
       callbacks.onError?.(aiError);
       throw aiError;
     } finally {
@@ -296,6 +300,19 @@ export class AIController {
   async #safeConversationAdd(record) {
     try { await this.conversations.add(record); }
     catch (error) { AILogger.warn("conversation persistence skipped", error); }
+  }
+}
+
+/** Map an AIError to the human-readable failure reasons required by TASK 6. */
+function classifyGatewayFailure(error) {
+  switch (error?.code) {
+    case AI_ERROR_CODES.PROVIDER_OFFLINE: return "offline / provider unavailable";
+    case AI_ERROR_CODES.TIMEOUT: return "timeout";
+    case AI_ERROR_CODES.RATE_LIMIT: return "rate limit";
+    case AI_ERROR_CODES.QUOTA_EXCEEDED: return "quota exceeded";
+    case AI_ERROR_CODES.API_ERROR: return "provider API error";
+    case AI_ERROR_CODES.INVALID_REQUEST: return "configuration / missing key or context";
+    default: return error?.message || "unknown";
   }
 }
 

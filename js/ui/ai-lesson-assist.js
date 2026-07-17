@@ -6,6 +6,7 @@ import { el, toast } from "../dom.js";
 import { announce } from "../a11y.js";
 import { go } from "../router.js";
 import { AIService } from "../../src/ai/ai-service.js";
+import { AIDebug } from "../../src/ai/ai-utils.js";
 import { mountSemanticSearch } from "./semantic-search-ui.js";
 import {
   openAiDialog,
@@ -198,6 +199,7 @@ export function mountAiLessonAssist(host, { plan, content } = {}) {
             aiAnswerBlock("Jawaban", extractAiText(result)),
             aiReasoningBasis(result),
           );
+          AIDebug.log("Response Rendered", `Ask This Chapter · ${result?.provider || "local"} · ${result?.metadata?.validation_status || "n/a"}`);
           announce("Jawaban AI siap");
         } catch (err) {
           out.replaceChildren(aiError(err?.userMessage || err?.message || "Gagal meminta jawaban AI"));
