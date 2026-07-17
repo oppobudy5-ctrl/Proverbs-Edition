@@ -1,5 +1,26 @@
 # Changelog
 
+## Phase 004 — AI Review Engine & Bible Mentor
+
+### Perubahan
+- `src/ai/review/review-engine.js` (baru): orchestrator Review Engine — satu panggilan CIL + optional LLM enrichment + formatter; fallback canonical-only jika provider gagal.
+- `src/ai/review/review-formatter.js` (baru): memetakan CanonicalContext DTO ke immutable ReviewOutput schema.
+- `src/ai/ai-service.js`: `review()` diganti ke ReviewEngine; `mentor()` ditambahkan (mode mentor dari engine yang sama). Envelope Phase 002 tetap dipertahankan; field `review` berisi output terstruktur.
+- `js/ui/ai-reflection-panel.js`: tombol **Review AI** memakai `AIService.review`; tombol **Bible Mentor** memakai `AIService.mentor`; render terstruktur (ayat hafalan, tema, kekuatan, aplikasi, referensi silang, doa, dll.).
+- `scripts/test-review-engine.mjs` (baru): 12 assertion — schema, tema via topics, memory verse, crossrefs, historical, prayer, mentor mode, provider-failure fallback, UI boundary.
+- `docs/ai/AI_REVIEW_ENGINE.md`: dokumentasi pipeline, schema, error handling, integrasi.
+- `sw.js`: cache bump ke `bibletime-v21-ai-review`.
+
+### Output schema
+`summary`, `strengths`, `missing_points`, `application`, `memory_verse`,
+`cross_references`, `historical_context`, `themes`, `wisdom`, `encouragement`,
+`prayer`, `next_step`, `reflection_question`, `confidence`, `citations`,
+`provider`, `timestamp`, `canonical_only`.
+
+### Batas perubahan
+Tidak mengubah CIL, Bible Knowledge Base, RAG, Prompt templates, atau Design System.
+Tidak membuat model AI baru.
+
 ## Phase 002 — AI Service Layer
 
 ### Perubahan

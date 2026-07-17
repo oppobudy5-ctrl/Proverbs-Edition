@@ -8,6 +8,10 @@ Phase 002 standardizes that facade as the unified, safe service contract. See
 [AI Service Layer](./AI-SERVICE-LAYER.md) for available methods, response
 envelope, error handling, logging, and UI-boundary rules.
 
+Phase 004 adds the [AI Review Engine & Bible Mentor](./ai/AI_REVIEW_ENGINE.md)
+as a structured evaluation layer for reflections, exposed via
+`AIService.review()` and `AIService.mentor()`.
+
 ## Layered architecture
 
 ```text

@@ -59,8 +59,28 @@ assertEnvelope(summaryAlias, { method: "summary" });
 const reflect = await AIService.reflect(common);
 assertEnvelope(reflect, { method: "reflect" });
 
-const review = await AIService.review({ ...common, question: "Tinjau refleksi ini." });
+const review = await AIService.review({ ...common, text: "Tinjau refleksi ini — pasal ini mengajarkan takut akan Tuhan." });
 assertEnvelope(review, { method: "review" });
+// Phase 004: structured review output
+assert.ok("review" in review, "review response harus punya field review terstruktur");
+if (review.review) {
+  const ro = review.review;
+  ["summary", "strengths", "missing_points", "application", "cross_references",
+   "themes", "encouragement", "prayer", "next_step", "reflection_question",
+   "confidence", "citations", "provider", "timestamp", "canonical_only"].forEach((f) => {
+    assert.ok(f in ro, `review output harus punya field ${f}`);
+  });
+  assert.ok(Array.isArray(ro.strengths));
+  assert.ok(Array.isArray(ro.cross_references));
+  assert.ok(Array.isArray(ro.themes));
+  assert.ok(Array.isArray(ro.citations));
+  assert.ok(Number.isFinite(ro.confidence));
+  assert.ok(typeof ro.canonical_only === "boolean");
+}
+
+const mentor = await AIService.mentor({ ...common, text: "Saya ingin menerapkan hikmat ini dalam keputusan harian." });
+assertEnvelope(mentor, { method: "mentor" });
+assert.ok("review" in mentor, "mentor response harus punya field review");
 
 const search = await AIService.search("takut akan Tuhan", common);
 assertEnvelope(search, { method: "search" });

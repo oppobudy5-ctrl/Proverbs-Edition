@@ -31,7 +31,8 @@ flowchart TD
 | `ask(question)` | intent `qa` | Implemented |
 | `reflect(target)` | intent `reflection` | Implemented |
 | `reflectJournal(target)` | intent `journal-reflection` + consent | Implemented |
-| `review(target)` | existing Reflection Engine | Implemented |
+| `review(target)` | Review Engine (`src/ai/review/`) — structured biblical review | Implemented |
+| `mentor(target)` | Review Engine in mentor mode — pastoral guidance | Implemented |
 | `search(query)` | intent `search` (LLM synthesis) | Implemented |
 | `semanticSearch(query)` | CIL Semantic Search | Implemented |
 | `explain(question)` | intent `explain` | Implemented |

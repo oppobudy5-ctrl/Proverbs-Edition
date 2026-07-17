@@ -1,4 +1,5 @@
 import { aiController } from "./ai-controller.js";
+import { runReview } from "./review/review-engine.js";
 import {
   AIEvents,
   AI_EVENTS,
@@ -151,14 +152,36 @@ export const AIService = Object.freeze({
     });
   },
 
+  /**
+   * AI Review Engine — structured biblical review of a user reflection.
+   * Runs the full Phase 004 pipeline: CIL + optional LLM + formatter.
+   * Returns standardised Phase 002 envelope with `review` field on success.
+   */
   async review(target = {}, options = {}) {
-    return runCapability("review", "ai-controller", () => {
+    return runCapability("review", "review-engine", async () => {
       const payload = normalizeTarget(target, options);
-      return execute("reflection", {
+      const reviewOutput = await runReview({
         ...payload,
-        question: payload.question || "Tinjau refleksi ini secara pastoral dan berikan pertanyaan lanjutan.",
-        metadata: { ...(payload.metadata || {}), serviceMethod: "review" },
+        mode: "review",
+        journalConsent: Boolean(payload.journalConsent),
       });
+      return _wrapReviewOutput(reviewOutput);
+    });
+  },
+
+  /**
+   * Bible Mentor — mentor mode of the Review Engine.
+   * Emphasises summary, encouragement, wisdom, prayer, next step, reflection question.
+   */
+  async mentor(target = {}, options = {}) {
+    return runCapability("mentor", "review-engine", async () => {
+      const payload = normalizeTarget(target, options);
+      const reviewOutput = await runReview({
+        ...payload,
+        mode: "mentor",
+        journalConsent: Boolean(payload.journalConsent),
+      });
+      return _wrapReviewOutput(reviewOutput);
     });
   },
 
@@ -374,6 +397,25 @@ function logFailure(method, error) {
     code: mapServiceErrorCode(aiError),
     retryable: Boolean(aiError.retryable),
   });
+}
+
+/**
+ * Wrap a ReviewOutput into a structure that createServiceSuccess can spread cleanly.
+ * The full ReviewOutput is available as `.review` for structured UI rendering.
+ */
+function _wrapReviewOutput(reviewOutput) {
+  return {
+    review: reviewOutput,
+    content: reviewOutput.summary || "",
+    citations: reviewOutput.citations || [],
+    provider: reviewOutput.provider || "local",
+    confidence: reviewOutput.confidence,
+    metadata: {
+      canonical_only: reviewOutput.canonical_only,
+      themes: reviewOutput.themes,
+      confidence: reviewOutput.confidence,
+    },
+  };
 }
 
 function normalizeTarget(target, options) {
