@@ -3,7 +3,7 @@
 // =============================================================================
 import { Store, consumeLegacyBookmarkNotice } from "./store.js";
 import { toast, $ } from "./dom.js";
-import { initRouter, go } from "./router.js";
+import { initRouter } from "./router.js";
 import { injectFooterIcons } from "./ui/about.js";
 import { refreshStreak } from "./ui/streak.js";
 import { Bgm } from "./ui/bgm.js";
@@ -40,8 +40,7 @@ function boot() {
   refreshStreak();
 
   initRouter();
-  go("home");
-
+  // Deep link / refresh ditangani di dalam initRouter() via History API.
   if (consumeLegacyBookmarkNotice()) {
     toast("Bookmark ini berasal dari versi sebelumnya dan tidak lagi tersedia.", 4200);
   }

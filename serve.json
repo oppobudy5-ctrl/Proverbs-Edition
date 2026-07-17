@@ -1,0 +1,14 @@
+{
+  "rewrites": [
+    { "source": "/lesson/**", "destination": "/index.html" },
+    { "source": "/day/**", "destination": "/index.html" },
+    { "source": "/calendar", "destination": "/index.html" },
+    { "source": "/library", "destination": "/index.html" },
+    { "source": "/journal", "destination": "/index.html" },
+    { "source": "/bookmark", "destination": "/index.html" },
+    { "source": "/bookmarks", "destination": "/index.html" },
+    { "source": "/about", "destination": "/index.html" },
+    { "source": "/profile", "destination": "/index.html" },
+    { "source": "/home", "destination": "/index.html" }
+  ]
+}

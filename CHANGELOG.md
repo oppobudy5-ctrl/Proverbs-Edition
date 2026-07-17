@@ -1,5 +1,28 @@
 # Changelog
 
+## PR-004 Router & Navigation
+
+### Perubahan
+- `js/router.js`: History API (`pushState` / `replaceState` / `popstate`), deep link path, title, fokus a11y, dan sinkronisasi nav aktif.
+- Path publik: `/`, `/calendar`, `/library`, `/about`, `/lesson/:day` (alias `/day/:day`, `/journal`, `/bookmark`, `/profile`).
+- `js/main.js`: boot menghormati URL (tidak lagi memaksa `go("home")`).
+- `vercel.json` + `serve.json`: rewrite SPA agar refresh/deep link tidak 404.
+- `scripts/test-router.mjs` + `npm run test-router`.
+
+### Alasan
+Router sebelumnya hanya navigasi in-memory tanpa History API, sehingga Back/Forward browser, URL shareable, dan deep link/refresh tidak andal.
+
+### Dampak
+- Back/Forward bekerja tanpa full reload.
+- URL dapat dibagikan dan di-refresh dengan aman.
+- Unknown route jatuh ke home tanpa crash.
+- UI/UX visual, AI, journal, storage, dan service worker tidak diubah.
+- API publik `go(route, params)` dan `initRouter()` tetap kompatibel.
+
+### Kompatibilitas
+- Pemanggilan `go("day", { day })` / `data-route` lama tetap valid.
+- Fallback aman bila History API tidak tersedia (`file:` protocol).
+
 ## PR-002 Service Worker Reliability
 
 ### Perubahan

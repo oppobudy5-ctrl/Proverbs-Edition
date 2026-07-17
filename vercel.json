@@ -2,7 +2,17 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/bible/:path*", "destination": "https://mayicu.id/api/alkitab/v1/:path*" }
+    { "source": "/bible/:path*", "destination": "https://mayicu.id/api/alkitab/v1/:path*" },
+    { "source": "/lesson/:day*", "destination": "/index.html" },
+    { "source": "/day/:day*", "destination": "/index.html" },
+    { "source": "/calendar", "destination": "/index.html" },
+    { "source": "/library", "destination": "/index.html" },
+    { "source": "/journal", "destination": "/index.html" },
+    { "source": "/bookmark", "destination": "/index.html" },
+    { "source": "/bookmarks", "destination": "/index.html" },
+    { "source": "/about", "destination": "/index.html" },
+    { "source": "/profile", "destination": "/index.html" },
+    { "source": "/home", "destination": "/index.html" }
   ],
   "headers": [
     {
