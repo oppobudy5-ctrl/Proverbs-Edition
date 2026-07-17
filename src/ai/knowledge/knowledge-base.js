@@ -90,8 +90,8 @@ export class KnowledgeBase {
     return [...this.#topics.values()];
   }
 
-  getChapter(chapter) {
-    const bundle = this.#chapters.get(Number(chapter));
+  getChapter(chapter, book = "proverbs") {
+    const bundle = this.#chapters.get(chapterKey(book, chapter));
     return bundle ? { ...bundle } : null;
   }
 
@@ -116,9 +116,10 @@ export class KnowledgeBase {
     for (const doc of this.#byType.get(DOCUMENT_TYPES.CHAPTER) || []) {
       const chapter = Number(doc.meta?.chapter);
       if (!Number.isFinite(chapter)) continue;
-      this.#chapters.set(chapter, {
+      const book = documentBookKey(doc);
+      this.#chapters.set(chapterKey(book, chapter), {
         chapter,
-        book: doc.meta?.book || null,
+        book,
         chapterDoc: doc,
         goldenVerse: null,
         verses: [],
@@ -131,7 +132,7 @@ export class KnowledgeBase {
     const attach = (type, key) => {
       for (const doc of this.#byType.get(type) || []) {
         const chapter = Number(doc.meta?.chapter);
-        const bundle = this.#chapters.get(chapter);
+        const bundle = this.#chapters.get(chapterKey(documentBookKey(doc), chapter));
         if (!bundle) continue;
         if (Array.isArray(bundle[key])) bundle[key].push(doc);
         else bundle[key] = doc;
@@ -205,6 +206,18 @@ function reviveIndexes(indexes) {
 
 function structuredCopy(value) {
   return JSON.parse(JSON.stringify(value));
+}
+
+function chapterKey(book, chapter) {
+  return `${normalizeText(String(book || "proverbs")).replace(/^book:/, "")}:${Number(chapter)}`;
+}
+
+function documentBookKey(doc) {
+  if (doc?.meta?.bookSlug) return doc.meta.bookSlug;
+  if (doc?.meta?.bookId) return String(doc.meta.bookId).replace(/^book:/, "");
+  const idMatch = String(doc?.id || "").match(/^(.+?)-(?:chapter|golden|verse|reflection|prayer|challenge|devotional)-/);
+  if (idMatch) return idMatch[1];
+  return normalizeText(doc?.meta?.book || "proverbs") || "proverbs";
 }
 
 export const knowledgeBase = new KnowledgeBase();

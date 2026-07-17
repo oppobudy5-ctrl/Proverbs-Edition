@@ -1,5 +1,26 @@
 # Changelog
 
+## Phase 005 — Multi-Book Bible Companion
+
+### Perubahan
+- `knowledge/canon/books-registry.json`: registry kanonik lengkap 66 kitab dengan nama, singkatan, testament, jumlah pasal, penulis, periode, kategori, bahasa, urutan kanonik, dan status ketersediaan.
+- `src/ai/cil/gateway.js`: pencarian chapter, typed documents, retrieval, cross-reference, dan degraded fallback kini book-aware; memperbaiki binding `fetch` browser agar CIL tidak jatuh ke fallback secara keliru.
+- `src/ai/knowledge/knowledge-base.js`: chapter bundle memakai key `book:chapter`, mencegah collision lintas kitab.
+- `src/ai/companion/companion-engine.js` (baru): structured Bible Companion dengan Book Overview, Summary, Historical Context, Cross Book References, Application, Prayer, citation, dan metadata-only fallback.
+- `src/ai/ai-service.js`: menambahkan `books()`, `book()`, dan `companion()` melalui standard response envelope.
+- `js/ui/bible-companion.js` (baru): Book Selector 66 kitab, Chapter Selector, Book Overview, Book Summary, cross-book references, dan status offline yang jelas.
+- `js/router.js` dan `index.html`: deep link `/companion/:book/:chapter` serta navigasi Companion yang accessible dan responsive.
+- Semantic Search mencakup seluruh registry melalui 66 dokumen `canon-book`.
+- `scripts/test-multi-book.mjs` (baru): registry, isolasi chapter lintas kitab, CIL leakage, Companion, cross-book references, semantic search, navigation, offline fallback, dan UI boundary.
+- `docs/ai/MULTI_BOOK_COMPANION.md`: dokumentasi arsitektur dan ekspansi.
+- `sw.js`: cache `bibletime-v22-multi-book` dan precache modul Companion/Review.
+
+### Ketersediaan data
+Struktur mendukung 66 kitab. Amsal adalah satu-satunya kitab dengan konten
+pasal terkurasi dan tersedia offline saat ini. Kitab lain menampilkan metadata
+kanonik serta status `metadata-only`; aplikasi tidak mengarang atau meminjam
+konten Amsal.
+
 ## Phase 004 — AI Review Engine & Bible Mentor
 
 ### Perubahan

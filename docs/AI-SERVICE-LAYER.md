@@ -33,6 +33,9 @@ flowchart TD
 | `reflectJournal(target)` | intent `journal-reflection` + consent | Implemented |
 | `review(target)` | Review Engine (`src/ai/review/`) — structured biblical review | Implemented |
 | `mentor(target)` | Review Engine in mentor mode — pastoral guidance | Implemented |
+| `books()` | 66-book Canonical Registry | Implemented |
+| `book(nameOrSlug)` | Canonical book metadata and availability | Implemented |
+| `companion(target)` | Multi-Book Bible Companion | Implemented |
 | `search(query)` | intent `search` (LLM synthesis) | Implemented |
 | `semanticSearch(query)` | CIL Semantic Search | Implemented |
 | `explain(question)` | intent `explain` | Implemented |

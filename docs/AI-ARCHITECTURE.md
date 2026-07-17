@@ -12,6 +12,10 @@ Phase 004 adds the [AI Review Engine & Bible Mentor](./ai/AI_REVIEW_ENGINE.md)
 as a structured evaluation layer for reflections, exposed via
 `AIService.review()` and `AIService.mentor()`.
 
+Phase 005 adds the [Multi-Book Bible Companion](./ai/MULTI_BOOK_COMPANION.md),
+the 66-book registry, book-aware CIL retrieval, canonical navigation, and
+availability-safe offline responses through `AIService.companion()`.
+
 ## Layered architecture
 
 ```text

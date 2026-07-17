@@ -95,6 +95,19 @@ const crossReference = await AIService.crossReference(common);
 assertEnvelope(crossReference, { method: "crossReference" });
 assert.ok(Array.isArray(crossReference.crossrefs));
 
+const books = await AIService.books();
+assertEnvelope(books, { method: "books" });
+assert.equal(books.books.length, 66);
+
+const book = await AIService.book("Mazmur");
+assertEnvelope(book, { method: "book" });
+assert.equal(book.book.slug, "psalms");
+
+const companion = await AIService.companion({ ...common, book: "proverbs", llmEnabled: false });
+assertEnvelope(companion, { method: "companion" });
+assert.ok(companion.companion);
+assert.equal(companion.companion.book.slug, "proverbs");
+
 const semantic = await AIService.semanticSearch("hikmat dalam keputusan", { remember: false });
 assertEnvelope(semantic, { method: "semanticSearch" });
 assert.ok(Array.isArray(semantic.results), "field hasil lama tetap kompatibel");

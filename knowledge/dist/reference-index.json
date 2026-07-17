@@ -1,6 +1,120 @@
 {
   "version": "1.0.0",
   "byCanonicalId": {
+    "book:genesis": {
+      "id": "book:genesis",
+      "display": "Kejadian",
+      "type": "canon-book",
+      "legacyId": "genesis"
+    },
+    "book:exodus": {
+      "id": "book:exodus",
+      "display": "Keluaran",
+      "type": "canon-book",
+      "legacyId": "exodus"
+    },
+    "book:leviticus": {
+      "id": "book:leviticus",
+      "display": "Imamat",
+      "type": "canon-book",
+      "legacyId": "leviticus"
+    },
+    "book:numbers": {
+      "id": "book:numbers",
+      "display": "Bilangan",
+      "type": "canon-book",
+      "legacyId": "numbers"
+    },
+    "book:deuteronomy": {
+      "id": "book:deuteronomy",
+      "display": "Ulangan",
+      "type": "canon-book",
+      "legacyId": "deuteronomy"
+    },
+    "book:joshua": {
+      "id": "book:joshua",
+      "display": "Yosua",
+      "type": "canon-book",
+      "legacyId": "joshua"
+    },
+    "book:judges": {
+      "id": "book:judges",
+      "display": "Hakim-hakim",
+      "type": "canon-book",
+      "legacyId": "judges"
+    },
+    "book:ruth": {
+      "id": "book:ruth",
+      "display": "Rut",
+      "type": "canon-book",
+      "legacyId": "ruth"
+    },
+    "book:1samuel": {
+      "id": "book:1samuel",
+      "display": "1 Samuel",
+      "type": "canon-book",
+      "legacyId": "1samuel"
+    },
+    "book:2samuel": {
+      "id": "book:2samuel",
+      "display": "2 Samuel",
+      "type": "canon-book",
+      "legacyId": "2samuel"
+    },
+    "book:1kings": {
+      "id": "book:1kings",
+      "display": "1 Raja-raja",
+      "type": "canon-book",
+      "legacyId": "1kings"
+    },
+    "book:2kings": {
+      "id": "book:2kings",
+      "display": "2 Raja-raja",
+      "type": "canon-book",
+      "legacyId": "2kings"
+    },
+    "book:1chronicles": {
+      "id": "book:1chronicles",
+      "display": "1 Tawarikh",
+      "type": "canon-book",
+      "legacyId": "1chronicles"
+    },
+    "book:2chronicles": {
+      "id": "book:2chronicles",
+      "display": "2 Tawarikh",
+      "type": "canon-book",
+      "legacyId": "2chronicles"
+    },
+    "book:ezra": {
+      "id": "book:ezra",
+      "display": "Ezra",
+      "type": "canon-book",
+      "legacyId": "ezra"
+    },
+    "book:nehemiah": {
+      "id": "book:nehemiah",
+      "display": "Nehemia",
+      "type": "canon-book",
+      "legacyId": "nehemiah"
+    },
+    "book:esther": {
+      "id": "book:esther",
+      "display": "Ester",
+      "type": "canon-book",
+      "legacyId": "esther"
+    },
+    "book:job": {
+      "id": "book:job",
+      "display": "Ayub",
+      "type": "canon-book",
+      "legacyId": "job"
+    },
+    "book:psalms": {
+      "id": "book:psalms",
+      "display": "Mazmur",
+      "type": "canon-book",
+      "legacyId": "psalms"
+    },
     "book:proverbs": {
       "id": "book:proverbs",
       "display": "Amsal",
@@ -162,23 +276,149 @@
       "display": "Amsal 31",
       "type": "reference"
     },
-    "book:psalms": {
-      "id": "book:psalms",
-      "display": "Mazmur",
-      "type": "canon-book",
-      "legacyId": "psalms"
-    },
     "book:ecclesiastes": {
       "id": "book:ecclesiastes",
       "display": "Pengkhotbah",
       "type": "canon-book",
       "legacyId": "ecclesiastes"
     },
+    "book:songofsongs": {
+      "id": "book:songofsongs",
+      "display": "Kidung Agung",
+      "type": "canon-book",
+      "legacyId": "songofsongs"
+    },
+    "book:isaiah": {
+      "id": "book:isaiah",
+      "display": "Yesaya",
+      "type": "canon-book",
+      "legacyId": "isaiah"
+    },
+    "book:jeremiah": {
+      "id": "book:jeremiah",
+      "display": "Yeremia",
+      "type": "canon-book",
+      "legacyId": "jeremiah"
+    },
+    "book:lamentations": {
+      "id": "book:lamentations",
+      "display": "Ratapan",
+      "type": "canon-book",
+      "legacyId": "lamentations"
+    },
+    "book:ezekiel": {
+      "id": "book:ezekiel",
+      "display": "Yehezkiel",
+      "type": "canon-book",
+      "legacyId": "ezekiel"
+    },
+    "book:daniel": {
+      "id": "book:daniel",
+      "display": "Daniel",
+      "type": "canon-book",
+      "legacyId": "daniel"
+    },
+    "book:hosea": {
+      "id": "book:hosea",
+      "display": "Hosea",
+      "type": "canon-book",
+      "legacyId": "hosea"
+    },
+    "book:joel": {
+      "id": "book:joel",
+      "display": "Yoel",
+      "type": "canon-book",
+      "legacyId": "joel"
+    },
+    "book:amos": {
+      "id": "book:amos",
+      "display": "Amos",
+      "type": "canon-book",
+      "legacyId": "amos"
+    },
+    "book:obadiah": {
+      "id": "book:obadiah",
+      "display": "Obaja",
+      "type": "canon-book",
+      "legacyId": "obadiah"
+    },
+    "book:jonah": {
+      "id": "book:jonah",
+      "display": "Yunus",
+      "type": "canon-book",
+      "legacyId": "jonah"
+    },
+    "book:micah": {
+      "id": "book:micah",
+      "display": "Mikha",
+      "type": "canon-book",
+      "legacyId": "micah"
+    },
+    "book:nahum": {
+      "id": "book:nahum",
+      "display": "Nahum",
+      "type": "canon-book",
+      "legacyId": "nahum"
+    },
+    "book:habakkuk": {
+      "id": "book:habakkuk",
+      "display": "Habakuk",
+      "type": "canon-book",
+      "legacyId": "habakkuk"
+    },
+    "book:zephaniah": {
+      "id": "book:zephaniah",
+      "display": "Zefanya",
+      "type": "canon-book",
+      "legacyId": "zephaniah"
+    },
+    "book:haggai": {
+      "id": "book:haggai",
+      "display": "Hagai",
+      "type": "canon-book",
+      "legacyId": "haggai"
+    },
+    "book:zechariah": {
+      "id": "book:zechariah",
+      "display": "Zakharia",
+      "type": "canon-book",
+      "legacyId": "zechariah"
+    },
+    "book:malachi": {
+      "id": "book:malachi",
+      "display": "Maleakhi",
+      "type": "canon-book",
+      "legacyId": "malachi"
+    },
     "book:matthew": {
       "id": "book:matthew",
       "display": "Matius",
       "type": "canon-book",
       "legacyId": "matthew"
+    },
+    "book:mark": {
+      "id": "book:mark",
+      "display": "Markus",
+      "type": "canon-book",
+      "legacyId": "mark"
+    },
+    "book:luke": {
+      "id": "book:luke",
+      "display": "Lukas",
+      "type": "canon-book",
+      "legacyId": "luke"
+    },
+    "book:john": {
+      "id": "book:john",
+      "display": "Yohanes",
+      "type": "canon-book",
+      "legacyId": "john"
+    },
+    "book:acts": {
+      "id": "book:acts",
+      "display": "Kisah Para Rasul",
+      "type": "canon-book",
+      "legacyId": "acts"
     },
     "book:romans": {
       "id": "book:romans",
@@ -222,11 +462,41 @@
       "type": "canon-book",
       "legacyId": "colossians"
     },
+    "book:1thessalonians": {
+      "id": "book:1thessalonians",
+      "display": "1 Tesalonika",
+      "type": "canon-book",
+      "legacyId": "1thessalonians"
+    },
     "book:2thessalonians": {
       "id": "book:2thessalonians",
       "display": "2 Tesalonika",
       "type": "canon-book",
       "legacyId": "2thessalonians"
+    },
+    "book:1timothy": {
+      "id": "book:1timothy",
+      "display": "1 Timotius",
+      "type": "canon-book",
+      "legacyId": "1timothy"
+    },
+    "book:2timothy": {
+      "id": "book:2timothy",
+      "display": "2 Timotius",
+      "type": "canon-book",
+      "legacyId": "2timothy"
+    },
+    "book:titus": {
+      "id": "book:titus",
+      "display": "Titus",
+      "type": "canon-book",
+      "legacyId": "titus"
+    },
+    "book:philemon": {
+      "id": "book:philemon",
+      "display": "Filemon",
+      "type": "canon-book",
+      "legacyId": "philemon"
     },
     "book:hebrews": {
       "id": "book:hebrews",
@@ -245,6 +515,42 @@
       "display": "1 Petrus",
       "type": "canon-book",
       "legacyId": "1peter"
+    },
+    "book:2peter": {
+      "id": "book:2peter",
+      "display": "2 Petrus",
+      "type": "canon-book",
+      "legacyId": "2peter"
+    },
+    "book:1john": {
+      "id": "book:1john",
+      "display": "1 Yohanes",
+      "type": "canon-book",
+      "legacyId": "1john"
+    },
+    "book:2john": {
+      "id": "book:2john",
+      "display": "2 Yohanes",
+      "type": "canon-book",
+      "legacyId": "2john"
+    },
+    "book:3john": {
+      "id": "book:3john",
+      "display": "3 Yohanes",
+      "type": "canon-book",
+      "legacyId": "3john"
+    },
+    "book:jude": {
+      "id": "book:jude",
+      "display": "Yudas",
+      "type": "canon-book",
+      "legacyId": "jude"
+    },
+    "book:revelation": {
+      "id": "book:revelation",
+      "display": "Wahyu",
+      "type": "canon-book",
+      "legacyId": "revelation"
     },
     "ref:proverbs.1.1": {
       "id": "ref:proverbs.1.1",
@@ -1937,6 +2243,25 @@
     }
   },
   "byDisplay": {
+    "kejadian": "book:genesis",
+    "keluaran": "book:exodus",
+    "imamat": "book:leviticus",
+    "bilangan": "book:numbers",
+    "ulangan": "book:deuteronomy",
+    "yosua": "book:joshua",
+    "hakim hakim": "book:judges",
+    "rut": "book:ruth",
+    "1 samuel": "book:1samuel",
+    "2 samuel": "book:2samuel",
+    "1 raja raja": "book:1kings",
+    "2 raja raja": "book:2kings",
+    "1 tawarikh": "book:1chronicles",
+    "2 tawarikh": "book:2chronicles",
+    "ezra": "book:ezra",
+    "nehemia": "book:nehemiah",
+    "ester": "book:esther",
+    "ayub": "book:job",
+    "mazmur": "book:psalms",
     "amsal": "book:proverbs",
     "amsal 1": "chapter:proverbs.01",
     "amsal 2": "chapter:proverbs.02",
@@ -1969,9 +2294,30 @@
     "amsal 29": "chapter:proverbs.29",
     "amsal 30": "chapter:proverbs.30",
     "amsal 31": "chapter:proverbs.31",
-    "mazmur": "book:psalms",
     "pengkhotbah": "book:ecclesiastes",
+    "kidung agung": "book:songofsongs",
+    "yesaya": "book:isaiah",
+    "yeremia": "book:jeremiah",
+    "ratapan": "book:lamentations",
+    "yehezkiel": "book:ezekiel",
+    "daniel": "book:daniel",
+    "hosea": "book:hosea",
+    "yoel": "book:joel",
+    "amos": "book:amos",
+    "obaja": "book:obadiah",
+    "yunus": "book:jonah",
+    "mikha": "book:micah",
+    "nahum": "book:nahum",
+    "habakuk": "book:habakkuk",
+    "zefanya": "book:zephaniah",
+    "hagai": "book:haggai",
+    "zakharia": "book:zechariah",
+    "maleakhi": "book:malachi",
     "matius": "book:matthew",
+    "markus": "book:mark",
+    "lukas": "book:luke",
+    "yohanes": "book:john",
+    "kisah para rasul": "book:acts",
     "roma": "book:romans",
     "1 korintus": "book:1corinthians",
     "2 korintus": "book:2corinthians",
@@ -1979,10 +2325,21 @@
     "efesus": "book:ephesians",
     "filipi": "book:philippians",
     "kolose": "book:colossians",
+    "1 tesalonika": "book:1thessalonians",
     "2 tesalonika": "book:2thessalonians",
+    "1 timotius": "book:1timothy",
+    "2 timotius": "book:2timothy",
+    "titus": "book:titus",
+    "filemon": "book:philemon",
     "ibrani": "book:hebrews",
     "yakobus": "book:james",
     "1 petrus": "book:1peter",
+    "2 petrus": "book:2peter",
+    "1 yohanes": "book:1john",
+    "2 yohanes": "book:2john",
+    "3 yohanes": "book:3john",
+    "yudas": "book:jude",
+    "wahyu": "book:revelation",
     "amsal 1 1": "ref:proverbs.1.1",
     "amsal 1 7": "ref:proverbs.1.7",
     "mazmur 111 10": "ref:psalms.111.10",
@@ -2267,6 +2624,25 @@
     "ref proverbs 31": "ref:proverbs.31"
   },
   "resolvable": [
+    "book:genesis",
+    "book:exodus",
+    "book:leviticus",
+    "book:numbers",
+    "book:deuteronomy",
+    "book:joshua",
+    "book:judges",
+    "book:ruth",
+    "book:1samuel",
+    "book:2samuel",
+    "book:1kings",
+    "book:2kings",
+    "book:1chronicles",
+    "book:2chronicles",
+    "book:ezra",
+    "book:nehemiah",
+    "book:esther",
+    "book:job",
+    "book:psalms",
     "book:proverbs",
     "chapter:proverbs.01",
     "chapter:proverbs.02",
@@ -2299,9 +2675,30 @@
     "chapter:proverbs.29",
     "chapter:proverbs.30",
     "chapter:proverbs.31",
-    "book:psalms",
     "book:ecclesiastes",
+    "book:songofsongs",
+    "book:isaiah",
+    "book:jeremiah",
+    "book:lamentations",
+    "book:ezekiel",
+    "book:daniel",
+    "book:hosea",
+    "book:joel",
+    "book:amos",
+    "book:obadiah",
+    "book:jonah",
+    "book:micah",
+    "book:nahum",
+    "book:habakkuk",
+    "book:zephaniah",
+    "book:haggai",
+    "book:zechariah",
+    "book:malachi",
     "book:matthew",
+    "book:mark",
+    "book:luke",
+    "book:john",
+    "book:acts",
     "book:romans",
     "book:1corinthians",
     "book:2corinthians",
@@ -2309,10 +2706,21 @@
     "book:ephesians",
     "book:philippians",
     "book:colossians",
+    "book:1thessalonians",
     "book:2thessalonians",
+    "book:1timothy",
+    "book:2timothy",
+    "book:titus",
+    "book:philemon",
     "book:hebrews",
     "book:james",
     "book:1peter",
+    "book:2peter",
+    "book:1john",
+    "book:2john",
+    "book:3john",
+    "book:jude",
+    "book:revelation",
     "ref:proverbs.1.1",
     "ref:proverbs.1.7",
     "ref:psalms.111.10",

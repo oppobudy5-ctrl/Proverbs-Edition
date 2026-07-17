@@ -823,9 +823,10 @@ function buildCilArtifacts({
     }
   }
   for (const doc of documents.filter((d) => d.type === DOCUMENT_TYPES.CHAPTER)) {
-    const id = doc.meta?.canonicalId || canonicalChapterId("proverbs", doc.meta?.chapter);
+    const bookSlug = doc.meta?.bookSlug || resolveBookSlug(doc.meta?.book, canonIndex) || "proverbs";
+    const id = doc.meta?.canonicalId || canonicalChapterId(bookSlug, doc.meta?.chapter);
     addNode(id, "chapter", doc.title, { chapter: doc.meta?.chapter, legacyId: doc.id });
-    addEdge(canonicalBookId("proverbs"), id, "contains", 1, "book hierarchy");
+    addEdge(canonicalBookId(bookSlug), id, "contains", 1, "book hierarchy");
     for (const t of doc.topics || []) addEdge(id, t.startsWith("topic:") ? t : `topic:${t}`, "has-topic", 0.8);
   }
   for (const rel of crossrefs.relations || []) {
@@ -915,6 +916,12 @@ function parseLooseRef(text, canonIndex) {
     ? canonicalRefId(book.slug, chapter, verse)
     : canonicalChapterId(book.slug, chapter);
   return { canonicalId, display: raw, bookId, chapter, verse };
+}
+
+function resolveBookSlug(input, canonIndex) {
+  const key = normalizeText(input).replace(/\s+/g, "");
+  const bookId = canonIndex.aliases?.[key] || canonIndex.bySlug?.[key];
+  return bookId ? canonIndex.byId?.[bookId]?.slug || null : null;
 }
 
 function faqDocument(entry, type, source, license) {

@@ -1,34 +1,481 @@
 {
   "version": "1.0.0",
   "byId": {
-    "book:proverbs": {
-      "bookId": "book:proverbs",
-      "osis": "Prov",
-      "slug": "proverbs",
+    "book:genesis": {
+      "bookId": "book:genesis",
+      "osis": "Gen",
+      "slug": "genesis",
       "names": {
-        "id": "Amsal",
-        "en": "Proverbs"
+        "id": "Kejadian",
+        "en": "Genesis"
       },
+      "shortName": "Kej",
       "aliases": [
-        "Ams",
-        "Amsal",
-        "Prov",
-        "Proverbs",
-        "Pr"
+        "Kej",
+        "Kejadian",
+        "Gen",
+        "Genesis"
       ],
-      "canonicalOrder": 20,
       "testament": "OT",
-      "genre": "wisdom",
-      "chapterCount": 31,
-      "status": "production",
+      "chapterCount": 50,
+      "canonicalOrder": 1,
       "authors": [
-        "solomon",
-        "agur",
-        "lemuel",
-        "hezekiah-men"
+        "Musa (tradisional)"
       ],
-      "audience": "Israel and later wisdom communities",
-      "purpose": "Form wise, righteous, God-fearing character for daily life"
+      "period": "Zaman para leluhur hingga keluaran",
+      "category": "Taurat",
+      "genre": "law-narrative",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:exodus": {
+      "bookId": "book:exodus",
+      "osis": "Exod",
+      "slug": "exodus",
+      "names": {
+        "id": "Keluaran",
+        "en": "Exodus"
+      },
+      "shortName": "Kel",
+      "aliases": [
+        "Kel",
+        "Keluaran",
+        "Exod",
+        "Exodus"
+      ],
+      "testament": "OT",
+      "chapterCount": 40,
+      "canonicalOrder": 2,
+      "authors": [
+        "Musa (tradisional)"
+      ],
+      "period": "Keluaran dan perjalanan di padang gurun",
+      "category": "Taurat",
+      "genre": "law-narrative",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:leviticus": {
+      "bookId": "book:leviticus",
+      "osis": "Lev",
+      "slug": "leviticus",
+      "names": {
+        "id": "Imamat",
+        "en": "Leviticus"
+      },
+      "shortName": "Im",
+      "aliases": [
+        "Im",
+        "Imamat",
+        "Lev",
+        "Leviticus"
+      ],
+      "testament": "OT",
+      "chapterCount": 27,
+      "canonicalOrder": 3,
+      "authors": [
+        "Musa (tradisional)"
+      ],
+      "period": "Perkemahan Israel di Sinai",
+      "category": "Taurat",
+      "genre": "law",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:numbers": {
+      "bookId": "book:numbers",
+      "osis": "Num",
+      "slug": "numbers",
+      "names": {
+        "id": "Bilangan",
+        "en": "Numbers"
+      },
+      "shortName": "Bil",
+      "aliases": [
+        "Bil",
+        "Bilangan",
+        "Num",
+        "Numbers"
+      ],
+      "testament": "OT",
+      "chapterCount": 36,
+      "canonicalOrder": 4,
+      "authors": [
+        "Musa (tradisional)"
+      ],
+      "period": "Perjalanan Israel di padang gurun",
+      "category": "Taurat",
+      "genre": "law-narrative",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:deuteronomy": {
+      "bookId": "book:deuteronomy",
+      "osis": "Deut",
+      "slug": "deuteronomy",
+      "names": {
+        "id": "Ulangan",
+        "en": "Deuteronomy"
+      },
+      "shortName": "Ul",
+      "aliases": [
+        "Ul",
+        "Ulangan",
+        "Deut",
+        "Deuteronomy"
+      ],
+      "testament": "OT",
+      "chapterCount": 34,
+      "canonicalOrder": 5,
+      "authors": [
+        "Musa (tradisional)"
+      ],
+      "period": "Dataran Moab sebelum masuk Kanaan",
+      "category": "Taurat",
+      "genre": "law",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:joshua": {
+      "bookId": "book:joshua",
+      "osis": "Josh",
+      "slug": "joshua",
+      "names": {
+        "id": "Yosua",
+        "en": "Joshua"
+      },
+      "shortName": "Yos",
+      "aliases": [
+        "Yos",
+        "Yosua",
+        "Josh",
+        "Joshua"
+      ],
+      "testament": "OT",
+      "chapterCount": 24,
+      "canonicalOrder": 6,
+      "authors": [
+        "Yosua (tradisional)"
+      ],
+      "period": "Penaklukan dan pembagian Kanaan",
+      "category": "Sejarah",
+      "genre": "history",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:judges": {
+      "bookId": "book:judges",
+      "osis": "Judg",
+      "slug": "judges",
+      "names": {
+        "id": "Hakim-hakim",
+        "en": "Judges"
+      },
+      "shortName": "Hak",
+      "aliases": [
+        "Hak",
+        "Hakim-hakim",
+        "Judg",
+        "Judges"
+      ],
+      "testament": "OT",
+      "chapterCount": 21,
+      "canonicalOrder": 7,
+      "authors": [
+        "Samuel (tradisional)"
+      ],
+      "period": "Masa para hakim",
+      "category": "Sejarah",
+      "genre": "history",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:ruth": {
+      "bookId": "book:ruth",
+      "osis": "Ruth",
+      "slug": "ruth",
+      "names": {
+        "id": "Rut",
+        "en": "Ruth"
+      },
+      "shortName": "Rut",
+      "aliases": [
+        "Rut",
+        "Ruth"
+      ],
+      "testament": "OT",
+      "chapterCount": 4,
+      "canonicalOrder": 8,
+      "authors": [
+        "Samuel (tradisional)"
+      ],
+      "period": "Masa para hakim",
+      "category": "Sejarah",
+      "genre": "narrative",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:1samuel": {
+      "bookId": "book:1samuel",
+      "osis": "1Sam",
+      "slug": "1samuel",
+      "names": {
+        "id": "1 Samuel",
+        "en": "1 Samuel"
+      },
+      "shortName": "1Sam",
+      "aliases": [
+        "1Sam",
+        "1 Samuel"
+      ],
+      "testament": "OT",
+      "chapterCount": 31,
+      "canonicalOrder": 9,
+      "authors": [
+        "Tidak diketahui"
+      ],
+      "period": "Peralihan dari hakim kepada kerajaan",
+      "category": "Sejarah",
+      "genre": "history",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:2samuel": {
+      "bookId": "book:2samuel",
+      "osis": "2Sam",
+      "slug": "2samuel",
+      "names": {
+        "id": "2 Samuel",
+        "en": "2 Samuel"
+      },
+      "shortName": "2Sam",
+      "aliases": [
+        "2Sam",
+        "2 Samuel"
+      ],
+      "testament": "OT",
+      "chapterCount": 24,
+      "canonicalOrder": 10,
+      "authors": [
+        "Tidak diketahui"
+      ],
+      "period": "Pemerintahan Daud",
+      "category": "Sejarah",
+      "genre": "history",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:1kings": {
+      "bookId": "book:1kings",
+      "osis": "1Kgs",
+      "slug": "1kings",
+      "names": {
+        "id": "1 Raja-raja",
+        "en": "1 Kings"
+      },
+      "shortName": "1Raj",
+      "aliases": [
+        "1Raj",
+        "1 Raja-raja",
+        "1Kgs",
+        "1 Kings"
+      ],
+      "testament": "OT",
+      "chapterCount": 22,
+      "canonicalOrder": 11,
+      "authors": [
+        "Tidak diketahui"
+      ],
+      "period": "Kerajaan bersatu dan awal kerajaan terbagi",
+      "category": "Sejarah",
+      "genre": "history",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:2kings": {
+      "bookId": "book:2kings",
+      "osis": "2Kgs",
+      "slug": "2kings",
+      "names": {
+        "id": "2 Raja-raja",
+        "en": "2 Kings"
+      },
+      "shortName": "2Raj",
+      "aliases": [
+        "2Raj",
+        "2 Raja-raja",
+        "2Kgs",
+        "2 Kings"
+      ],
+      "testament": "OT",
+      "chapterCount": 25,
+      "canonicalOrder": 12,
+      "authors": [
+        "Tidak diketahui"
+      ],
+      "period": "Kerajaan terbagi hingga pembuangan",
+      "category": "Sejarah",
+      "genre": "history",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:1chronicles": {
+      "bookId": "book:1chronicles",
+      "osis": "1Chr",
+      "slug": "1chronicles",
+      "names": {
+        "id": "1 Tawarikh",
+        "en": "1 Chronicles"
+      },
+      "shortName": "1Taw",
+      "aliases": [
+        "1Taw",
+        "1 Tawarikh",
+        "1Chr",
+        "1 Chronicles"
+      ],
+      "testament": "OT",
+      "chapterCount": 29,
+      "canonicalOrder": 13,
+      "authors": [
+        "Ezra (tradisional)"
+      ],
+      "period": "Tinjauan sejarah hingga pemerintahan Daud",
+      "category": "Sejarah",
+      "genre": "history",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:2chronicles": {
+      "bookId": "book:2chronicles",
+      "osis": "2Chr",
+      "slug": "2chronicles",
+      "names": {
+        "id": "2 Tawarikh",
+        "en": "2 Chronicles"
+      },
+      "shortName": "2Taw",
+      "aliases": [
+        "2Taw",
+        "2 Tawarikh",
+        "2Chr",
+        "2 Chronicles"
+      ],
+      "testament": "OT",
+      "chapterCount": 36,
+      "canonicalOrder": 14,
+      "authors": [
+        "Ezra (tradisional)"
+      ],
+      "period": "Salomo hingga pembuangan Yehuda",
+      "category": "Sejarah",
+      "genre": "history",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:ezra": {
+      "bookId": "book:ezra",
+      "osis": "Ezra",
+      "slug": "ezra",
+      "names": {
+        "id": "Ezra",
+        "en": "Ezra"
+      },
+      "shortName": "Ezr",
+      "aliases": [
+        "Ezr",
+        "Ezra"
+      ],
+      "testament": "OT",
+      "chapterCount": 10,
+      "canonicalOrder": 15,
+      "authors": [
+        "Ezra (tradisional)"
+      ],
+      "period": "Kepulangan dari pembuangan",
+      "category": "Sejarah",
+      "genre": "history",
+      "language": "Ibrani-Aram",
+      "status": "seed"
+    },
+    "book:nehemiah": {
+      "bookId": "book:nehemiah",
+      "osis": "Neh",
+      "slug": "nehemiah",
+      "names": {
+        "id": "Nehemia",
+        "en": "Nehemiah"
+      },
+      "shortName": "Neh",
+      "aliases": [
+        "Neh",
+        "Nehemia",
+        "Nehemiah"
+      ],
+      "testament": "OT",
+      "chapterCount": 13,
+      "canonicalOrder": 16,
+      "authors": [
+        "Nehemia (tradisional)"
+      ],
+      "period": "Pemulihan Yerusalem pascapembuangan",
+      "category": "Sejarah",
+      "genre": "memoir-history",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:esther": {
+      "bookId": "book:esther",
+      "osis": "Esth",
+      "slug": "esther",
+      "names": {
+        "id": "Ester",
+        "en": "Esther"
+      },
+      "shortName": "Est",
+      "aliases": [
+        "Est",
+        "Ester",
+        "Esth",
+        "Esther"
+      ],
+      "testament": "OT",
+      "chapterCount": 10,
+      "canonicalOrder": 17,
+      "authors": [
+        "Tidak diketahui"
+      ],
+      "period": "Diaspora Yahudi di Persia",
+      "category": "Sejarah",
+      "genre": "narrative",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:job": {
+      "bookId": "book:job",
+      "osis": "Job",
+      "slug": "job",
+      "names": {
+        "id": "Ayub",
+        "en": "Job"
+      },
+      "shortName": "Ayb",
+      "aliases": [
+        "Ayb",
+        "Ayub",
+        "Job"
+      ],
+      "testament": "OT",
+      "chapterCount": 42,
+      "canonicalOrder": 18,
+      "authors": [
+        "Tidak diketahui"
+      ],
+      "period": "Latar zaman para leluhur",
+      "category": "Puisi dan Hikmat",
+      "genre": "wisdom-poetry",
+      "language": "Ibrani",
+      "status": "seed"
     },
     "book:psalms": {
       "bookId": "book:psalms",
@@ -38,6 +485,7 @@
         "id": "Mazmur",
         "en": "Psalms"
       },
+      "shortName": "Mzm",
       "aliases": [
         "Mzm",
         "Mazmur",
@@ -45,11 +493,55 @@
         "Psalm",
         "Psalms"
       ],
-      "canonicalOrder": 19,
       "testament": "OT",
-      "genre": "poetry",
       "chapterCount": 150,
+      "canonicalOrder": 19,
+      "authors": [
+        "Daud dan penulis lain"
+      ],
+      "period": "Monarki hingga pascapembuangan",
+      "category": "Puisi dan Hikmat",
+      "genre": "poetry",
+      "language": "Ibrani",
       "status": "seed"
+    },
+    "book:proverbs": {
+      "bookId": "book:proverbs",
+      "osis": "Prov",
+      "slug": "proverbs",
+      "names": {
+        "id": "Amsal",
+        "en": "Proverbs"
+      },
+      "shortName": "Ams",
+      "aliases": [
+        "Ams",
+        "Amsal",
+        "Prov",
+        "Proverbs",
+        "Pr"
+      ],
+      "testament": "OT",
+      "chapterCount": 31,
+      "canonicalOrder": 20,
+      "authors": [
+        "Salomo",
+        "Agur",
+        "Lemuel",
+        "Para pegawai Hizkia"
+      ],
+      "period": "Monarki Israel hingga masa Hizkia",
+      "category": "Puisi dan Hikmat",
+      "genre": "wisdom",
+      "language": "Ibrani",
+      "status": "production",
+      "audience": "Israel dan komunitas pembelajar hikmat",
+      "purpose": "Membentuk karakter bijak, benar, dan takut akan Tuhan dalam kehidupan sehari-hari",
+      "api": {
+        "sabdaId": 20,
+        "mayicuCode": "Ams",
+        "alkitabCode": "Pro"
+      }
     },
     "book:ecclesiastes": {
       "bookId": "book:ecclesiastes",
@@ -59,16 +551,497 @@
         "id": "Pengkhotbah",
         "en": "Ecclesiastes"
       },
+      "shortName": "Pkh",
       "aliases": [
         "Pkh",
         "Pengkhotbah",
         "Eccl",
+        "Ecclesiastes",
         "Qoheleth"
       ],
-      "canonicalOrder": 21,
       "testament": "OT",
-      "genre": "wisdom",
       "chapterCount": 12,
+      "canonicalOrder": 21,
+      "authors": [
+        "Pengkhotbah; dikaitkan dengan Salomo"
+      ],
+      "period": "Tradisi hikmat Israel",
+      "category": "Puisi dan Hikmat",
+      "genre": "wisdom",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:songofsongs": {
+      "bookId": "book:songofsongs",
+      "osis": "Song",
+      "slug": "songofsongs",
+      "names": {
+        "id": "Kidung Agung",
+        "en": "Song of Songs"
+      },
+      "shortName": "Kid",
+      "aliases": [
+        "Kid",
+        "Kidung Agung",
+        "Song",
+        "Song of Songs"
+      ],
+      "testament": "OT",
+      "chapterCount": 8,
+      "canonicalOrder": 22,
+      "authors": [
+        "Salomo (tradisional)"
+      ],
+      "period": "Monarki Israel",
+      "category": "Puisi dan Hikmat",
+      "genre": "poetry",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:isaiah": {
+      "bookId": "book:isaiah",
+      "osis": "Isa",
+      "slug": "isaiah",
+      "names": {
+        "id": "Yesaya",
+        "en": "Isaiah"
+      },
+      "shortName": "Yes",
+      "aliases": [
+        "Yes",
+        "Yesaya",
+        "Isa",
+        "Isaiah"
+      ],
+      "testament": "OT",
+      "chapterCount": 66,
+      "canonicalOrder": 23,
+      "authors": [
+        "Yesaya"
+      ],
+      "period": "Abad ke-8 SM dan konteks pembuangan",
+      "category": "Nabi Besar",
+      "genre": "prophecy",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:jeremiah": {
+      "bookId": "book:jeremiah",
+      "osis": "Jer",
+      "slug": "jeremiah",
+      "names": {
+        "id": "Yeremia",
+        "en": "Jeremiah"
+      },
+      "shortName": "Yer",
+      "aliases": [
+        "Yer",
+        "Yeremia",
+        "Jer",
+        "Jeremiah"
+      ],
+      "testament": "OT",
+      "chapterCount": 52,
+      "canonicalOrder": 24,
+      "authors": [
+        "Yeremia"
+      ],
+      "period": "Menjelang dan selama jatuhnya Yerusalem",
+      "category": "Nabi Besar",
+      "genre": "prophecy",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:lamentations": {
+      "bookId": "book:lamentations",
+      "osis": "Lam",
+      "slug": "lamentations",
+      "names": {
+        "id": "Ratapan",
+        "en": "Lamentations"
+      },
+      "shortName": "Rat",
+      "aliases": [
+        "Rat",
+        "Ratapan",
+        "Lam",
+        "Lamentations"
+      ],
+      "testament": "OT",
+      "chapterCount": 5,
+      "canonicalOrder": 25,
+      "authors": [
+        "Yeremia (tradisional)"
+      ],
+      "period": "Setelah jatuhnya Yerusalem",
+      "category": "Nabi Besar",
+      "genre": "poetry-lament",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:ezekiel": {
+      "bookId": "book:ezekiel",
+      "osis": "Ezek",
+      "slug": "ezekiel",
+      "names": {
+        "id": "Yehezkiel",
+        "en": "Ezekiel"
+      },
+      "shortName": "Yeh",
+      "aliases": [
+        "Yeh",
+        "Yehezkiel",
+        "Ezek",
+        "Ezekiel"
+      ],
+      "testament": "OT",
+      "chapterCount": 48,
+      "canonicalOrder": 26,
+      "authors": [
+        "Yehezkiel"
+      ],
+      "period": "Pembuangan Babel",
+      "category": "Nabi Besar",
+      "genre": "prophecy",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:daniel": {
+      "bookId": "book:daniel",
+      "osis": "Dan",
+      "slug": "daniel",
+      "names": {
+        "id": "Daniel",
+        "en": "Daniel"
+      },
+      "shortName": "Dan",
+      "aliases": [
+        "Dan",
+        "Daniel"
+      ],
+      "testament": "OT",
+      "chapterCount": 12,
+      "canonicalOrder": 27,
+      "authors": [
+        "Daniel (tradisional)"
+      ],
+      "period": "Pembuangan Babel dan Persia",
+      "category": "Nabi Besar",
+      "genre": "prophecy-apocalyptic",
+      "language": "Ibrani-Aram",
+      "status": "seed"
+    },
+    "book:hosea": {
+      "bookId": "book:hosea",
+      "osis": "Hos",
+      "slug": "hosea",
+      "names": {
+        "id": "Hosea",
+        "en": "Hosea"
+      },
+      "shortName": "Hos",
+      "aliases": [
+        "Hos",
+        "Hosea"
+      ],
+      "testament": "OT",
+      "chapterCount": 14,
+      "canonicalOrder": 28,
+      "authors": [
+        "Hosea"
+      ],
+      "period": "Kerajaan Israel utara abad ke-8 SM",
+      "category": "Nabi Kecil",
+      "genre": "prophecy",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:joel": {
+      "bookId": "book:joel",
+      "osis": "Joel",
+      "slug": "joel",
+      "names": {
+        "id": "Yoel",
+        "en": "Joel"
+      },
+      "shortName": "Yl",
+      "aliases": [
+        "Yl",
+        "Yoel",
+        "Joel"
+      ],
+      "testament": "OT",
+      "chapterCount": 3,
+      "canonicalOrder": 29,
+      "authors": [
+        "Yoel"
+      ],
+      "period": "Tidak dapat dipastikan",
+      "category": "Nabi Kecil",
+      "genre": "prophecy",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:amos": {
+      "bookId": "book:amos",
+      "osis": "Amos",
+      "slug": "amos",
+      "names": {
+        "id": "Amos",
+        "en": "Amos"
+      },
+      "shortName": "Am",
+      "aliases": [
+        "Am",
+        "Amos"
+      ],
+      "testament": "OT",
+      "chapterCount": 9,
+      "canonicalOrder": 30,
+      "authors": [
+        "Amos"
+      ],
+      "period": "Kerajaan Israel utara abad ke-8 SM",
+      "category": "Nabi Kecil",
+      "genre": "prophecy",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:obadiah": {
+      "bookId": "book:obadiah",
+      "osis": "Obad",
+      "slug": "obadiah",
+      "names": {
+        "id": "Obaja",
+        "en": "Obadiah"
+      },
+      "shortName": "Ob",
+      "aliases": [
+        "Ob",
+        "Obaja",
+        "Obad",
+        "Obadiah"
+      ],
+      "testament": "OT",
+      "chapterCount": 1,
+      "canonicalOrder": 31,
+      "authors": [
+        "Obaja"
+      ],
+      "period": "Tidak dapat dipastikan",
+      "category": "Nabi Kecil",
+      "genre": "prophecy",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:jonah": {
+      "bookId": "book:jonah",
+      "osis": "Jonah",
+      "slug": "jonah",
+      "names": {
+        "id": "Yunus",
+        "en": "Jonah"
+      },
+      "shortName": "Yun",
+      "aliases": [
+        "Yun",
+        "Yunus",
+        "Jonah"
+      ],
+      "testament": "OT",
+      "chapterCount": 4,
+      "canonicalOrder": 32,
+      "authors": [
+        "Tidak diketahui"
+      ],
+      "period": "Latar kerajaan Israel utara",
+      "category": "Nabi Kecil",
+      "genre": "prophetic-narrative",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:micah": {
+      "bookId": "book:micah",
+      "osis": "Mic",
+      "slug": "micah",
+      "names": {
+        "id": "Mikha",
+        "en": "Micah"
+      },
+      "shortName": "Mi",
+      "aliases": [
+        "Mi",
+        "Mikha",
+        "Mic",
+        "Micah"
+      ],
+      "testament": "OT",
+      "chapterCount": 7,
+      "canonicalOrder": 33,
+      "authors": [
+        "Mikha"
+      ],
+      "period": "Yehuda abad ke-8 SM",
+      "category": "Nabi Kecil",
+      "genre": "prophecy",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:nahum": {
+      "bookId": "book:nahum",
+      "osis": "Nah",
+      "slug": "nahum",
+      "names": {
+        "id": "Nahum",
+        "en": "Nahum"
+      },
+      "shortName": "Nah",
+      "aliases": [
+        "Nah",
+        "Nahum"
+      ],
+      "testament": "OT",
+      "chapterCount": 3,
+      "canonicalOrder": 34,
+      "authors": [
+        "Nahum"
+      ],
+      "period": "Menjelang jatuhnya Niniwe",
+      "category": "Nabi Kecil",
+      "genre": "prophecy",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:habakkuk": {
+      "bookId": "book:habakkuk",
+      "osis": "Hab",
+      "slug": "habakkuk",
+      "names": {
+        "id": "Habakuk",
+        "en": "Habakkuk"
+      },
+      "shortName": "Hab",
+      "aliases": [
+        "Hab",
+        "Habakuk",
+        "Habakkuk"
+      ],
+      "testament": "OT",
+      "chapterCount": 3,
+      "canonicalOrder": 35,
+      "authors": [
+        "Habakuk"
+      ],
+      "period": "Menjelang invasi Babel",
+      "category": "Nabi Kecil",
+      "genre": "prophecy",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:zephaniah": {
+      "bookId": "book:zephaniah",
+      "osis": "Zeph",
+      "slug": "zephaniah",
+      "names": {
+        "id": "Zefanya",
+        "en": "Zephaniah"
+      },
+      "shortName": "Zef",
+      "aliases": [
+        "Zef",
+        "Zefanya",
+        "Zeph",
+        "Zephaniah"
+      ],
+      "testament": "OT",
+      "chapterCount": 3,
+      "canonicalOrder": 36,
+      "authors": [
+        "Zefanya"
+      ],
+      "period": "Pemerintahan Yosia",
+      "category": "Nabi Kecil",
+      "genre": "prophecy",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:haggai": {
+      "bookId": "book:haggai",
+      "osis": "Hag",
+      "slug": "haggai",
+      "names": {
+        "id": "Hagai",
+        "en": "Haggai"
+      },
+      "shortName": "Hag",
+      "aliases": [
+        "Hag",
+        "Hagai",
+        "Haggai"
+      ],
+      "testament": "OT",
+      "chapterCount": 2,
+      "canonicalOrder": 37,
+      "authors": [
+        "Hagai"
+      ],
+      "period": "Pascapembuangan Persia",
+      "category": "Nabi Kecil",
+      "genre": "prophecy",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:zechariah": {
+      "bookId": "book:zechariah",
+      "osis": "Zech",
+      "slug": "zechariah",
+      "names": {
+        "id": "Zakharia",
+        "en": "Zechariah"
+      },
+      "shortName": "Za",
+      "aliases": [
+        "Za",
+        "Zakharia",
+        "Zech",
+        "Zechariah"
+      ],
+      "testament": "OT",
+      "chapterCount": 14,
+      "canonicalOrder": 38,
+      "authors": [
+        "Zakharia"
+      ],
+      "period": "Pascapembuangan Persia",
+      "category": "Nabi Kecil",
+      "genre": "prophecy",
+      "language": "Ibrani",
+      "status": "seed"
+    },
+    "book:malachi": {
+      "bookId": "book:malachi",
+      "osis": "Mal",
+      "slug": "malachi",
+      "names": {
+        "id": "Maleakhi",
+        "en": "Malachi"
+      },
+      "shortName": "Mal",
+      "aliases": [
+        "Mal",
+        "Maleakhi",
+        "Malachi"
+      ],
+      "testament": "OT",
+      "chapterCount": 4,
+      "canonicalOrder": 39,
+      "authors": [
+        "Maleakhi"
+      ],
+      "period": "Pascapembuangan Persia",
+      "category": "Nabi Kecil",
+      "genre": "prophecy",
+      "language": "Ibrani",
       "status": "seed"
     },
     "book:matthew": {
@@ -79,6 +1052,7 @@
         "id": "Matius",
         "en": "Matthew"
       },
+      "shortName": "Mat",
       "aliases": [
         "Mat",
         "Matius",
@@ -86,10 +1060,123 @@
         "Matthew",
         "Mt"
       ],
-      "canonicalOrder": 40,
       "testament": "NT",
-      "genre": "gospel",
       "chapterCount": 28,
+      "canonicalOrder": 40,
+      "authors": [
+        "Matius (tradisional)"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Injil",
+      "genre": "gospel",
+      "language": "Yunani",
+      "status": "seed"
+    },
+    "book:mark": {
+      "bookId": "book:mark",
+      "osis": "Mark",
+      "slug": "mark",
+      "names": {
+        "id": "Markus",
+        "en": "Mark"
+      },
+      "shortName": "Mrk",
+      "aliases": [
+        "Mrk",
+        "Markus",
+        "Mark",
+        "Mk"
+      ],
+      "testament": "NT",
+      "chapterCount": 16,
+      "canonicalOrder": 41,
+      "authors": [
+        "Markus (tradisional)"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Injil",
+      "genre": "gospel",
+      "language": "Yunani",
+      "status": "seed"
+    },
+    "book:luke": {
+      "bookId": "book:luke",
+      "osis": "Luke",
+      "slug": "luke",
+      "names": {
+        "id": "Lukas",
+        "en": "Luke"
+      },
+      "shortName": "Luk",
+      "aliases": [
+        "Luk",
+        "Lukas",
+        "Luke",
+        "Lk"
+      ],
+      "testament": "NT",
+      "chapterCount": 24,
+      "canonicalOrder": 42,
+      "authors": [
+        "Lukas (tradisional)"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Injil",
+      "genre": "gospel",
+      "language": "Yunani",
+      "status": "seed"
+    },
+    "book:john": {
+      "bookId": "book:john",
+      "osis": "John",
+      "slug": "john",
+      "names": {
+        "id": "Yohanes",
+        "en": "John"
+      },
+      "shortName": "Yoh",
+      "aliases": [
+        "Yoh",
+        "Yohanes",
+        "John",
+        "Jn"
+      ],
+      "testament": "NT",
+      "chapterCount": 21,
+      "canonicalOrder": 43,
+      "authors": [
+        "Yohanes (tradisional)"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Injil",
+      "genre": "gospel",
+      "language": "Yunani",
+      "status": "seed"
+    },
+    "book:acts": {
+      "bookId": "book:acts",
+      "osis": "Acts",
+      "slug": "acts",
+      "names": {
+        "id": "Kisah Para Rasul",
+        "en": "Acts"
+      },
+      "shortName": "Kis",
+      "aliases": [
+        "Kis",
+        "Kisah Para Rasul",
+        "Acts"
+      ],
+      "testament": "NT",
+      "chapterCount": 28,
+      "canonicalOrder": 44,
+      "authors": [
+        "Lukas (tradisional)"
+      ],
+      "period": "Gereja mula-mula abad pertama",
+      "category": "Sejarah",
+      "genre": "history",
+      "language": "Yunani",
       "status": "seed"
     },
     "book:romans": {
@@ -100,16 +1187,23 @@
         "id": "Roma",
         "en": "Romans"
       },
+      "shortName": "Rm",
       "aliases": [
         "Rm",
         "Roma",
         "Rom",
         "Romans"
       ],
-      "canonicalOrder": 45,
       "testament": "NT",
-      "genre": "epistle",
       "chapterCount": 16,
+      "canonicalOrder": 45,
+      "authors": [
+        "Paulus"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Surat Paulus",
+      "genre": "epistle",
+      "language": "Yunani",
       "status": "seed"
     },
     "book:1corinthians": {
@@ -120,17 +1214,24 @@
         "id": "1 Korintus",
         "en": "1 Corinthians"
       },
+      "shortName": "1Kor",
       "aliases": [
         "1Kor",
         "1 Kor",
         "1 Korintus",
         "1Cor",
-        "1 Cor"
+        "1 Corinthians"
       ],
-      "canonicalOrder": 46,
       "testament": "NT",
-      "genre": "epistle",
       "chapterCount": 16,
+      "canonicalOrder": 46,
+      "authors": [
+        "Paulus"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Surat Paulus",
+      "genre": "epistle",
+      "language": "Yunani",
       "status": "seed"
     },
     "book:2corinthians": {
@@ -141,17 +1242,24 @@
         "id": "2 Korintus",
         "en": "2 Corinthians"
       },
+      "shortName": "2Kor",
       "aliases": [
         "2Kor",
         "2 Kor",
         "2 Korintus",
         "2Cor",
-        "2 Cor"
+        "2 Corinthians"
       ],
-      "canonicalOrder": 47,
       "testament": "NT",
-      "genre": "epistle",
       "chapterCount": 13,
+      "canonicalOrder": 47,
+      "authors": [
+        "Paulus"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Surat Paulus",
+      "genre": "epistle",
+      "language": "Yunani",
       "status": "seed"
     },
     "book:galatians": {
@@ -162,15 +1270,22 @@
         "id": "Galatia",
         "en": "Galatians"
       },
+      "shortName": "Gal",
       "aliases": [
         "Gal",
         "Galatia",
         "Galatians"
       ],
-      "canonicalOrder": 48,
       "testament": "NT",
-      "genre": "epistle",
       "chapterCount": 6,
+      "canonicalOrder": 48,
+      "authors": [
+        "Paulus"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Surat Paulus",
+      "genre": "epistle",
+      "language": "Yunani",
       "status": "seed"
     },
     "book:ephesians": {
@@ -181,16 +1296,23 @@
         "id": "Efesus",
         "en": "Ephesians"
       },
+      "shortName": "Ef",
       "aliases": [
         "Ef",
         "Efesus",
         "Eph",
         "Ephesians"
       ],
-      "canonicalOrder": 49,
       "testament": "NT",
-      "genre": "epistle",
       "chapterCount": 6,
+      "canonicalOrder": 49,
+      "authors": [
+        "Paulus (tradisional)"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Surat Paulus",
+      "genre": "epistle",
+      "language": "Yunani",
       "status": "seed"
     },
     "book:philippians": {
@@ -201,16 +1323,23 @@
         "id": "Filipi",
         "en": "Philippians"
       },
+      "shortName": "Flp",
       "aliases": [
         "Flp",
         "Filipi",
         "Phil",
         "Philippians"
       ],
-      "canonicalOrder": 50,
       "testament": "NT",
-      "genre": "epistle",
       "chapterCount": 4,
+      "canonicalOrder": 50,
+      "authors": [
+        "Paulus"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Surat Paulus",
+      "genre": "epistle",
+      "language": "Yunani",
       "status": "seed"
     },
     "book:colossians": {
@@ -221,16 +1350,50 @@
         "id": "Kolose",
         "en": "Colossians"
       },
+      "shortName": "Kol",
       "aliases": [
         "Kol",
         "Kolose",
         "Col",
         "Colossians"
       ],
-      "canonicalOrder": 51,
       "testament": "NT",
-      "genre": "epistle",
       "chapterCount": 4,
+      "canonicalOrder": 51,
+      "authors": [
+        "Paulus (tradisional)"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Surat Paulus",
+      "genre": "epistle",
+      "language": "Yunani",
+      "status": "seed"
+    },
+    "book:1thessalonians": {
+      "bookId": "book:1thessalonians",
+      "osis": "1Thess",
+      "slug": "1thessalonians",
+      "names": {
+        "id": "1 Tesalonika",
+        "en": "1 Thessalonians"
+      },
+      "shortName": "1Tes",
+      "aliases": [
+        "1Tes",
+        "1 Tesalonika",
+        "1Thess",
+        "1 Thessalonians"
+      ],
+      "testament": "NT",
+      "chapterCount": 5,
+      "canonicalOrder": 52,
+      "authors": [
+        "Paulus"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Surat Paulus",
+      "genre": "epistle",
+      "language": "Yunani",
       "status": "seed"
     },
     "book:2thessalonians": {
@@ -241,17 +1404,127 @@
         "id": "2 Tesalonika",
         "en": "2 Thessalonians"
       },
+      "shortName": "2Tes",
       "aliases": [
         "2Tes",
-        "2 Tes",
         "2 Tesalonika",
         "2Thess",
-        "2 Thess"
+        "2 Thessalonians"
       ],
-      "canonicalOrder": 53,
       "testament": "NT",
-      "genre": "epistle",
       "chapterCount": 3,
+      "canonicalOrder": 53,
+      "authors": [
+        "Paulus (tradisional)"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Surat Paulus",
+      "genre": "epistle",
+      "language": "Yunani",
+      "status": "seed"
+    },
+    "book:1timothy": {
+      "bookId": "book:1timothy",
+      "osis": "1Tim",
+      "slug": "1timothy",
+      "names": {
+        "id": "1 Timotius",
+        "en": "1 Timothy"
+      },
+      "shortName": "1Tim",
+      "aliases": [
+        "1Tim",
+        "1 Timotius",
+        "1 Timothy"
+      ],
+      "testament": "NT",
+      "chapterCount": 6,
+      "canonicalOrder": 54,
+      "authors": [
+        "Paulus (tradisional)"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Surat Paulus",
+      "genre": "epistle",
+      "language": "Yunani",
+      "status": "seed"
+    },
+    "book:2timothy": {
+      "bookId": "book:2timothy",
+      "osis": "2Tim",
+      "slug": "2timothy",
+      "names": {
+        "id": "2 Timotius",
+        "en": "2 Timothy"
+      },
+      "shortName": "2Tim",
+      "aliases": [
+        "2Tim",
+        "2 Timotius",
+        "2 Timothy"
+      ],
+      "testament": "NT",
+      "chapterCount": 4,
+      "canonicalOrder": 55,
+      "authors": [
+        "Paulus (tradisional)"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Surat Paulus",
+      "genre": "epistle",
+      "language": "Yunani",
+      "status": "seed"
+    },
+    "book:titus": {
+      "bookId": "book:titus",
+      "osis": "Titus",
+      "slug": "titus",
+      "names": {
+        "id": "Titus",
+        "en": "Titus"
+      },
+      "shortName": "Tit",
+      "aliases": [
+        "Tit",
+        "Titus"
+      ],
+      "testament": "NT",
+      "chapterCount": 3,
+      "canonicalOrder": 56,
+      "authors": [
+        "Paulus (tradisional)"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Surat Paulus",
+      "genre": "epistle",
+      "language": "Yunani",
+      "status": "seed"
+    },
+    "book:philemon": {
+      "bookId": "book:philemon",
+      "osis": "Phlm",
+      "slug": "philemon",
+      "names": {
+        "id": "Filemon",
+        "en": "Philemon"
+      },
+      "shortName": "Flm",
+      "aliases": [
+        "Flm",
+        "Filemon",
+        "Phlm",
+        "Philemon"
+      ],
+      "testament": "NT",
+      "chapterCount": 1,
+      "canonicalOrder": 57,
+      "authors": [
+        "Paulus"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Surat Paulus",
+      "genre": "epistle",
+      "language": "Yunani",
       "status": "seed"
     },
     "book:hebrews": {
@@ -262,16 +1535,23 @@
         "id": "Ibrani",
         "en": "Hebrews"
       },
+      "shortName": "Ibr",
       "aliases": [
         "Ibr",
         "Ibrani",
         "Heb",
         "Hebrews"
       ],
-      "canonicalOrder": 58,
       "testament": "NT",
-      "genre": "epistle",
       "chapterCount": 13,
+      "canonicalOrder": 58,
+      "authors": [
+        "Tidak diketahui"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Surat Umum",
+      "genre": "epistle-sermon",
+      "language": "Yunani",
       "status": "seed"
     },
     "book:james": {
@@ -282,17 +1562,23 @@
         "id": "Yakobus",
         "en": "James"
       },
+      "shortName": "Yak",
       "aliases": [
         "Yak",
         "Yakobus",
         "Jas",
-        "James",
-        "Jm"
+        "James"
       ],
-      "canonicalOrder": 59,
       "testament": "NT",
-      "genre": "epistle",
       "chapterCount": 5,
+      "canonicalOrder": 59,
+      "authors": [
+        "Yakobus (tradisional)"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Surat Umum",
+      "genre": "epistle",
+      "language": "Yunani",
       "status": "seed"
     },
     "book:1peter": {
@@ -303,25 +1589,232 @@
         "id": "1 Petrus",
         "en": "1 Peter"
       },
+      "shortName": "1Ptr",
       "aliases": [
         "1Ptr",
-        "1 Pet",
         "1 Petrus",
         "1Pet",
         "1 Peter"
       ],
-      "canonicalOrder": 60,
       "testament": "NT",
-      "genre": "epistle",
       "chapterCount": 5,
+      "canonicalOrder": 60,
+      "authors": [
+        "Petrus (tradisional)"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Surat Umum",
+      "genre": "epistle",
+      "language": "Yunani",
+      "status": "seed"
+    },
+    "book:2peter": {
+      "bookId": "book:2peter",
+      "osis": "2Pet",
+      "slug": "2peter",
+      "names": {
+        "id": "2 Petrus",
+        "en": "2 Peter"
+      },
+      "shortName": "2Ptr",
+      "aliases": [
+        "2Ptr",
+        "2 Petrus",
+        "2Pet",
+        "2 Peter"
+      ],
+      "testament": "NT",
+      "chapterCount": 3,
+      "canonicalOrder": 61,
+      "authors": [
+        "Petrus (tradisional)"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Surat Umum",
+      "genre": "epistle",
+      "language": "Yunani",
+      "status": "seed"
+    },
+    "book:1john": {
+      "bookId": "book:1john",
+      "osis": "1John",
+      "slug": "1john",
+      "names": {
+        "id": "1 Yohanes",
+        "en": "1 John"
+      },
+      "shortName": "1Yoh",
+      "aliases": [
+        "1Yoh",
+        "1 Yohanes",
+        "1John",
+        "1 John"
+      ],
+      "testament": "NT",
+      "chapterCount": 5,
+      "canonicalOrder": 62,
+      "authors": [
+        "Yohanes (tradisional)"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Surat Umum",
+      "genre": "epistle",
+      "language": "Yunani",
+      "status": "seed"
+    },
+    "book:2john": {
+      "bookId": "book:2john",
+      "osis": "2John",
+      "slug": "2john",
+      "names": {
+        "id": "2 Yohanes",
+        "en": "2 John"
+      },
+      "shortName": "2Yoh",
+      "aliases": [
+        "2Yoh",
+        "2 Yohanes",
+        "2John",
+        "2 John"
+      ],
+      "testament": "NT",
+      "chapterCount": 1,
+      "canonicalOrder": 63,
+      "authors": [
+        "Yohanes (tradisional)"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Surat Umum",
+      "genre": "epistle",
+      "language": "Yunani",
+      "status": "seed"
+    },
+    "book:3john": {
+      "bookId": "book:3john",
+      "osis": "3John",
+      "slug": "3john",
+      "names": {
+        "id": "3 Yohanes",
+        "en": "3 John"
+      },
+      "shortName": "3Yoh",
+      "aliases": [
+        "3Yoh",
+        "3 Yohanes",
+        "3John",
+        "3 John"
+      ],
+      "testament": "NT",
+      "chapterCount": 1,
+      "canonicalOrder": 64,
+      "authors": [
+        "Yohanes (tradisional)"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Surat Umum",
+      "genre": "epistle",
+      "language": "Yunani",
+      "status": "seed"
+    },
+    "book:jude": {
+      "bookId": "book:jude",
+      "osis": "Jude",
+      "slug": "jude",
+      "names": {
+        "id": "Yudas",
+        "en": "Jude"
+      },
+      "shortName": "Yud",
+      "aliases": [
+        "Yud",
+        "Yudas",
+        "Jude"
+      ],
+      "testament": "NT",
+      "chapterCount": 1,
+      "canonicalOrder": 65,
+      "authors": [
+        "Yudas (tradisional)"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Surat Umum",
+      "genre": "epistle",
+      "language": "Yunani",
+      "status": "seed"
+    },
+    "book:revelation": {
+      "bookId": "book:revelation",
+      "osis": "Rev",
+      "slug": "revelation",
+      "names": {
+        "id": "Wahyu",
+        "en": "Revelation"
+      },
+      "shortName": "Why",
+      "aliases": [
+        "Why",
+        "Wahyu",
+        "Rev",
+        "Revelation"
+      ],
+      "testament": "NT",
+      "chapterCount": 22,
+      "canonicalOrder": 66,
+      "authors": [
+        "Yohanes (tradisional)"
+      ],
+      "period": "Abad pertama Masehi",
+      "category": "Apokaliptik",
+      "genre": "apocalyptic-prophecy",
+      "language": "Yunani",
       "status": "seed"
     }
   },
   "byOsis": {
-    "Prov": "book:proverbs",
+    "Gen": "book:genesis",
+    "Exod": "book:exodus",
+    "Lev": "book:leviticus",
+    "Num": "book:numbers",
+    "Deut": "book:deuteronomy",
+    "Josh": "book:joshua",
+    "Judg": "book:judges",
+    "Ruth": "book:ruth",
+    "1Sam": "book:1samuel",
+    "2Sam": "book:2samuel",
+    "1Kgs": "book:1kings",
+    "2Kgs": "book:2kings",
+    "1Chr": "book:1chronicles",
+    "2Chr": "book:2chronicles",
+    "Ezra": "book:ezra",
+    "Neh": "book:nehemiah",
+    "Esth": "book:esther",
+    "Job": "book:job",
     "Ps": "book:psalms",
+    "Prov": "book:proverbs",
     "Eccl": "book:ecclesiastes",
+    "Song": "book:songofsongs",
+    "Isa": "book:isaiah",
+    "Jer": "book:jeremiah",
+    "Lam": "book:lamentations",
+    "Ezek": "book:ezekiel",
+    "Dan": "book:daniel",
+    "Hos": "book:hosea",
+    "Joel": "book:joel",
+    "Amos": "book:amos",
+    "Obad": "book:obadiah",
+    "Jonah": "book:jonah",
+    "Mic": "book:micah",
+    "Nah": "book:nahum",
+    "Hab": "book:habakkuk",
+    "Zeph": "book:zephaniah",
+    "Hag": "book:haggai",
+    "Zech": "book:zechariah",
+    "Mal": "book:malachi",
     "Matt": "book:matthew",
+    "Mark": "book:mark",
+    "Luke": "book:luke",
+    "John": "book:john",
+    "Acts": "book:acts",
     "Rom": "book:romans",
     "1Cor": "book:1corinthians",
     "2Cor": "book:2corinthians",
@@ -329,16 +1822,67 @@
     "Eph": "book:ephesians",
     "Phil": "book:philippians",
     "Col": "book:colossians",
+    "1Thess": "book:1thessalonians",
     "2Thess": "book:2thessalonians",
+    "1Tim": "book:1timothy",
+    "2Tim": "book:2timothy",
+    "Titus": "book:titus",
+    "Phlm": "book:philemon",
     "Heb": "book:hebrews",
     "Jas": "book:james",
-    "1Pet": "book:1peter"
+    "1Pet": "book:1peter",
+    "2Pet": "book:2peter",
+    "1John": "book:1john",
+    "2John": "book:2john",
+    "3John": "book:3john",
+    "Jude": "book:jude",
+    "Rev": "book:revelation"
   },
   "bySlug": {
-    "proverbs": "book:proverbs",
+    "genesis": "book:genesis",
+    "exodus": "book:exodus",
+    "leviticus": "book:leviticus",
+    "numbers": "book:numbers",
+    "deuteronomy": "book:deuteronomy",
+    "joshua": "book:joshua",
+    "judges": "book:judges",
+    "ruth": "book:ruth",
+    "1samuel": "book:1samuel",
+    "2samuel": "book:2samuel",
+    "1kings": "book:1kings",
+    "2kings": "book:2kings",
+    "1chronicles": "book:1chronicles",
+    "2chronicles": "book:2chronicles",
+    "ezra": "book:ezra",
+    "nehemiah": "book:nehemiah",
+    "esther": "book:esther",
+    "job": "book:job",
     "psalms": "book:psalms",
+    "proverbs": "book:proverbs",
     "ecclesiastes": "book:ecclesiastes",
+    "songofsongs": "book:songofsongs",
+    "isaiah": "book:isaiah",
+    "jeremiah": "book:jeremiah",
+    "lamentations": "book:lamentations",
+    "ezekiel": "book:ezekiel",
+    "daniel": "book:daniel",
+    "hosea": "book:hosea",
+    "joel": "book:joel",
+    "amos": "book:amos",
+    "obadiah": "book:obadiah",
+    "jonah": "book:jonah",
+    "micah": "book:micah",
+    "nahum": "book:nahum",
+    "habakkuk": "book:habakkuk",
+    "zephaniah": "book:zephaniah",
+    "haggai": "book:haggai",
+    "zechariah": "book:zechariah",
+    "malachi": "book:malachi",
     "matthew": "book:matthew",
+    "mark": "book:mark",
+    "luke": "book:luke",
+    "john": "book:john",
+    "acts": "book:acts",
     "romans": "book:romans",
     "1corinthians": "book:1corinthians",
     "2corinthians": "book:2corinthians",
@@ -346,10 +1890,21 @@
     "ephesians": "book:ephesians",
     "philippians": "book:philippians",
     "colossians": "book:colossians",
+    "1thessalonians": "book:1thessalonians",
     "2thessalonians": "book:2thessalonians",
+    "1timothy": "book:1timothy",
+    "2timothy": "book:2timothy",
+    "titus": "book:titus",
+    "philemon": "book:philemon",
     "hebrews": "book:hebrews",
     "james": "book:james",
-    "1peter": "book:1peter"
+    "1peter": "book:1peter",
+    "2peter": "book:2peter",
+    "1john": "book:1john",
+    "2john": "book:2john",
+    "3john": "book:3john",
+    "jude": "book:jude",
+    "revelation": "book:revelation"
   },
   "aliases": {
     "amsal": "book:proverbs",
@@ -409,9 +1964,49 @@
     "book:proverbs"
   ],
   "seedBookIds": [
+    "book:genesis",
+    "book:exodus",
+    "book:leviticus",
+    "book:numbers",
+    "book:deuteronomy",
+    "book:joshua",
+    "book:judges",
+    "book:ruth",
+    "book:1samuel",
+    "book:2samuel",
+    "book:1kings",
+    "book:2kings",
+    "book:1chronicles",
+    "book:2chronicles",
+    "book:ezra",
+    "book:nehemiah",
+    "book:esther",
+    "book:job",
     "book:psalms",
     "book:ecclesiastes",
+    "book:songofsongs",
+    "book:isaiah",
+    "book:jeremiah",
+    "book:lamentations",
+    "book:ezekiel",
+    "book:daniel",
+    "book:hosea",
+    "book:joel",
+    "book:amos",
+    "book:obadiah",
+    "book:jonah",
+    "book:micah",
+    "book:nahum",
+    "book:habakkuk",
+    "book:zephaniah",
+    "book:haggai",
+    "book:zechariah",
+    "book:malachi",
     "book:matthew",
+    "book:mark",
+    "book:luke",
+    "book:john",
+    "book:acts",
     "book:romans",
     "book:1corinthians",
     "book:2corinthians",
@@ -419,9 +2014,20 @@
     "book:ephesians",
     "book:philippians",
     "book:colossians",
+    "book:1thessalonians",
     "book:2thessalonians",
+    "book:1timothy",
+    "book:2timothy",
+    "book:titus",
+    "book:philemon",
     "book:hebrews",
     "book:james",
-    "book:1peter"
+    "book:1peter",
+    "book:2peter",
+    "book:1john",
+    "book:2john",
+    "book:3john",
+    "book:jude",
+    "book:revelation"
   ]
 }

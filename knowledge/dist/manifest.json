@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-07-17T10:00:45.991Z",
+  "generatedAt": "2026-07-17T10:20:28.722Z",
   "artifacts": [
     "knowledge.min.json",
     "search-index.json",
@@ -36,7 +36,7 @@
     "quote": 31,
     "faq": 10,
     "apologetics": 6,
-    "canon-book": 15,
+    "canon-book": 66,
     "doctrine": 12,
     "character": 9,
     "timeline": 7,
@@ -45,9 +45,9 @@
     "application": 31
   },
   "cil": {
-    "graphNodes": 200,
+    "graphNodes": 251,
     "graphEdges": 660,
-    "canonBooks": 15,
+    "canonBooks": 66,
     "doctrines": 12,
     "characters": 9,
     "timeline": 7,
@@ -56,22 +56,22 @@
     "applications": 31
   },
   "checksums": {
-    "knowledge.min.json": "915d756d0d65934f",
-    "search-index.json": "c44fdff316e93af7",
+    "knowledge.min.json": "a8830e29354786e0",
+    "search-index.json": "832dc8c502ea2752",
     "topic-index.json": "fa044ee0a1003c9c",
     "crossref-index.json": "d75a34d885f54ce9",
     "dictionary-index.json": "8934080c87dac105",
     "faq-index.json": "81c6ff21f7c10fbf",
     "knowledge.chunks.json": "c1cfccf9cd650a14",
-    "canon-index.json": "fc0fd70f9eabe52a",
-    "reference-index.json": "463c648d57b15673",
+    "canon-index.json": "a25c520fa968ec94",
+    "reference-index.json": "2cd9df9a63c22345",
     "doctrine-index.json": "2d34cbcd46c75eb5",
     "character-index.json": "24bcb99f85ec276d",
     "timeline-index.json": "96191e6b86cb613d",
     "symbol-index.json": "64631d29dde44a2a",
     "wisdom-index.json": "70820b32ddfe9288",
     "application-index.json": "0c3e3c2231b8f09d",
-    "graph-nodes.json": "5e5d94995f54a292",
+    "graph-nodes.json": "a9fe16f10c06dc34",
     "graph-edges.json": "0d7450844aedf4ae"
   }
 }

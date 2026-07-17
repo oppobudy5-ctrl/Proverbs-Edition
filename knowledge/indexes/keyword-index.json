@@ -2280,7 +2280,8 @@
     "topic-money"
   ],
   "hak": [
-    "topic-justice"
+    "topic-justice",
+    "book:judges"
   ],
   "membela yang lemah": [
     "topic-justice"
@@ -2455,7 +2456,8 @@
     "dict-lev"
   ],
   "lev": [
-    "dict-lev"
+    "dict-lev",
+    "book:leviticus"
   ],
   "א מ ת": [
     "dict-emet"
@@ -2746,18 +2748,215 @@
     "apol-women-in-proverbs",
     "doctrine:sexual-faithfulness"
   ],
-  "ams": [
-    "book:proverbs"
+  "kej": [
+    "book:genesis"
   ],
-  "prov": [
-    "book:proverbs"
+  "kejadian": [
+    "book:genesis"
   ],
-  "proverbs": [
-    "book:proverbs",
-    "book:proverbs"
+  "gen": [
+    "book:genesis"
   ],
-  "pr": [
-    "book:proverbs"
+  "genesis": [
+    "book:genesis",
+    "book:genesis"
+  ],
+  "kel": [
+    "book:exodus"
+  ],
+  "keluaran": [
+    "book:exodus"
+  ],
+  "exod": [
+    "book:exodus"
+  ],
+  "exodus": [
+    "book:exodus",
+    "book:exodus"
+  ],
+  "im": [
+    "book:leviticus"
+  ],
+  "imamat": [
+    "book:leviticus"
+  ],
+  "leviticus": [
+    "book:leviticus",
+    "book:leviticus"
+  ],
+  "bil": [
+    "book:numbers"
+  ],
+  "bilangan": [
+    "book:numbers"
+  ],
+  "num": [
+    "book:numbers"
+  ],
+  "numbers": [
+    "book:numbers",
+    "book:numbers"
+  ],
+  "ul": [
+    "book:deuteronomy"
+  ],
+  "ulangan": [
+    "book:deuteronomy"
+  ],
+  "deut": [
+    "book:deuteronomy"
+  ],
+  "deuteronomy": [
+    "book:deuteronomy",
+    "book:deuteronomy"
+  ],
+  "yos": [
+    "book:joshua"
+  ],
+  "yosua": [
+    "book:joshua"
+  ],
+  "josh": [
+    "book:joshua"
+  ],
+  "joshua": [
+    "book:joshua",
+    "book:joshua"
+  ],
+  "hakim hakim": [
+    "book:judges"
+  ],
+  "judg": [
+    "book:judges"
+  ],
+  "judges": [
+    "book:judges",
+    "book:judges"
+  ],
+  "rut": [
+    "book:ruth"
+  ],
+  "ruth": [
+    "book:ruth",
+    "book:ruth"
+  ],
+  "1sam": [
+    "book:1samuel"
+  ],
+  "1 samuel": [
+    "book:1samuel"
+  ],
+  "1samuel": [
+    "book:1samuel"
+  ],
+  "2sam": [
+    "book:2samuel"
+  ],
+  "2 samuel": [
+    "book:2samuel"
+  ],
+  "2samuel": [
+    "book:2samuel"
+  ],
+  "1raj": [
+    "book:1kings"
+  ],
+  "1 raja raja": [
+    "book:1kings"
+  ],
+  "1kgs": [
+    "book:1kings"
+  ],
+  "1 kings": [
+    "book:1kings"
+  ],
+  "1kings": [
+    "book:1kings"
+  ],
+  "2raj": [
+    "book:2kings"
+  ],
+  "2 raja raja": [
+    "book:2kings"
+  ],
+  "2kgs": [
+    "book:2kings"
+  ],
+  "2 kings": [
+    "book:2kings"
+  ],
+  "2kings": [
+    "book:2kings"
+  ],
+  "1taw": [
+    "book:1chronicles"
+  ],
+  "1 tawarikh": [
+    "book:1chronicles"
+  ],
+  "1chr": [
+    "book:1chronicles"
+  ],
+  "1 chronicles": [
+    "book:1chronicles"
+  ],
+  "1chronicles": [
+    "book:1chronicles"
+  ],
+  "2taw": [
+    "book:2chronicles"
+  ],
+  "2 tawarikh": [
+    "book:2chronicles"
+  ],
+  "2chr": [
+    "book:2chronicles"
+  ],
+  "2 chronicles": [
+    "book:2chronicles"
+  ],
+  "2chronicles": [
+    "book:2chronicles"
+  ],
+  "ezr": [
+    "book:ezra"
+  ],
+  "ezra": [
+    "book:ezra",
+    "book:ezra"
+  ],
+  "neh": [
+    "book:nehemiah"
+  ],
+  "nehemia": [
+    "book:nehemiah"
+  ],
+  "nehemiah": [
+    "book:nehemiah",
+    "book:nehemiah"
+  ],
+  "est": [
+    "book:esther"
+  ],
+  "ester": [
+    "book:esther"
+  ],
+  "esth": [
+    "book:esther"
+  ],
+  "esther": [
+    "book:esther",
+    "book:esther"
+  ],
+  "ayb": [
+    "book:job"
+  ],
+  "ayub": [
+    "book:job"
+  ],
+  "job": [
+    "book:job",
+    "book:job"
   ],
   "mzm": [
     "book:psalms"
@@ -2775,6 +2974,19 @@
     "book:psalms",
     "book:psalms"
   ],
+  "ams": [
+    "book:proverbs"
+  ],
+  "prov": [
+    "book:proverbs"
+  ],
+  "proverbs": [
+    "book:proverbs",
+    "book:proverbs"
+  ],
+  "pr": [
+    "book:proverbs"
+  ],
   "pkh": [
     "book:ecclesiastes"
   ],
@@ -2784,11 +2996,209 @@
   "eccl": [
     "book:ecclesiastes"
   ],
+  "ecclesiastes": [
+    "book:ecclesiastes",
+    "book:ecclesiastes"
+  ],
   "qoheleth": [
     "book:ecclesiastes"
   ],
-  "ecclesiastes": [
-    "book:ecclesiastes"
+  "kid": [
+    "book:songofsongs"
+  ],
+  "kidung agung": [
+    "book:songofsongs"
+  ],
+  "song": [
+    "book:songofsongs"
+  ],
+  "song of songs": [
+    "book:songofsongs"
+  ],
+  "songofsongs": [
+    "book:songofsongs"
+  ],
+  "yes": [
+    "book:isaiah"
+  ],
+  "yesaya": [
+    "book:isaiah"
+  ],
+  "isa": [
+    "book:isaiah"
+  ],
+  "isaiah": [
+    "book:isaiah",
+    "book:isaiah"
+  ],
+  "yer": [
+    "book:jeremiah"
+  ],
+  "yeremia": [
+    "book:jeremiah"
+  ],
+  "jer": [
+    "book:jeremiah"
+  ],
+  "jeremiah": [
+    "book:jeremiah",
+    "book:jeremiah"
+  ],
+  "rat": [
+    "book:lamentations"
+  ],
+  "ratapan": [
+    "book:lamentations"
+  ],
+  "lam": [
+    "book:lamentations"
+  ],
+  "lamentations": [
+    "book:lamentations",
+    "book:lamentations"
+  ],
+  "yeh": [
+    "book:ezekiel"
+  ],
+  "yehezkiel": [
+    "book:ezekiel"
+  ],
+  "ezek": [
+    "book:ezekiel"
+  ],
+  "ezekiel": [
+    "book:ezekiel",
+    "book:ezekiel"
+  ],
+  "dan": [
+    "book:daniel"
+  ],
+  "daniel": [
+    "book:daniel",
+    "book:daniel"
+  ],
+  "hos": [
+    "book:hosea"
+  ],
+  "hosea": [
+    "book:hosea",
+    "book:hosea"
+  ],
+  "yl": [
+    "book:joel"
+  ],
+  "yoel": [
+    "book:joel"
+  ],
+  "joel": [
+    "book:joel",
+    "book:joel"
+  ],
+  "am": [
+    "book:amos"
+  ],
+  "amos": [
+    "book:amos",
+    "book:amos"
+  ],
+  "ob": [
+    "book:obadiah"
+  ],
+  "obaja": [
+    "book:obadiah"
+  ],
+  "obad": [
+    "book:obadiah"
+  ],
+  "obadiah": [
+    "book:obadiah",
+    "book:obadiah"
+  ],
+  "yun": [
+    "book:jonah"
+  ],
+  "yunus": [
+    "book:jonah"
+  ],
+  "jonah": [
+    "book:jonah",
+    "book:jonah"
+  ],
+  "mi": [
+    "book:micah"
+  ],
+  "mikha": [
+    "book:micah"
+  ],
+  "mic": [
+    "book:micah"
+  ],
+  "micah": [
+    "book:micah",
+    "book:micah"
+  ],
+  "nah": [
+    "book:nahum"
+  ],
+  "nahum": [
+    "book:nahum",
+    "book:nahum"
+  ],
+  "hab": [
+    "book:habakkuk"
+  ],
+  "habakuk": [
+    "book:habakkuk"
+  ],
+  "habakkuk": [
+    "book:habakkuk",
+    "book:habakkuk"
+  ],
+  "zef": [
+    "book:zephaniah"
+  ],
+  "zefanya": [
+    "book:zephaniah"
+  ],
+  "zeph": [
+    "book:zephaniah"
+  ],
+  "zephaniah": [
+    "book:zephaniah",
+    "book:zephaniah"
+  ],
+  "hag": [
+    "book:haggai"
+  ],
+  "hagai": [
+    "book:haggai"
+  ],
+  "haggai": [
+    "book:haggai",
+    "book:haggai"
+  ],
+  "za": [
+    "book:zechariah"
+  ],
+  "zakharia": [
+    "book:zechariah"
+  ],
+  "zech": [
+    "book:zechariah"
+  ],
+  "zechariah": [
+    "book:zechariah",
+    "book:zechariah"
+  ],
+  "mal": [
+    "book:malachi"
+  ],
+  "maleakhi": [
+    "book:malachi"
+  ],
+  "malachi": [
+    "book:malachi",
+    "book:malachi"
   ],
   "mat": [
     "book:matthew"
@@ -2805,6 +3215,55 @@
   ],
   "mt": [
     "book:matthew"
+  ],
+  "mrk": [
+    "book:mark"
+  ],
+  "markus": [
+    "book:mark"
+  ],
+  "mark": [
+    "book:mark",
+    "book:mark"
+  ],
+  "mk": [
+    "book:mark"
+  ],
+  "luk": [
+    "book:luke"
+  ],
+  "lukas": [
+    "book:luke"
+  ],
+  "luke": [
+    "book:luke",
+    "book:luke"
+  ],
+  "lk": [
+    "book:luke"
+  ],
+  "yoh": [
+    "book:john"
+  ],
+  "yohanes": [
+    "book:john"
+  ],
+  "john": [
+    "book:john",
+    "book:john"
+  ],
+  "jn": [
+    "book:john"
+  ],
+  "kis": [
+    "book:acts"
+  ],
+  "kisah para rasul": [
+    "book:acts"
+  ],
+  "acts": [
+    "book:acts",
+    "book:acts"
   ],
   "rm": [
     "book:romans"
@@ -2831,7 +3290,7 @@
   "1cor": [
     "book:1corinthians"
   ],
-  "1 cor": [
+  "1 corinthians": [
     "book:1corinthians"
   ],
   "1corinthians": [
@@ -2849,7 +3308,7 @@
   "2cor": [
     "book:2corinthians"
   ],
-  "2 cor": [
+  "2 corinthians": [
     "book:2corinthians"
   ],
   "2corinthians": [
@@ -2904,10 +3363,22 @@
     "book:colossians",
     "book:colossians"
   ],
-  "2tes": [
-    "book:2thessalonians"
+  "1tes": [
+    "book:1thessalonians"
   ],
-  "2 tes": [
+  "1 tesalonika": [
+    "book:1thessalonians"
+  ],
+  "1thess": [
+    "book:1thessalonians"
+  ],
+  "1 thessalonians": [
+    "book:1thessalonians"
+  ],
+  "1thessalonians": [
+    "book:1thessalonians"
+  ],
+  "2tes": [
     "book:2thessalonians"
   ],
   "2 tesalonika": [
@@ -2916,11 +3387,55 @@
   "2thess": [
     "book:2thessalonians"
   ],
-  "2 thess": [
+  "2 thessalonians": [
     "book:2thessalonians"
   ],
   "2thessalonians": [
     "book:2thessalonians"
+  ],
+  "1tim": [
+    "book:1timothy"
+  ],
+  "1 timotius": [
+    "book:1timothy"
+  ],
+  "1 timothy": [
+    "book:1timothy"
+  ],
+  "1timothy": [
+    "book:1timothy"
+  ],
+  "2tim": [
+    "book:2timothy"
+  ],
+  "2 timotius": [
+    "book:2timothy"
+  ],
+  "2 timothy": [
+    "book:2timothy"
+  ],
+  "2timothy": [
+    "book:2timothy"
+  ],
+  "tit": [
+    "book:titus"
+  ],
+  "titus": [
+    "book:titus",
+    "book:titus"
+  ],
+  "flm": [
+    "book:philemon"
+  ],
+  "filemon": [
+    "book:philemon"
+  ],
+  "phlm": [
+    "book:philemon"
+  ],
+  "philemon": [
+    "book:philemon",
+    "book:philemon"
   ],
   "ibr": [
     "book:hebrews"
@@ -2948,13 +3463,7 @@
     "book:james",
     "book:james"
   ],
-  "jm": [
-    "book:james"
-  ],
   "1ptr": [
-    "book:1peter"
-  ],
-  "1 pet": [
     "book:1peter"
   ],
   "1 petrus": [
@@ -2968,6 +3477,83 @@
   ],
   "1peter": [
     "book:1peter"
+  ],
+  "2ptr": [
+    "book:2peter"
+  ],
+  "2 petrus": [
+    "book:2peter"
+  ],
+  "2pet": [
+    "book:2peter"
+  ],
+  "2 peter": [
+    "book:2peter"
+  ],
+  "2peter": [
+    "book:2peter"
+  ],
+  "1yoh": [
+    "book:1john"
+  ],
+  "1 yohanes": [
+    "book:1john"
+  ],
+  "1john": [
+    "book:1john",
+    "book:1john"
+  ],
+  "1 john": [
+    "book:1john"
+  ],
+  "2yoh": [
+    "book:2john"
+  ],
+  "2 yohanes": [
+    "book:2john"
+  ],
+  "2john": [
+    "book:2john",
+    "book:2john"
+  ],
+  "2 john": [
+    "book:2john"
+  ],
+  "3yoh": [
+    "book:3john"
+  ],
+  "3 yohanes": [
+    "book:3john"
+  ],
+  "3john": [
+    "book:3john",
+    "book:3john"
+  ],
+  "3 john": [
+    "book:3john"
+  ],
+  "yud": [
+    "book:jude"
+  ],
+  "yudas": [
+    "book:jude"
+  ],
+  "jude": [
+    "book:jude",
+    "book:jude"
+  ],
+  "why": [
+    "book:revelation"
+  ],
+  "wahyu": [
+    "book:revelation"
+  ],
+  "rev": [
+    "book:revelation"
+  ],
+  "revelation": [
+    "book:revelation",
+    "book:revelation"
   ],
   "hikmat dari allah": [
     "doctrine:wisdom-from-god"

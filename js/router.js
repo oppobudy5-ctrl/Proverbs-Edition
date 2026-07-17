@@ -8,11 +8,12 @@ import { renderHome, renderDay } from "./ui/day.js";
 import { renderCalendar } from "./ui/calendar.js";
 import { renderAbout } from "./ui/about.js";
 import { renderLibrary } from "./ui/library.js";
+import { renderBibleCompanion } from "./ui/bible-companion.js";
 import { runLeave } from "./lifecycle.js";
 import { announce } from "./a11y.js";
 import { planCount } from "./plan.js";
 
-const BASE_TITLE = "Bible Time Proverbs Edition";
+const BASE_TITLE = "Bible Time Bible Companion";
 
 const ROUTE_META = Object.freeze({
   home: Object.freeze({ id: "home", path: "/", title: "Hari Ini" }),
@@ -20,6 +21,7 @@ const ROUTE_META = Object.freeze({
   library: Object.freeze({ id: "library", path: "/library", title: "Koleksi" }),
   about: Object.freeze({ id: "about", path: "/about", title: "Tentang" }),
   day: Object.freeze({ id: "day", path: "/lesson/:day", title: "Bacaan" }),
+  companion: Object.freeze({ id: "companion", path: "/companion/:book/:chapter", title: "Bible Companion" }),
 });
 
 const routes = {
@@ -28,6 +30,7 @@ const routes = {
   about: renderAbout,
   day: renderDay,
   library: renderLibrary,
+  companion: renderBibleCompanion,
 };
 
 let initialized = false;
@@ -42,6 +45,11 @@ export function buildPath(route, params = {}) {
   if (id === "day") {
     const day = normalizeDay(params.day);
     return day ? `/lesson/${day}` : "/";
+  }
+  if (id === "companion") {
+    const book = normalizeBook(params.book) || "proverbs";
+    const chapter = normalizePositiveInt(params.chapter) || 1;
+    return `/companion/${encodeURIComponent(book)}/${chapter}`;
   }
   if (id === "home") return "/";
   return ROUTE_META[id]?.path || "/";
@@ -68,6 +76,17 @@ export function parsePath(pathname = "/") {
   if (lesson) {
     const day = normalizeDay(lesson[1]);
     if (day) return { route: "day", params: { day } };
+  }
+
+  const companion = path.match(/^\/companion\/([a-z0-9-]+)(?:\/(\d{1,3}))?$/i);
+  if (companion) {
+    return {
+      route: "companion",
+      params: {
+        book: normalizeBook(companion[1]) || "proverbs",
+        chapter: normalizePositiveInt(companion[2]) || 1,
+      },
+    };
   }
 
   return { route: "home", params: {} };
@@ -142,7 +161,11 @@ function onRouteClick(e) {
   if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
   e.preventDefault();
   const route = t.dataset.route;
-  const params = t.dataset.day ? { day: Number(t.dataset.day) } : {};
+  const params = t.dataset.day
+    ? { day: Number(t.dataset.day) }
+    : (t.dataset.book
+        ? { book: t.dataset.book, chapter: Number(t.dataset.chapter) || 1 }
+        : {});
   go(route, params);
 }
 
@@ -188,6 +211,7 @@ function syncActiveNav(activeRoute) {
 function updateDocumentTitle(route, params) {
   let label = ROUTE_META[route]?.title || "Bible Time";
   if (route === "day" && params.day) label = `Amsal ${params.day}`;
+  if (route === "companion" && params.book) label = `Bible Companion · ${params.book} ${params.chapter || 1}`;
   document.title = `${label} — ${BASE_TITLE}`;
 }
 
@@ -211,17 +235,35 @@ function focusMainContent(route, params) {
   }
   const label = route === "day" && params.day
     ? `Amsal ${params.day}`
+    : route === "companion" && params.book
+      ? `Bible Companion ${params.book} ${params.chapter || 1}`
     : (ROUTE_META[route]?.title || "Halaman");
   announce(`${label}`);
 }
 
 function normalizeParams(route, params) {
+  if (route === "companion") {
+    return {
+      book: normalizeBook(params?.book) || "proverbs",
+      chapter: normalizePositiveInt(params?.chapter) || 1,
+    };
+  }
   if (route !== "day") return { ...(params || {}) };
   const day = normalizeDay(params.day);
   const next = { ...(params || {}) };
   if (day) next.day = day;
   else delete next.day;
   return next;
+}
+
+function normalizeBook(value) {
+  const book = String(value || "").trim().toLowerCase();
+  return /^[a-z0-9-]+$/.test(book) ? book : null;
+}
+
+function normalizePositiveInt(value) {
+  const number = Number(value);
+  return Number.isInteger(number) && number > 0 ? number : null;
 }
 
 function normalizeDay(value) {

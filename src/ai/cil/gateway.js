@@ -56,7 +56,9 @@ export class CanonicalContextGateway {
   async init(options = {}) {
     if (this.#ready && !options.force) return this;
     this.#baseUrl = options.baseUrl || "";
-    this.#fetchImpl = options.fetchImpl || globalThis.fetch;
+    this.#fetchImpl = options.fetchImpl || (
+      typeof globalThis.fetch === "function" ? globalThis.fetch.bind(globalThis) : null
+    );
     this.#degraded = false;
 
     if (options.bundle) {
@@ -153,12 +155,17 @@ export class CanonicalContextGateway {
       this.ensureDomain("application"),
     ]);
 
-    const bookSlug = input.book || "proverbs";
+    const requestedBook = input.book || "proverbs";
+    const bookMeta = canonicalEngine.getBook(requestedBook);
+    const bookSlug = bookMeta?.slug || String(requestedBook).replace(/^book:/, "") || "proverbs";
     const chapterNum = Number(input.chapter) || null;
     const day = Number(input.day) || null;
-    const chapterDoc = this.#findChapterDoc(chapterNum, day);
-    const bookMeta = canonicalEngine.getBook(bookSlug) || canonicalEngine.getBook("proverbs");
-    const chapterMeta = chapterNum
+    const chapterDoc = this.#findChapterDoc(bookSlug, chapterNum, day);
+    const bookDoc = this.#documents.find(
+      (d) => d.type === "book" && this.#documentMatchesBook(d, bookSlug),
+    ) || null;
+    const hasChapterContent = Boolean(chapterDoc);
+    const chapterMeta = chapterNum && bookMeta
       ? {
           ...canonicalEngine.getChapterMeta(bookSlug, chapterNum),
           title: chapterDoc?.title || input.title || "",
@@ -166,18 +173,18 @@ export class CanonicalContextGateway {
         }
       : null;
 
-    const golden = this.#findGoldenVerse(chapterNum);
-    const topics = topicEngine.forChapter(chapterNum, 8);
-    const crossrefs = this.#crossrefsForChapter(chapterNum);
-    const doctrines = doctrineEngine.forChapter(chapterNum, 5);
-    const characters = characterEngine.forChapter(chapterNum, 5);
-    const historical = timelineEngine.forChapter(chapterNum, 4);
-    const symbols = symbolEngine.forChapter(chapterNum, 6);
-    const wisdomPatterns = wisdomEngine.forChapter(chapterNum, 4);
-    const application = applicationEngine.forChapter(chapterNum);
-    const reflectionDoc = this.#findTyped(chapterNum, "reflection");
-    const prayerDoc = this.#findTyped(chapterNum, "prayer");
-    const challengeDoc = this.#findTyped(chapterNum, "challenge");
+    const golden = this.#findTyped(bookSlug, chapterNum, "golden-verse");
+    const topics = hasChapterContent ? topicEngine.forChapter(chapterNum, 8) : [];
+    const crossrefs = this.#crossrefsForChapter(bookSlug, chapterNum);
+    const doctrines = hasChapterContent ? doctrineEngine.forChapter(chapterNum, 5) : [];
+    const characters = hasChapterContent ? characterEngine.forChapter(chapterNum, 5) : [];
+    const historical = hasChapterContent ? timelineEngine.forChapter(chapterNum, 4) : [];
+    const symbols = hasChapterContent ? symbolEngine.forChapter(chapterNum, 6) : [];
+    const wisdomPatterns = hasChapterContent ? wisdomEngine.forChapter(chapterNum, 4) : [];
+    const application = hasChapterContent ? applicationEngine.forChapter(chapterNum) : null;
+    const reflectionDoc = this.#findTyped(bookSlug, chapterNum, "reflection");
+    const prayerDoc = this.#findTyped(bookSlug, chapterNum, "prayer");
+    const challengeDoc = this.#findTyped(bookSlug, chapterNum, "challenge");
     const faq = this.#matchFaq(input.query || input.question || input.topic, 3);
     const commentary = this.#documents.filter((d) => d.type === "commentary").slice(0, 2);
 
@@ -220,6 +227,7 @@ export class CanonicalContextGateway {
     const journalExcerpt = allowJournal ? String(input.journal.excerpt).slice(0, 4000) : "";
 
     const retrieved = await this.retrieve(input.query || input.question || "", {
+      book: bookSlug,
       chapter: chapterNum,
       day,
       limit: input.limit || 5,
@@ -257,16 +265,16 @@ export class CanonicalContextGateway {
       hasGoldenVerse: !!golden,
     });
 
-    const summary = chapterDoc?.summary || chapterDoc?.content || input.summary || "";
+    const summary = chapterDoc?.summary || chapterDoc?.content || bookDoc?.summary || bookMeta?.purpose || input.summary || "";
     const tokenBudget = Number(input.tokenBudget) || 1800;
     const context = createCanonicalContext({
       book: bookMeta,
       chapter: chapterMeta,
-      verse: input.verse ? canonicalEngine.parseReference(`${bookMeta?.names?.id || "Amsal"} ${chapterNum}:${input.verse}`) : null,
+      verse: input.verse && bookMeta ? canonicalEngine.parseReference(`${bookMeta.names?.id || bookSlug} ${chapterNum}:${input.verse}`) : null,
       day: day || chapterDoc?.meta?.day || null,
       intent: input.intent || "",
-      themes: [chapterDoc?.meta?.theme, input.theme].filter(Boolean),
-      keywords: chapterDoc?.keywords || [],
+      themes: [chapterDoc?.meta?.theme, ...(bookDoc?.tags || []), input.theme].filter(Boolean),
+      keywords: chapterDoc?.keywords || bookDoc?.keywords || [],
       goldenVerse: golden
         ? { ref: golden.references?.[0] || "", text: golden.content || golden.summary || "", translation: golden.meta?.translation || "" }
         : null,
@@ -304,11 +312,13 @@ export class CanonicalContextGateway {
       journalExcerpt,
       retrieved,
       summary,
-      title: chapterDoc?.title || input.title || "",
-      theme: chapterDoc?.meta?.theme || input.theme || "",
+      title: chapterDoc?.title || bookDoc?.title || bookMeta?.names?.id || input.title || "",
+      theme: chapterDoc?.meta?.theme || bookDoc?.tags?.[0] || input.theme || "",
       question: input.question || input.query || "",
       metadata: {
         source: "cil",
+        availability: hasChapterContent ? "available" : "metadata-only",
+        bookStatus: bookMeta?.status || "unknown",
         tookMs: Math.round(now() - started),
         tokenBudget,
         generatedAt: new Date().toISOString(),
@@ -340,11 +350,14 @@ export class CanonicalContextGateway {
     if (!this.#ready) await this.init(options.init || {});
     if (this.#degraded) return [];
     const limit = Math.max(1, options.limit || 5);
+    const requestedBook = options.book ? canonicalEngine.getBook(options.book) : null;
+    const bookSlug = requestedBook?.slug || null;
     const chapter = Number(options.chapter);
     const day = Number(options.day);
     const terms = normalizeText(query).split(/\s+/).filter(Boolean);
     const ranked = this.#documents
       .filter((d) => ["chapter", "golden-verse", "reflection", "faq", "doctrine", "application"].includes(d.type))
+      .filter((d) => !bookSlug || ["faq", "doctrine"].includes(d.type) || this.#documentMatchesBook(d, bookSlug))
       .map((doc) => {
         let score = 0;
         const hay = normalizeText(`${doc.title} ${doc.summary} ${doc.content} ${(doc.keywords || []).join(" ")}`);
@@ -358,7 +371,7 @@ export class CanonicalContextGateway {
           summary: doc.summary,
           chapter: doc.meta?.chapter ?? null,
           day: doc.meta?.day ?? null,
-          book: "Amsal",
+          book: canonicalEngine.getBook(doc.meta?.book)?.names?.id || doc.meta?.book || null,
           theme: doc.meta?.theme || "",
           keywords: doc.keywords || [],
           goldenVerse: doc.type === "golden-verse" ? { ref: doc.references?.[0], text: doc.content } : null,
@@ -449,31 +462,36 @@ export class CanonicalContextGateway {
     this.#domainsLoaded.add(name);
   }
 
-  #findChapterDoc(chapter, day) {
+  #findChapterDoc(bookSlug, chapter, day) {
     if (Number.isFinite(day)) {
-      const byDay = this.#documents.find((d) => d.type === "chapter" && d.meta?.day === day);
+      const byDay = this.#documents.find(
+        (d) => d.type === "chapter" && d.meta?.day === day && this.#documentMatchesBook(d, bookSlug),
+      );
       if (byDay) return byDay;
     }
     if (Number.isFinite(chapter)) {
-      return this.#documents.find((d) => d.type === "chapter" && d.meta?.chapter === chapter) || null;
+      return this.#documents.find(
+        (d) => d.type === "chapter" && d.meta?.chapter === chapter && this.#documentMatchesBook(d, bookSlug),
+      ) || null;
     }
     return null;
   }
 
-  #findGoldenVerse(chapter) {
+  #findTyped(bookSlug, chapter, type) {
     if (!Number.isFinite(chapter)) return null;
-    return this.#documents.find((d) => d.type === "golden-verse" && d.meta?.chapter === chapter) || null;
+    return this.#documents.find(
+      (d) => d.type === type && d.meta?.chapter === chapter && this.#documentMatchesBook(d, bookSlug),
+    ) || null;
   }
 
-  #findTyped(chapter, type) {
-    if (!Number.isFinite(chapter)) return null;
-    return this.#documents.find((d) => d.type === type && d.meta?.chapter === chapter) || null;
-  }
-
-  #crossrefsForChapter(chapter) {
+  #crossrefsForChapter(bookSlug, chapter) {
     if (!Number.isFinite(chapter)) return [];
     return this.#documents
-      .filter((d) => d.type === "crossref" && Number(String(d.meta?.source || "").match(/Amsal\s+(\d+)/i)?.[1]) === chapter)
+      .filter((d) => {
+        if (d.type !== "crossref") return false;
+        const parsed = canonicalEngine.parseReference(d.meta?.source || "");
+        return parsed?.bookSlug === bookSlug && parsed.chapter === chapter;
+      })
       .map((d) => ({
         id: d.id,
         source: d.meta.source,
@@ -483,6 +501,14 @@ export class CanonicalContextGateway {
         confidence: d.meta.confidence,
         why: d.content || d.summary,
       }));
+  }
+
+  #documentMatchesBook(doc, bookSlug) {
+    if (!bookSlug) return false;
+    const raw = doc?.meta?.book || doc?.references?.[0] || "";
+    const resolved = canonicalEngine.getBook(raw) || canonicalEngine.parseReference(raw);
+    const slug = resolved?.slug || resolved?.bookSlug || String(raw).toLowerCase();
+    return slug === bookSlug || (bookSlug === "proverbs" && /amsal|proverbs/i.test(String(raw)));
   }
 
   #matchFaq(query, limit = 3) {
@@ -503,8 +529,13 @@ export class CanonicalContextGateway {
 
   async #buildDegradedContext(input, started) {
     // Legacy CONTENT adapter — explicit degraded fallback only.
+    const requestedBook = input.book || "proverbs";
+    const registeredBook = canonicalEngine.getBook(requestedBook);
+    const bookSlug = registeredBook?.slug || String(requestedBook).replace(/^book:/, "");
+    const canUseLegacyProverbs = bookSlug === "proverbs" || /^(amsal|prov|proverbs)$/i.test(String(requestedBook));
     let source = null;
     try {
+      if (!canUseLegacyProverbs) throw new Error("Legacy fallback is Proverbs-only");
       const { CONTENT } = await import("../../../data/content.js");
       source =
         (input.day && CONTENT[input.day]) ||
@@ -518,12 +549,16 @@ export class CanonicalContextGateway {
       coverageScore: source ? 0.35 : 0.05,
       crossrefCount: 0,
       hasChapter: !!source,
-      hasBook: true,
+      hasBook: !!registeredBook || canUseLegacyProverbs,
     });
-    const book = { bookId: "book:proverbs", slug: "proverbs", bookName: "Amsal", names: { id: "Amsal" }, status: "production" };
+    const book = registeredBook || (canUseLegacyProverbs
+      ? { bookId: "book:proverbs", slug: "proverbs", bookName: "Amsal", names: { id: "Amsal" }, status: "production" }
+      : null);
     const chapter = source
       ? { canonicalId: `chapter:proverbs.${String(source.chapter).padStart(2, "0")}`, chapter: source.chapter, bookName: "Amsal", title: source.title }
-      : null;
+      : (book && input.chapter
+          ? canonicalEngine.getChapterMeta(book.slug, input.chapter)
+          : null);
     return createCanonicalContext({
       book,
       chapter,
@@ -551,6 +586,8 @@ export class CanonicalContextGateway {
       privacy: { journalIncluded: false },
       metadata: {
         source: source ? "content-degraded" : "no-context",
+        availability: source ? "available" : "metadata-only",
+        bookStatus: book?.status || "unknown",
         tookMs: Math.round(now() - started),
         generatedAt: new Date().toISOString(),
       },

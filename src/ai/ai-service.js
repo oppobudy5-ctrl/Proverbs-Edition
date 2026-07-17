@@ -1,6 +1,11 @@
 import { aiController } from "./ai-controller.js";
 import { runReview } from "./review/review-engine.js";
 import {
+  getCanonicalBook,
+  listCanonicalBooks,
+  runBibleCompanion,
+} from "./companion/companion-engine.js";
+import {
   AIEvents,
   AI_EVENTS,
   AIError,
@@ -115,6 +120,49 @@ export const AIService = Object.freeze({
           chapter: context?.chapter || input.chapter || null,
           crossrefCount: crossrefs.length,
           confidence: context?.confidence ?? null,
+        },
+      };
+    });
+  },
+
+  /** Canonical 66-book registry, ordered from Genesis to Revelation. */
+  async books(options = {}) {
+    return runCapability("books", "canonical-intelligence-layer", async () => ({
+      books: await listCanonicalBooks(options),
+      content: "Daftar kitab kanonik.",
+    }));
+  },
+
+  async book(book, options = {}) {
+    return runCapability("book", "canonical-intelligence-layer", async () => {
+      requireText(book, "book");
+      const result = await getCanonicalBook(book, options);
+      if (!result) {
+        throw new AIError(AI_ERROR_CODES.INVALID_REQUEST, "unknown canonical book", {
+          userMessage: "Kitab tidak ditemukan.",
+          retryable: false,
+        });
+      }
+      return { book: result, content: result.names?.id || result.slug };
+    });
+  },
+
+  /** Structured multi-book Bible Companion response. */
+  async companion(target = {}, options = {}) {
+    return runCapability("companion", "bible-companion", async () => {
+      const payload = normalizeTarget(target, options);
+      const companion = await runBibleCompanion(payload);
+      return {
+        companion,
+        content: companion.summary || companion.overview || companion.status_message,
+        citations: companion.citations,
+        provider: companion.provider,
+        confidence: companion.confidence,
+        metadata: {
+          book: companion.book.slug,
+          chapter: companion.chapter,
+          availability: companion.availability,
+          canonical_only: companion.canonical_only,
         },
       };
     });
