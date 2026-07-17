@@ -9,7 +9,7 @@ export function renderBibleCompanion({ book = "proverbs", chapter = 1 } = {}) {
     class: "section day-section",
     "aria-labelledby": "companion-title",
   });
-  const controls = el("div", { class: "reading" }, aiLoading("Memuat daftar kitab…"));
+  const controls = el("div", { class: "reading companion-controls" }, aiLoading("Memuat daftar kitab…"));
   const output = el("div", { "aria-live": "polite", "aria-busy": "true" }, aiLoading("Memuat Bible Companion…"));
 
   section.append(
@@ -105,26 +105,65 @@ export function renderBibleCompanion({ book = "proverbs", chapter = 1 } = {}) {
 
 function renderCompanionCards(companion) {
   const book = companion.book;
-  const overview = el("article", { class: "reading ai-assist-card" },
+  const available = Boolean(companion.available);
+  const bookOverview = typeof companion.book_overview === "object"
+    ? companion.book_overview
+    : {
+        name: book.names?.id || book.slug,
+        english_name: book.names?.en || "",
+        testament: book.testament || "",
+        category: book.category || book.genre || "",
+        chapter_count: book.chapterCount || 0,
+        authors: book.authors || [],
+        period: book.period || "",
+        language: book.language || "",
+        purpose: companion.book_overview || companion.purpose || "",
+      };
+  const overview = el("article", { class: "reading ai-assist-card companion-card" },
     el("div", { class: "eyebrow" }, "Book Overview"),
-    el("h2", {}, book.names?.id || book.slug),
-    el("p", {}, `${book.names?.en || ""} · ${book.testament} · ${book.category || book.genre} · ${book.chapterCount} pasal`),
-    el("p", {}, `Penulis: ${(book.authors || []).join(", ") || "Belum tersedia"}`),
-    el("p", {}, `Periode: ${book.period || "Belum tersedia"}`),
-    el("p", {}, `Bahasa utama: ${book.language || "Belum tersedia"}`),
+    el("h2", {}, bookOverview.name),
+    el("p", {}, `${bookOverview.english_name} · ${bookOverview.testament} · ${bookOverview.category} · ${bookOverview.chapter_count} pasal`),
+    bookOverview.authors?.length ? el("p", {}, `Penulis: ${bookOverview.authors.join(", ")}`) : null,
+    bookOverview.period ? el("p", {}, `Periode: ${bookOverview.period}`) : null,
+    bookOverview.language ? el("p", {}, `Bahasa utama: ${bookOverview.language}`) : null,
+    bookOverview.purpose ? el("p", {}, `Tujuan: ${bookOverview.purpose}`) : null,
+    available && companion.metadata?.canonical_id
+      ? el("p", { class: "reader-note" }, `Canonical ID: ${companion.metadata.canonical_id}`)
+      : null,
     companion.status_message ? el("p", { class: "reader-note", role: "status" }, companion.status_message) : null,
   );
 
-  const summary = el("article", { class: "reading ai-assist-card" },
-    el("div", { class: "eyebrow" }, "Book Summary"),
-    el("h2", {}, companion.chapter ? `Pasal ${companion.chapter}` : "Ringkasan kitab"),
-    el("p", {}, companion.summary || companion.overview || "Ringkasan belum tersedia dalam Knowledge Base."),
-    companion.purpose ? el("p", {}, `Tujuan: ${companion.purpose}`) : null,
-    companion.themes?.length ? el("p", {}, `Tema: ${companion.themes.join(" · ")}`) : null,
-    companion.historical_context ? el("p", {}, companion.historical_context) : null,
+  const summary = el("article", { class: "reading ai-assist-card companion-card" },
+    el("div", { class: "eyebrow" }, "Chapter Overview"),
+    el("h2", {}, companion.chapter_title || `Pasal ${companion.chapter}`),
+    available && companion.chapter_overview
+      ? el("p", { class: "lead" }, companion.chapter_overview)
+      : null,
+    available && companion.summary
+      ? el("p", {}, companion.summary)
+      : el("p", { class: "reader-note", role: "status" }, companion.status_message),
+    available
+      ? el("div", {},
+        companion.themes?.length ? renderChips("Tema", companion.themes, true) : null,
+        companion.keywords?.length ? renderChips("Kata kunci", companion.keywords) : null,
+        companion.historical_context ? el("p", {}, companion.historical_context) : null,
+        companion.literary_context ? el("p", {}, `Konteks sastra: ${companion.literary_context}`) : null,
+        companion.structure?.length
+          ? el("ul", { class: "ai-crossref-list" },
+              ...companion.structure.map((item) => el("li", { class: "ai-crossref-item" }, item)),
+            )
+          : null,
+        companion.memory_verse
+          ? el("div", {},
+              el("div", { class: "eyebrow" }, `Memory Verse · ${companion.memory_verse.ref}`),
+              el("blockquote", { class: "pull" }, companion.memory_verse.text),
+            )
+          : null,
+      )
+      : null,
   );
 
-  const references = el("article", { class: "reading ai-assist-card" },
+  const references = el("article", { class: "reading ai-assist-card companion-card" },
     el("div", { class: "eyebrow" }, "Cross Book References"),
     el("h2", {}, "Hubungan kanonik"),
     companion.cross_book_references?.length
@@ -136,16 +175,29 @@ function renderCompanionCards(companion) {
             ),
           ),
         )
-      : el("p", {}, "Belum ada referensi lintas kitab yang tervalidasi untuk konteks ini."),
+      : (!available
+          ? el("p", { class: "reader-note", role: "status" }, companion.status_message)
+          : null),
   );
 
-  const guidance = el("article", { class: "reading ai-assist-card" },
+  const guidance = el("article", { class: "reading ai-assist-card companion-card" },
     el("div", { class: "eyebrow" }, "Bible Companion"),
     el("h2", {}, "Penerapan dan doa"),
-    el("p", {}, companion.application || "Penerapan belum tersedia."),
-    companion.prayer ? el("blockquote", { class: "pull" }, companion.prayer) : null,
+    available && companion.application ? el("p", {}, companion.application) : null,
+    available && companion.prayer ? el("blockquote", { class: "pull" }, companion.prayer) : null,
+    !available ? el("p", { class: "reader-note", role: "status" }, companion.status_message) : null,
   );
+
   return [overview, summary, references, guidance];
+}
+
+function renderChips(label, values, highlighted = false) {
+  return el("div", { class: "chips", "aria-label": label },
+    el("span", { class: "reader-note" }, `${label}:`),
+    ...values.map((value) =>
+      el("span", { class: `chip${highlighted ? " gold" : ""}` }, value),
+    ),
+  );
 }
 
 function appendBookOptions(select, books, selectedSlug) {

@@ -200,7 +200,7 @@ function syncHistory(route, params, options = {}) {
 }
 
 function syncActiveNav(activeRoute) {
-  $$(".nav-btn, .bn-btn").forEach((b) => {
+  $$(".nav-btn, .bn-btn, .footer-nav-btn[data-route]").forEach((b) => {
     const isActive = b.dataset.route === activeRoute;
     b.classList.toggle("active", isActive);
     if (isActive) b.setAttribute("aria-current", "page");

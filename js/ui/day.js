@@ -6,10 +6,9 @@
 // lain: Ringkasan, Renungan, Catatan Eksegesis, dan Kata Kunci kini tampil
 // independen sesuai urutan.
 //
-// Urutan halaman hari: Hero → Ayat Emas → Teks Pasal → Renungan →
+// Urutan halaman hari: Hero → Teks Pasal → Renungan →
 //         Catatan Eksegesis → Jurnal → Kuis → Navigasi.
-// Beranda menempatkan Ayat Emas → Kuis → Hero Preview → kartu perjalanan
-// di bagian akhir.
+// Beranda menempatkan Kuis → Hero Preview → kartu perjalanan di bagian akhir.
 // =============================================================================
 import { el, paragraphs, $ } from "../dom.js";
 import { CONTENT } from "../../data/content.js";
@@ -80,22 +79,6 @@ function renderHero(plan, content, status) {
     actions
   );
   return hero;
-}
-
-// ---------------------------------------------------------------------------
-// Section: Ayat Emas
-// ---------------------------------------------------------------------------
-function renderGoldenVerse(plan, content) {
-  if (!content.goldenVerse) return null;
-  return el("div", { class: "golden-verse" },
-    el("div", { class: "golden-eyebrow" }, "\u2728 Ayat Emas Hari Ini"),
-    el("p", { class: "golden-text" }, `\u201C${content.goldenVerse.text}\u201D`),
-    el("div", { class: "golden-ref" }, `\u2014 ${content.goldenVerse.ref} (TB)`),
-    el("div", { class: "save-row" },
-      favoriteButton({ day: plan.day, chapter: plan.chapter, type: "verse", text: content.goldenVerse.text }),
-      bookmarkButton({ day: plan.day, chapter: plan.chapter, type: "verse", text: `${content.goldenVerse.ref} \u2014 ${content.goldenVerse.text}`, label: "Simpan ayat" })
-    )
-  );
 }
 
 // ---------------------------------------------------------------------------
@@ -300,7 +283,6 @@ export function renderDay({ day, resume, homeLayout = false } = {}) {
   const readingAnchor = el("div", { id: "reading-anchor", style: "scroll-margin-top:80px" });
   const quizAnchor = el("div", { id: "quiz-anchor", style: "scroll-margin-top:80px" });
   const hero = renderHero(plan, content, status);
-  const goldenVerse = renderGoldenVerse(plan, content);
   const quiz = renderQuiz(plan, content);
 
   const aiAssistHost = el("div", { id: "ai-assist-host", class: "ai-assist-host" });
@@ -316,8 +298,8 @@ export function renderDay({ day, resume, homeLayout = false } = {}) {
     renderMidAction(),
   ];
   const parts = homeLayout
-    ? [...readingParts, goldenVerse, quizAnchor, quiz, hero, renderFooter(plan)]
-    : [hero, goldenVerse, ...readingParts, quizAnchor, quiz, renderFooter(plan)];
+    ? [...readingParts, quizAnchor, quiz, hero, renderFooter(plan)]
+    : [hero, ...readingParts, quizAnchor, quiz, renderFooter(plan)];
   parts.forEach((node) => { if (node) section.append(node); });
 
   $("#app").appendChild(section);
@@ -329,7 +311,7 @@ export function renderDay({ day, resume, homeLayout = false } = {}) {
   mountAiLessonAssist(aiAssistHost, { plan, content });
 }
 
-// Beranda = renungan, ayat emas, kuis, hero preview, lalu kartu perjalanan.
+// Beranda = renungan, kuis, hero preview, lalu kartu perjalanan.
 export function renderHome() {
   const card = continueCard();
   renderDay({ day: getTodayPlan().day, homeLayout: true });

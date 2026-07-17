@@ -1,5 +1,37 @@
 # Changelog
 
+## Phase 005B — Bible Companion Integration Refinement
+
+### Perubahan
+- Editorial challenge kini selalu diprioritaskan di atas template invitation.
+- Memory verse dan keywords dipetakan dari dataset chapter dan dirender di card Chapter Overview.
+- Historical context memakai chapter context dan timeline CIL terlebih dahulu; metadata kitab hanya fallback.
+- Purpose, themes, book overview, dan chapter overview memiliki mapping yang terpisah dan eksplisit.
+- Seluruh themes dan keywords memakai komponen chip yang sudah tersedia.
+- Rendering kembali memakai empat card Companion yang sudah ada; tidak ada card atau komponen desain baru.
+- Fallback palsu tidak dirender untuk chapter berstatus `available`.
+- Laporan mapping tersedia di `docs/audit/COMPANION_MAPPING_REPORT.md`.
+
+### Batas perubahan
+Tidak ada perubahan pada dataset editorial, Proverbs bundle, Bible Knowledge
+Base, Canonical Intelligence Layer, AI Engine, RAG, atau prompt.
+
+## Phase 005A — Canonical Dataset Activation
+
+### Perubahan
+- `src/ai/companion/companion-engine.js`: mengaktifkan source editorial `CONTENT` Amsal 1–31 sebagai resolver utama untuk chapter title, overview, summary, main theme, keywords, application, prayer, dan memory verse.
+- Metadata pasal terkurasi dari `knowledge/metadata/chapter-overlays.json` dimuat sekali dan dipakai untuk historical context, literary context, struktur, serta tingkat kesulitan.
+- Ringkasan editorial kanonik tidak lagi ditimpa oleh output provider/mock; hasil provider disimpan terpisah sebagai `ai_summary`.
+- `js/ui/bible-companion.js`: menampilkan Book Overview, Chapter Overview, Canonical Context, Memory Verse, Cross Book References, Penerapan dan Doa, serta Dataset Metadata.
+- Placeholder palsu dihapus dari jalur Amsal yang berstatus `available`; fallback tetap dipakai hanya untuk kitab `metadata-only`.
+- `styles.css`: menonaktifkan drop cap artikel pada kartu Companion agar metadata tidak terpecah menjadi huruf awal besar.
+- `scripts/test-proverbs-activation.mjs`: validasi 31 bundle JSON dan seluruh field aktif, termasuk sampel pasal 1, 5, 10, 15, 20, 25, dan 31.
+
+### Batas perubahan
+Tidak ada isi editorial, devosional, Bible Knowledge Base, Canonical Intelligence
+Layer, atau AI Engine yang diubah. Fase ini hanya mengaktifkan dan memetakan
+dataset yang sudah ada.
+
 ## Phase 006 — Biblical Reasoning Engine
 
 ### Perubahan

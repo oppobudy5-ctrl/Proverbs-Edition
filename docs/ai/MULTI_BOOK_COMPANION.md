@@ -6,6 +6,27 @@ canonical books. Curated chapter content remains availability-aware: Proverbs
 is production-ready and offline; the other books currently expose canonical
 metadata without fabricated chapter content.
 
+## Phase 005A — Proverbs Dataset Activation
+
+The Companion resolves the existing `data/content.js` editorial source for all
+31 Proverbs chapters and combines it with the existing canonical context. No
+new biblical or devotional content is generated.
+
+For every Proverbs chapter, the structured response now exposes:
+
+- book overview and purpose
+- chapter title, overview, and editorial summary
+- main theme and keywords
+- historical and literary context
+- chapter structure and difficulty
+- application and prayer
+- memory verse
+- canonical metadata and citations
+
+Provider prose is retained separately as `ai_summary`; it does not replace the
+existing editorial summary. UI fallback copy is only rendered for books whose
+availability is `metadata-only`.
+
 ## 1. Overview
 
 The implementation reuses the existing Canonical Intelligence Layer (CIL),

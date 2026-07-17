@@ -22,6 +22,8 @@ assert.match(html, /<header class="topbar">/);
 assert.match(html, /<main id="app"[^>]*tabindex="-1"/);
 assert.match(html, /<nav class="topnav"[^>]*aria-label="Navigasi atas"/);
 assert.match(html, /<nav class="bottomnav"[^>]*aria-label="Navigasi utama"/);
+assert.match(html, /<nav class="footer-nav"[^>]*aria-label="Navigasi footer"/);
+assert.match(html, /id="footer-top"[^>]*aria-label="Kembali ke bagian atas halaman"/);
 assert.match(html, /<footer class="footer">/);
 assert.match(html, /aria-hidden="true"/);
 assert.match(html, /streak-pill[^>]*role="status"/);

@@ -1,5 +1,8 @@
 import { canonicalContextGateway, initCIL } from "../cil/index.js";
 import { AIError, AI_ERROR_CODES } from "../ai-utils.js";
+import { CONTENT } from "../../../data/content.js";
+
+let chapterOverlaysPromise = null;
 
 /**
  * Multi-book Bible Companion orchestrator.
@@ -32,6 +35,10 @@ export async function runBibleCompanion(input = {}) {
     intent: "summary",
   });
   const available = context.metadata?.availability === "available";
+  const editorial = book.slug === "proverbs" ? CONTENT[chapter] || null : null;
+  const overlay = editorial
+    ? await resolveChapterOverlay(chapter, input.chapterOverlays)
+    : null;
 
   let prose = "";
   let provider = "local";
@@ -55,7 +62,16 @@ export async function runBibleCompanion(input = {}) {
     }
   }
 
-  return formatCompanion({ book, chapter, context, prose, provider, available });
+  return formatCompanion({
+    book,
+    chapter,
+    context,
+    prose,
+    provider,
+    available,
+    editorial,
+    overlay,
+  });
 }
 
 export async function listCanonicalBooks(options = {}) {
@@ -74,7 +90,16 @@ export async function getCanonicalBook(bookInput, options = {}) {
   return book ? Object.freeze({ ...book, available: book.status === "production" }) : null;
 }
 
-function formatCompanion({ book, chapter, context, prose, provider, available }) {
+function formatCompanion({
+  book,
+  chapter,
+  context,
+  prose,
+  provider,
+  available,
+  editorial,
+  overlay,
+}) {
   const seenReferences = new Set();
   const crossBookReferences = (context.crossrefs || []).filter((ref) => {
     const target = String(ref.target || "");
@@ -83,11 +108,36 @@ function formatCompanion({ book, chapter, context, prose, provider, available })
     seenReferences.add(key);
     return !target.toLowerCase().includes(String(book.names?.id || book.slug).toLowerCase());
   });
-  const historicalParts = [
+  const chapterHistorical = [
+    overlay?.historicalContext || "",
+    ...(context.historical || []).map((item) => item.summary || item.name || "").filter(Boolean),
+  ].filter(Boolean);
+  const bookHistorical = [
     book.authors?.length ? `Penulis: ${book.authors.join(", ")}` : "",
     book.period ? `Periode: ${book.period}` : "",
     book.audience ? `Pembaca: ${book.audience}` : "",
   ].filter(Boolean);
+  const summary = editorial?.summary || context.summary || "";
+  const mainTheme = editorial?.theme || context.theme || "";
+  const memoryVerse = editorial?.goldenVerse || context.goldenVerse || null;
+  const keywords = editorial?.keywords?.length ? editorial.keywords : context.keywords || [];
+  const application = editorial?.challenge
+    || context.challenge
+    || context.application?.invitation
+    || "";
+  const prayer = editorial?.prayer || context.prayer || "";
+  const purpose = context.chapter?.purpose || context.book?.purpose || book.purpose || "";
+  const bookOverview = Object.freeze({
+    name: book.names?.id || book.slug,
+    english_name: book.names?.en || "",
+    testament: book.testament || "",
+    category: book.category || book.genre || "",
+    chapter_count: book.chapterCount || 0,
+    authors: Object.freeze([...(book.authors || [])]),
+    period: book.period || "",
+    language: book.language || "",
+    purpose,
+  });
 
   return Object.freeze({
     book: Object.freeze({ ...book }),
@@ -97,23 +147,71 @@ function formatCompanion({ book, chapter, context, prose, provider, available })
     status_message: available
       ? ""
       : "Metadata kitab tersedia, tetapi konten pasal belum tersedia offline.",
-    overview: context.summary || book.purpose || "",
-    summary: prose || context.summary || "",
-    purpose: book.purpose || "",
+    book_overview: bookOverview,
+    chapter_title: editorial?.title || context.title || context.chapter?.title || "",
+    chapter_overview: editorial?.lead || summary,
+    overview: purpose,
+    summary,
+    ai_summary: prose,
+    purpose,
+    main_theme: mainTheme,
     themes: Object.freeze(
-      [...new Set([...(context.themes || []), ...(context.topics || []).map((t) => t.name)].filter(Boolean))],
+      [...new Set([
+        mainTheme,
+        ...(context.themes || []),
+        ...(context.topics || []).map((t) => t.name),
+      ].filter(Boolean))],
     ),
-    historical_context: historicalParts.join(" · "),
+    keywords: Object.freeze([...keywords]),
+    historical_context: (chapterHistorical.length ? chapterHistorical : bookHistorical).join(" · "),
+    historical_source: chapterHistorical.length ? "chapter" : "book",
+    literary_context: overlay?.literaryContext || "",
+    structure: Object.freeze([...(overlay?.structure || [])]),
+    difficulty: overlay?.difficulty || "",
     cross_book_references: Object.freeze(crossBookReferences.map((ref) => Object.freeze({ ...ref }))),
     related_verses: Object.freeze((context.crossrefs || []).map((ref) => ref.target).filter(Boolean)),
-    application: context.application?.invitation || context.challenge || "",
-    prayer: context.prayer || "",
+    application,
+    prayer,
+    memory_verse: memoryVerse ? Object.freeze({ ...memoryVerse }) : null,
     citations: Object.freeze((context.citations || []).map((item) => Object.freeze({ ...item }))),
     confidence: context.confidence || 0,
     provider,
     canonical_only: !prose,
+    metadata: Object.freeze({
+      canonical_id: context.chapter?.canonicalId || null,
+      source: context.metadata?.source || "cil",
+      availability: context.metadata?.availability || (available ? "available" : "metadata-only"),
+      book_status: context.metadata?.bookStatus || book.status || "unknown",
+      token_estimate: context.tokenEstimate || 0,
+    }),
     timestamp: new Date().toISOString(),
   });
+}
+
+async function resolveChapterOverlay(chapter, injected) {
+  const source = injected || await loadChapterOverlays();
+  if (!source) return null;
+  return Object.freeze({
+    ...(source.defaults || {}),
+    ...(source.chapters?.[String(chapter)] || {}),
+  });
+}
+
+async function loadChapterOverlays() {
+  if (chapterOverlaysPromise) return chapterOverlaysPromise;
+  chapterOverlaysPromise = (async () => {
+    try {
+      if (typeof globalThis.fetch !== "function") return null;
+      const response = await globalThis.fetch("knowledge/metadata/chapter-overlays.json", {
+        cache: "force-cache",
+      });
+      if (!response.ok) return null;
+      return response.json();
+    } catch {
+      return null;
+    }
+  })();
+  return chapterOverlaysPromise;
 }
 
 function normalizeChapter(value, max) {

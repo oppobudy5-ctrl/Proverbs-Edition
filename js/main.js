@@ -22,6 +22,24 @@ function wireSettingsButtons() {
   if (bn) bn.addEventListener("click", open);
 }
 
+function wireFooterNavigation() {
+  const scrollTop = () => {
+    const reducedMotion = globalThis.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    globalThis.scrollTo?.({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
+  };
+
+  document.querySelectorAll(".footer-nav-btn[data-route]").forEach((button) => {
+    button.addEventListener("click", scrollTop);
+  });
+
+  const topButton = $("#footer-top");
+  topButton?.addEventListener("click", () => {
+    scrollTop();
+    const brand = document.querySelector(".brand");
+    try { brand?.focus({ preventScroll: true }); } catch { brand?.focus(); }
+  });
+}
+
 function boot() {
   // Preferensi tampilan diterapkan sedini mungkin agar tidak ada kedip tema.
   initTheme();
@@ -30,6 +48,7 @@ function boot() {
   injectFooterIcons();
   initOffline();
   wireSettingsButtons();
+  wireFooterNavigation();
   Bgm.init();
 
   // Tandai kunjungan hari ini (menaikkan streak saat app dibuka harian);

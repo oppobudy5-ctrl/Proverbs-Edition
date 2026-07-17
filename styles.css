@@ -667,6 +667,16 @@ button { font-family: inherit; cursor: pointer; }
   color: var(--gold-3);
   font-weight: 700;
 }
+.companion-card p:first-letter,
+.companion-controls p:first-letter {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  float: none;
+  padding: 0;
+  color: inherit;
+  font-weight: inherit;
+}
 .reading p.lead:first-letter {
   font-family: inherit;
   font-size: inherit;
@@ -1074,6 +1084,36 @@ button { font-family: inherit; cursor: pointer; }
   background: linear-gradient(180deg, transparent, rgba(0,0,0,0.6));
   color: var(--ink-3); font-size: 12px; letter-spacing: 0.02em;
 }
+.footer-nav {
+  flex: 1 0 100%;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px;
+  padding: 0 0 16px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--stroke);
+}
+.footer-nav-btn {
+  min-height: 36px;
+  padding: 7px 13px;
+  border: 1px solid var(--stroke);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.025);
+  color: var(--ink-2);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color .2s ease, border-color .2s ease, background-color .2s ease;
+}
+.footer-nav-btn:hover {
+  color: var(--ink-0);
+  border-color: rgba(214,168,81,0.45);
+  background: rgba(214,168,81,0.08);
+}
+.footer-nav-btn.active {
+  color: var(--gold-1);
+  border-color: rgba(214,168,81,0.5);
+  background: rgba(214,168,81,0.1);
+}
+.footer-top-btn { margin-left: 8px; }
 .badge-tb { color: var(--gold-1); font-weight: 700; letter-spacing: 0.08em; }
 .foot-sep { opacity: 0.4; margin: 0 4px; }
 .foot-right { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
@@ -1980,6 +2020,7 @@ mark { background: rgba(233,200,122,.4); color: inherit; border-radius: 3px; pad
 
 /* Bottom nav (mobile) */
 @media (max-width: 720px) {
+  .footer-nav { display: none; }
   .bottomnav {
     display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
     justify-content: space-around; align-items: stretch; gap: 2px;
