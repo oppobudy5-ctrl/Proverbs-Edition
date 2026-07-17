@@ -138,6 +138,18 @@ export const AIService = Object.freeze({
     return execute("explain", { ...options, question });
   },
 
+  /**
+   * Wisdom Coach — memakai intent/prompt wisdom yang sudah ada.
+   * Facade tipis untuk UI; tidak mengubah engine/prompt.
+   */
+  wisdom(target = {}, options = {}) {
+    const payload = normalizeTarget(target, options);
+    return execute("wisdom", {
+      ...payload,
+      question: payload.question || "Bantu saya menerapkan hikmat pasal ini dengan hati-hati dalam keputusan nyata.",
+    });
+  },
+
   // Read-only event facade for UI subscriptions.
   events: Object.freeze({
     names: AI_EVENTS,

@@ -10,7 +10,7 @@
    - CACHE_VERSION adalah sumber tunggal; bump ini saat app shell berubah.
    - CACHE_STATIC menyimpan shell + aset offline; cache lama dihapus di activate.
 */
-const CACHE_VERSION = "bibletime-v10-rc";
+const CACHE_VERSION = "bibletime-v19-ai-ui";
 const CACHE_STATIC = `static-${CACHE_VERSION}`;
 
 const APP_SHELL = [
@@ -83,6 +83,8 @@ const APP_SHELL = [
   "./js/ui/journal-box.js",
   "./js/ui/journal-editor.js",
   "./js/ui/ai-reflection-panel.js",
+  "./js/ui/ai-dialog.js",
+  "./js/ui/ai-lesson-assist.js",
   "./js/ui/journal-insights.js",
   "./js/ui/growth-timeline.js",
   "./js/ui/save-actions.js",

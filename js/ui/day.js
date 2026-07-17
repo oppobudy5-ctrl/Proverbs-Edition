@@ -6,8 +6,10 @@
 // lain: Ringkasan, Renungan, Catatan Eksegesis, dan Kata Kunci kini tampil
 // independen sesuai urutan.
 //
-// Urutan: Hero → Ayat Emas → Ringkasan → Renungan → Catatan Eksegesis →
-//         Kata Kunci → Refleksi → Doa → Tantangan → Kuis → Navigasi.
+// Urutan halaman hari: Hero → Ayat Emas → Teks Pasal → Renungan →
+//         Catatan Eksegesis → Jurnal → Kuis → Navigasi.
+// Beranda menempatkan Ayat Emas → Kuis → Hero Preview → kartu perjalanan
+// di bagian akhir.
 // =============================================================================
 import { el, paragraphs, $ } from "../dom.js";
 import { CONTENT } from "../../data/content.js";
@@ -15,7 +17,7 @@ import { getPlanByDay, firstPlan, planCount, planDateStatus, getTodayPlan } from
 import { Store } from "../store.js";
 import { setMainVersion } from "../store.js";
 import { fmtDateID } from "../date-helper.js";
-import { fullChapterLabel } from "../bible-api.js";
+import { fetchChapter, fullChapterLabel } from "../bible-api.js";
 import { openParallelReader } from "./reader.js";
 import { buildVersionDropdown } from "./version-dropdown.js";
 import { renderQuiz } from "./quiz.js";
@@ -31,6 +33,7 @@ import { renderJournalBox } from "./journal-box.js";
 import { bookmarkButton, favoriteButton } from "./save-actions.js";
 import { continueCard } from "./continue-card.js";
 import { showAchievements } from "./celebrate.js";
+import { mountAiLessonAssist } from "./ai-lesson-assist.js";
 
 // Tandai hari selesai + rayakan pencapaian yang baru terbuka.
 function finishDay(plan) {
@@ -96,14 +99,94 @@ function renderGoldenVerse(plan, content) {
 }
 
 // ---------------------------------------------------------------------------
-// Section: Ringkasan
+// Section: Judul pasal (Amsal N) + prev/next otomatis antar pasal
 // ---------------------------------------------------------------------------
-function renderSummary(content) {
-  if (!content.summary) return null;
-  return el("div", { class: "reading" },
-    el("div", { class: "eyebrow" }, "Ringkasan"),
-    ...paragraphs(content.summary)
+function renderChapterHeading(plan) {
+  const label = `${plan.book} ${plan.chapter}`;
+  const total = planCount();
+  const prevDay = plan.day > 1 ? plan.day - 1 : null;
+  const nextDay = plan.day < total ? plan.day + 1 : null;
+
+  const navBtn = (dir, targetDay) => {
+    const isPrev = dir === "prev";
+    const enabled = targetDay != null;
+    return el("button", {
+      type: "button",
+      class: `chapter-nav chapter-nav--${dir}${enabled ? "" : " is-disabled"}`,
+      "aria-label": enabled
+        ? (isPrev ? `Pasal sebelumnya · Hari ${targetDay}` : `Pasal berikutnya · Hari ${targetDay}`)
+        : (isPrev ? "Tidak ada pasal sebelumnya" : "Tidak ada pasal berikutnya"),
+      disabled: enabled ? undefined : "disabled",
+      onclick: enabled ? () => go("day", { day: targetDay }) : undefined,
+    },
+      el("span", { class: "chapter-nav-icon", "aria-hidden": "true" }, isPrev ? "‹" : "›")
+    );
+  };
+
+  return el("div", {
+    class: "chapter-heading",
+    "aria-label": label,
+  },
+    navBtn("prev", prevDay),
+    el("div", { class: "chapter-heading-core" },
+      el("h2", { class: "chapter-title" }, label),
+      el("span", { class: "chapter-rule", "aria-hidden": "true" })
+    ),
+    navBtn("next", nextDay)
   );
+}
+
+// ---------------------------------------------------------------------------
+// Section: Teks lengkap pasal TB (ringkasan tetap menjadi fallback offline)
+// ---------------------------------------------------------------------------
+function renderChapterText(plan, content) {
+  const title = content.title || plan.title || `${plan.book} ${plan.chapter}`;
+  return el("div", {
+    class: "reading chapter-reading",
+    "data-chapter-text": String(plan.chapter),
+    "aria-busy": "true",
+  },
+    el("h3", { class: "chapter-pericope" }, title),
+    el("div", { class: "chapter-text-body" },
+      el("p", { class: "chapter-text-status", role: "status" },
+        `Memuat ${fullChapterLabel(plan.refs)} (TB)…`
+      )
+    )
+  );
+}
+
+async function loadChapterText(section, plan, content) {
+  const card = section.querySelector(`[data-chapter-text="${plan.chapter}"]`);
+  const body = card?.querySelector(".chapter-text-body");
+  if (!card || !body) return;
+
+  try {
+    const verses = await fetchChapter("tb", String(plan.chapter));
+    if (!card.isConnected) return;
+    const numbers = Object.keys(verses).map(Number).filter(Number.isFinite).sort((a, b) => a - b);
+    if (!numbers.length) throw new Error("Ayat kosong");
+
+    body.replaceChildren(
+      el("div", { class: "chapter-verses" },
+        ...numbers.map((number) =>
+          el("p", { class: "chapter-verse" },
+            el("sup", { class: "chapter-verse-num", "aria-label": `Ayat ${number}` }, String(number)),
+            verses[number]
+          )
+        )
+      )
+    );
+    card.removeAttribute("aria-busy");
+  } catch {
+    if (!card.isConnected) return;
+    body.replaceChildren(
+      el("p", { class: "chapter-offline-note", role: "status" },
+        "Teks lengkap TB tidak dapat dimuat. Ringkasan ditampilkan sebagai fallback offline."
+      ),
+      ...paragraphs(content.summary)
+    );
+    card.removeAttribute("aria-busy");
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -140,31 +223,6 @@ function renderExegesis(content) {
   return el("div", { class: "reading" },
     el("div", { class: "eyebrow" }, "Catatan Eksegesis"),
     ...paragraphs(content.exegesis)
-  );
-}
-
-// ---------------------------------------------------------------------------
-// Section: Refleksi, doa, dan tantangan
-// ---------------------------------------------------------------------------
-function renderReflectionQuestions(content) {
-  if (!content.reflection?.length) return null;
-  return el("div", { class: "reading" },
-    el("div", { class: "eyebrow" }, "Refleksi"),
-    el("h2", {}, "Berhenti dan renungkan"),
-    el("ol", {}, ...content.reflection.map((question) => el("li", {}, question)))
-  );
-}
-
-function renderChallenge(plan, content) {
-  if (!content.challenge) return null;
-  return el("div", { class: "reading" },
-    el("div", { class: "reading-head" },
-      el("div", { class: "eyebrow" }, "Tantangan Hari Ini"),
-      el("div", { class: "save-row" },
-        favoriteButton({ day: plan.day, chapter: plan.chapter, type: "challenge", text: content.challenge })
-      )
-    ),
-    el("p", { class: "lead" }, content.challenge)
   );
 }
 
@@ -233,7 +291,7 @@ function stubContent(plan) {
 // ---------------------------------------------------------------------------
 // Komposisi halaman
 // ---------------------------------------------------------------------------
-export function renderDay({ day, resume } = {}) {
+export function renderDay({ day, resume, homeLayout = false } = {}) {
   const plan = getPlanByDay(day) || firstPlan();
   const content = (CONTENT && CONTENT[plan.day]) || stubContent(plan);
   const status = planDateStatus(plan);
@@ -241,22 +299,25 @@ export function renderDay({ day, resume } = {}) {
   const section = el("section", { class: "section day-section" });
   const readingAnchor = el("div", { id: "reading-anchor", style: "scroll-margin-top:80px" });
   const quizAnchor = el("div", { id: "quiz-anchor", style: "scroll-margin-top:80px" });
+  const hero = renderHero(plan, content, status);
+  const goldenVerse = renderGoldenVerse(plan, content);
+  const quiz = renderQuiz(plan, content);
 
-  const parts = [
-    renderHero(plan, content, status),
-    renderGoldenVerse(plan, content),
+  const aiAssistHost = el("div", { id: "ai-assist-host", class: "ai-assist-host" });
+
+  const readingParts = [
     readingAnchor,
-    renderSummary(content),
+    renderChapterHeading(plan),
+    renderChapterText(plan, content),
+    aiAssistHost,
     renderReflection(plan, content),
     renderExegesis(content),
-    renderReflectionQuestions(content),
-    renderChallenge(plan, content),
     renderJournalBox(plan),
     renderMidAction(),
-    quizAnchor,
-    renderQuiz(plan, content),
-    renderFooter(plan),
   ];
+  const parts = homeLayout
+    ? [...readingParts, goldenVerse, quizAnchor, quiz, hero, renderFooter(plan)]
+    : [hero, goldenVerse, ...readingParts, quizAnchor, quiz, renderFooter(plan)];
   parts.forEach((node) => { if (node) section.append(node); });
 
   $("#app").appendChild(section);
@@ -264,11 +325,13 @@ export function renderDay({ day, resume } = {}) {
 
   const resumeRatio = resume ? getChapterProgress(plan.day) : 0;
   mountDayRuntime({ plan, section, resumeRatio });
+  loadChapterText(section, plan, content);
+  mountAiLessonAssist(aiAssistHost, { plan, content });
 }
 
-// Beranda = kartu "Lanjutkan Membaca" + renungan untuk rencana "hari ini".
+// Beranda = renungan, ayat emas, kuis, hero preview, lalu kartu perjalanan.
 export function renderHome() {
   const card = continueCard();
+  renderDay({ day: getTodayPlan().day, homeLayout: true });
   if (card) $("#app").appendChild(el("section", { class: "section home-lead" }, card));
-  renderDay({ day: getTodayPlan().day });
 }

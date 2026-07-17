@@ -458,6 +458,104 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 14px;
 }
 
+/* ===== Judul pasal (Amsal N) + prev/next ================================ */
+.chapter-heading {
+  margin-top: 36px;
+  margin-bottom: -12px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 22px clamp(14px, 3vw, 28px) 18px;
+  border-radius: var(--r-xl) var(--r-xl) 0 0;
+  background: linear-gradient(180deg, #fbf6e6 0%, #f5ecd2 100%);
+  border: 1px solid var(--paper-edge);
+  border-bottom: 0;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+  color: #1a2744;
+  max-width: var(--reader-measure);
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.chapter-heading-core {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.chapter-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4.2vw, 40px);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #1a2744;
+  text-align: center;
+  margin: 0;
+  line-height: 1.1;
+}
+.chapter-rule {
+  display: block;
+  width: min(220px, 55%);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-2), transparent);
+  position: relative;
+}
+.chapter-rule::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: var(--gold-2);
+  box-shadow: 0 0 0 3px #f5ecd2;
+}
+.chapter-nav {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(173, 126, 44, 0.35);
+  background: rgba(255, 255, 255, 0.45);
+  color: var(--gold-3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease, color .15s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.chapter-nav-icon {
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 600;
+  transform: translateY(-1px);
+}
+.chapter-nav:hover:not(:disabled) {
+  background: linear-gradient(180deg, #f3d98a, var(--gold-2));
+  border-color: transparent;
+  color: #2a1d05;
+  transform: translateY(-1px);
+}
+.chapter-nav:focus-visible {
+  outline: 2px solid var(--gold-2);
+  outline-offset: 2px;
+}
+.chapter-nav.is-disabled,
+.chapter-nav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.chapter-heading + .reading {
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
 /* ===== Renungan (devotional reading) =================================== */
 .reading {
   margin-top: 36px;
@@ -487,6 +585,59 @@ button { font-family: inherit; cursor: pointer; }
   display: flex; gap: 8px; align-items: center;
   color: var(--gold-3); font-weight: 700; letter-spacing: 0.18em; font-size: 11px; text-transform: uppercase;
   margin-bottom: 8px;
+}
+.chapter-pericope {
+  font-family: var(--font-display);
+  color: var(--gold-3);
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  margin: 0 0 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(173, 126, 44, 0.25);
+}
+.chapter-verses {
+  display: grid;
+  gap: 12px;
+}
+.reading .chapter-verse {
+  margin: 0;
+  padding-left: 2.25em;
+  text-indent: -2.25em;
+}
+.reading .chapter-verse:first-letter,
+.reading .chapter-text-status:first-letter,
+.reading .chapter-offline-note:first-letter {
+  float: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+.chapter-verse-num {
+  display: inline-block;
+  width: 2em;
+  margin-right: .25em;
+  color: var(--gold-3);
+  font-family: var(--font-body);
+  font-size: .72em;
+  font-weight: 800;
+  line-height: 1;
+  text-align: right;
+  vertical-align: .25em;
+}
+.chapter-text-status,
+.chapter-offline-note {
+  color: #6d6048 !important;
+  font-style: italic;
+}
+.chapter-offline-note {
+  padding: 12px 14px;
+  border: 1px solid rgba(173, 126, 44, 0.25);
+  border-radius: var(--r-sm);
+  background: rgba(214, 168, 81, 0.08);
 }
 .reading h2 {
   font-family: var(--font-display);
@@ -1026,6 +1177,9 @@ button { font-family: inherit; cursor: pointer; }
   .app-shell { padding: 22px 16px 70px; }
   .hero { padding: 28px 22px 32px; border-radius: var(--r-lg); }
   .golden-verse { padding: 30px 22px 26px; }
+  .chapter-heading { padding: 18px 12px 14px; margin-top: 28px; }
+  .chapter-nav { width: 38px; height: 38px; }
+  .chapter-nav-icon { font-size: 24px; }
   .reading { padding: 32px 22px 36px; }
   .quiz { padding: 22px 18px; }
   .footer { flex-direction: column; align-items: flex-start; gap: 6px; padding: 18px 16px; }
@@ -1213,7 +1367,7 @@ button { font-family: inherit; cursor: pointer; }
 
 /* Smooth theme transitions (only when switching, to avoid perf cost). */
 html.theme-anim, html.theme-anim body,
-html.theme-anim .hero, html.theme-anim .golden-verse, html.theme-anim .reading,
+html.theme-anim .hero, html.theme-anim .golden-verse, html.theme-anim .chapter-heading, html.theme-anim .reading,
 html.theme-anim .topbar, html.theme-anim .btn, html.theme-anim .chip,
 html.theme-anim .cal-cell, html.theme-anim .quiz, html.theme-anim .lib-panel,
 html.theme-anim .coll-item, html.theme-anim .stat-card, html.theme-anim .continue-card,
@@ -1281,6 +1435,8 @@ html:is([data-theme="light"],[data-theme="sepia"],[data-theme="warm"]) .bgm-btn 
 /* Sepia & warm give the reading paper an even warmer tint. */
 html[data-theme="sepia"] .reading { background: linear-gradient(180deg,#f4e7c8,#ecdcb4); }
 html[data-theme="warm"] .reading  { background: linear-gradient(180deg,#f8efd6,#efe1bf); }
+html[data-theme="sepia"] .chapter-heading { background: linear-gradient(180deg,#f7ebcf,#f0dfb8); }
+html[data-theme="warm"] .chapter-heading  { background: linear-gradient(180deg,#faf1d9,#f3e6c4); }
 
 /* ----- Typography controls (apply to reading surfaces) ----- */
 .reading { font-family: var(--reader-font); max-width: var(--reader-measure); margin-left: auto; margin-right: auto; }
@@ -1493,8 +1649,129 @@ body.reading-active .topbar { position: sticky; }
 .journal-ai-panel {
   margin-top: 18px; padding-top: 16px; border-top: 1px dashed var(--paper-edge);
 }
-.journal-ai-body { white-space: pre-wrap; line-height: 1.55; color: var(--ink-1); font-size: 14.5px; }
-.journal-ai-error { color: #a33; }
+.journal-ai-out { margin-top: 14px; }
+.journal-ai-status {
+  margin: 0;
+  color: #6a5a38;
+  font-size: 13.5px;
+  font-style: italic;
+}
+.journal-ai-answer {
+  margin: 0 0 12px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(173, 126, 44, 0.28);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.55);
+}
+.journal-ai-answer .journal-label {
+  margin-bottom: 10px;
+  color: var(--gold-3);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.journal-ai-body {
+  white-space: pre-wrap;
+  line-height: 1.65;
+  color: var(--paper-ink);
+  font-size: 15px;
+  margin: 0;
+}
+.journal-ai-error { color: #a33; font-weight: 600; }
+
+/* ----- Phase 001: AI Lesson Assist (reuse reading / journal / reader) ----- */
+.ai-assist-host { margin-top: 28px; }
+.ai-assist {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.ai-assist-intro .eyebrow {
+  color: var(--gold-1);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.ai-assist-note {
+  margin: 6px 0 0;
+  color: var(--ink-2);
+  font-size: 13.5px;
+  line-height: 1.5;
+  max-width: 62ch;
+}
+.ai-assist-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.ai-assist-card {
+  margin-top: 0;
+}
+.ai-assist-card .ai-card-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 30px);
+  color: #1f1a10;
+  margin: 0 0 12px;
+}
+.ai-card-body .reader-loading,
+.ai-card-body .reader-error {
+  padding: 24px 8px;
+}
+.ai-card-empty {
+  margin: 0;
+  color: #6a5a38;
+  font-style: italic;
+  font-size: 14.5px;
+}
+.ai-crossref-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.ai-crossref-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: start;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(173, 126, 44, 0.25);
+  background: rgba(255, 255, 255, 0.55);
+}
+.ai-crossref-main strong {
+  color: #1f1a10;
+  font-size: 14.5px;
+}
+.ai-crossref-main p {
+  margin: 4px 0 0;
+  color: #4a3f2a;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.ai-dialog-body .journal-field { margin-top: 8px; }
+.ai-dialog-answer {
+  margin-top: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(233, 200, 122, 0.25);
+}
+.ai-dialog-answer .journal-label { color: var(--gold-1); }
+.ai-dialog-answer .journal-ai-body { color: var(--ink-1); }
+.ai-ask-input { min-height: 88px; }
+.ai-search-host { padding-bottom: 8px; }
+.ai-search-host .search-input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 640px) {
+  .ai-assist-toolbar { gap: 6px; }
+  .ai-assist-toolbar .btn { font-size: 13px; padding: 8px 12px; }
+  .ai-crossref-item { grid-template-columns: 1fr; }
+}
 .journal-lib-filters {
   display: grid; grid-template-columns: 1.4fr repeat(2, minmax(120px, .8fr)) auto;
   gap: 8px; margin-bottom: 12px;

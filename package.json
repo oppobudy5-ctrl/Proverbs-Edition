@@ -5,8 +5,8 @@
   "description": "Bible Time Proverbs Edition — Daily Wisdom Journey selama 31 hari melalui Amsal 1–31.",
   "type": "module",
   "scripts": {
-    "dev": "npx --yes serve . -p 8080",
-    "start": "npx --yes serve . -p 8080",
+    "dev": "node scripts/dev-server.mjs",
+    "start": "node scripts/dev-server.mjs",
     "build": "npm run build-knowledge",
     "lint": "node scripts/lint.mjs",
     "icons": "node scripts/gen-icons.mjs",

@@ -1,5 +1,45 @@
 # Changelog
 
+## Phase 001 — AI UI Integration
+
+### Perubahan
+- `js/ui/ai-dialog.js` (baru): dialog AI reusable (pola `reader-overlay` + focus trap, loading/error/answer).
+- `js/ui/ai-lesson-assist.js` (baru): toolbar + kartu Lesson — Ringkas AI, Tanyakan AI, Jelaskan, Wisdom Coach, Cari Hikmat, Referensi Silang.
+- `js/ui/day.js`: mount AI assist setelah teks pasal.
+- `js/ui/ai-reflection-panel.js`: tombol **Review Renungan** memakai `AIService.reflect` (Reflection Engine yang sudah ada), dengan consent jurnal.
+- `src/ai/ai-service.js`: facade tipis `wisdom()` agar intent/prompt wisdom yang sudah ada dapat dipanggil UI (tanpa mengubah engine/prompt).
+- `styles.css` + `sw.js`: gaya assist (reuse reading/journal/reader) dan precache modul UI baru.
+
+### Engine yang dihubungkan
+| UI | Engine / API |
+| --- | --- |
+| Ringkas AI | `AIService.summarize` |
+| Tanyakan AI | `AIService.ask` |
+| Jelaskan | `AIService.explain` |
+| Review Renungan | `AIService.reflect` |
+| Bantu refleksi (AI) | `AIService.reflectJournal` (sudah ada) |
+| Wisdom Coach | `AIService.wisdom` → intent `wisdom` |
+| Referensi Silang | `AIService.buildCanonicalContext` → `crossrefs` |
+| Cari Hikmat | `AIService.semanticSearch` via `mountSemanticSearch` (+ panel Kalender) |
+
+### Halaman
+- Lesson / Day / Home lesson body
+- Journal (panel AI)
+- Semantic Search juga tetap di Kalender
+
+### Belum punya UI khusus (sengaja ditunda)
+- Provider/model settings UI
+- Conversation history UI
+- Review Engine produk (belum ada engine terpisah)
+- Vector/embeddings search
+
+### Alasan
+Audit AI-07A: engine sudah ada; Phase 001 hanya mengekspos ke UI.
+
+### Kompatibilitas
+- Tidak mengubah RAG, KB, CIL engines, atau prompt templates.
+- Provider default tetap mock bila cloud belum dikonfigurasi.
+
 ## PR-010 Production Verification & Release Candidate
 
 ### Perubahan

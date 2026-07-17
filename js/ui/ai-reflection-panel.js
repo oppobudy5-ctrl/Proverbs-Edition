@@ -86,13 +86,14 @@ export function mountAiReflectionPanel(host, { getEntry, onApplyDraft } = {}) {
             tags: entry.tags,
           });
           recordJournalAiAssist();
-          const answer = result?.content || result?.answer || result?.text || String(result || "");
+          const answer = String(result?.content || result?.answer || result?.text || "").trim();
           status.textContent = "";
+          const answerNode = el("div", { class: "journal-ai-answer" },
+            el("p", { class: "journal-label" }, "Ringkasan & refleksi AI"),
+            el("div", { class: "journal-ai-body" }, answer || "AI tidak mengembalikan teks. Coba lagi."),
+          );
           out.replaceChildren(
-            el("div", { class: "journal-ai-answer" },
-              el("p", { class: "journal-label" }, "Ringkasan & refleksi AI"),
-              el("div", { class: "journal-ai-body" }, answer),
-            ),
+            answerNode,
             el("div", { class: "journal-actions" },
               el("button", {
                 type: "button",
@@ -113,6 +114,8 @@ export function mountAiReflectionPanel(host, { getEntry, onApplyDraft } = {}) {
               }, "Cabut izin AI"),
             ),
           );
+          answerNode.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          announce("Ringkasan dan refleksi AI sudah siap");
         } catch (err) {
           status.textContent = "";
           out.replaceChildren(
@@ -122,12 +125,59 @@ export function mountAiReflectionPanel(host, { getEntry, onApplyDraft } = {}) {
       },
     }, "Bantu refleksi (AI)");
 
+    const reviewBtn = el("button", {
+      type: "button",
+      class: "btn",
+      "aria-label": "Review renungan dengan Reflection Engine",
+      onclick: async () => {
+        const entry = getEntry?.() || {};
+        const text = [entry.body, entry.gratitude, entry.actionPlan]
+          .filter(Boolean)
+          .join("\n")
+          .trim();
+        if (!text) {
+          toast("Tulis renungan/jurnal dulu sebelum meminta review");
+          return;
+        }
+        if (!isJournalAiConsentGranted()) {
+          renderConsentGate();
+          return;
+        }
+        status.textContent = "Meninjau renungan…";
+        out.replaceChildren(status);
+        try {
+          const result = await AIService.reflect({
+            day: entry.day,
+            chapter: entry.chapter,
+            book: entry.book,
+            question: `Review renungan berikut dan berikan dorongan pastoral serta pertanyaan lanjutan:\n\n${text.slice(0, 2500)}`,
+          });
+          recordJournalAiAssist();
+          const answer = String(result?.content || result?.answer || result?.text || "").trim();
+          status.textContent = "";
+          const answerNode = el("div", { class: "journal-ai-answer" },
+            el("p", { class: "journal-label" }, "Review Renungan"),
+            el("div", { class: "journal-ai-body" }, answer || "Review belum tersedia."),
+          );
+          out.replaceChildren(answerNode);
+          answerNode.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          announce("Review renungan siap");
+        } catch (err) {
+          status.textContent = "";
+          out.replaceChildren(
+            el("p", { class: "journal-ai-error" }, err?.userMessage || err?.message || "Gagal mereview renungan"),
+          );
+        }
+      },
+    }, "Review Renungan");
+
     host.replaceChildren(
       el("div", { class: "journal-ai-panel" },
         el("h3", { class: "journal-subhead" }, "Asisten refleksi AI"),
         el("p", { class: "journal-note" }, "Izin aktif. AI hanya memakai teks jurnal yang kamu kirim sekarang."),
         el("div", { class: "journal-actions" },
           runBtn,
+          reviewBtn,
           el("button", {
             type: "button",
             class: "btn ghost",
