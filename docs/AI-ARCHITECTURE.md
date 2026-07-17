@@ -16,6 +16,11 @@ Phase 005 adds the [Multi-Book Bible Companion](./ai/MULTI_BOOK_COMPANION.md),
 the 66-book registry, book-aware CIL retrieval, canonical navigation, and
 availability-safe offline responses through `AIService.companion()`.
 
+Phase 006 adds the [Biblical Reasoning Engine](./ai/BIBLICAL_REASONING_ENGINE.md),
+which classifies question intent, reuses one canonical context, connects
+evidence-backed themes, validates provider output, and exposes structured
+explainability through `AIService.ask()` and `AIService.reason()`.
+
 ## Layered architecture
 
 ```text

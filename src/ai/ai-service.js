@@ -5,6 +5,7 @@ import {
   listCanonicalBooks,
   runBibleCompanion,
 } from "./companion/companion-engine.js";
+import { runBiblicalReasoning } from "./reasoning/reasoning-engine.js";
 import {
   AIEvents,
   AI_EVENTS,
@@ -34,9 +35,17 @@ export const AI_SERVICE_STATUS = Object.freeze({
 // UI code must not import providers, prompt templates, retrieval, or stores.
 export const AIService = Object.freeze({
   async ask(question, options = {}) {
-    return runCapability("ask", "ai-controller", async () => {
+    return runCapability("ask", "biblical-reasoning-engine", async () => {
       requireText(question, "question");
-      return execute("qa", { ...options, question });
+      return wrapReasoningOutput(await runBiblicalReasoning(question, options));
+    });
+  },
+
+  /** Explicit Phase 006 entry point; `ask()` uses the same pipeline. */
+  async reason(question, options = {}) {
+    return runCapability("reason", "biblical-reasoning-engine", async () => {
+      requireText(question, "question");
+      return wrapReasoningOutput(await runBiblicalReasoning(question, options));
     });
   },
 
@@ -462,6 +471,24 @@ function _wrapReviewOutput(reviewOutput) {
       canonical_only: reviewOutput.canonical_only,
       themes: reviewOutput.themes,
       confidence: reviewOutput.confidence,
+    },
+  };
+}
+
+function wrapReasoningOutput(output) {
+  return {
+    ...output,
+    content: output.summary || "",
+    citations: output.citations || [],
+    provider: output.provider || "local",
+    confidence: output.confidence,
+    metadata: {
+      intent: output.explainability?.intent || "general",
+      reasoning_path: output.explainability?.reasoning_path || [],
+      context_used: output.explainability?.context_used || [],
+      references_used: output.explainability?.references_used || [],
+      canonical_only: Boolean(output.explainability?.canonical_only),
+      validation_status: output.validation?.status || "unknown",
     },
   };
 }

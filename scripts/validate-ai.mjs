@@ -75,7 +75,7 @@ offFinished();
 assert.equal(response.provider, "mock");
 assert.equal(response.success, true);
 assert.equal(response.status, "success");
-assert.equal(response.source, "ai-controller");
+assert.equal(response.source, "biblical-reasoning-engine");
 assert.equal(response.error, null);
 assert.ok(response.timestamp);
 assert.ok(response.content.length > 30);

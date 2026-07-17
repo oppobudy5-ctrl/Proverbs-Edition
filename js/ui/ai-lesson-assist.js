@@ -12,6 +12,7 @@ import {
   aiLoading,
   aiError,
   aiAnswerBlock,
+  aiReasoningBasis,
   extractAiText,
 } from "./ai-dialog.js";
 
@@ -135,11 +136,14 @@ export function mountAiLessonAssist(host, { plan, content } = {}) {
     });
     dlg.setBody(aiLoading("Menjelaskan pasal\u2026"));
     try {
-      const result = await AIService.explain(
+      const result = await AIService.reason(
         `Jelaskan tema dan pesan utama ${chapterLabel}${content?.title ? ` (“${content.title}”)` : ""} untuk pembaca awam.`,
         baseOpts,
       );
-      dlg.setBody(aiAnswerBlock("Penjelasan", extractAiText(result)));
+      dlg.setBody(
+        aiAnswerBlock("Penjelasan", extractAiText(result)),
+        aiReasoningBasis(result),
+      );
       announce("Penjelasan AI siap");
     } catch (err) {
       dlg.setBody(aiError(err?.userMessage || err?.message || "Gagal menjelaskan pasal"));
@@ -190,7 +194,10 @@ export function mountAiLessonAssist(host, { plan, content } = {}) {
               out.replaceChildren(aiAnswerBlock("Jawaban", full));
             },
           });
-          out.replaceChildren(aiAnswerBlock("Jawaban", extractAiText(result)));
+          out.replaceChildren(
+            aiAnswerBlock("Jawaban", extractAiText(result)),
+            aiReasoningBasis(result),
+          );
           announce("Jawaban AI siap");
         } catch (err) {
           out.replaceChildren(aiError(err?.userMessage || err?.message || "Gagal meminta jawaban AI"));

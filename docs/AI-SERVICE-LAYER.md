@@ -28,7 +28,8 @@ flowchart TD
 | --- | --- | --- |
 | `summary(target)` | intent `summary` | Implemented |
 | `summarize(target)` | alias kompatibilitas `summary` | Implemented |
-| `ask(question)` | intent `qa` | Implemented |
+| `ask(question)` | Biblical Reasoning Engine → intent `qa` | Implemented |
+| `reason(question)` | structured Biblical Reasoning Engine | Implemented |
 | `reflect(target)` | intent `reflection` | Implemented |
 | `reflectJournal(target)` | intent `journal-reflection` + consent | Implemented |
 | `review(target)` | Review Engine (`src/ai/review/`) — structured biblical review | Implemented |
@@ -70,6 +71,11 @@ tetap tersedia melalui facade yang sama.
 Response juga mempertahankan field engine lama di top level, misalnya
 `results`, `analysis`, `crossrefs`, `confidence`, dan `guardrails`. Ini menjaga
 kompatibilitas UI tanpa membuat format baru per feature.
+
+`ask()` dan `reason()` juga mempertahankan output reasoning terstruktur:
+`summary`, `reasoning`, `themes`, `historical_context`, `cross_references`,
+`application`, `prayer`, `validation`, dan `explainability`. Field reasoning
+berisi ringkasan bukti kanonik, bukan prompt atau chain-of-thought.
 
 ## Safe error response
 

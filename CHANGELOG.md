@@ -1,5 +1,27 @@
 # Changelog
 
+## Phase 006 — Biblical Reasoning Engine
+
+### Perubahan
+- `src/ai/reasoning/` (baru): Intent Analyzer, single-pass Canonical Context projection, Theme Reasoning, Canonical Validator, structured formatter, dan Reasoning Engine.
+- `src/ai/ai-controller.js`: menerima `CanonicalContext` yang sudah dibangun agar pipeline reasoning tidak mengulang query CIL.
+- `src/ai/ai-service.js`: menambahkan `reason()`; `ask()` kini memakai pipeline Biblical Reasoning dengan envelope yang tetap kompatibel.
+- `src/ai/prompts/qa.prompt.js`: peran Bible Companion dibuat generik lintas kitab, tanpa mengubah provider gateway.
+- `js/ui/ai-dialog.js` dan `js/ui/ai-lesson-assist.js`: panel **Dasar Jawaban** menampilkan tema, ayat pendukung, konteks, referensi silang, sejarah, validasi, dan confidence tanpa prompt internal.
+- `scripts/test-reasoning-engine.mjs` (baru): menguji 15 intent, context reuse, theme path, canonical validation, explainability, prompt boundary, provider failure, metadata-only book, dan UI.
+- `sw.js`: cache `bibletime-v23-biblical-reasoning` dan precache seluruh modul reasoning untuk offline.
+- `docs/ai/BIBLICAL_REASONING_ENGINE.md`: dokumentasi arsitektur, pipeline, schema, validation, explainability, dan ekspansi.
+
+### Output schema
+`summary`, `reasoning`, `themes`, `theme_path`, `historical_context`,
+`cross_references`, `application`, `prayer`, `citations`, `confidence`,
+`provider`, `timestamp`, `validation`, dan `explainability`.
+
+### Kompatibilitas dan keamanan
+Tidak mengganti AI Gateway, Bible Knowledge Base, RAG, atau provider adapter.
+Reasoning publik adalah ringkasan bukti kanonik, bukan chain-of-thought.
+System prompt, prompt internal, credential, dan API key tidak dikirim ke UI.
+
 ## Phase 005 — Multi-Book Bible Companion
 
 ### Perubahan

@@ -49,6 +49,13 @@ const common = { day: 1, chapter: 1, book: "Amsal", cache: false, persist: false
 const ask = await AIService.ask("Apa dasar hikmat?", common);
 assertEnvelope(ask, { method: "ask" });
 assert.equal(ask.provider, "mock");
+assert.ok(Array.isArray(ask.reasoning), "ask harus memakai Biblical Reasoning Engine");
+assert.ok(ask.validation?.status, "ask harus menyertakan validasi kanonik");
+
+const reason = await AIService.reason("Apa tema utama Amsal 1?", common);
+assertEnvelope(reason, { method: "reason" });
+assert.ok(Array.isArray(reason.reasoning));
+assert.ok(Array.isArray(reason.explainability?.context_used));
 
 const summary = await AIService.summary(common);
 assertEnvelope(summary, { method: "summary" });

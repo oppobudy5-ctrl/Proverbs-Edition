@@ -84,6 +84,63 @@ export function aiAnswerBlock(label, text) {
   );
 }
 
+/**
+ * Compact, user-facing evidence panel. It exposes canonical support only,
+ * never system prompts, provider prompts, or hidden chain-of-thought.
+ */
+export function aiReasoningBasis(result) {
+  if (!result || !Array.isArray(result.reasoning)) return null;
+  const themes = Array.isArray(result.themes) ? result.themes : [];
+  const citations = Array.isArray(result.citations) ? result.citations : [];
+  const crossrefs = Array.isArray(result.cross_references) ? result.cross_references : [];
+  const contextStep = result.reasoning.find((step) => step.stage === "canonical_context");
+
+  return el("details", { class: "reader-note ai-reasoning-basis" },
+    el("summary", {}, "Dasar Jawaban"),
+    themes.length
+      ? el("div", {},
+          el("p", { class: "journal-label" }, "Tema utama"),
+          el("p", {}, themes.slice(0, 6).join(" · ")),
+        )
+      : null,
+    contextStep?.explanation
+      ? el("div", {},
+          el("p", { class: "journal-label" }, "Konteks"),
+          el("p", {}, contextStep.explanation),
+        )
+      : null,
+    citations.length
+      ? el("div", {},
+          el("p", { class: "journal-label" }, "Ayat pendukung"),
+          el("ul", {},
+            ...citations.slice(0, 6).map((citation) =>
+              el("li", {}, citation.display || citation.canonicalId || "Referensi terverifikasi"),
+            ),
+          ),
+        )
+      : null,
+    crossrefs.length
+      ? el("div", {},
+          el("p", { class: "journal-label" }, "Referensi silang"),
+          el("ul", {},
+            ...crossrefs.slice(0, 5).map((ref) =>
+              el("li", {}, `${ref.source} → ${ref.target}${ref.reason ? ` — ${ref.reason}` : ""}`),
+            ),
+          ),
+        )
+      : null,
+    result.historical_context
+      ? el("div", {},
+          el("p", { class: "journal-label" }, "Konteks sejarah"),
+          el("p", {}, result.historical_context),
+        )
+      : null,
+    el("p", { class: "ai-assist-note" },
+      `Validasi: ${result.validation?.status || "tidak tersedia"} · Confidence: ${result.confidence ?? 0}%`,
+    ),
+  );
+}
+
 export function extractAiText(result) {
   return String(result?.content || result?.answer || result?.text || "").trim();
 }

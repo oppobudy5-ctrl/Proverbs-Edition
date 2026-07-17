@@ -85,7 +85,7 @@ export class AIController {
     try {
       await initCIL(payload.cilInit || {});
 
-      const canonical = await this.gateway.buildCanonicalContext({
+      const canonical = payload.canonical || await this.gateway.buildCanonicalContext({
         book: payload.book || "proverbs",
         chapter: payload.chapter,
         verse: payload.verse,
