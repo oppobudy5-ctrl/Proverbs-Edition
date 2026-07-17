@@ -9,6 +9,7 @@ import { COMPANION_VERSIONS, TEXT_API_VERSIONS, SABDA_VER, READER_LAYOUTS } from
 import { getSecondaryVersion, setSecondaryVersion, getReaderLayout, setReaderLayout } from "../store.js";
 import { fetchChapter, chapterFromRefs, sabdaDiglotURL } from "../bible-api.js";
 import { safeURL } from "../utils/security.js";
+import { trapFocus, announce } from "../a11y.js";
 
 function renderParallelVerses(tb, en, nums, layout, verLbl, enOk, chapter, ver2) {
   const list = el("div", { class: "reader-verses layout-" + layout });
@@ -100,6 +101,7 @@ export function openParallelReader(refs) {
       type: "button",
       class: "reader-layout-btn" + (layout === opt.id ? " active" : ""),
       title: opt.label,
+      "aria-pressed": layout === opt.id ? "true" : "false",
       onclick: () => {
         if (layout === opt.id) return;
         layout = opt.id;
@@ -113,15 +115,26 @@ export function openParallelReader(refs) {
   });
 
   function syncLayoutUI() {
-    layoutBtns.forEach(({ id, btn }) => btn.classList.toggle("active", id === layout));
+    layoutBtns.forEach(({ id, btn }) => {
+      const on = id === layout;
+      btn.classList.toggle("active", on);
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+    });
     modal.classList.toggle("reader-modal--wide", layout === "cols");
   }
 
-  const closeBtn = el("button", { class: "reader-close", title: "Tutup", "aria-label": "Tutup", onclick: close }, "\u2715");
+  const titleId = `reader-title-${chapter}`;
+  const closeBtn = el("button", {
+    class: "reader-close",
+    type: "button",
+    title: "Tutup",
+    "aria-label": "Tutup pembaca paralel",
+    onclick: close,
+  }, "\u2715");
 
   const head = el("div", { class: "reader-head" },
     el("div", { class: "reader-titles" },
-      el("h2", {}, `Amsal ${chapter}`),
+      el("h2", { id: titleId }, `Amsal ${chapter}`),
       el("div", { class: "reader-sub" },
         el("span", {}, "TB"),
         el("span", { class: "reader-plus" }, "+"),
@@ -140,18 +153,18 @@ export function openParallelReader(refs) {
     class: "reader-modal" + (layout === "cols" ? " reader-modal--wide" : ""),
     role: "dialog",
     "aria-modal": "true",
+    "aria-labelledby": titleId,
   }, head, body, foot);
   overlay.append(modal);
 
+  let releaseFocus = () => {};
   function close() {
     loadToken++; // batalkan efek load yang tertunda
-    document.removeEventListener("keydown", onKey);
+    releaseFocus();
     overlay.classList.remove("show");
     setTimeout(() => overlay.remove(), 180);
   }
-  function onKey(e) { if (e.key === "Escape") close(); }
   overlay.addEventListener("click", (e) => { if (e.target === overlay) close(); });
-  document.addEventListener("keydown", onKey);
 
   function paintVerses() {
     if (!cached) return;
@@ -167,7 +180,13 @@ export function openParallelReader(refs) {
     foot.firstChild.href = safeURL(sabdaDiglotURL(chapter, ver2, SABDA_VER));
     cached = null;
     body.replaceChildren();
-    body.append(el("div", { class: "reader-loading" }, el("span", { class: "reader-spin" }), "Memuat teks\u2026"));
+    body.setAttribute("aria-busy", "true");
+    body.append(el("div", {
+      class: "reader-loading",
+      role: "status",
+      "aria-live": "polite",
+    }, el("span", { class: "reader-spin", "aria-hidden": "true" }), "Memuat teks\u2026"));
+    announce(`Memuat Amsal ${chapter}`);
     try {
       const enWanted = TEXT_API_VERSIONS.has(ver2);
       const [tb, enRes] = await Promise.all([
@@ -181,21 +200,26 @@ export function openParallelReader(refs) {
       const nums = Object.keys(tb).map(Number).sort((a, b) => a - b);
       cached = { tb, en, nums, enOk };
       body.replaceChildren();
+      body.removeAttribute("aria-busy");
       body.append(renderParallelVerses(tb, en, nums, layout, verLabel(), enOk, chapter, ver2));
       body.scrollTop = 0;
+      announce(`Amsal ${chapter} siap dibaca`);
     } catch {
       if (token !== loadToken) return;
       body.replaceChildren();
+      body.removeAttribute("aria-busy");
       body.append(
-        el("div", { class: "reader-error" },
+        el("div", { class: "reader-error", role: "alert" },
           el("p", {}, "Tidak bisa memuat teks daring. Pastikan ada koneksi internet (fitur ini aktif di versi web/Vercel)."),
           el("a", { class: "btn", href: safeURL(sabdaDiglotURL(chapter, ver2, SABDA_VER)), target: "_blank", rel: "noopener noreferrer" }, "Baca di SABDA \u2197")
         )
       );
+      announce("Gagal memuat teks daring", { polite: false });
     }
   }
 
   document.body.append(overlay);
   requestAnimationFrame(() => overlay.classList.add("show"));
+  releaseFocus = trapFocus(modal, { onEscape: close, initialFocus: closeBtn });
   load();
 }

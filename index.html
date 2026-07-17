@@ -72,13 +72,13 @@
 
 <header class="topbar">
 <button class="brand" data-route="home" aria-label="Beranda">
-<span class="brand-mark">&#10022;</span>
+<span class="brand-mark" aria-hidden="true">&#10022;</span>
 <span class="brand-text">
 <span class="brand-name">Bible Time<em>: Proverbs Edition</em></span>
 <span class="brand-sub">Daily Wisdom Journey</span>
 </span>
 </button>
-<nav class="topnav" id="topnav">
+<nav class="topnav" id="topnav" aria-label="Navigasi atas">
 <button class="nav-btn" data-route="home">Hari ini</button>
 <button class="nav-btn" data-route="calendar">Kalender</button>
 <button class="nav-btn" data-route="library">Koleksi</button>
@@ -90,25 +90,25 @@
 <input type="range" class="bgm-slider" id="bgm-volume" min="0" max="100" step="1" value="40" aria-label="Volume musik latar" title="Volume musik latar" />
 <button class="bgm-mini" id="bgm-max" type="button" aria-label="Volume maksimum" title="Volume maksimum">&#43;</button>
 </div>
-<div class="streak-pill" id="streak-pill" title="Streak harian">
-<span class="streak-flame">&#128293;</span>
+<div class="streak-pill" id="streak-pill" role="status" aria-live="polite" aria-label="Streak harian 0 hari" title="Streak harian">
+<span class="streak-flame" aria-hidden="true">&#128293;</span>
 <span class="streak-count" id="streak-count">0</span>
 </div>
 <button class="settings-btn" id="settings-btn" type="button" aria-label="Pengaturan membaca" title="Pengaturan membaca">
-<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
 </button>
 </header>
 
 <nav class="bottomnav" id="bottomnav" aria-label="Navigasi utama">
-<button class="bn-btn" data-route="home" aria-label="Hari ini"><span class="bn-ico">&#9788;</span><span class="bn-lbl">Hari ini</span></button>
-<button class="bn-btn" data-route="calendar" aria-label="Kalender"><span class="bn-ico">&#128197;</span><span class="bn-lbl">Kalender</span></button>
-<button class="bn-btn" data-route="library" aria-label="Koleksi"><span class="bn-ico">&#9733;</span><span class="bn-lbl">Koleksi</span></button>
-<button class="bn-btn" data-route="about" aria-label="Tentang"><span class="bn-ico">&#8505;</span><span class="bn-lbl">Tentang</span></button>
-<button class="bn-btn" id="bn-settings" type="button" aria-label="Pengaturan"><span class="bn-ico">&#9881;</span><span class="bn-lbl">Atur</span></button>
+<button class="bn-btn" data-route="home" aria-label="Hari ini"><span class="bn-ico" aria-hidden="true">&#9788;</span><span class="bn-lbl">Hari ini</span></button>
+<button class="bn-btn" data-route="calendar" aria-label="Kalender"><span class="bn-ico" aria-hidden="true">&#128197;</span><span class="bn-lbl">Kalender</span></button>
+<button class="bn-btn" data-route="library" aria-label="Koleksi"><span class="bn-ico" aria-hidden="true">&#9733;</span><span class="bn-lbl">Koleksi</span></button>
+<button class="bn-btn" data-route="about" aria-label="Tentang"><span class="bn-ico" aria-hidden="true">&#8505;</span><span class="bn-lbl">Tentang</span></button>
+<button class="bn-btn" id="bn-settings" type="button" aria-label="Pengaturan"><span class="bn-ico" aria-hidden="true">&#9881;</span><span class="bn-lbl">Atur</span></button>
 </nav>
 <audio id="bgm-audio" src="./assets/audio/bgm.mp3" loop preload="none"></audio>
 
-<main id="app" class="app-shell" aria-live="polite"></main>
+<main id="app" class="app-shell" tabindex="-1" aria-live="polite"></main>
 
 <footer class="footer">
 <div class="foot-left">

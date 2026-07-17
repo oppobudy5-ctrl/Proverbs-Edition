@@ -1,5 +1,37 @@
 # Changelog
 
+## PR-007 Accessibility Enhancement
+
+### Perubahan
+- `js/a11y.js`: memperluas helper — `getFocusableElements`, `restoreFocus`, `trapFocus` (Escape + Tab cycle), `announce`, skip link “Lewati ke konten utama”.
+- `js/ui/reader.js`: modal pembaca paralel memakai `role="dialog"`, `aria-labelledby`, focus trap, restore focus, status loading/`aria-busy`, dan pengumuman screen reader.
+- `js/ui/version-dropdown.js`: navigasi panah/Home/End, `aria-selected`, restore fokus ke trigger.
+- `js/ui/library.js`: tablist/tabpanel dengan `aria-controls`, Home/End, `replaceChildren`.
+- `js/ui/settings-panel.js`: nama aksesibel untuk Mode Baca; swatch dekoratif `aria-hidden`.
+- `js/ui/calendar.js` + `js/ui/semantic-search-ui.js` + `js/ui/streak.js` + `js/ui/offline.js`: label/status/live region lebih jelas.
+- `index.html`: landmark nav berlabel, streak `role="status"`, ikon dekoratif `aria-hidden`, `#app` dapat difokuskan.
+- `styles.css`: fokus keyboard tetap terlihat pada slider BGM dan saran pencarian (`:focus-visible` saja — tanpa mengubah tampilan mouse).
+- `scripts/test-a11y.mjs` + `npm run test-a11y`.
+
+### Alasan
+Audit menemukan fokus modal pembaca belum ter-trap, beberapa kontrol ikon/landmark kurang nama aksesibel, dan indikator fokus hilang pada beberapa kontrol. Perbaikan ini menegakkan Perceivable / Operable / Understandable / Robust menuju WCAG 2.2 AA tanpa mengubah desain visual.
+
+### Dampak
+- Keyboard: Tab / Shift+Tab / Enter / Space / Esc / panah berfungsi pada navigasi, modal, dropdown, dan tab koleksi.
+- Screen reader: landmark, judul halaman, status loading/offline/streak, dan nama tombol lebih jelas.
+- UI visual dan business logic tidak diubah.
+
+### Kompatibilitas
+- API publik `trapFocus` / `announce` / `installSkipLink` tetap tersedia; helper baru bersifat tambahan.
+- AI, Journal storage, Database/Supabase, Router History API, dan Service Worker tidak diubah secara fungsional.
+
+### Hasil audit accessibility
+- Landmark: `header`, `nav` (atas + bawah), `main`, `footer` + `lang="id"`.
+- Modal: settings + reader dialog dengan focus trap, Escape, restore focus.
+- Form: jurnal/search/bookmark memakai label atau `aria-label` (placeholder bukan satu-satunya nama).
+- Gambar/ikon dekoratif: `aria-hidden`; kontrol ikon-only: `aria-label`.
+- Skip link + live region toast/status sudah ada dan diverifikasi.
+
 ## PR-006 Security & DOM Hardening
 
 ### Perubahan

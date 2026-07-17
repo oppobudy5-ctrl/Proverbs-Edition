@@ -46,13 +46,14 @@ export function openSettingsPanel() {
     type: "button",
     role: "switch",
     "aria-checked": s.readingMode ? "true" : "false",
+    "aria-label": "Mode Baca",
     onclick: () => {
       const on = toggleReadingMode();
       readingToggle.classList.toggle("is-on", on);
       readingToggle.setAttribute("aria-checked", on ? "true" : "false");
       announce(on ? "Mode baca aktif" : "Mode baca nonaktif");
     },
-  }, el("span", { class: "sp-toggle-track" }, el("span", { class: "sp-toggle-thumb" })));
+  }, el("span", { class: "sp-toggle-track", "aria-hidden": "true" }, el("span", { class: "sp-toggle-thumb" })));
 
   const themeGrid = el("div", { class: "theme-grid", role: "group", "aria-label": "Pilih tema" });
   const themeBtns = [];
@@ -70,7 +71,7 @@ export function openSettingsPanel() {
         announce("Tema " + t.label);
       },
     },
-      el("span", { class: "theme-swatch", style: `background:${t.swatch}` }),
+      el("span", { class: "theme-swatch", style: `background:${t.swatch}`, "aria-hidden": "true" }),
       el("span", { class: "theme-name" }, t.label)
     );
     themeBtns.push(btn);

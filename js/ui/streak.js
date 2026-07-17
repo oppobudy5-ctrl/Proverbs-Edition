@@ -32,7 +32,10 @@ export function refreshStreak() {
   const pill = $("#streak-pill");
   if (pill) {
     const m = streakMilestone(s.streak || 0);
+    const days = s.streak || 0;
     pill.classList.toggle("has-milestone", !!m);
-    pill.title = m ? `Streak ${s.streak} hari \u00b7 ${m.label}` : "Streak harian";
+    const label = m ? `Streak ${days} hari · ${m.label}` : `Streak harian ${days} hari`;
+    pill.title = label;
+    pill.setAttribute("aria-label", label);
   }
 }

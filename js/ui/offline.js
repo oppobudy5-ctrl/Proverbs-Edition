@@ -12,7 +12,8 @@ function ensureBadge() {
   badge.id = "offline-badge";
   badge.className = "offline-badge";
   badge.setAttribute("role", "status");
-  badge.innerHTML = '<span class="offline-dot"></span><span class="offline-text"></span>';
+  badge.setAttribute("aria-live", "polite");
+  badge.innerHTML = '<span class="offline-dot" aria-hidden="true"></span><span class="offline-text"></span>';
   document.body.appendChild(badge);
   return badge;
 }

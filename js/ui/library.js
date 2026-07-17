@@ -389,7 +389,12 @@ export function renderLibrary(params = {}) {
     el("span", { class: "sub" }, "Bookmark, favorit, jurnal, riwayat, dan pencapaianmu")
   );
 
-  const panel = el("div", { class: "lib-panel" });
+  const panel = el("div", {
+    class: "lib-panel",
+    role: "tabpanel",
+    id: "lib-panel",
+    "aria-labelledby": `lib-tab-${activeTab}`,
+  });
   const tabbar = el("div", { class: "lib-tabs", role: "tablist", "aria-label": "Kategori koleksi" });
 
   function activate(id) {
@@ -400,14 +405,19 @@ export function renderLibrary(params = {}) {
       t.setAttribute("aria-selected", on ? "true" : "false");
       t.tabIndex = on ? 0 : -1;
     });
-    panel.innerHTML = "";
+    panel.setAttribute("aria-labelledby", `lib-tab-${id}`);
+    panel.replaceChildren();
     panel.append(TABS.find((t) => t.id === id).render());
   }
 
   TABS.forEach((t) => {
     const btn = el("button", {
       class: "lib-tab" + (t.id === activeTab ? " is-active" : ""),
-      role: "tab", "data-tab": t.id,
+      role: "tab",
+      type: "button",
+      id: `lib-tab-${t.id}`,
+      "data-tab": t.id,
+      "aria-controls": "lib-panel",
       "aria-selected": t.id === activeTab ? "true" : "false",
       tabindex: t.id === activeTab ? "0" : "-1",
       onclick: () => activate(t.id),
@@ -416,6 +426,8 @@ export function renderLibrary(params = {}) {
         const i = ids.indexOf(activeTab);
         if (e.key === "ArrowRight") { e.preventDefault(); activate(ids[(i + 1) % ids.length]); tabbar.querySelector(".lib-tab.is-active").focus(); }
         else if (e.key === "ArrowLeft") { e.preventDefault(); activate(ids[(i - 1 + ids.length) % ids.length]); tabbar.querySelector(".lib-tab.is-active").focus(); }
+        else if (e.key === "Home") { e.preventDefault(); activate(ids[0]); tabbar.querySelector(".lib-tab.is-active").focus(); }
+        else if (e.key === "End") { e.preventDefault(); activate(ids[ids.length - 1]); tabbar.querySelector(".lib-tab.is-active").focus(); }
       },
     }, t.label);
     tabbar.append(btn);

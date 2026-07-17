@@ -52,11 +52,13 @@ export function mountSemanticSearch(host, options = {}) {
     type: "button",
     class: "btn ghost sem-fav",
     "aria-pressed": "false",
+    "aria-label": "Simpan pencarian",
     title: "Simpan pencarian",
     onclick: () => {
       if (!lastQuery) return;
       const { favorited } = AIService.toggleFavoriteSearch(lastQuery);
       favBtn.setAttribute("aria-pressed", favorited ? "true" : "false");
+      favBtn.setAttribute("aria-label", favorited ? "Hapus pencarian dari favorit" : "Simpan pencarian");
       favBtn.textContent = favorited ? "★ Disimpan" : "☆ Simpan";
       announce(favorited ? "Pencarian disimpan" : "Pencarian dihapus dari favorit");
       renderPrefChips();

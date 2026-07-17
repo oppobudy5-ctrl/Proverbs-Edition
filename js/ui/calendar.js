@@ -30,7 +30,16 @@ export function renderCalendar() {
 
     const titleEl = el("span", { class: "t" }, p.title);
     const cell = el(isFuture && !isToday ? "div" : "button",
-      Object.assign({ class: cls.join(" "), "data-day": p.day }, (isFuture && !isToday) ? {} : { "data-route": "day" }),
+      Object.assign(
+        {
+          class: cls.join(" "),
+          "data-day": p.day,
+          "aria-label": `Hari ${p.day}: ${p.book} ${p.chapter} — ${p.title}${isDone ? ", sudah dibaca" : ""}${isToday ? ", hari ini" : ""}${isFuture && !isToday ? ", belum tersedia" : ""}`,
+        },
+        (isFuture && !isToday)
+          ? { "aria-disabled": "true" }
+          : { type: "button", "data-route": "day" },
+      ),
       el("span", { class: "d" }, `${dayName(p.date)} · ${fmtDateShort(p.date)}`),
       el("span", { class: "n" }, `Hari ${p.day}`),
       el("span", { class: "r" }, `${p.book} ${p.chapter}`),
