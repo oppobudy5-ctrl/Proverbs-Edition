@@ -6,6 +6,11 @@ export const $ = (sel, el = document) => el.querySelector(sel);
 export const $$ = (sel, el = document) => Array.from(el.querySelectorAll(sel));
 
 // el("div", { class: "x", onclick: fn, html: "<b>hi</b>" }, child, "text", [more])
+//
+// KEAMANAN: atribut `html` menetapkan innerHTML dan HANYA boleh menerima markup
+// tepercaya statis (ikon SVG internal atau hasil `highlight()` yang sudah
+// meng-escape teks). JANGAN pernah memasukkan data user/jaringan lewat `html`;
+// untuk data dinamis gunakan child text (textContent) yang aman secara default.
 export function el(tag, attrs = {}, ...kids) {
   const n = document.createElement(tag);
   for (const [k, v] of Object.entries(attrs)) {

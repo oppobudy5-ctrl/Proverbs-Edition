@@ -58,7 +58,7 @@ export function renderQuiz(plan, content) {
   function next() {
     if (state.i >= state.total) return finish();
     head.lastChild.textContent = `Soal ${state.i + 1} / ${state.total} \u00b7 ${state.poin} poin`;
-    body.innerHTML = "";
+    body.replaceChildren();
     const q = questions[state.i];
     const cat = QUIZ_CATS[q.cat] || null;
     const poin = catPoin(q);
@@ -99,10 +99,14 @@ export function renderQuiz(plan, content) {
       }
       feedback.className = "feedback show " + (correct ? "ok" : "no");
       const ans = isTF ? optList[q.answer] : q.opts[q.answer];
-      feedback.innerHTML = (correct ? "\u2713 <strong>Benar!</strong> " : "\u2717 <strong>Belum tepat.</strong> ")
-        + `<span class="ans">Jawaban: <strong>${ans}</strong>.</span> `
-        + (q.explain || "");
-      footer.innerHTML = "";
+      feedback.replaceChildren(
+        document.createTextNode(correct ? "\u2713 " : "\u2717 "),
+        el("strong", {}, correct ? "Benar!" : "Belum tepat."),
+        document.createTextNode(" "),
+        el("span", { class: "ans" }, "Jawaban: ", el("strong", {}, String(ans ?? "")), "."),
+        document.createTextNode(" " + (q.explain || "")),
+      );
+      footer.replaceChildren();
       footer.append(
         el("button", { class: "btn primary", onclick: () => { state.i++; next(); } },
           state.i + 1 < state.total ? "Soal berikutnya \u2192" : "Selesai \u2713")
@@ -116,8 +120,8 @@ export function renderQuiz(plan, content) {
     Store.markQuiz(plan.day, state.score, state.total);
     const pct = Math.round((state.score / state.total) * 100);
     const isFinale = plan.day === planCount();
-    body.innerHTML = "";
-    head.innerHTML = "";
+    body.replaceChildren();
+    head.replaceChildren();
     head.appendChild(el("span", { class: "quiz-eyebrow quiz-eyebrow--finale" }, "Kuis"));
 
     const starFor = (ratio) => Math.max(1, Math.min(5, Math.round((ratio || 0) * 5)));

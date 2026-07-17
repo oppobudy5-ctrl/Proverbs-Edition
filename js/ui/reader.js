@@ -8,6 +8,7 @@ import { el } from "../dom.js";
 import { COMPANION_VERSIONS, TEXT_API_VERSIONS, SABDA_VER, READER_LAYOUTS } from "../versions.js";
 import { getSecondaryVersion, setSecondaryVersion, getReaderLayout, setReaderLayout } from "../store.js";
 import { fetchChapter, chapterFromRefs, sabdaDiglotURL } from "../bible-api.js";
+import { safeURL } from "../utils/security.js";
 
 function renderParallelVerses(tb, en, nums, layout, verLbl, enOk, chapter, ver2) {
   const list = el("div", { class: "reader-verses layout-" + layout });
@@ -16,7 +17,7 @@ function renderParallelVerses(tb, en, nums, layout, verLbl, enOk, chapter, ver2)
     list.append(
       el("div", { class: "reader-note" },
         el("span", {}, `Teks ${verLbl} belum tersedia untuk dibaca paralel di app. `),
-        el("a", { href: sabdaDiglotURL(chapter, ver2, SABDA_VER), target: "_blank", rel: "noopener" }, `Buka TB + ${verLbl} di SABDA \u2197`)
+        el("a", { href: safeURL(sabdaDiglotURL(chapter, ver2, SABDA_VER)), target: "_blank", rel: "noopener noreferrer" }, `Buka TB + ${verLbl} di SABDA \u2197`)
       )
     );
     nums.forEach((n) => {
@@ -132,7 +133,7 @@ export function openParallelReader(refs) {
   );
 
   const foot = el("div", { class: "reader-foot" },
-    el("a", { class: "btn ghost", href: sabdaDiglotURL(chapter, ver2, SABDA_VER), target: "_blank", rel: "noopener" }, "Buka diglot di SABDA \u2197")
+    el("a", { class: "btn ghost", href: safeURL(sabdaDiglotURL(chapter, ver2, SABDA_VER)), target: "_blank", rel: "noopener noreferrer" }, "Buka diglot di SABDA \u2197")
   );
 
   const modal = el("div", {
@@ -163,9 +164,9 @@ export function openParallelReader(refs) {
 
   async function load() {
     const token = ++loadToken;
-    foot.firstChild.href = sabdaDiglotURL(chapter, ver2, SABDA_VER);
+    foot.firstChild.href = safeURL(sabdaDiglotURL(chapter, ver2, SABDA_VER));
     cached = null;
-    body.innerHTML = "";
+    body.replaceChildren();
     body.append(el("div", { class: "reader-loading" }, el("span", { class: "reader-spin" }), "Memuat teks\u2026"));
     try {
       const enWanted = TEXT_API_VERSIONS.has(ver2);
@@ -179,16 +180,16 @@ export function openParallelReader(refs) {
       const en = enRes.en, enOk = enWanted ? enRes.ok : false;
       const nums = Object.keys(tb).map(Number).sort((a, b) => a - b);
       cached = { tb, en, nums, enOk };
-      body.innerHTML = "";
+      body.replaceChildren();
       body.append(renderParallelVerses(tb, en, nums, layout, verLabel(), enOk, chapter, ver2));
       body.scrollTop = 0;
     } catch {
       if (token !== loadToken) return;
-      body.innerHTML = "";
+      body.replaceChildren();
       body.append(
         el("div", { class: "reader-error" },
           el("p", {}, "Tidak bisa memuat teks daring. Pastikan ada koneksi internet (fitur ini aktif di versi web/Vercel)."),
-          el("a", { class: "btn", href: sabdaDiglotURL(chapter, ver2, SABDA_VER), target: "_blank", rel: "noopener" }, "Baca di SABDA \u2197")
+          el("a", { class: "btn", href: safeURL(sabdaDiglotURL(chapter, ver2, SABDA_VER)), target: "_blank", rel: "noopener noreferrer" }, "Baca di SABDA \u2197")
         )
       );
     }

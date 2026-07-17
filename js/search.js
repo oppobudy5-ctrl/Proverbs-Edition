@@ -4,6 +4,7 @@
 // dan tantangan. Menyediakan highlight kata kunci + snippet.
 // =============================================================================
 import { CONTENT } from "../data/content.js";
+import { escapeHTML } from "./utils/security.js";
 
 export function normalize(value) {
   return String(value || "")
@@ -91,8 +92,4 @@ export function highlight(text, query) {
   });
   out += escapeHTML(raw.slice(cursor));
   return out;
-}
-
-function escapeHTML(str) {
-  return str.replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
 }

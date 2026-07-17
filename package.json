@@ -20,10 +20,11 @@
     "test-journal": "node scripts/test-journal.mjs",
     "test-storage": "node scripts/test-storage.mjs",
     "test-validation": "node scripts/test-validation.mjs",
+    "test-security": "node scripts/test-security.mjs",
     "test-sw": "node scripts/test-sw.mjs",
     "test-router": "node scripts/test-router.mjs",
     "test-cil": "npm run validate-cil && node scripts/test-cil-engines.mjs && node scripts/test-cil-context.mjs && node scripts/test-cil-guardrails.mjs && node scripts/test-cil-confidence.mjs",
-    "test": "npm run validate-content && npm run validate-knowledge && npm run validate-cil && npm run test-knowledge && npm run test-semantic && npm run test-journal && npm run test-storage && npm run test-validation && npm run test-sw && npm run test-router && npm run test-cil && npm run validate-ai",
+    "test": "npm run validate-content && npm run validate-knowledge && npm run validate-cil && npm run test-knowledge && npm run test-semantic && npm run test-journal && npm run test-storage && npm run test-validation && npm run test-security && npm run test-sw && npm run test-router && npm run test-cil && npm run validate-ai",
     "knowledge": "npm run build-knowledge && npm run validate-knowledge && npm run test-knowledge",
     "validate-semantic": "npm run test-semantic"
   },

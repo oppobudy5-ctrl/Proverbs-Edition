@@ -6,6 +6,7 @@ import { clearAllData } from "../store.js";
 import { refreshStreak } from "./streak.js";
 import { toast } from "../dom.js";
 import { go } from "../router.js";
+import { safeURL } from "../utils/security.js";
 
 const DEV_LINKS = [
   { key: "ig",  label: "Instagram", aria: "Instagram @parestemy", href: "https://instagram.com/parestemy",
@@ -25,7 +26,7 @@ const DEV_LINKS = [
 function devLinksRow() {
   const wrap = el("div", { class: "dev-links" });
   DEV_LINKS.forEach((link) => {
-    const a = el("a", { class: "dev-link " + link.key, href: link.href, target: "_blank", rel: "noopener", "aria-label": link.aria });
+    const a = el("a", { class: "dev-link " + link.key, href: safeURL(link.href), target: "_blank", rel: "noopener noreferrer", "aria-label": link.aria });
     a.innerHTML = link.svg + "<span>" + link.label + "</span>";
     wrap.appendChild(a);
   });
@@ -35,7 +36,7 @@ function devLinksRow() {
 function devIconsRow() {
   const wrap = el("div", { class: "foot-icons" });
   DEV_LINKS.forEach((link) => {
-    const a = el("a", { class: "foot-icon " + link.key, href: link.href, target: "_blank", rel: "noopener", "aria-label": link.aria, title: link.label });
+    const a = el("a", { class: "foot-icon " + link.key, href: safeURL(link.href), target: "_blank", rel: "noopener noreferrer", "aria-label": link.aria, title: link.label });
     a.innerHTML = link.svg;
     wrap.appendChild(a);
   });

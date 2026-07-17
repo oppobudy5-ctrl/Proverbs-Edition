@@ -1,5 +1,36 @@
 # Changelog
 
+## PR-006 Security & DOM Hardening
+
+### Perubahan
+- `js/utils/security.js` (baru): utilitas keamanan bersama — `escapeHTML`, `sanitizeString`, `safeText`, `isSafeProtocol`, `validateURL`, `safeURL`.
+- `js/search.js` + `js/journal/export.js`: menghapus definisi `escapeHTML`/`escapeHtml` duplikat, memakai util bersama.
+- `js/ui/quiz.js`: mengganti seluruh `innerHTML` (feedback + clear) dengan node DOM aman (`el()`, `textContent`, `replaceChildren()`).
+- `js/ui/reader.js`: clear via `replaceChildren()`, href SABDA lewat `safeURL()`, dan `rel="noopener noreferrer"`.
+- `js/ui/about.js`: href sosial lewat `safeURL()` dan `rel="noopener noreferrer"`.
+- `index.html`: tautan eksternal `target="_blank"` memakai `rel="noopener noreferrer"`.
+- `js/dom.js`: dokumentasi keamanan pada atribut `html` (hanya markup tepercaya statis).
+- `scripts/test-security.mjs` + `npm run test-security`.
+
+### Alasan
+Audit menemukan `escapeHTML` terduplikasi, `quiz.js` memakai `innerHTML`, serta beberapa `target="_blank"` tanpa `rel` lengkap. Menyatukan escape util, memindahkan render ke DOM API, dan memvalidasi URL menegakkan prinsip Escape Before Render, Validate Before Use, dan Default Safe.
+
+### Dampak
+- Render tetap identik secara visual (konten kuis/refleksi murni statis), namun kini aman by default.
+- Teks user (jurnal/refleksi/pencarian) tetap dirender sebagai teks, tag HTML tidak dieksekusi.
+- Kode lebih siap CSP (tanpa `eval`/`new Function`/`set*(string)`; tidak menambah global baru).
+
+### Kompatibilitas
+- Public API tidak berubah; hanya deduplikasi internal + hardening.
+- AI, Journal, Database/Supabase, Router, dan Service Worker tidak diubah.
+- Inline script di `index.html` dibatasi pada bootstrap first-party tepercaya (injeksi manifest + registrasi SW) tanpa data dinamis; ekstraksi penuh ditunda agar tidak meregresi SW/boot.
+
+### Risiko yang dikurangi
+- Reflected/stored XSS sederhana lewat teks (jurnal, pencarian, highlight, ekspor markdown).
+- Tabnabbing pada tautan `target="_blank"`.
+- Navigasi ke skema berbahaya (`javascript:`, `data:`, `vbscript:`, `file:`, `blob:`).
+- Divergensi perilaku escape akibat helper terduplikasi.
+
 ## PR-005 Data Validation & Import Safety
 
 ### Perubahan

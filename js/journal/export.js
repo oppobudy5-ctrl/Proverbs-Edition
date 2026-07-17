@@ -9,6 +9,7 @@ import {
   normalizeEntry,
 } from "./schema.js";
 import { DATA_SCHEMA_VERSION, VALIDATION_LIMITS, safeStringify } from "../safe-store.js";
+import { escapeHTML } from "../utils/security.js";
 
 export function buildJournalExportPayload(entries = listEntries()) {
   const safeEntries = normalizeExportEntries(entries);
@@ -120,17 +121,8 @@ function normalizeExportEntries(entries) {
     .map((entry) => normalizeEntry(entry));
 }
 
-function escapeHtml(value) {
-  return String(value ?? "")
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}
-
 export function markdownToSafeHtml(markdown) {
-  const escaped = escapeHtml(markdown);
+  const escaped = escapeHTML(markdown);
   return escaped
     .split("\n")
     .map((line) => {
