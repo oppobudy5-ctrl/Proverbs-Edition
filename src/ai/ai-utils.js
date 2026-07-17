@@ -72,7 +72,10 @@ export const AILogger = {
   debug(...args) { if (this.mode === "development") console.debug("[BibleTime AI]", ...args); },
   info(...args) { if (this.mode === "development") console.info("[BibleTime AI]", ...args); },
   warn(...args) { if (this.mode === "development") console.warn("[BibleTime AI]", ...args); },
-  error(...args) { console.error("[BibleTime AI]", ...args); },
+  error(...args) {
+    if (this.mode === "development") console.error("[BibleTime AI]", ...args);
+    else console.error("[BibleTime AI] request failed");
+  },
 };
 
 function resolveLogMode(configured) {

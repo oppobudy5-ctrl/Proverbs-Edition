@@ -86,7 +86,11 @@ await walk(aiRoot);
 
 // ai-service must not import semantic-search engine directly anymore
 const aiService = await readFile(path.join(aiRoot, "ai-service.js"), "utf8");
-assert.ok(!aiService.includes("semantic-search"), "ai-service must not import semantic-search directly");
+assert.doesNotMatch(
+  aiService,
+  /(?:from\s+|import\s*\()\s*["'][^"']*knowledge\/semantic-search(?:\.js)?["']/,
+  "ai-service must not import semantic-search directly",
+);
 assert.ok(aiService.includes("cil/index"), "ai-service must use CIL");
 
 const controller = await readFile(path.join(aiRoot, "ai-controller.js"), "utf8");

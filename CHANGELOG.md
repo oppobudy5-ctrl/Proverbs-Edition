@@ -1,5 +1,32 @@
 # Changelog
 
+## Phase 002 — AI Service Layer
+
+### Perubahan
+- `src/ai/ai-service.js`: menjadi facade tunggal dengan response envelope seragam dan error aman (tidak melempar ke UI).
+- Method tersedia: `summary`/`summarize`, `ask`, `reflect`, `reflectJournal`, `review`, `search`, `semanticSearch`, `explain`, `wisdom`, `crossReference`, dan `buildCanonicalContext`.
+- `prayer()` mengembalikan status `not_implemented` secara aman karena Prayer Engine belum tersedia.
+- `src/ai/ai-utils.js`: logging production tidak lagi mencetak detail error sensitif.
+- `scripts/test-ai-service.mjs`: contract test seluruh method, kompatibilitas field lama, error handling, dan larangan import engine/provider langsung dari UI.
+- `validate-ai.mjs` dan `test-journal.mjs`: diperbarui untuk kontrak error-as-response.
+- `docs/AI-SERVICE-LAYER.md`: dokumentasi arsitektur, method, response, dan error.
+
+### Standard response
+Semua capability utama mengembalikan:
+`success`, `status`, `provider`, `source`, `citation`, `citations`, `content`,
+`metadata`, `error`, dan `timestamp`.
+
+Field hasil lama (`results`, `analysis`, `crossrefs`, confidence/guardrails)
+tetap dipertahankan untuk kompatibilitas UI tanpa perubahan.
+
+### Engine terhubung
+- Generatif: Summary, Ask/Q&A, Reflection, Review (Reflection Engine), Explain, Wisdom, LLM Search.
+- Lokal/CIL: Semantic Search, Cross Reference, Canonical Context.
+- Belum tersedia: Prayer Engine (`NOT_IMPLEMENTED`, tidak crash).
+
+### Batas perubahan
+Tidak ada perubahan UI, Prompt, RAG, CIL, atau Bible Knowledge Base.
+
 ## Phase 001 — AI UI Integration
 
 ### Perubahan

@@ -1,5 +1,12 @@
 import { aiController } from "./ai-controller.js";
-import { AIEvents, AI_EVENTS, AIError, AI_ERROR_CODES } from "./ai-utils.js";
+import {
+  AIEvents,
+  AI_EVENTS,
+  AIError,
+  AI_ERROR_CODES,
+  AILogger,
+  toAIError,
+} from "./ai-utils.js";
 import { SearchAnalytics } from "./search-analytics.js";
 import {
   getRecentSearches,
@@ -11,56 +18,105 @@ import {
 import { isJournalAiConsentGranted } from "../../js/journal/consent.js";
 import { initCIL, canonicalContextGateway, getCILServices } from "./cil/index.js";
 
+export const AI_SERVICE_STATUS = Object.freeze({
+  SUCCESS: "success",
+  ERROR: "error",
+  NOT_IMPLEMENTED: "not_implemented",
+});
+
 // Public entry point for every future AI-facing UI.
 // UI code must not import providers, prompt templates, retrieval, or stores.
 export const AIService = Object.freeze({
-  ask(question, options = {}) {
-    requireText(question, "question");
-    return execute("qa", { ...options, question });
+  async ask(question, options = {}) {
+    return runCapability("ask", "ai-controller", async () => {
+      requireText(question, "question");
+      return execute("qa", { ...options, question });
+    });
   },
 
-  summarize(target = {}, options = {}) {
-    const payload = normalizeTarget(target, options);
-    return execute("summary", payload);
+  async summary(target = {}, options = {}) {
+    return runCapability("summary", "ai-controller", () => {
+      const payload = normalizeTarget(target, options);
+      return execute("summary", payload);
+    });
   },
 
-  search(query, options = {}) {
-    requireText(query, "query");
-    return execute("search", { ...options, question: query, query });
+  // Backward-compatible alias used by Phase 001 UI.
+  async summarize(target = {}, options = {}) {
+    return AIService.summary(target, options);
+  },
+
+  async search(query, options = {}) {
+    return runCapability("search", "ai-controller", async () => {
+      requireText(query, "query");
+      return execute("search", { ...options, question: query, query });
+    });
   },
 
   /**
    * Semantic Search lokal (offline-first) — routed through CIL gateway.
    */
   async semanticSearch(query, options = {}) {
-    requireText(query, "query");
-    await initCIL(options.init || {});
-    const result = await canonicalContextGateway.semanticSearch(query, options);
-    SearchAnalytics.recordSearch({
-      intent: result.analysis?.intent || null,
-      topic: result.analysis?.topicIds?.[0] || null,
-      queryLength: String(query).trim().length,
-      tookMs: result.tookMs,
-      resultCount: result.results?.length || 0,
+    return runCapability("semanticSearch", "semantic-search", async () => {
+      requireText(query, "query");
+      await initCIL(options.init || {});
+      const result = await canonicalContextGateway.semanticSearch(query, options);
+      SearchAnalytics.recordSearch({
+        intent: result.analysis?.intent || null,
+        topic: result.analysis?.topicIds?.[0] || null,
+        queryLength: String(query).trim().length,
+        tookMs: result.tookMs,
+        resultCount: result.results?.length || 0,
+      });
+      if (options.remember !== false) pushRecentSearch(query);
+      return result;
     });
-    if (options.remember !== false) pushRecentSearch(query);
-    return result;
   },
 
   async suggestSearch(query, options = {}) {
-    await initCIL(options.init || {});
-    return canonicalContextGateway.suggestSearch(query, options);
+    try {
+      await initCIL(options.init || {});
+      return await canonicalContextGateway.suggestSearch(query, options);
+    } catch (error) {
+      logFailure("suggestSearch", error);
+      return [];
+    }
   },
 
   async relatedSearch(target = {}, options = {}) {
-    await initCIL(options.init || {});
-    return canonicalContextGateway.relatedSearch(target, options);
+    return runCapability("relatedSearch", "semantic-search", async () => {
+      await initCIL(options.init || {});
+      return canonicalContextGateway.relatedSearch(target, options);
+    });
   },
 
   /** Build immutable CanonicalContext for the given target. */
   async buildCanonicalContext(input = {}) {
-    await initCIL(input.init || {});
-    return canonicalContextGateway.buildCanonicalContext(input);
+    return runCapability("buildCanonicalContext", "canonical-intelligence-layer", async () => {
+      await initCIL(input.init || {});
+      return canonicalContextGateway.buildCanonicalContext(input);
+    });
+  },
+
+  async crossReference(target = {}, options = {}) {
+    return runCapability("crossReference", "canonical-intelligence-layer", async () => {
+      const input = normalizeTarget(target, options);
+      await initCIL(input.init || {});
+      const context = await canonicalContextGateway.buildCanonicalContext(input);
+      const crossrefs = Array.isArray(context?.crossrefs) ? context.crossrefs : [];
+      return {
+        crossrefs,
+        content: crossrefs.length
+          ? `${crossrefs.length} referensi silang ditemukan.`
+          : "Belum ada referensi silang untuk konteks ini.",
+        citations: context?.citations || [],
+        metadata: {
+          chapter: context?.chapter || input.chapter || null,
+          crossrefCount: crossrefs.length,
+          confidence: context?.confidence ?? null,
+        },
+      };
+    });
   },
 
   /** Read-only CIL service facades for future features. */
@@ -85,11 +141,24 @@ export const AIService = Object.freeze({
   toggleFavoriteSearch,
   isFavoriteSearch,
 
-  reflect(target = {}, options = {}) {
-    const payload = normalizeTarget(target, options);
-    return execute("reflection", {
-      ...payload,
-      question: payload.question || "Bantu saya merenungkan bacaan ini.",
+  async reflect(target = {}, options = {}) {
+    return runCapability("reflect", "ai-controller", () => {
+      const payload = normalizeTarget(target, options);
+      return execute("reflection", {
+        ...payload,
+        question: payload.question || "Bantu saya merenungkan bacaan ini.",
+      });
+    });
+  },
+
+  async review(target = {}, options = {}) {
+    return runCapability("review", "ai-controller", () => {
+      const payload = normalizeTarget(target, options);
+      return execute("reflection", {
+        ...payload,
+        question: payload.question || "Tinjau refleksi ini secara pastoral dan berikan pertanyaan lanjutan.",
+        metadata: { ...(payload.metadata || {}), serviceMethod: "review" },
+      });
     });
   },
 
@@ -97,56 +166,73 @@ export const AIService = Object.freeze({
    * Refleksi berbasis jurnal pengguna. Wajib consent eksplisit.
    * Tidak pernah mengirim isi jurnal tanpa izin tersimpan.
    */
-  reflectJournal(target = {}, options = {}) {
-    if (!isJournalAiConsentGranted()) {
-      throw new AIError(
-        AI_ERROR_CODES.INVALID_REQUEST,
-        "Journal AI consent is required",
-        {
-          userMessage: "Izinkan AI membaca jurnal terlebih dahulu sebelum meminta bantuan refleksi.",
-          retryable: false,
-        },
-      );
-    }
-    const payload = normalizeTarget(target, options);
-    const text = String(payload.text || payload.journalExcerpt || "").trim();
-    if (!text) {
-      throw new AIError(
-        AI_ERROR_CODES.INVALID_REQUEST,
-        "journal text is required",
-        { userMessage: "Tulis jurnal dulu sebelum meminta bantuan AI.", retryable: false },
-      );
-    }
-    return execute("journal-reflection", {
-      ...payload,
-      journalConsent: true,
-      journalExcerpt: text,
-      // Jangan cache/persist ringkasan yang diturunkan dari jurnal privat.
-      cache: false,
-      persist: false,
-      question: payload.question || "Bantu merangkum jurnal ini dan usulkan pertanyaan refleksi lanjutan.",
-      metadata: {
-        ...(payload.metadata || {}),
+  async reflectJournal(target = {}, options = {}) {
+    return runCapability("reflectJournal", "ai-controller", async () => {
+      if (!isJournalAiConsentGranted()) {
+        throw new AIError(
+          AI_ERROR_CODES.INVALID_REQUEST,
+          "Journal AI consent is required",
+          {
+            userMessage: "Izinkan AI membaca jurnal terlebih dahulu sebelum meminta bantuan refleksi.",
+            retryable: false,
+          },
+        );
+      }
+      const payload = normalizeTarget(target, options);
+      const text = String(payload.text || payload.journalExcerpt || "").trim();
+      if (!text) {
+        throw new AIError(
+          AI_ERROR_CODES.INVALID_REQUEST,
+          "journal text is required",
+          { userMessage: "Tulis jurnal dulu sebelum meminta bantuan AI.", retryable: false },
+        );
+      }
+      return execute("journal-reflection", {
+        ...payload,
         journalConsent: true,
-        entryId: payload.entryId || null,
-      },
+        journalExcerpt: text,
+        // Jangan cache/persist ringkasan yang diturunkan dari jurnal privat.
+        cache: false,
+        persist: false,
+        question: payload.question || "Bantu merangkum jurnal ini dan usulkan pertanyaan refleksi lanjutan.",
+        metadata: {
+          ...(payload.metadata || {}),
+          journalConsent: true,
+          entryId: payload.entryId || null,
+        },
+      });
     });
   },
 
-  explain(question, options = {}) {
-    requireText(question, "question");
-    return execute("explain", { ...options, question });
+  async explain(question, options = {}) {
+    return runCapability("explain", "ai-controller", async () => {
+      requireText(question, "question");
+      return execute("explain", { ...options, question });
+    });
   },
 
   /**
    * Wisdom Coach — memakai intent/prompt wisdom yang sudah ada.
    * Facade tipis untuk UI; tidak mengubah engine/prompt.
    */
-  wisdom(target = {}, options = {}) {
-    const payload = normalizeTarget(target, options);
-    return execute("wisdom", {
-      ...payload,
-      question: payload.question || "Bantu saya menerapkan hikmat pasal ini dengan hati-hati dalam keputusan nyata.",
+  async wisdom(target = {}, options = {}) {
+    return runCapability("wisdom", "ai-controller", () => {
+      const payload = normalizeTarget(target, options);
+      return execute("wisdom", {
+        ...payload,
+        question: payload.question || "Bantu saya menerapkan hikmat pasal ini dengan hati-hati dalam keputusan nyata.",
+      });
+    });
+  },
+
+  async prayer() {
+    return createServiceError({
+      method: "prayer",
+      source: "not-implemented",
+      status: AI_SERVICE_STATUS.NOT_IMPLEMENTED,
+      code: "NOT_IMPLEMENTED",
+      message: "Prayer Engine belum tersedia.",
+      retryable: false,
     });
   },
 
@@ -169,6 +255,125 @@ function execute(intent, payload) {
   delete cleanPayload.onFinish;
   delete cleanPayload.onError;
   return aiController.execute(intent, cleanPayload, callbacks);
+}
+
+async function runCapability(method, source, operation) {
+  const startedAt = Date.now();
+  AILogger.debug("service request", { method, source });
+  try {
+    const result = await operation();
+    const response = createServiceSuccess({ method, source, result, startedAt });
+    AILogger.debug("service success", {
+      method,
+      source,
+      durationMs: response.metadata.durationMs,
+    });
+    return response;
+  } catch (error) {
+    logFailure(method, error);
+    return createServiceErrorFromException({ method, source, error, startedAt });
+  }
+}
+
+function createServiceSuccess({ method, source, result, startedAt }) {
+  const raw = result && typeof result === "object" ? result : {};
+  const citations = Object.freeze(
+    Array.isArray(raw.citations)
+      ? raw.citations.map((item) => Object.freeze({ ...item }))
+      : [],
+  );
+  const metadata = Object.freeze({
+    ...(raw.metadata && typeof raw.metadata === "object" ? raw.metadata : {}),
+    method,
+    durationMs: Math.max(0, Date.now() - startedAt),
+  });
+  return Object.freeze({
+    ...raw,
+    success: true,
+    status: AI_SERVICE_STATUS.SUCCESS,
+    provider: raw.provider || (source === "ai-controller" ? "unknown" : "local"),
+    source,
+    citation: citations[0] || null,
+    citations,
+    content: typeof raw.content === "string" ? raw.content : "",
+    metadata,
+    error: null,
+    timestamp: raw.createdAt || new Date().toISOString(),
+  });
+}
+
+function createServiceErrorFromException({ method, source, error, startedAt }) {
+  const aiError = toAIError(error);
+  return createServiceError({
+    method,
+    source,
+    code: mapServiceErrorCode(aiError),
+    message: aiError.userMessage || "Layanan AI tidak tersedia.",
+    retryable: Boolean(aiError.retryable),
+    providerStatus: aiError.status,
+    details: safeErrorDetails(aiError),
+    durationMs: Math.max(0, Date.now() - startedAt),
+  });
+}
+
+function createServiceError({
+  method,
+  source,
+  status = AI_SERVICE_STATUS.ERROR,
+  code,
+  message,
+  retryable = false,
+  providerStatus = null,
+  details = null,
+  durationMs = 0,
+}) {
+  const error = Object.freeze({
+    code: code || "AI_UNAVAILABLE",
+    message: message || "Layanan AI tidak tersedia.",
+    retryable: Boolean(retryable),
+    status: providerStatus,
+    details,
+  });
+  return Object.freeze({
+    success: false,
+    status,
+    provider: null,
+    source,
+    citation: null,
+    citations: Object.freeze([]),
+    // Content tetap berisi pesan aman agar UI lama menampilkan error jelas.
+    content: error.message,
+    metadata: Object.freeze({ method, durationMs }),
+    error,
+    timestamp: new Date().toISOString(),
+  });
+}
+
+function mapServiceErrorCode(error) {
+  if (error?.code === AI_ERROR_CODES.INVALID_REQUEST) return "INVALID_REQUEST";
+  if (error?.code === AI_ERROR_CODES.TIMEOUT) return "PROVIDER_TIMEOUT";
+  if (error?.code === AI_ERROR_CODES.PROVIDER_OFFLINE) return "AI_UNAVAILABLE";
+  if (error?.code === AI_ERROR_CODES.CANCELLED) return "CANCELLED";
+  if (error?.code === AI_ERROR_CODES.RATE_LIMIT) return "RATE_LIMIT";
+  if (error?.code === AI_ERROR_CODES.QUOTA_EXCEEDED) return "QUOTA_EXCEEDED";
+  if (/knowledge|context|canonical/i.test(error?.message || "")) return "KNOWLEDGE_UNAVAILABLE";
+  return "AI_UNAVAILABLE";
+}
+
+function safeErrorDetails(error) {
+  if (AILogger.mode !== "development") return null;
+  return error?.details && typeof error.details === "object"
+    ? Object.freeze({ ...error.details })
+    : null;
+}
+
+function logFailure(method, error) {
+  const aiError = toAIError(error);
+  AILogger.warn("service failure", {
+    method,
+    code: mapServiceErrorCode(aiError),
+    retryable: Boolean(aiError.retryable),
+  });
 }
 
 function normalizeTarget(target, options) {

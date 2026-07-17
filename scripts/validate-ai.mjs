@@ -73,6 +73,11 @@ offStarted();
 offFinished();
 
 assert.equal(response.provider, "mock");
+assert.equal(response.success, true);
+assert.equal(response.status, "success");
+assert.equal(response.source, "ai-controller");
+assert.equal(response.error, null);
+assert.ok(response.timestamp);
 assert.ok(response.content.length > 30);
 assert.ok(response.citations);
 assert.ok(Number.isFinite(response.confidence));
@@ -83,9 +88,10 @@ assert.equal(finished, true);
 assert.ok(streamed.length > 0);
 assert.equal(streamed, response.content);
 
-let invalid = false;
-try { AIService.ask(""); } catch (error) { invalid = error.code === "INVALID_REQUEST"; }
-assert.equal(invalid, true);
+const invalid = await AIService.ask("");
+assert.equal(invalid.success, false);
+assert.equal(invalid.error.code, "INVALID_REQUEST");
+assert.ok(invalid.content);
 
 const viaCil = await AIService.buildCanonicalContext({ chapter: 1 });
 assert.equal(viaCil.degraded, false);

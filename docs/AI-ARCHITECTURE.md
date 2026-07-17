@@ -4,6 +4,10 @@ Phase AI-01 provides an offline-first, provider-agnostic AI layer. **CI-01** add
 [Canonical Intelligence Layer](./CIL-ARCHITECTURE.md) as the only runtime gateway to biblical knowledge.
 It does not expose a complete chatbot. Future UI features must import only `src/ai/ai-service.js`.
 
+Phase 002 standardizes that facade as the unified, safe service contract. See
+[AI Service Layer](./AI-SERVICE-LAYER.md) for available methods, response
+envelope, error handling, logging, and UI-boundary rules.
+
 ## Layered architecture
 
 ```text

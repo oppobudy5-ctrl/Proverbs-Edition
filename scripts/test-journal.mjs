@@ -136,16 +136,12 @@ const leaked = contextBuilder.build({
 assert.equal(leaked.journalExcerpt, "", "ContextBuilder wajib cek consent tersimpan");
 assert.equal(leaked.metadata.journalConsent, false);
 
-// AIService.reflectJournal harus menolak tanpa consent
+// AIService.reflectJournal harus mengembalikan error aman tanpa consent.
 const { AIService } = await import("../src/ai/ai-service.js");
-let blocked = false;
-try {
-  await AIService.reflectJournal({ text: "Refleksi rahasia", day: 1 });
-} catch (err) {
-  blocked = true;
-  assert.equal(err.code, "INVALID_REQUEST");
-}
-assert.ok(blocked, "reflectJournal harus ditolak tanpa consent");
+const blocked = await AIService.reflectJournal({ text: "Refleksi rahasia", day: 1 });
+assert.equal(blocked.success, false, "reflectJournal harus ditolak tanpa consent");
+assert.equal(blocked.error.code, "INVALID_REQUEST");
+assert.equal(blocked.metadata.method, "reflectJournal");
 
 grantJournalAiConsent();
 const allowed = contextBuilder.build({
@@ -161,6 +157,7 @@ const aiResult = await AIService.reflectJournal({
   chapter: 1,
   book: "Amsal",
 });
+assert.equal(aiResult.success, true);
 assert.ok(aiResult?.content || aiResult?.answer, "dengan consent harus ada jawaban");
 
 // Prompt metadata tidak boleh membawa isi jurnal mentah ke provider metadata
