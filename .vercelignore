@@ -1,0 +1,8 @@
+# Hanya file dev/tooling — tidak ikut di-deploy (situs statis).
+node_modules
+scripts
+package.json
+package-lock.json
+README.md
+start.bat
+desktop.ini

@@ -1,0 +1,272 @@
+{
+  "version": "1.0.0",
+  "language": "id",
+  "source": "Topic ontology Bible Time (kurasi editorial).",
+  "license": "editorial-cc-by-nc",
+  "topics": [
+    {
+      "id": "wisdom",
+      "name": "Hikmat",
+      "description": "Kecakapan menjalani hidup di hadapan Allah dengan benar; bukan sekadar kepandaian, melainkan kemampuan memilih jalan yang selaras dengan kehendak dan tatanan Allah.",
+      "keywords": ["hikmat", "kebijaksanaan", "kecakapan hidup", "pengertian", "akal budi"],
+      "aliases": ["hikmat", "kebijaksanaan", "mencari hikmat", "panggilan hikmat", "kebijaksanaan", "chokmah"],
+      "parentTopic": null,
+      "childTopics": ["fear_of_god", "decision_making", "discipline"],
+      "relatedBooks": ["proverbs", "job", "ecclesiastes", "james"],
+      "relatedVerses": ["Amsal 1:7", "Amsal 2:6", "Amsal 9:10", "Yakobus 1:5"]
+    },
+    {
+      "id": "fear_of_god",
+      "name": "Takut akan TUHAN",
+      "description": "Sikap hormat, tunduk, percaya, dan enggan mendukakan Allah; disebut permulaan dan prinsip pengarah pengetahuan sejati.",
+      "keywords": ["takut akan Tuhan", "hormat", "penyembahan", "permulaan pengetahuan"],
+      "aliases": ["takut akan tuhan", "takut akan TUHAN", "takut akan manusia", "hormat kepada Tuhan"],
+      "parentTopic": "wisdom",
+      "childTopics": [],
+      "relatedBooks": ["proverbs", "psalms", "ecclesiastes"],
+      "relatedVerses": ["Amsal 1:7", "Amsal 9:10", "Amsal 31:30"]
+    },
+    {
+      "id": "speech",
+      "name": "Perkataan",
+      "description": "Kuasa lidah untuk membangun atau menghancurkan; hikmat menata perkataan agar membawa kebenaran, kehidupan, dan damai.",
+      "keywords": ["perkataan", "lidah", "mulut", "jawaban lemah lembut", "dusta", "kejujuran"],
+      "aliases": ["perkataan", "perkataan dan relasi", "lidah", "jawaban lemah lembut"],
+      "parentTopic": null,
+      "childTopics": [],
+      "relatedBooks": ["proverbs", "james", "psalms"],
+      "relatedVerses": ["Amsal 15:1", "Amsal 18:21", "Yakobus 3:5"]
+    },
+    {
+      "id": "leadership",
+      "name": "Kepemimpinan",
+      "description": "Memimpin dengan keadilan, kerendahan hati, dan takut akan Allah, baik di rumah, komunitas, maupun pemerintahan.",
+      "keywords": ["kepemimpinan", "raja", "pemerintahan", "keadilan pemimpin", "otoritas"],
+      "aliases": ["kepemimpinan", "kedaulatan TUHAN", "penyerahan", "raja"],
+      "parentTopic": null,
+      "childTopics": [],
+      "relatedBooks": ["proverbs", "1kings"],
+      "relatedVerses": ["Amsal 16:12", "Amsal 29:2", "Amsal 8:15"]
+    },
+    {
+      "id": "integrity",
+      "name": "Integritas",
+      "description": "Keselarasan antara hati, perkataan, dan perbuatan; hidup jujur baik di depan umum maupun tersembunyi.",
+      "keywords": ["integritas", "kejujuran", "ketulusan", "kelurusan hati"],
+      "aliases": ["integritas", "kejujuran", "orang benar", "keberanian moral"],
+      "parentTopic": "character",
+      "childTopics": [],
+      "relatedBooks": ["proverbs", "psalms"],
+      "relatedVerses": ["Amsal 10:9", "Amsal 11:3", "Amsal 20:7"]
+    },
+    {
+      "id": "humility",
+      "name": "Kerendahan Hati",
+      "description": "Sikap yang mengenal keterbatasan diri, terbuka pada didikan, dan menempatkan Allah serta sesama dengan tepat; lawan dari kesombongan.",
+      "keywords": ["kerendahan hati", "rendah hati", "kesombongan", "teguran"],
+      "aliases": ["kerendahan hati", "rendah hati", "kemuliaan dalam kerendahan hati"],
+      "parentTopic": "character",
+      "childTopics": [],
+      "relatedBooks": ["proverbs", "james", "philippians"],
+      "relatedVerses": ["Amsal 3:34", "Amsal 11:2", "Amsal 22:4"]
+    },
+    {
+      "id": "marriage",
+      "name": "Pernikahan",
+      "description": "Kesetiaan perjanjian dalam pernikahan, keintiman yang eksklusif, dan penghormatan timbal balik antara pasangan.",
+      "keywords": ["pernikahan", "kesetiaan", "kasih perjanjian", "istri", "suami"],
+      "aliases": ["pernikahan", "kasih perjanjian", "kesetiaan"],
+      "parentTopic": null,
+      "childTopics": [],
+      "relatedBooks": ["proverbs", "songofsongs", "genesis"],
+      "relatedVerses": ["Amsal 5:18", "Amsal 18:22", "Amsal 31:10"]
+    },
+    {
+      "id": "family",
+      "name": "Keluarga",
+      "description": "Pengajaran antargenerasi, mendidik anak dalam jalan hikmat, dan tanggung jawab dalam rumah tangga.",
+      "keywords": ["keluarga", "anak", "orang tua", "didikan anak", "warisan iman"],
+      "aliases": ["keluarga", "pendidikan iman", "membangun kehidupan", "mendidik anak"],
+      "parentTopic": null,
+      "childTopics": [],
+      "relatedBooks": ["proverbs", "deuteronomy", "ephesians"],
+      "relatedVerses": ["Amsal 22:6", "Amsal 1:8", "Amsal 13:24"]
+    },
+    {
+      "id": "money",
+      "name": "Uang & Harta",
+      "description": "Sikap bijak terhadap kekayaan dan kemiskinan: kemurahan hati, kejujuran ekonomi, dan menolak keserakahan.",
+      "keywords": ["uang", "harta", "kekayaan", "kemiskinan", "kemurahan hati", "utang"],
+      "aliases": ["uang", "harta", "kekayaan", "kemurahan hati"],
+      "parentTopic": null,
+      "childTopics": [],
+      "relatedBooks": ["proverbs", "ecclesiastes", "1timothy"],
+      "relatedVerses": ["Amsal 3:9", "Amsal 11:24", "Amsal 30:8"]
+    },
+    {
+      "id": "work",
+      "name": "Kerja & Kerajinan",
+      "description": "Nilai kerja yang setia dan rajin sebagai respons tanggung jawab, serta peringatan terhadap kemalasan.",
+      "keywords": ["kerja", "kerajinan", "ketekunan", "kemalasan", "semut", "tanggung jawab"],
+      "aliases": ["kerajinan", "kerja", "ketekunan", "tanggung jawab", "kewaspadaan"],
+      "parentTopic": null,
+      "childTopics": [],
+      "relatedBooks": ["proverbs", "2thessalonians"],
+      "relatedVerses": ["Amsal 6:6", "Amsal 12:11", "Amsal 14:23"]
+    },
+    {
+      "id": "justice",
+      "name": "Keadilan",
+      "description": "Membela yang benar, memperlakukan sesama dengan adil, dan menegakkan kebenaran di hadapan Allah.",
+      "keywords": ["keadilan", "kebenaran", "hak", "membela yang lemah"],
+      "aliases": ["keadilan", "kebenaran"],
+      "parentTopic": null,
+      "childTopics": [],
+      "relatedBooks": ["proverbs", "amos", "micah"],
+      "relatedVerses": ["Amsal 21:3", "Amsal 31:8", "Amsal 29:7"]
+    },
+    {
+      "id": "forgiveness",
+      "name": "Pengampunan",
+      "description": "Menutupi pelanggaran dengan kasih, melepaskan dendam, dan memulihkan relasi.",
+      "keywords": ["pengampunan", "menutupi pelanggaran", "dendam", "pemulihan"],
+      "aliases": ["pengampunan", "menutupi pelanggaran"],
+      "parentTopic": null,
+      "childTopics": [],
+      "relatedBooks": ["proverbs", "matthew", "colossians"],
+      "relatedVerses": ["Amsal 10:12", "Amsal 17:9", "Amsal 19:11"]
+    },
+    {
+      "id": "prayer",
+      "name": "Doa",
+      "description": "Membawa seluruh hidup kepada Allah dalam penyerahan, permohonan, dan kejujuran hati.",
+      "keywords": ["doa", "permohonan", "penyerahan", "menyerahkan rencana"],
+      "aliases": ["doa", "penyerahan", "menyerahkan rencana kepada Tuhan"],
+      "parentTopic": null,
+      "childTopics": [],
+      "relatedBooks": ["proverbs", "psalms", "philippians"],
+      "relatedVerses": ["Amsal 15:8", "Amsal 15:29", "Amsal 16:3"]
+    },
+    {
+      "id": "faith",
+      "name": "Iman & Percaya",
+      "description": "Kepercayaan penuh kepada Allah yang dinyatakan melalui ketaatan, bukan bersandar pada pengertian sendiri.",
+      "keywords": ["iman", "percaya kepada Tuhan", "segenap hati", "bersandar"],
+      "aliases": ["percaya kepada Tuhan", "segenap hati", "percaya kepada TUHAN", "iman"],
+      "parentTopic": null,
+      "childTopics": [],
+      "relatedBooks": ["proverbs", "hebrews", "romans"],
+      "relatedVerses": ["Amsal 3:5", "Amsal 16:20", "Amsal 29:25"]
+    },
+    {
+      "id": "hope",
+      "name": "Pengharapan",
+      "description": "Menantikan kebaikan Allah dan masa depan yang dijanjikan-Nya di tengah kesulitan.",
+      "keywords": ["pengharapan", "harapan", "menanti", "masa depan"],
+      "aliases": ["pengharapan", "harapan"],
+      "parentTopic": null,
+      "childTopics": [],
+      "relatedBooks": ["proverbs", "romans", "psalms"],
+      "relatedVerses": ["Amsal 13:12", "Amsal 23:18", "Amsal 24:14"]
+    },
+    {
+      "id": "love",
+      "name": "Kasih",
+      "description": "Kasih yang setia, murah hati, dan menutupi pelanggaran; dasar relasi yang sehat.",
+      "keywords": ["kasih", "kasih setia", "kemurahan", "belas kasihan"],
+      "aliases": ["kasih", "kasih setia", "kemurahan hati"],
+      "parentTopic": null,
+      "childTopics": [],
+      "relatedBooks": ["proverbs", "1corinthians", "1john"],
+      "relatedVerses": ["Amsal 10:12", "Amsal 17:17", "Amsal 3:3"]
+    },
+    {
+      "id": "temptation",
+      "name": "Godaan",
+      "description": "Rayuan menuju dosa, terutama seksual dan finansial; hikmat menolong mengenali pola dan menjauhi pintunya.",
+      "keywords": ["godaan", "rayuan", "jerat", "bujukan", "kemurnian"],
+      "aliases": ["godaan", "bujukan", "kewaspadaan", "penguasaan diri", "menjaga hati"],
+      "parentTopic": null,
+      "childTopics": [],
+      "relatedBooks": ["proverbs", "james", "1corinthians"],
+      "relatedVerses": ["Amsal 5:8", "Amsal 7:25", "Amsal 4:23"]
+    },
+    {
+      "id": "decision_making",
+      "name": "Pengambilan Keputusan",
+      "description": "Menimbang pilihan dengan pertimbangan moral, nasihat, dan penyerahan hasil kepada Allah.",
+      "keywords": ["keputusan", "rancangan", "nasihat", "pertimbangan", "perencanaan"],
+      "aliases": ["pengambilan keputusan", "penyerahan", "rancangan"],
+      "parentTopic": "wisdom",
+      "childTopics": [],
+      "relatedBooks": ["proverbs"],
+      "relatedVerses": ["Amsal 16:9", "Amsal 15:22", "Amsal 19:21"]
+    },
+    {
+      "id": "friendship",
+      "name": "Persahabatan",
+      "description": "Relasi yang setia dan menajamkan; teman yang berani menegur dengan kasih dan hadir di masa sukar.",
+      "keywords": ["persahabatan", "teman", "sahabat", "menajamkan", "setia"],
+      "aliases": ["persahabatan", "sahabat", "teman"],
+      "parentTopic": null,
+      "childTopics": [],
+      "relatedBooks": ["proverbs", "1samuel"],
+      "relatedVerses": ["Amsal 27:17", "Amsal 17:17", "Amsal 18:24"]
+    },
+    {
+      "id": "character",
+      "name": "Karakter",
+      "description": "Watak batin yang dibentuk oleh pilihan berulang; akar dari integritas, kerendahan hati, dan disiplin.",
+      "keywords": ["karakter", "watak", "pembentukan", "hati"],
+      "aliases": ["karakter", "watak"],
+      "parentTopic": null,
+      "childTopics": ["integrity", "humility", "discipline"],
+      "relatedBooks": ["proverbs", "romans"],
+      "relatedVerses": ["Amsal 4:23", "Amsal 20:11", "Amsal 27:19"]
+    },
+    {
+      "id": "discipline",
+      "name": "Didikan & Disiplin",
+      "description": "Koreksi yang membentuk watak menuju kedewasaan; diterima sebagai kasih, bukan penolakan.",
+      "keywords": ["didikan", "disiplin", "teguran", "koreksi", "ganjaran"],
+      "aliases": ["didikan", "disiplin", "ketekunan dalam kebaikan"],
+      "parentTopic": "character",
+      "childTopics": [],
+      "relatedBooks": ["proverbs", "hebrews"],
+      "relatedVerses": ["Amsal 3:11", "Amsal 13:24", "Amsal 12:1"]
+    },
+    {
+      "id": "suffering",
+      "name": "Penderitaan",
+      "description": "Menghadapi kesulitan dengan iman, mengenali bahwa tidak semua penderitaan adalah hukuman langsung.",
+      "keywords": ["penderitaan", "kesulitan", "ujian", "ketabahan"],
+      "aliases": ["penderitaan", "kesulitan"],
+      "parentTopic": null,
+      "childTopics": [],
+      "relatedBooks": ["proverbs", "job", "romans"],
+      "relatedVerses": ["Amsal 24:10", "Amsal 17:3", "Amsal 3:11"]
+    },
+    {
+      "id": "joy",
+      "name": "Sukacita",
+      "description": "Kegembiraan yang lahir dari hati yang benar dan relasi dengan Allah, melampaui keadaan lahiriah.",
+      "keywords": ["sukacita", "hati gembira", "kegembiraan"],
+      "aliases": ["sukacita", "hati yang gembira"],
+      "parentTopic": null,
+      "childTopics": [],
+      "relatedBooks": ["proverbs", "philippians"],
+      "relatedVerses": ["Amsal 17:22", "Amsal 15:13", "Amsal 15:15"]
+    },
+    {
+      "id": "peace",
+      "name": "Damai",
+      "description": "Ketenteraman relasional dan batin yang lahir dari hidup benar dan menjadi pembawa damai.",
+      "keywords": ["damai", "ketenteraman", "damai sejahtera", "pembawa damai"],
+      "aliases": ["damai", "ketenteraman", "damai sejahtera"],
+      "parentTopic": null,
+      "childTopics": [],
+      "relatedBooks": ["proverbs", "romans", "matthew"],
+      "relatedVerses": ["Amsal 17:1", "Amsal 16:7", "Amsal 12:20"]
+    }
+  ]
+}

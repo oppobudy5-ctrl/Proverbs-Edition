@@ -1,0 +1,160 @@
+{
+  "byId": {
+    "timeline:solomon-wisdom-era": {
+      "id": "timeline:solomon-wisdom-era",
+      "name": "Era hikmat Salomo",
+      "epoch": "early-monarchy",
+      "approxDate": "c. 10th century BCE (tradisional)",
+      "summary": "Tradisi menghubungkan inti koleksi Amsal dengan Salomo sebagai raja bijak.",
+      "references": [
+        "ref:proverbs.1.1",
+        "ref:proverbs.10.1"
+      ],
+      "relatedCharacters": [
+        "character:solomon"
+      ],
+      "confidence": 0.7
+    },
+    "timeline:hezekiah-collection": {
+      "id": "timeline:hezekiah-collection",
+      "name": "Koleksi pegawai Hizkia",
+      "epoch": "late-monarchy",
+      "approxDate": "c. late 8th–early 7th century BCE",
+      "summary": "Pegawai Hizkia menyalin dan menyusun pepatah Salomo tambahan (Amsal 25–29).",
+      "references": [
+        "ref:proverbs.25.1"
+      ],
+      "relatedCharacters": [
+        "character:hezekiah-men",
+        "character:solomon"
+      ],
+      "confidence": 0.85
+    },
+    "timeline:agur-oracle": {
+      "id": "timeline:agur-oracle",
+      "name": "Perkataan Agur",
+      "epoch": "wisdom-appendix",
+      "approxDate": "unknown; appended in final form",
+      "summary": "Unit Amsal 30 menampilkan kerendahan hati, teka-teki numerik, dan doa kecukupan.",
+      "references": [
+        "ref:proverbs.30"
+      ],
+      "relatedCharacters": [
+        "character:agur"
+      ],
+      "confidence": 0.8
+    },
+    "timeline:lemuel-oracle": {
+      "id": "timeline:lemuel-oracle",
+      "name": "Perkataan Lemuel",
+      "epoch": "wisdom-appendix",
+      "approxDate": "unknown; appended in final form",
+      "summary": "Amsal 31:1-9 adalah nasihat ibu raja tentang kepemimpinan adil.",
+      "references": [
+        "ref:proverbs.31.1-9"
+      ],
+      "relatedCharacters": [
+        "character:lemuel",
+        "character:lemuel-mother"
+      ],
+      "confidence": 0.8
+    },
+    "timeline:noble-wife-poem": {
+      "id": "timeline:noble-wife-poem",
+      "name": "Puisi istri yang cakap",
+      "epoch": "wisdom-appendix",
+      "approxDate": "unknown; final form of Proverbs",
+      "summary": "Amsal 31:10-31 menutup kitab dengan akrostik tentang karakter yang takut akan Tuhan.",
+      "references": [
+        "ref:proverbs.31.10-31"
+      ],
+      "relatedCharacters": [
+        "character:noble-wife"
+      ],
+      "confidence": 0.85
+    },
+    "timeline:wisdom-personification": {
+      "id": "timeline:wisdom-personification",
+      "name": "Personifikasi Hikmat dan Kebodohan",
+      "epoch": "instructional-prologues",
+      "approxDate": "formative wisdom instruction stage",
+      "summary": "Amsal 1–9 membentuk kerangka instruksi dengan Hikmat dan Kebodohan sebagai undangan bersaing.",
+      "references": [
+        "ref:proverbs.1.20-33",
+        "ref:proverbs.8",
+        "ref:proverbs.9"
+      ],
+      "relatedCharacters": [
+        "character:woman-wisdom",
+        "character:woman-folly"
+      ],
+      "confidence": 0.9
+    },
+    "timeline:nt-reception": {
+      "id": "timeline:nt-reception",
+      "name": "Resepsi Perjanjian Baru",
+      "epoch": "early-church",
+      "approxDate": "1st century CE",
+      "summary": "Penulis PB mengutip dan menggemakan Amsal dalam etika, didikan, dan kristologi hikmat.",
+      "references": [
+        "ref:hebrews.12.5-6",
+        "ref:romans.12.20",
+        "ref:james.1.5",
+        "ref:1corinthians.1.24"
+      ],
+      "relatedCharacters": [],
+      "confidence": 0.9
+    }
+  },
+  "byTopic": {},
+  "byRef": {
+    "ref:proverbs.1.1": [
+      "timeline:solomon-wisdom-era"
+    ],
+    "ref:proverbs.10.1": [
+      "timeline:solomon-wisdom-era"
+    ],
+    "ref:proverbs.25.1": [
+      "timeline:hezekiah-collection"
+    ],
+    "ref:proverbs.30": [
+      "timeline:agur-oracle"
+    ],
+    "ref:proverbs.31.1-9": [
+      "timeline:lemuel-oracle"
+    ],
+    "ref:proverbs.31.10-31": [
+      "timeline:noble-wife-poem"
+    ],
+    "ref:proverbs.1.20-33": [
+      "timeline:wisdom-personification"
+    ],
+    "ref:proverbs.8": [
+      "timeline:wisdom-personification"
+    ],
+    "ref:proverbs.9": [
+      "timeline:wisdom-personification"
+    ],
+    "ref:hebrews.12.5-6": [
+      "timeline:nt-reception"
+    ],
+    "ref:romans.12.20": [
+      "timeline:nt-reception"
+    ],
+    "ref:james.1.5": [
+      "timeline:nt-reception"
+    ],
+    "ref:1corinthians.1.24": [
+      "timeline:nt-reception"
+    ]
+  },
+  "ids": [
+    "timeline:solomon-wisdom-era",
+    "timeline:hezekiah-collection",
+    "timeline:agur-oracle",
+    "timeline:lemuel-oracle",
+    "timeline:noble-wife-poem",
+    "timeline:wisdom-personification",
+    "timeline:nt-reception"
+  ]
+}

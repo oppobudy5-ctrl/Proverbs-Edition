@@ -1,0 +1,261 @@
+{
+  "byId": {
+    "wisdom-pattern:situational-pair": {
+      "id": "wisdom-pattern:situational-pair",
+      "name": "Pasangan situasional",
+      "summary": "Amsal sering menempatkan dua respons berlawanan dalam situasi mirip untuk melatih discernment.",
+      "proverbsAnchors": [
+        "ref:proverbs.26.4-5",
+        "ref:proverbs.15.1"
+      ],
+      "crossCanon": [
+        "ref:ecclesiastes.3.1-8",
+        "ref:james.1.19"
+      ],
+      "discernmentNote": "Hikmat bukan rumus tunggal; konteks menentukan respons yang tepat.",
+      "topics": [
+        "decision_making",
+        "speech"
+      ],
+      "confidence": 0.92
+    },
+    "wisdom-pattern:fear-foundation": {
+      "id": "wisdom-pattern:fear-foundation",
+      "name": "Fondasi takut akan Tuhan",
+      "summary": "Takut akan Tuhan sebagai titik awal pengetahuan diulang di Amsal dan Mazmur.",
+      "proverbsAnchors": [
+        "ref:proverbs.1.7",
+        "ref:proverbs.9.10"
+      ],
+      "crossCanon": [
+        "ref:psalms.111.10"
+      ],
+      "discernmentNote": "Tanpa horor kepada Tuhan, keterampilan hidup mudah menjadi tipu daya.",
+      "topics": [
+        "fear_of_god",
+        "wisdom"
+      ],
+      "confidence": 0.95
+    },
+    "wisdom-pattern:ask-for-wisdom": {
+      "id": "wisdom-pattern:ask-for-wisdom",
+      "name": "Meminta hikmat",
+      "summary": "Hikmat dicari dan diminta kepada Allah yang memberi dengan murah hati.",
+      "proverbsAnchors": [
+        "ref:proverbs.2.1-6"
+      ],
+      "crossCanon": [
+        "ref:james.1.5"
+      ],
+      "discernmentNote": "Pencarian hikmat bersifat aktif: mendengar, menyimpan, dan memohon.",
+      "topics": [
+        "wisdom",
+        "prayer"
+      ],
+      "confidence": 0.9
+    },
+    "wisdom-pattern:speech-power": {
+      "id": "wisdom-pattern:speech-power",
+      "name": "Kuasa lidah",
+      "summary": "Perkataan membentuk komunitas; PB menggemakan etika lidah Amsal.",
+      "proverbsAnchors": [
+        "ref:proverbs.18.21",
+        "ref:proverbs.15.1"
+      ],
+      "crossCanon": [
+        "ref:james.3.5-10",
+        "ref:ephesians.4.29"
+      ],
+      "discernmentNote": "Kontrol lidah adalah ujian maturitas hikmat.",
+      "topics": [
+        "speech"
+      ],
+      "confidence": 0.93
+    },
+    "wisdom-pattern:jesus-kingdom-priority": {
+      "id": "wisdom-pattern:jesus-kingdom-priority",
+      "name": "Prioritas kerajaan",
+      "summary": "Mengutamakan Tuhan dan keadilan lebih dulu sejajar dengan ajaran Yesus tentang kerajaan.",
+      "proverbsAnchors": [
+        "ref:proverbs.3.9-10",
+        "ref:proverbs.21.3"
+      ],
+      "crossCanon": [
+        "ref:matthew.6.33"
+      ],
+      "discernmentNote": "Kemurahan dan keadilan bukan tambahan, melainkan prioritas.",
+      "topics": [
+        "money",
+        "faith"
+      ],
+      "confidence": 0.85
+    },
+    "wisdom-pattern:enemy-kindness": {
+      "id": "wisdom-pattern:enemy-kindness",
+      "name": "Kebaikan kepada musuh",
+      "summary": "Amsal mengajarkan memberi makan musuh; Paulus mengutipnya untuk etika kasih.",
+      "proverbsAnchors": [
+        "ref:proverbs.25.21-22"
+      ],
+      "crossCanon": [
+        "ref:romans.12.20"
+      ],
+      "discernmentNote": "Kebaikan kepada musuh menolak lingkaran dendam tanpa meniadakan keadilan.",
+      "topics": [
+        "forgiveness",
+        "love"
+      ],
+      "confidence": 0.95
+    },
+    "wisdom-pattern:discipline-love": {
+      "id": "wisdom-pattern:discipline-love",
+      "name": "Didikan sebagai kasih",
+      "summary": "Didikan Tuhan dibaca ulang dalam Ibrani sebagai tanda anak yang dikasihi.",
+      "proverbsAnchors": [
+        "ref:proverbs.3.11-12"
+      ],
+      "crossCanon": [
+        "ref:hebrews.12.5-6"
+      ],
+      "discernmentNote": "Didikan berbeda dari hukuman sewenang-wenang.",
+      "topics": [
+        "discipline",
+        "family"
+      ],
+      "confidence": 0.95
+    },
+    "wisdom-pattern:vanity-check": {
+      "id": "wisdom-pattern:vanity-check",
+      "name": "Cek kesia-siaan",
+      "summary": "Amsal mendorong ketekunan dan takut Tuhan; Pengkhotbah menguji batasan usaha manusia.",
+      "proverbsAnchors": [
+        "ref:proverbs.16.3",
+        "ref:proverbs.23.4-5"
+      ],
+      "crossCanon": [
+        "ref:ecclesiastes.1.2",
+        "ref:ecclesiastes.12.13"
+      ],
+      "discernmentNote": "Usaha bijak tetap di bawah takut akan Tuhan; sukses dunia bukan makna akhir.",
+      "topics": [
+        "work",
+        "money",
+        "fear_of_god"
+      ],
+      "confidence": 0.85
+    },
+    "wisdom-pattern:christ-wisdom": {
+      "id": "wisdom-pattern:christ-wisdom",
+      "name": "Kristus sebagai hikmat Allah",
+      "summary": "Personifikasi hikmat Amsal diresonansikan Paulus dengan Kristus sebagai hikmat Allah.",
+      "proverbsAnchors": [
+        "ref:proverbs.8.22-31"
+      ],
+      "crossCanon": [
+        "ref:1corinthians.1.24",
+        "ref:colossians.1.15-17"
+      ],
+      "discernmentNote": "Catat bahwa pembacaan kristologis adalah salah satu tafsiran yang diakui, bukan satu-satunya.",
+      "topics": [
+        "wisdom"
+      ],
+      "confidence": 0.8
+    }
+  },
+  "byTopic": {
+    "decision_making": [
+      "wisdom-pattern:situational-pair"
+    ],
+    "speech": [
+      "wisdom-pattern:situational-pair",
+      "wisdom-pattern:speech-power"
+    ],
+    "fear_of_god": [
+      "wisdom-pattern:fear-foundation",
+      "wisdom-pattern:vanity-check"
+    ],
+    "wisdom": [
+      "wisdom-pattern:fear-foundation",
+      "wisdom-pattern:ask-for-wisdom",
+      "wisdom-pattern:christ-wisdom"
+    ],
+    "prayer": [
+      "wisdom-pattern:ask-for-wisdom"
+    ],
+    "money": [
+      "wisdom-pattern:jesus-kingdom-priority",
+      "wisdom-pattern:vanity-check"
+    ],
+    "faith": [
+      "wisdom-pattern:jesus-kingdom-priority"
+    ],
+    "forgiveness": [
+      "wisdom-pattern:enemy-kindness"
+    ],
+    "love": [
+      "wisdom-pattern:enemy-kindness"
+    ],
+    "discipline": [
+      "wisdom-pattern:discipline-love"
+    ],
+    "family": [
+      "wisdom-pattern:discipline-love"
+    ],
+    "work": [
+      "wisdom-pattern:vanity-check"
+    ]
+  },
+  "byRef": {
+    "ref:proverbs.26.4-5": [
+      "wisdom-pattern:situational-pair"
+    ],
+    "ref:proverbs.15.1": [
+      "wisdom-pattern:situational-pair",
+      "wisdom-pattern:speech-power"
+    ],
+    "ref:proverbs.1.7": [
+      "wisdom-pattern:fear-foundation"
+    ],
+    "ref:proverbs.9.10": [
+      "wisdom-pattern:fear-foundation"
+    ],
+    "ref:proverbs.2.1-6": [
+      "wisdom-pattern:ask-for-wisdom"
+    ],
+    "ref:proverbs.18.21": [
+      "wisdom-pattern:speech-power"
+    ],
+    "ref:proverbs.3.9-10": [
+      "wisdom-pattern:jesus-kingdom-priority"
+    ],
+    "ref:proverbs.21.3": [
+      "wisdom-pattern:jesus-kingdom-priority"
+    ],
+    "ref:proverbs.25.21-22": [
+      "wisdom-pattern:enemy-kindness"
+    ],
+    "ref:proverbs.3.11-12": [
+      "wisdom-pattern:discipline-love"
+    ],
+    "ref:proverbs.16.3": [
+      "wisdom-pattern:vanity-check"
+    ],
+    "ref:proverbs.23.4-5": [
+      "wisdom-pattern:vanity-check"
+    ],
+    "ref:proverbs.8.22-31": [
+      "wisdom-pattern:christ-wisdom"
+    ]
+  },
+  "ids": [
+    "wisdom-pattern:situational-pair",
+    "wisdom-pattern:fear-foundation",
+    "wisdom-pattern:ask-for-wisdom",
+    "wisdom-pattern:speech-power",
+    "wisdom-pattern:jesus-kingdom-priority",
+    "wisdom-pattern:enemy-kindness",
+    "wisdom-pattern:discipline-love",
+    "wisdom-pattern:vanity-check",
+    "wisdom-pattern:christ-wisdom"
+  ]
+}

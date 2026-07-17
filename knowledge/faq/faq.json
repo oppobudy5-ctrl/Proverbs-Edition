@@ -1,0 +1,78 @@
+{
+  "version": "1.0.0",
+  "language": "id",
+  "source": "FAQ Bible Time (kurasi editorial berbasis teks Amsal).",
+  "license": "editorial-cc-by-nc",
+  "entries": [
+    {
+      "id": "faq-what-is-wisdom",
+      "question": "Apa itu hikmat?",
+      "answer": "Dalam Amsal, hikmat (chokmah) adalah kecakapan menjalani hidup di hadapan Allah dengan benar. Ia bukan sekadar kepandaian atau informasi, melainkan kemampuan memilih jalan yang selaras dengan kehendak Allah dalam situasi nyata. Fondasinya adalah takut akan TUHAN.",
+      "references": ["Amsal 1:2", "Amsal 1:7", "Amsal 9:10"],
+      "relatedTopics": ["wisdom", "fear_of_god"]
+    },
+    {
+      "id": "faq-fear-of-the-lord",
+      "question": "Apa itu takut akan Tuhan?",
+      "answer": "Takut akan TUHAN adalah sikap hormat, kagum, percaya, dan tunduk kepada Allah, disertai keengganan mendukakan-Nya. Ini bukan ketakutan yang melumpuhkan seperti budak, melainkan penghormatan seorang anak yang mengenal kekudusan dan kebaikan Bapanya. Amsal menyebutnya sebagai permulaan pengetahuan.",
+      "references": ["Amsal 1:7", "Amsal 9:10"],
+      "relatedTopics": ["fear_of_god", "wisdom"]
+    },
+    {
+      "id": "faq-why-proverbs-written",
+      "question": "Mengapa kitab Amsal ditulis?",
+      "answer": "Amsal 1:2-6 menyatakan tujuannya: menolong pembaca memperoleh hikmat, didikan, keadilan, dan kecakapan hidup, serta membentuk watak melalui pengajaran. Kitab ini membekali kaum muda dan setiap orang untuk membedakan jalan kehidupan dari jalan kebodohan.",
+      "references": ["Amsal 1:1-6"],
+      "relatedTopics": ["wisdom", "discipline"]
+    },
+    {
+      "id": "faq-how-to-read-wisdom-literature",
+      "question": "Bagaimana membaca sastra hikmat?",
+      "answer": "Amsal berisi prinsip umum, bukan janji mutlak tanpa pengecualian. Sebuah amsal menggambarkan bagaimana hidup umumnya berjalan menurut tatanan Allah, bukan hukum mekanis. Baca setiap amsal dalam konteksnya, bandingkan dengan bagian Alkitab lain (mis. Ayub dan Pengkhotbah), dan terapkan dengan kebijaksanaan pada situasi yang tepat.",
+      "references": ["Amsal 26:4-5"],
+      "relatedTopics": ["wisdom"]
+    },
+    {
+      "id": "faq-are-proverbs-promises",
+      "question": "Apakah setiap amsal adalah janji yang pasti?",
+      "answer": "Tidak. Amsal adalah kebenaran umum yang biasanya berlaku, bukan jaminan tanpa pengecualian. Misalnya, mendidik anak dengan benar sangat menolong, tetapi bukan rumus otomatis. Kitab Ayub memperlihatkan bahwa penderitaan tidak selalu akibat dosa tertentu.",
+      "references": ["Amsal 22:6"],
+      "relatedTopics": ["family", "suffering"]
+    },
+    {
+      "id": "faq-wisdom-vs-knowledge",
+      "question": "Apa beda hikmat, pengetahuan, dan pengertian?",
+      "answer": "Pengetahuan (daat) adalah pengenalan akan fakta dan akan Allah; pengertian (binah) adalah kemampuan membedakan yang benar dari yang salah; hikmat (chokmah) adalah keterampilan menerapkan keduanya dalam hidup nyata. Ketiganya berakar pada takut akan TUHAN.",
+      "references": ["Amsal 2:5-6", "Amsal 9:10"],
+      "relatedTopics": ["wisdom", "decision_making"]
+    },
+    {
+      "id": "faq-who-wrote-proverbs",
+      "question": "Siapa yang menulis kitab Amsal?",
+      "answer": "Salomo adalah penulis tradisional bagian terbesar. Amsal juga memuat koleksi para orang bijak, perkataan Agur (pasal 30), dan perkataan Lemuel (pasal 31). Amsal 25:1 mencatat bahwa para pegawai Hizkia menyalin kembali sebagian amsal Salomo.",
+      "references": ["Amsal 1:1", "Amsal 25:1", "Amsal 30:1", "Amsal 31:1"],
+      "relatedTopics": ["wisdom", "leadership"]
+    },
+    {
+      "id": "faq-personified-wisdom",
+      "question": "Siapa 'Hikmat' yang berseru dalam Amsal 8?",
+      "answer": "Hikmat dipersonifikasikan sebagai perempuan yang berseru di ruang publik. Ini adalah sarana puitis untuk menghadirkan panggilan Allah melalui tatanan moral. Tradisi Kristen melihat gema menuju Kristus sebagai hikmat Allah, namun teksnya tetap harus dihormati sebagai puisi personifikasi.",
+      "references": ["Amsal 8:1-11", "1 Korintus 1:24"],
+      "relatedTopics": ["wisdom"]
+    },
+    {
+      "id": "faq-guard-your-heart",
+      "question": "Apa artinya 'menjaga hati'?",
+      "answer": "Dalam Amsal 4:23, 'hati' (lev) berarti pusat batin yang mencakup pikiran, kehendak, dan keputusan. Menjaga hati berarti mengawasi apa yang kita terima, percayai, dan pelihara, karena dari sanalah terpancar arah seluruh hidup—perkataan, tatapan, dan langkah.",
+      "references": ["Amsal 4:23"],
+      "relatedTopics": ["character", "temptation"]
+    },
+    {
+      "id": "faq-wisdom-and-christ",
+      "question": "Bagaimana Amsal berhubungan dengan Kristus?",
+      "answer": "Perjanjian Baru menyebut Kristus sebagai hikmat Allah (1 Korintus 1:24) dan perantara penciptaan (Kolose 1:16). Hikmat yang dipuji dalam Amsal menemukan penggenapannya dalam Kristus, yang menghadirkan kebenaran, menebus, dan mengundang kita mengikuti jalan-Nya.",
+      "references": ["Amsal 8:22-31", "1 Korintus 1:24", "Kolose 2:3"],
+      "relatedTopics": ["wisdom", "faith"]
+    }
+  ]
+}

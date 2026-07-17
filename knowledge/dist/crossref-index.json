@@ -1,0 +1,422 @@
+{
+  "Amsal 1": [
+    {
+      "target": "Mazmur 111:10",
+      "relationshipType": "parallel",
+      "confidence": 0.95
+    },
+    {
+      "target": "Yakobus 1:5",
+      "relationshipType": "amplification",
+      "confidence": 0.85
+    }
+  ],
+  "Amsal 2": [
+    {
+      "target": "Yakobus 1:5",
+      "relationshipType": "thematic",
+      "confidence": 0.9
+    }
+  ],
+  "Amsal 3": [
+    {
+      "target": "Mazmur 37:3-5",
+      "relationshipType": "parallel",
+      "confidence": 0.9
+    },
+    {
+      "target": "Ibrani 12:5-6",
+      "relationshipType": "quotation",
+      "confidence": 0.98
+    },
+    {
+      "target": "Matius 6:33",
+      "relationshipType": "thematic",
+      "confidence": 0.75
+    }
+  ],
+  "Amsal 4": [
+    {
+      "target": "Matius 6:21",
+      "relationshipType": "thematic",
+      "confidence": 0.8
+    },
+    {
+      "target": "Filipi 4:8",
+      "relationshipType": "amplification",
+      "confidence": 0.8
+    }
+  ],
+  "Amsal 5": [
+    {
+      "target": "1 Korintus 6:18-20",
+      "relationshipType": "thematic",
+      "confidence": 0.85
+    },
+    {
+      "target": "Ibrani 13:4",
+      "relationshipType": "parallel",
+      "confidence": 0.85
+    }
+  ],
+  "Amsal 6": [
+    {
+      "target": "2 Tesalonika 3:10",
+      "relationshipType": "amplification",
+      "confidence": 0.85
+    },
+    {
+      "target": "Roma 12:18",
+      "relationshipType": "thematic",
+      "confidence": 0.7
+    }
+  ],
+  "Amsal 7": [
+    {
+      "target": "Matius 26:41",
+      "relationshipType": "thematic",
+      "confidence": 0.8
+    }
+  ],
+  "Amsal 8": [
+    {
+      "target": "1 Korintus 1:24",
+      "relationshipType": "fulfillment",
+      "confidence": 0.8
+    },
+    {
+      "target": "Kolose 1:15-17",
+      "relationshipType": "fulfillment",
+      "confidence": 0.8
+    }
+  ],
+  "Amsal 9": [
+    {
+      "target": "Mazmur 111:10",
+      "relationshipType": "parallel",
+      "confidence": 0.95
+    }
+  ],
+  "Amsal 10": [
+    {
+      "target": "Yakobus 3:5-10",
+      "relationshipType": "amplification",
+      "confidence": 0.8
+    }
+  ],
+  "Amsal 11": [
+    {
+      "target": "2 Korintus 9:6-7",
+      "relationshipType": "thematic",
+      "confidence": 0.8
+    }
+  ],
+  "Amsal 12": [
+    {
+      "target": "Ibrani 12:11",
+      "relationshipType": "thematic",
+      "confidence": 0.75
+    }
+  ],
+  "Amsal 15": [
+    {
+      "target": "Efesus 4:29",
+      "relationshipType": "amplification",
+      "confidence": 0.85
+    }
+  ],
+  "Amsal 16": [
+    {
+      "target": "Yakobus 4:13-15",
+      "relationshipType": "parallel",
+      "confidence": 0.9
+    }
+  ],
+  "Amsal 17": [
+    {
+      "target": "Amsal 15:17",
+      "relationshipType": "parallel",
+      "confidence": 0.85
+    }
+  ],
+  "Amsal 18": [
+    {
+      "target": "Yakobus 1:19",
+      "relationshipType": "thematic",
+      "confidence": 0.8
+    }
+  ],
+  "Amsal 19": [
+    {
+      "target": "Roma 8:28",
+      "relationshipType": "thematic",
+      "confidence": 0.7
+    }
+  ],
+  "Amsal 22": [
+    {
+      "target": "Efesus 6:4",
+      "relationshipType": "amplification",
+      "confidence": 0.85
+    }
+  ],
+  "Amsal 25": [
+    {
+      "target": "Roma 12:20",
+      "relationshipType": "quotation",
+      "confidence": 0.95
+    }
+  ],
+  "Amsal 27": [
+    {
+      "target": "Ibrani 10:24-25",
+      "relationshipType": "thematic",
+      "confidence": 0.8
+    }
+  ],
+  "Amsal 29": [
+    {
+      "target": "Galatia 1:10",
+      "relationshipType": "thematic",
+      "confidence": 0.8
+    }
+  ],
+  "Amsal 30": [
+    {
+      "target": "Matius 6:11",
+      "relationshipType": "thematic",
+      "confidence": 0.75
+    }
+  ],
+  "Amsal 31": [
+    {
+      "target": "1 Petrus 3:1-6",
+      "relationshipType": "thematic",
+      "confidence": 0.75
+    }
+  ],
+  "Amsal 13": [
+    {
+      "target": "Efesus 6:4",
+      "relationshipType": "thematic",
+      "confidence": 0.8
+    },
+    {
+      "target": "Amsal 22:6",
+      "relationshipType": "parallel",
+      "confidence": 0.85
+    },
+    {
+      "target": "Efesus 6:4",
+      "relationshipType": "thematic",
+      "confidence": 0.8
+    },
+    {
+      "target": "Amsal 22:6",
+      "relationshipType": "parallel",
+      "confidence": 0.85
+    }
+  ],
+  "Amsal 14": [
+    {
+      "target": "Yakobus 1:19-20",
+      "relationshipType": "thematic",
+      "confidence": 0.8
+    },
+    {
+      "target": "Amsal 15:1",
+      "relationshipType": "contrast",
+      "confidence": 0.85
+    },
+    {
+      "target": "Yakobus 1:19-20",
+      "relationshipType": "thematic",
+      "confidence": 0.8
+    },
+    {
+      "target": "Amsal 15:1",
+      "relationshipType": "contrast",
+      "confidence": 0.85
+    }
+  ],
+  "Amsal 20": [
+    {
+      "target": "Efesus 5:15-16",
+      "relationshipType": "thematic",
+      "confidence": 0.8
+    },
+    {
+      "target": "Amsal 16:32",
+      "relationshipType": "parallel",
+      "confidence": 0.85
+    },
+    {
+      "target": "Efesus 5:15-16",
+      "relationshipType": "thematic",
+      "confidence": 0.8
+    },
+    {
+      "target": "Amsal 16:32",
+      "relationshipType": "parallel",
+      "confidence": 0.85
+    }
+  ],
+  "Amsal 21": [
+    {
+      "target": "Matius 23:23",
+      "relationshipType": "thematic",
+      "confidence": 0.75
+    },
+    {
+      "target": "Amsal 15:8",
+      "relationshipType": "contrast",
+      "confidence": 0.8
+    },
+    {
+      "target": "Matius 23:23",
+      "relationshipType": "thematic",
+      "confidence": 0.75
+    },
+    {
+      "target": "Amsal 15:8",
+      "relationshipType": "contrast",
+      "confidence": 0.8
+    }
+  ],
+  "Amsal 23": [
+    {
+      "target": "Efesus 5:18",
+      "relationshipType": "thematic",
+      "confidence": 0.85
+    },
+    {
+      "target": "Amsal 20:1",
+      "relationshipType": "parallel",
+      "confidence": 0.9
+    },
+    {
+      "target": "Efesus 5:18",
+      "relationshipType": "thematic",
+      "confidence": 0.85
+    },
+    {
+      "target": "Amsal 20:1",
+      "relationshipType": "parallel",
+      "confidence": 0.9
+    }
+  ],
+  "Amsal 24": [
+    {
+      "target": "Roma 12:17-21",
+      "relationshipType": "amplification",
+      "confidence": 0.85
+    },
+    {
+      "target": "Amsal 25:21-22",
+      "relationshipType": "parallel",
+      "confidence": 0.9
+    },
+    {
+      "target": "Roma 12:17-21",
+      "relationshipType": "amplification",
+      "confidence": 0.85
+    },
+    {
+      "target": "Amsal 25:21-22",
+      "relationshipType": "parallel",
+      "confidence": 0.9
+    }
+  ],
+  "Amsal 26": [
+    {
+      "target": "Yakobus 3:5-10",
+      "relationshipType": "thematic",
+      "confidence": 0.8
+    },
+    {
+      "target": "Amsal 26:4-5",
+      "relationshipType": "contrast",
+      "confidence": 0.95
+    },
+    {
+      "target": "Yakobus 3:5-10",
+      "relationshipType": "thematic",
+      "confidence": 0.8
+    },
+    {
+      "target": "Amsal 26:4-5",
+      "relationshipType": "contrast",
+      "confidence": 0.95
+    }
+  ],
+  "Amsal 28": [
+    {
+      "target": "Yakobus 5:16",
+      "relationshipType": "thematic",
+      "confidence": 0.75
+    },
+    {
+      "target": "Amsal 28:13",
+      "relationshipType": "amplification",
+      "confidence": 0.9
+    },
+    {
+      "target": "Yakobus 5:16",
+      "relationshipType": "thematic",
+      "confidence": 0.75
+    },
+    {
+      "target": "Amsal 28:13",
+      "relationshipType": "amplification",
+      "confidence": 0.9
+    }
+  ],
+  "Amsal 1:7": [
+    {
+      "target": "Mazmur 111:10",
+      "relationshipType": "parallel",
+      "confidence": 0.95
+    },
+    {
+      "target": "Mazmur 111:10",
+      "relationshipType": "parallel",
+      "confidence": 0.95
+    }
+  ],
+  "Amsal 3:5-6": [
+    {
+      "target": "Mazmur 37:5",
+      "relationshipType": "parallel",
+      "confidence": 0.9
+    },
+    {
+      "target": "Mazmur 37:5",
+      "relationshipType": "parallel",
+      "confidence": 0.9
+    }
+  ],
+  "Amsal 4:23": [
+    {
+      "target": "Matius 6:21",
+      "relationshipType": "thematic",
+      "confidence": 0.85
+    },
+    {
+      "target": "Matius 6:21",
+      "relationshipType": "thematic",
+      "confidence": 0.85
+    }
+  ],
+  "Amsal 16:9": [
+    {
+      "target": "Yakobus 4:13-15",
+      "relationshipType": "parallel",
+      "confidence": 0.9
+    },
+    {
+      "target": "Yakobus 4:13-15",
+      "relationshipType": "parallel",
+      "confidence": 0.9
+    }
+  ]
+}

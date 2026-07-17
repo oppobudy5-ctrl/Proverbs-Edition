@@ -1,0 +1,813 @@
+{
+  "version": "1.0.0",
+  "language": "id",
+  "source": "Pemetaan rujukan silang Bible Time (kurasi editorial berdasarkan paralel tematik dan kanonik).",
+  "license": "editorial-cc-by-nc",
+  "relationshipTypes": [
+    "thematic",
+    "parallel",
+    "fulfillment",
+    "amplification",
+    "contrast",
+    "quotation"
+  ],
+  "relations": [
+    {
+      "id": "xref-001",
+      "source": "Amsal 1",
+      "target": "Mazmur 111:10",
+      "relationshipType": "parallel",
+      "reason": "Sama-sama menyatakan takut akan TUHAN sebagai permulaan hikmat/pengetahuan.",
+      "confidence": 0.95,
+      "topics": [
+        "fear_of_god",
+        "wisdom"
+      ]
+    },
+    {
+      "id": "xref-002",
+      "source": "Amsal 1",
+      "target": "Yakobus 1:5",
+      "relationshipType": "amplification",
+      "reason": "Yakobus mengajak meminta hikmat kepada Allah yang memberi dengan murah hati.",
+      "confidence": 0.85,
+      "topics": [
+        "wisdom"
+      ]
+    },
+    {
+      "id": "xref-003",
+      "source": "Amsal 2",
+      "target": "Yakobus 1:5",
+      "relationshipType": "thematic",
+      "reason": "Hikmat sebagai pemberian Allah yang dicari dengan sungguh-sungguh.",
+      "confidence": 0.9,
+      "topics": [
+        "wisdom"
+      ]
+    },
+    {
+      "id": "xref-004",
+      "source": "Amsal 3",
+      "target": "Mazmur 37:3-5",
+      "relationshipType": "parallel",
+      "reason": "Percaya dan menyerahkan jalan kepada TUHAN dengan segenap hati.",
+      "confidence": 0.9,
+      "topics": [
+        "faith"
+      ]
+    },
+    {
+      "id": "xref-005",
+      "source": "Amsal 3",
+      "target": "Ibrani 12:5-6",
+      "relationshipType": "quotation",
+      "reason": "Ibrani mengutip Amsal 3:11-12 tentang didikan Tuhan sebagai tanda kasih.",
+      "confidence": 0.98,
+      "topics": [
+        "discipline"
+      ]
+    },
+    {
+      "id": "xref-006",
+      "source": "Amsal 3",
+      "target": "Matius 6:33",
+      "relationshipType": "thematic",
+      "reason": "Mengutamakan Allah dengan hasil pertama sejajar dengan mencari Kerajaan terlebih dahulu.",
+      "confidence": 0.75,
+      "topics": [
+        "money",
+        "faith"
+      ]
+    },
+    {
+      "id": "xref-007",
+      "source": "Amsal 4",
+      "target": "Matius 6:21",
+      "relationshipType": "thematic",
+      "reason": "Hati sebagai pusat yang menentukan arah hidup dan harta.",
+      "confidence": 0.8,
+      "topics": [
+        "character",
+        "temptation"
+      ]
+    },
+    {
+      "id": "xref-008",
+      "source": "Amsal 4",
+      "target": "Filipi 4:8",
+      "relationshipType": "amplification",
+      "reason": "Menjaga hati dengan merenungkan apa yang benar dan mulia.",
+      "confidence": 0.8,
+      "topics": [
+        "character"
+      ]
+    },
+    {
+      "id": "xref-009",
+      "source": "Amsal 5",
+      "target": "1 Korintus 6:18-20",
+      "relationshipType": "thematic",
+      "reason": "Panggilan menjauhi percabulan dan menghormati tubuh sebagai bait.",
+      "confidence": 0.85,
+      "topics": [
+        "temptation",
+        "marriage"
+      ]
+    },
+    {
+      "id": "xref-010",
+      "source": "Amsal 5",
+      "target": "Ibrani 13:4",
+      "relationshipType": "parallel",
+      "reason": "Menghormati kekudusan dan kesetiaan pernikahan.",
+      "confidence": 0.85,
+      "topics": [
+        "marriage"
+      ]
+    },
+    {
+      "id": "xref-011",
+      "source": "Amsal 6",
+      "target": "2 Tesalonika 3:10",
+      "relationshipType": "amplification",
+      "reason": "Etika kerja: yang tidak mau bekerja jangan makan, menggemakan teguran terhadap kemalasan.",
+      "confidence": 0.85,
+      "topics": [
+        "work"
+      ]
+    },
+    {
+      "id": "xref-012",
+      "source": "Amsal 6",
+      "target": "Roma 12:18",
+      "relationshipType": "thematic",
+      "reason": "Peringatan terhadap penabur pertengkaran sejajar dengan panggilan hidup damai.",
+      "confidence": 0.7,
+      "topics": [
+        "peace",
+        "speech"
+      ]
+    },
+    {
+      "id": "xref-013",
+      "source": "Amsal 7",
+      "target": "Matius 26:41",
+      "relationshipType": "thematic",
+      "reason": "Berjaga-jaga dan berdoa agar tidak jatuh dalam pencobaan.",
+      "confidence": 0.8,
+      "topics": [
+        "temptation"
+      ]
+    },
+    {
+      "id": "xref-014",
+      "source": "Amsal 8",
+      "target": "1 Korintus 1:24",
+      "relationshipType": "fulfillment",
+      "reason": "Kristus disebut hikmat Allah, gema personifikasi Hikmat.",
+      "confidence": 0.8,
+      "topics": [
+        "wisdom"
+      ]
+    },
+    {
+      "id": "xref-015",
+      "source": "Amsal 8",
+      "target": "Kolose 1:15-17",
+      "relationshipType": "fulfillment",
+      "reason": "Hikmat hadir dalam penciptaan; Kristus perantara segala ciptaan.",
+      "confidence": 0.8,
+      "topics": [
+        "wisdom"
+      ]
+    },
+    {
+      "id": "xref-016",
+      "source": "Amsal 9",
+      "target": "Mazmur 111:10",
+      "relationshipType": "parallel",
+      "reason": "Takut akan TUHAN adalah permulaan hikmat.",
+      "confidence": 0.95,
+      "topics": [
+        "fear_of_god",
+        "wisdom"
+      ]
+    },
+    {
+      "id": "xref-017",
+      "source": "Amsal 10",
+      "target": "Yakobus 3:5-10",
+      "relationshipType": "amplification",
+      "reason": "Kuasa lidah orang benar dan bahaya perkataan.",
+      "confidence": 0.8,
+      "topics": [
+        "speech"
+      ]
+    },
+    {
+      "id": "xref-018",
+      "source": "Amsal 11",
+      "target": "2 Korintus 9:6-7",
+      "relationshipType": "thematic",
+      "reason": "Orang murah hati diperkaya; menabur dan menuai kemurahan.",
+      "confidence": 0.8,
+      "topics": [
+        "money",
+        "love"
+      ]
+    },
+    {
+      "id": "xref-019",
+      "source": "Amsal 12",
+      "target": "Ibrani 12:11",
+      "relationshipType": "thematic",
+      "reason": "Mencintai didikan menghasilkan buah kebenaran.",
+      "confidence": 0.75,
+      "topics": [
+        "discipline"
+      ]
+    },
+    {
+      "id": "xref-020",
+      "source": "Amsal 15",
+      "target": "Efesus 4:29",
+      "relationshipType": "amplification",
+      "reason": "Jawaban lemah lembut dan perkataan yang membangun.",
+      "confidence": 0.85,
+      "topics": [
+        "speech"
+      ]
+    },
+    {
+      "id": "xref-021",
+      "source": "Amsal 16",
+      "target": "Yakobus 4:13-15",
+      "relationshipType": "parallel",
+      "reason": "Manusia merancang, tetapi TUHAN menentukan langkah.",
+      "confidence": 0.9,
+      "topics": [
+        "decision_making",
+        "faith"
+      ]
+    },
+    {
+      "id": "xref-022",
+      "source": "Amsal 17",
+      "target": "Amsal 15:17",
+      "relationshipType": "parallel",
+      "reason": "Sepiring sayur dengan kasih lebih baik daripada kelimpahan dengan pertengkaran.",
+      "confidence": 0.85,
+      "topics": [
+        "peace",
+        "love"
+      ]
+    },
+    {
+      "id": "xref-023",
+      "source": "Amsal 18",
+      "target": "Yakobus 1:19",
+      "relationshipType": "thematic",
+      "reason": "Cepat mendengar dan lambat berbicara sejajar dengan hikmat perkataan.",
+      "confidence": 0.8,
+      "topics": [
+        "speech"
+      ]
+    },
+    {
+      "id": "xref-024",
+      "source": "Amsal 19",
+      "target": "Roma 8:28",
+      "relationshipType": "thematic",
+      "reason": "Rancangan TUHAN tetap terlaksana untuk kebaikan.",
+      "confidence": 0.7,
+      "topics": [
+        "faith",
+        "hope"
+      ]
+    },
+    {
+      "id": "xref-025",
+      "source": "Amsal 22",
+      "target": "Efesus 6:4",
+      "relationshipType": "amplification",
+      "reason": "Mendidik anak dalam jalan yang benar.",
+      "confidence": 0.85,
+      "topics": [
+        "family"
+      ]
+    },
+    {
+      "id": "xref-026",
+      "source": "Amsal 25",
+      "target": "Roma 12:20",
+      "relationshipType": "quotation",
+      "reason": "Paulus mengutip Amsal 25:21-22 tentang memberi makan musuh.",
+      "confidence": 0.95,
+      "topics": [
+        "love",
+        "forgiveness"
+      ]
+    },
+    {
+      "id": "xref-027",
+      "source": "Amsal 27",
+      "target": "Ibrani 10:24-25",
+      "relationshipType": "thematic",
+      "reason": "Sahabat menajamkan sahabat sejajar dengan saling menggerakkan dalam kasih.",
+      "confidence": 0.8,
+      "topics": [
+        "friendship"
+      ]
+    },
+    {
+      "id": "xref-028",
+      "source": "Amsal 29",
+      "target": "Galatia 1:10",
+      "relationshipType": "thematic",
+      "reason": "Takut kepada manusia mendatangkan jerat; jangan mencari perkenan manusia.",
+      "confidence": 0.8,
+      "topics": [
+        "fear_of_god"
+      ]
+    },
+    {
+      "id": "xref-029",
+      "source": "Amsal 30",
+      "target": "Matius 6:11",
+      "relationshipType": "thematic",
+      "reason": "Doa Agur meminta secukupnya sejajar dengan permohonan roti secukupnya.",
+      "confidence": 0.75,
+      "topics": [
+        "money",
+        "humility"
+      ]
+    },
+    {
+      "id": "xref-030",
+      "source": "Amsal 31",
+      "target": "1 Petrus 3:1-6",
+      "relationshipType": "thematic",
+      "reason": "Keindahan yang sejati bersumber dari karakter dan takut akan Tuhan.",
+      "confidence": 0.75,
+      "topics": [
+        "character",
+        "marriage"
+      ]
+    },
+    {
+      "id": "xref-031",
+      "source": "Amsal 13",
+      "target": "Efesus 6:4",
+      "relationshipType": "thematic",
+      "reason": "Didikan anak dan warisan hikmat sejajar dengan didikan dalam Tuhan.",
+      "confidence": 0.8,
+      "topics": [
+        "family",
+        "discipline"
+      ]
+    },
+    {
+      "id": "xref-032",
+      "source": "Amsal 13",
+      "target": "Amsal 22:6",
+      "relationshipType": "parallel",
+      "reason": "Kedua teks menekankan arah didikan awal yang membentuk perjalanan hidup.",
+      "confidence": 0.85,
+      "topics": [
+        "family"
+      ]
+    },
+    {
+      "id": "xref-033",
+      "source": "Amsal 14",
+      "target": "Yakobus 1:19-20",
+      "relationshipType": "thematic",
+      "reason": "Kemarahan dan kebijaksanaan hati yang tenang.",
+      "confidence": 0.8,
+      "topics": [
+        "speech",
+        "peace"
+      ]
+    },
+    {
+      "id": "xref-034",
+      "source": "Amsal 14",
+      "target": "Amsal 15:1",
+      "relationshipType": "contrast",
+      "reason": "Jawaban lemah lembut versus kemarahan yang memicu pertengkaran.",
+      "confidence": 0.85,
+      "topics": [
+        "speech"
+      ]
+    },
+    {
+      "id": "xref-035",
+      "source": "Amsal 20",
+      "target": "Efesus 5:15-16",
+      "relationshipType": "thematic",
+      "reason": "Hidup berhikmat dan memanfaatkan waktu.",
+      "confidence": 0.8,
+      "topics": [
+        "wisdom",
+        "character"
+      ]
+    },
+    {
+      "id": "xref-036",
+      "source": "Amsal 20",
+      "target": "Amsal 16:32",
+      "relationshipType": "parallel",
+      "reason": "Menguasai diri lebih baik daripada menaklukkan kota.",
+      "confidence": 0.85,
+      "topics": [
+        "character"
+      ]
+    },
+    {
+      "id": "xref-037",
+      "source": "Amsal 21",
+      "target": "Matius 23:23",
+      "relationshipType": "thematic",
+      "reason": "Keadilan dan belas kasih lebih utama daripada formalitas kosong.",
+      "confidence": 0.75,
+      "topics": [
+        "character"
+      ]
+    },
+    {
+      "id": "xref-038",
+      "source": "Amsal 21",
+      "target": "Amsal 15:8",
+      "relationshipType": "contrast",
+      "reason": "Korban orang fasik dibenci; keadilan dan kebenaran diutamakan.",
+      "confidence": 0.8,
+      "topics": [
+        "character"
+      ]
+    },
+    {
+      "id": "xref-039",
+      "source": "Amsal 23",
+      "target": "Efesus 5:18",
+      "relationshipType": "thematic",
+      "reason": "Peringatan terhadap mabuk dan kehilangan pengendalian diri.",
+      "confidence": 0.85,
+      "topics": [
+        "temptation"
+      ]
+    },
+    {
+      "id": "xref-040",
+      "source": "Amsal 23",
+      "target": "Amsal 20:1",
+      "relationshipType": "parallel",
+      "reason": "Anggur sebagai pengejek dan perusak hikmat.",
+      "confidence": 0.9,
+      "topics": [
+        "temptation"
+      ]
+    },
+    {
+      "id": "xref-041",
+      "source": "Amsal 24",
+      "target": "Roma 12:17-21",
+      "relationshipType": "amplification",
+      "reason": "Jangan membalas kejahatan; tinggalkan pembalasan kepada Tuhan.",
+      "confidence": 0.85,
+      "topics": [
+        "forgiveness",
+        "peace"
+      ]
+    },
+    {
+      "id": "xref-042",
+      "source": "Amsal 24",
+      "target": "Amsal 25:21-22",
+      "relationshipType": "parallel",
+      "reason": "Sikap terhadap musuh: kebaikan daripada dendam.",
+      "confidence": 0.9,
+      "topics": [
+        "forgiveness"
+      ]
+    },
+    {
+      "id": "xref-043",
+      "source": "Amsal 26",
+      "target": "Yakobus 3:5-10",
+      "relationshipType": "thematic",
+      "reason": "Lidah dan tipu daya perkataan yang merusak.",
+      "confidence": 0.8,
+      "topics": [
+        "speech"
+      ]
+    },
+    {
+      "id": "xref-044",
+      "source": "Amsal 26",
+      "target": "Amsal 26:4-5",
+      "relationshipType": "contrast",
+      "reason": "Pasangan situasional: menjawab atau tidak menjawab orang bebal.",
+      "confidence": 0.95,
+      "topics": [
+        "speech",
+        "decision_making"
+      ]
+    },
+    {
+      "id": "xref-045",
+      "source": "Amsal 28",
+      "target": "Yakobus 5:16",
+      "relationshipType": "thematic",
+      "reason": "Mengakui dosa dan kejujuran membawa pemulihan.",
+      "confidence": 0.75,
+      "topics": [
+        "character",
+        "forgiveness"
+      ]
+    },
+    {
+      "id": "xref-046",
+      "source": "Amsal 28",
+      "target": "Amsal 28:13",
+      "relationshipType": "amplification",
+      "reason": "Yang menutupi pelanggaran tidak akan beruntung; yang mengaku disayangi.",
+      "confidence": 0.9,
+      "topics": [
+        "forgiveness"
+      ]
+    },
+    {
+      "id": "xref-047",
+      "source": "Amsal 1:7",
+      "target": "Mazmur 111:10",
+      "relationshipType": "parallel",
+      "reason": "Takut akan TUHAN sebagai permulaan hikmat pada tingkat ayat.",
+      "confidence": 0.95,
+      "topics": [
+        "fear_of_god",
+        "wisdom"
+      ]
+    },
+    {
+      "id": "xref-048",
+      "source": "Amsal 3:5-6",
+      "target": "Mazmur 37:5",
+      "relationshipType": "parallel",
+      "reason": "Percaya dan serahkan jalan kepada TUHAN.",
+      "confidence": 0.9,
+      "topics": [
+        "faith"
+      ]
+    },
+    {
+      "id": "xref-049",
+      "source": "Amsal 4:23",
+      "target": "Matius 6:21",
+      "relationshipType": "thematic",
+      "reason": "Hati sebagai pusat arah hidup.",
+      "confidence": 0.85,
+      "topics": [
+        "character"
+      ]
+    },
+    {
+      "id": "xref-050",
+      "source": "Amsal 16:9",
+      "target": "Yakobus 4:13-15",
+      "relationshipType": "parallel",
+      "reason": "Rencana manusia di bawah kehendak Tuhan.",
+      "confidence": 0.9,
+      "topics": [
+        "decision_making"
+      ]
+    },
+    {
+      "id": "xref-051",
+      "source": "Amsal 13",
+      "target": "Efesus 6:4",
+      "relationshipType": "thematic",
+      "reason": "Didikan anak dan warisan hikmat sejajar dengan didikan dalam Tuhan.",
+      "confidence": 0.8,
+      "topics": [
+        "family",
+        "discipline"
+      ]
+    },
+    {
+      "id": "xref-052",
+      "source": "Amsal 13",
+      "target": "Amsal 22:6",
+      "relationshipType": "parallel",
+      "reason": "Kedua teks menekankan arah didikan awal yang membentuk perjalanan hidup.",
+      "confidence": 0.85,
+      "topics": [
+        "family"
+      ]
+    },
+    {
+      "id": "xref-053",
+      "source": "Amsal 14",
+      "target": "Yakobus 1:19-20",
+      "relationshipType": "thematic",
+      "reason": "Kemarahan dan kebijaksanaan hati yang tenang.",
+      "confidence": 0.8,
+      "topics": [
+        "speech",
+        "peace"
+      ]
+    },
+    {
+      "id": "xref-054",
+      "source": "Amsal 14",
+      "target": "Amsal 15:1",
+      "relationshipType": "contrast",
+      "reason": "Jawaban lemah lembut versus kemarahan yang memicu pertengkaran.",
+      "confidence": 0.85,
+      "topics": [
+        "speech"
+      ]
+    },
+    {
+      "id": "xref-055",
+      "source": "Amsal 20",
+      "target": "Efesus 5:15-16",
+      "relationshipType": "thematic",
+      "reason": "Hidup berhikmat dan memanfaatkan waktu.",
+      "confidence": 0.8,
+      "topics": [
+        "wisdom",
+        "character"
+      ]
+    },
+    {
+      "id": "xref-056",
+      "source": "Amsal 20",
+      "target": "Amsal 16:32",
+      "relationshipType": "parallel",
+      "reason": "Menguasai diri lebih baik daripada menaklukkan kota.",
+      "confidence": 0.85,
+      "topics": [
+        "character"
+      ]
+    },
+    {
+      "id": "xref-057",
+      "source": "Amsal 21",
+      "target": "Matius 23:23",
+      "relationshipType": "thematic",
+      "reason": "Keadilan dan belas kasih lebih utama daripada formalitas kosong.",
+      "confidence": 0.75,
+      "topics": [
+        "character"
+      ]
+    },
+    {
+      "id": "xref-058",
+      "source": "Amsal 21",
+      "target": "Amsal 15:8",
+      "relationshipType": "contrast",
+      "reason": "Korban orang fasik dibenci; keadilan dan kebenaran diutamakan.",
+      "confidence": 0.8,
+      "topics": [
+        "character"
+      ]
+    },
+    {
+      "id": "xref-059",
+      "source": "Amsal 23",
+      "target": "Efesus 5:18",
+      "relationshipType": "thematic",
+      "reason": "Peringatan terhadap mabuk dan kehilangan pengendalian diri.",
+      "confidence": 0.85,
+      "topics": [
+        "temptation"
+      ]
+    },
+    {
+      "id": "xref-060",
+      "source": "Amsal 23",
+      "target": "Amsal 20:1",
+      "relationshipType": "parallel",
+      "reason": "Anggur sebagai pengejek dan perusak hikmat.",
+      "confidence": 0.9,
+      "topics": [
+        "temptation"
+      ]
+    },
+    {
+      "id": "xref-061",
+      "source": "Amsal 24",
+      "target": "Roma 12:17-21",
+      "relationshipType": "amplification",
+      "reason": "Jangan membalas kejahatan; tinggalkan pembalasan kepada Tuhan.",
+      "confidence": 0.85,
+      "topics": [
+        "forgiveness",
+        "peace"
+      ]
+    },
+    {
+      "id": "xref-062",
+      "source": "Amsal 24",
+      "target": "Amsal 25:21-22",
+      "relationshipType": "parallel",
+      "reason": "Sikap terhadap musuh: kebaikan daripada dendam.",
+      "confidence": 0.9,
+      "topics": [
+        "forgiveness"
+      ]
+    },
+    {
+      "id": "xref-063",
+      "source": "Amsal 26",
+      "target": "Yakobus 3:5-10",
+      "relationshipType": "thematic",
+      "reason": "Lidah dan tipu daya perkataan yang merusak.",
+      "confidence": 0.8,
+      "topics": [
+        "speech"
+      ]
+    },
+    {
+      "id": "xref-064",
+      "source": "Amsal 26",
+      "target": "Amsal 26:4-5",
+      "relationshipType": "contrast",
+      "reason": "Pasangan situasional: menjawab atau tidak menjawab orang bebal.",
+      "confidence": 0.95,
+      "topics": [
+        "speech",
+        "decision_making"
+      ]
+    },
+    {
+      "id": "xref-065",
+      "source": "Amsal 28",
+      "target": "Yakobus 5:16",
+      "relationshipType": "thematic",
+      "reason": "Mengakui dosa dan kejujuran membawa pemulihan.",
+      "confidence": 0.75,
+      "topics": [
+        "character",
+        "forgiveness"
+      ]
+    },
+    {
+      "id": "xref-066",
+      "source": "Amsal 28",
+      "target": "Amsal 28:13",
+      "relationshipType": "amplification",
+      "reason": "Yang menutupi pelanggaran tidak akan beruntung; yang mengaku disayangi.",
+      "confidence": 0.9,
+      "topics": [
+        "forgiveness"
+      ]
+    },
+    {
+      "id": "xref-067",
+      "source": "Amsal 1:7",
+      "target": "Mazmur 111:10",
+      "relationshipType": "parallel",
+      "reason": "Takut akan TUHAN sebagai permulaan hikmat pada tingkat ayat.",
+      "confidence": 0.95,
+      "topics": [
+        "fear_of_god",
+        "wisdom"
+      ]
+    },
+    {
+      "id": "xref-068",
+      "source": "Amsal 3:5-6",
+      "target": "Mazmur 37:5",
+      "relationshipType": "parallel",
+      "reason": "Percaya dan serahkan jalan kepada TUHAN.",
+      "confidence": 0.9,
+      "topics": [
+        "faith"
+      ]
+    },
+    {
+      "id": "xref-069",
+      "source": "Amsal 4:23",
+      "target": "Matius 6:21",
+      "relationshipType": "thematic",
+      "reason": "Hati sebagai pusat arah hidup.",
+      "confidence": 0.85,
+      "topics": [
+        "character"
+      ]
+    },
+    {
+      "id": "xref-070",
+      "source": "Amsal 16:9",
+      "target": "Yakobus 4:13-15",
+      "relationshipType": "parallel",
+      "reason": "Rencana manusia di bawah kehendak Tuhan.",
+      "confidence": 0.9,
+      "topics": [
+        "decision_making"
+      ]
+    }
+  ]
+}

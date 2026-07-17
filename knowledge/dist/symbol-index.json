@@ -1,0 +1,476 @@
+{
+  "byId": {
+    "symbol:path": {
+      "id": "symbol:path",
+      "name": "Jalan / jalur",
+      "meanings": [
+        "arah hidup",
+        "pilihan moral"
+      ],
+      "contrasts": [
+        "symbol:snare"
+      ],
+      "references": [
+        "ref:proverbs.4.18-19",
+        "ref:proverbs.14.12"
+      ],
+      "topics": [
+        "decision_making",
+        "character"
+      ],
+      "confidence": 0.95
+    },
+    "symbol:heart": {
+      "id": "symbol:heart",
+      "name": "Hati",
+      "meanings": [
+        "pusat kehendak",
+        "sumber kehidupan"
+      ],
+      "contrasts": [],
+      "references": [
+        "ref:proverbs.4.23",
+        "ref:proverbs.23.26"
+      ],
+      "topics": [
+        "character"
+      ],
+      "confidence": 0.95
+    },
+    "symbol:tongue": {
+      "id": "symbol:tongue",
+      "name": "Lidah / mulut",
+      "meanings": [
+        "kuasa perkataan",
+        "berkat atau kutuk"
+      ],
+      "contrasts": [],
+      "references": [
+        "ref:proverbs.18.21",
+        "ref:proverbs.15.1"
+      ],
+      "topics": [
+        "speech"
+      ],
+      "confidence": 0.95
+    },
+    "symbol:tree-of-life": {
+      "id": "symbol:tree-of-life",
+      "name": "Pohon kehidupan",
+      "meanings": [
+        "buah hikmat",
+        "penyembuhan komunitas"
+      ],
+      "contrasts": [],
+      "references": [
+        "ref:proverbs.3.18",
+        "ref:proverbs.11.30",
+        "ref:proverbs.15.4"
+      ],
+      "topics": [
+        "wisdom",
+        "speech"
+      ],
+      "confidence": 0.9
+    },
+    "symbol:house": {
+      "id": "symbol:house",
+      "name": "Rumah",
+      "meanings": [
+        "keamanan",
+        "bangunan karakter/keluarga"
+      ],
+      "contrasts": [
+        "symbol:house-folly"
+      ],
+      "references": [
+        "ref:proverbs.9.1",
+        "ref:proverbs.14.1",
+        "ref:proverbs.24.3-4"
+      ],
+      "topics": [
+        "family",
+        "wisdom"
+      ],
+      "confidence": 0.9
+    },
+    "symbol:house-folly": {
+      "id": "symbol:house-folly",
+      "name": "Rumah kebodohan",
+      "meanings": [
+        "undangan maut",
+        "kesenangan palsu"
+      ],
+      "contrasts": [
+        "symbol:house"
+      ],
+      "references": [
+        "ref:proverbs.9.13-18"
+      ],
+      "topics": [
+        "temptation"
+      ],
+      "confidence": 0.88
+    },
+    "symbol:gold-silver": {
+      "id": "symbol:gold-silver",
+      "name": "Emas dan perak",
+      "meanings": [
+        "nilai yang diuji",
+        "hikmat lebih berharga"
+      ],
+      "contrasts": [],
+      "references": [
+        "ref:proverbs.3.13-15",
+        "ref:proverbs.8.10-11",
+        "ref:proverbs.16.16"
+      ],
+      "topics": [
+        "wisdom",
+        "money"
+      ],
+      "confidence": 0.92
+    },
+    "symbol:scales": {
+      "id": "symbol:scales",
+      "name": "Timbangan",
+      "meanings": [
+        "keadilan ekonomi",
+        "integritas"
+      ],
+      "contrasts": [],
+      "references": [
+        "ref:proverbs.11.1",
+        "ref:proverbs.16.11",
+        "ref:proverbs.20.23"
+      ],
+      "topics": [
+        "money",
+        "character"
+      ],
+      "confidence": 0.9
+    },
+    "symbol:lamp": {
+      "id": "symbol:lamp",
+      "name": "Pelita / terang",
+      "meanings": [
+        "petunjuk Tuhan",
+        "kesadaran nurani"
+      ],
+      "contrasts": [
+        "symbol:darkness"
+      ],
+      "references": [
+        "ref:proverbs.6.23",
+        "ref:proverbs.20.27"
+      ],
+      "topics": [
+        "wisdom",
+        "discipline"
+      ],
+      "confidence": 0.88
+    },
+    "symbol:darkness": {
+      "id": "symbol:darkness",
+      "name": "Kegelapan",
+      "meanings": [
+        "kebodohan",
+        "jalan orang fasik"
+      ],
+      "contrasts": [
+        "symbol:lamp",
+        "symbol:path"
+      ],
+      "references": [
+        "ref:proverbs.4.19"
+      ],
+      "topics": [
+        "character"
+      ],
+      "confidence": 0.88
+    },
+    "symbol:ant": {
+      "id": "symbol:ant",
+      "name": "Semut",
+      "meanings": [
+        "ketekunan",
+        "persiapan"
+      ],
+      "contrasts": [],
+      "references": [
+        "ref:proverbs.6.6-8"
+      ],
+      "topics": [
+        "work"
+      ],
+      "confidence": 0.9
+    },
+    "symbol:snare": {
+      "id": "symbol:snare",
+      "name": "Jerat",
+      "meanings": [
+        "godaan",
+        "akibat dosa",
+        "takut manusia"
+      ],
+      "contrasts": [
+        "symbol:path"
+      ],
+      "references": [
+        "ref:proverbs.1.17",
+        "ref:proverbs.29.25"
+      ],
+      "topics": [
+        "temptation",
+        "fear_of_god"
+      ],
+      "confidence": 0.9
+    },
+    "symbol:fountain": {
+      "id": "symbol:fountain",
+      "name": "Mata air",
+      "meanings": [
+        "sumber kehidupan",
+        "perkataan menyembuhkan"
+      ],
+      "contrasts": [],
+      "references": [
+        "ref:proverbs.10.11",
+        "ref:proverbs.13.14",
+        "ref:proverbs.18.4"
+      ],
+      "topics": [
+        "speech",
+        "wisdom"
+      ],
+      "confidence": 0.88
+    },
+    "symbol:crown": {
+      "id": "symbol:crown",
+      "name": "Mahkota",
+      "meanings": [
+        "kehormatan hikmat",
+        "buah usia/gray hair"
+      ],
+      "contrasts": [],
+      "references": [
+        "ref:proverbs.4.9",
+        "ref:proverbs.16.31"
+      ],
+      "topics": [
+        "wisdom",
+        "character"
+      ],
+      "confidence": 0.85
+    },
+    "symbol:honey": {
+      "id": "symbol:honey",
+      "name": "Madu",
+      "meanings": [
+        "manisnya hikmat",
+        "batas kenikmatan"
+      ],
+      "contrasts": [],
+      "references": [
+        "ref:proverbs.24.13-14",
+        "ref:proverbs.25.16"
+      ],
+      "topics": [
+        "wisdom",
+        "temptation"
+      ],
+      "confidence": 0.85
+    },
+    "symbol:shield": {
+      "id": "symbol:shield",
+      "name": "Perisai",
+      "meanings": [
+        "perlindungan Tuhan",
+        "keamanan orang jujur"
+      ],
+      "contrasts": [],
+      "references": [
+        "ref:proverbs.2.7",
+        "ref:proverbs.30.5"
+      ],
+      "topics": [
+        "faith",
+        "fear_of_god"
+      ],
+      "confidence": 0.88
+    }
+  },
+  "byTopic": {
+    "decision_making": [
+      "symbol:path"
+    ],
+    "character": [
+      "symbol:path",
+      "symbol:heart",
+      "symbol:scales",
+      "symbol:darkness",
+      "symbol:crown"
+    ],
+    "speech": [
+      "symbol:tongue",
+      "symbol:tree-of-life",
+      "symbol:fountain"
+    ],
+    "wisdom": [
+      "symbol:tree-of-life",
+      "symbol:house",
+      "symbol:gold-silver",
+      "symbol:lamp",
+      "symbol:fountain",
+      "symbol:crown",
+      "symbol:honey"
+    ],
+    "family": [
+      "symbol:house"
+    ],
+    "temptation": [
+      "symbol:house-folly",
+      "symbol:snare",
+      "symbol:honey"
+    ],
+    "money": [
+      "symbol:gold-silver",
+      "symbol:scales"
+    ],
+    "discipline": [
+      "symbol:lamp"
+    ],
+    "work": [
+      "symbol:ant"
+    ],
+    "fear_of_god": [
+      "symbol:snare",
+      "symbol:shield"
+    ],
+    "faith": [
+      "symbol:shield"
+    ]
+  },
+  "byRef": {
+    "ref:proverbs.4.18-19": [
+      "symbol:path"
+    ],
+    "ref:proverbs.14.12": [
+      "symbol:path"
+    ],
+    "ref:proverbs.4.23": [
+      "symbol:heart"
+    ],
+    "ref:proverbs.23.26": [
+      "symbol:heart"
+    ],
+    "ref:proverbs.18.21": [
+      "symbol:tongue"
+    ],
+    "ref:proverbs.15.1": [
+      "symbol:tongue"
+    ],
+    "ref:proverbs.3.18": [
+      "symbol:tree-of-life"
+    ],
+    "ref:proverbs.11.30": [
+      "symbol:tree-of-life"
+    ],
+    "ref:proverbs.15.4": [
+      "symbol:tree-of-life"
+    ],
+    "ref:proverbs.9.1": [
+      "symbol:house"
+    ],
+    "ref:proverbs.14.1": [
+      "symbol:house"
+    ],
+    "ref:proverbs.24.3-4": [
+      "symbol:house"
+    ],
+    "ref:proverbs.9.13-18": [
+      "symbol:house-folly"
+    ],
+    "ref:proverbs.3.13-15": [
+      "symbol:gold-silver"
+    ],
+    "ref:proverbs.8.10-11": [
+      "symbol:gold-silver"
+    ],
+    "ref:proverbs.16.16": [
+      "symbol:gold-silver"
+    ],
+    "ref:proverbs.11.1": [
+      "symbol:scales"
+    ],
+    "ref:proverbs.16.11": [
+      "symbol:scales"
+    ],
+    "ref:proverbs.20.23": [
+      "symbol:scales"
+    ],
+    "ref:proverbs.6.23": [
+      "symbol:lamp"
+    ],
+    "ref:proverbs.20.27": [
+      "symbol:lamp"
+    ],
+    "ref:proverbs.4.19": [
+      "symbol:darkness"
+    ],
+    "ref:proverbs.6.6-8": [
+      "symbol:ant"
+    ],
+    "ref:proverbs.1.17": [
+      "symbol:snare"
+    ],
+    "ref:proverbs.29.25": [
+      "symbol:snare"
+    ],
+    "ref:proverbs.10.11": [
+      "symbol:fountain"
+    ],
+    "ref:proverbs.13.14": [
+      "symbol:fountain"
+    ],
+    "ref:proverbs.18.4": [
+      "symbol:fountain"
+    ],
+    "ref:proverbs.4.9": [
+      "symbol:crown"
+    ],
+    "ref:proverbs.16.31": [
+      "symbol:crown"
+    ],
+    "ref:proverbs.24.13-14": [
+      "symbol:honey"
+    ],
+    "ref:proverbs.25.16": [
+      "symbol:honey"
+    ],
+    "ref:proverbs.2.7": [
+      "symbol:shield"
+    ],
+    "ref:proverbs.30.5": [
+      "symbol:shield"
+    ]
+  },
+  "ids": [
+    "symbol:path",
+    "symbol:heart",
+    "symbol:tongue",
+    "symbol:tree-of-life",
+    "symbol:house",
+    "symbol:house-folly",
+    "symbol:gold-silver",
+    "symbol:scales",
+    "symbol:lamp",
+    "symbol:darkness",
+    "symbol:ant",
+    "symbol:snare",
+    "symbol:fountain",
+    "symbol:crown",
+    "symbol:honey",
+    "symbol:shield"
+  ]
+}

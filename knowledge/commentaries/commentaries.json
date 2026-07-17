@@ -1,0 +1,64 @@
+{
+  "version": "1.0.0",
+  "language": "id",
+  "notice": "Hanya metadata dan ringkasan editorial. TIDAK memuat teks tafsiran berhak cipta.",
+  "source": "Metadata bibliografis karya-karya tafsir domain publik.",
+  "license": "metadata-only",
+  "entries": [
+    {
+      "id": "comm-henry-proverbs",
+      "author": "Matthew Henry",
+      "work": "Commentary on the Whole Bible (Proverbs)",
+      "publication": "1710",
+      "summary": "Tafsir devosional klasik yang menekankan penerapan praktis dan moral dari setiap amsal bagi kehidupan sehari-hari orang percaya.",
+      "topic": ["wisdom", "character"],
+      "relatedVerses": ["Amsal 1:7", "Amsal 3:5", "Amsal 31:10"],
+      "license": "public-domain",
+      "link": "https://www.ccel.org/ccel/henry/mhc3.html"
+    },
+    {
+      "id": "comm-keil-delitzsch-proverbs",
+      "author": "Carl Friedrich Keil & Franz Delitzsch",
+      "work": "Commentary on the Old Testament (Proverbs)",
+      "publication": "1872",
+      "summary": "Tafsir kritis-gramatikal yang menyoroti struktur puitis Ibrani, makna kata, dan latar sastra hikmat.",
+      "topic": ["wisdom", "speech"],
+      "relatedVerses": ["Amsal 8:22", "Amsal 2:6", "Amsal 4:23"],
+      "license": "public-domain",
+      "link": "https://www.ccel.org/ccel/keil/comm_ot"
+    },
+    {
+      "id": "comm-gill-proverbs",
+      "author": "John Gill",
+      "work": "Exposition of the Entire Bible (Proverbs)",
+      "publication": "1748",
+      "summary": "Eksposisi terperinci ayat demi ayat dengan rujukan pada tradisi rabinik dan teologi Reformed.",
+      "topic": ["wisdom", "fear_of_god"],
+      "relatedVerses": ["Amsal 1:7", "Amsal 9:10"],
+      "license": "public-domain",
+      "link": "https://www.biblestudytools.com/commentaries/gills-exposition-of-the-bible/"
+    },
+    {
+      "id": "comm-spurgeon-proverbs",
+      "author": "Charles H. Spurgeon",
+      "work": "The Treasury of David / Sermons on Proverbs",
+      "publication": "1885",
+      "summary": "Ringkasan khotbah dan renungan yang menekankan penerapan pastoral dan pemuridan atas hikmat Amsal.",
+      "topic": ["character", "discipline"],
+      "relatedVerses": ["Amsal 3:11", "Amsal 4:23"],
+      "license": "public-domain",
+      "link": "https://www.spurgeon.org/"
+    },
+    {
+      "id": "comm-barnes-proverbs",
+      "author": "Albert Barnes",
+      "work": "Notes on the Bible (Proverbs)",
+      "publication": "1834",
+      "summary": "Catatan penjelasan ringkas yang berguna untuk memahami latar historis dan makna langsung teks.",
+      "topic": ["wisdom", "justice"],
+      "relatedVerses": ["Amsal 21:3", "Amsal 22:6"],
+      "license": "public-domain",
+      "link": "https://www.biblestudytools.com/commentaries/barnes-notes/"
+    }
+  ]
+}

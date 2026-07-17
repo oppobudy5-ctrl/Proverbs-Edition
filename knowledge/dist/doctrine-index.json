@@ -1,0 +1,496 @@
+{
+  "byId": {
+    "doctrine:fear-of-the-lord": {
+      "id": "doctrine:fear-of-the-lord",
+      "name": "Takut akan TUHAN",
+      "summary": "Takut akan TUHAN adalah fondasi hikmat, pengetahuan, dan hidup yang benar.",
+      "supportingRefs": [
+        "ref:proverbs.1.7",
+        "ref:proverbs.9.10",
+        "ref:proverbs.14.26",
+        "ref:psalms.111.10"
+      ],
+      "contrastingRefs": [
+        "ref:proverbs.29.25"
+      ],
+      "boundaries": [
+        "Bukan teror irasional, melainkan hormat dan ketaatan yang hidup.",
+        "Tidak digantikan oleh moralitas sekuler semata."
+      ],
+      "relatedTopics": [
+        "fear_of_god",
+        "wisdom"
+      ],
+      "interpretiveNotes": [
+        "Tradisi hikmat menekankan awal hikmat; PB menghubungkan takut Tuhan dengan hidup dalam Kristus."
+      ],
+      "confidence": 0.95
+    },
+    "doctrine:wisdom-from-god": {
+      "id": "doctrine:wisdom-from-god",
+      "name": "Hikmat dari Allah",
+      "summary": "Hikmat sejati adalah anugerah Allah yang dicari, diterima, dan dihidupi.",
+      "supportingRefs": [
+        "ref:proverbs.2.6",
+        "ref:proverbs.8.1-36",
+        "ref:james.1.5",
+        "ref:1corinthians.1.24"
+      ],
+      "contrastingRefs": [
+        "ref:proverbs.14.12"
+      ],
+      "boundaries": [
+        "Hikmat tidak otomatis dari kecerdasan dunia.",
+        "Personifikasi Hikmat tidak harus dipaksa sebagai kristologi penuh tanpa catatan interpretasi."
+      ],
+      "relatedTopics": [
+        "wisdom"
+      ],
+      "interpretiveNotes": [
+        "Beberapa tradisi membaca Amsal 8 kristologis; yang lain menekankan personifikasi sastra."
+      ],
+      "confidence": 0.9
+    },
+    "doctrine:providence-and-plans": {
+      "id": "doctrine:providence-and-plans",
+      "name": "Pemeliharaan dan rencana manusia",
+      "summary": "Manusia merancang, tetapi TUHAN menetapkan langkah dan hasil akhir.",
+      "supportingRefs": [
+        "ref:proverbs.16.9",
+        "ref:proverbs.19.21",
+        "ref:proverbs.21.30",
+        "ref:romans.8.28"
+      ],
+      "contrastingRefs": [],
+      "boundaries": [
+        "Bukan fatalisme yang meniadakan tanggung jawab.",
+        "Bukan jaminan bahwa setiap keinginan orang percaya selalu terkabul."
+      ],
+      "relatedTopics": [
+        "faith",
+        "decision_making"
+      ],
+      "interpretiveNotes": [
+        "Tekankan kerjasama tanggung jawab manusia dan kedaulatan Allah."
+      ],
+      "confidence": 0.92
+    },
+    "doctrine:discipline-as-love": {
+      "id": "doctrine:discipline-as-love",
+      "name": "Didikan sebagai kasih",
+      "summary": "Didikan Tuhan dan orang tua yang benar adalah tanda kasih, bukan penolakan.",
+      "supportingRefs": [
+        "ref:proverbs.3.11-12",
+        "ref:proverbs.13.24",
+        "ref:hebrews.12.5-6"
+      ],
+      "contrastingRefs": [],
+      "boundaries": [
+        "Tidak membenarkan kekerasan atau pelecehan.",
+        "Konteks budaya kuno harus ditafsirkan dengan hikmat pastoral modern."
+      ],
+      "relatedTopics": [
+        "discipline",
+        "family"
+      ],
+      "interpretiveNotes": [
+        "Ibrani mengutip Amsal untuk kerangka didikan Bapa."
+      ],
+      "confidence": 0.9
+    },
+    "doctrine:speech-ethics": {
+      "id": "doctrine:speech-ethics",
+      "name": "Etika perkataan",
+      "summary": "Lidah membentuk kehidupan: dapat membangun atau merusak komunitas.",
+      "supportingRefs": [
+        "ref:proverbs.10.19",
+        "ref:proverbs.15.1",
+        "ref:proverbs.18.21",
+        "ref:james.3.5-10",
+        "ref:ephesians.4.29"
+      ],
+      "contrastingRefs": [],
+      "boundaries": [
+        "Kebenaran tanpa kasih tetap berbahaya.",
+        "Keheningan bukan selalu hikmat jika dibutuhkan kesaksian."
+      ],
+      "relatedTopics": [
+        "speech"
+      ],
+      "interpretiveNotes": [],
+      "confidence": 0.93
+    },
+    "doctrine:integrity-and-justice": {
+      "id": "doctrine:integrity-and-justice",
+      "name": "Integritas dan keadilan",
+      "summary": "Hidup benar meliputi kejujuran, keadilan sosial, dan keteguhan karakter.",
+      "supportingRefs": [
+        "ref:proverbs.11.1",
+        "ref:proverbs.21.3",
+        "ref:proverbs.28.6"
+      ],
+      "contrastingRefs": [
+        "ref:proverbs.17.23"
+      ],
+      "boundaries": [
+        "Kebenaran ritual tanpa keadilan ditolak.",
+        "Kaya atau miskin bukan ukuran otomatis kebenaran."
+      ],
+      "relatedTopics": [
+        "character",
+        "money"
+      ],
+      "interpretiveNotes": [],
+      "confidence": 0.9
+    },
+    "doctrine:work-and-diligence": {
+      "id": "doctrine:work-and-diligence",
+      "name": "Kerja dan ketekunan",
+      "summary": "Ketekunan dihormati; kemalasan membawa kekurangan; kerja adalah arena hikmat.",
+      "supportingRefs": [
+        "ref:proverbs.6.6-11",
+        "ref:proverbs.10.4",
+        "ref:proverbs.14.23",
+        "ref:2thessalonians.3.10"
+      ],
+      "contrastingRefs": [],
+      "boundaries": [
+        "Bukan injil kemakmuran.",
+        "Orang miskin tidak otomatis malas; konteks struktural tetap relevan."
+      ],
+      "relatedTopics": [
+        "work"
+      ],
+      "interpretiveNotes": [],
+      "confidence": 0.88
+    },
+    "doctrine:friendship-and-counsel": {
+      "id": "doctrine:friendship-and-counsel",
+      "name": "Persahabatan dan nasihat",
+      "summary": "Sahabat setia dan nasihat banyak menajamkan hikmat keputusan.",
+      "supportingRefs": [
+        "ref:proverbs.13.20",
+        "ref:proverbs.15.22",
+        "ref:proverbs.27.17",
+        "ref:hebrews.10.24-25"
+      ],
+      "contrastingRefs": [
+        "ref:proverbs.18.24"
+      ],
+      "boundaries": [
+        "Jumlah teman tidak sama dengan kedalaman sahabat.",
+        "Nasihat banyak tetap diuji dengan takut akan Tuhan."
+      ],
+      "relatedTopics": [
+        "friendship",
+        "decision_making"
+      ],
+      "interpretiveNotes": [],
+      "confidence": 0.9
+    },
+    "doctrine:sexual-faithfulness": {
+      "id": "doctrine:sexual-faithfulness",
+      "name": "Kesetiaan seksual",
+      "summary": "Hikmat melindungi dari godaan zina dan memelihara perjanjian pernikahan.",
+      "supportingRefs": [
+        "ref:proverbs.5.15-23",
+        "ref:proverbs.6.20-35",
+        "ref:proverbs.7",
+        "ref:1corinthians.6.18-20",
+        "ref:hebrews.13.4"
+      ],
+      "contrastingRefs": [],
+      "boundaries": [
+        "Bahasa metaforik Amsal 5–7 tidak boleh digeneralisasi untuk menyalahkan korban.",
+        "Fokus pada kesetiaan dan kewaspadaan hati."
+      ],
+      "relatedTopics": [
+        "temptation",
+        "marriage"
+      ],
+      "interpretiveNotes": [],
+      "confidence": 0.9
+    },
+    "doctrine:generosity-and-stewardship": {
+      "id": "doctrine:generosity-and-stewardship",
+      "name": "Kemurahan dan penatalayanan",
+      "summary": "Kemurahan memperkaya; menahan diri secara egois membawa kerugian moral.",
+      "supportingRefs": [
+        "ref:proverbs.11.24-25",
+        "ref:proverbs.19.17",
+        "ref:proverbs.22.9",
+        "ref:2corinthians.9.6-7"
+      ],
+      "contrastingRefs": [],
+      "boundaries": [
+        "Bukan manipulasi pemberian demi berkat otomatis.",
+        "Kemurahan mengalir dari keadilan dan belas kasih."
+      ],
+      "relatedTopics": [
+        "money",
+        "love"
+      ],
+      "interpretiveNotes": [],
+      "confidence": 0.88
+    },
+    "doctrine:heart-formation": {
+      "id": "doctrine:heart-formation",
+      "name": "Pembentukan hati",
+      "summary": "Hati adalah pusat kehidupan; menjaganya adalah tugas hikmat utama.",
+      "supportingRefs": [
+        "ref:proverbs.4.23",
+        "ref:proverbs.23.26",
+        "ref:matthew.6.21",
+        "ref:philippians.4.8"
+      ],
+      "contrastingRefs": [],
+      "boundaries": [
+        "Transformasi hati bukan hanya teknik perilaku.",
+        "Emosi saja bukan ukuran maturitas rohani."
+      ],
+      "relatedTopics": [
+        "character",
+        "temptation"
+      ],
+      "interpretiveNotes": [],
+      "confidence": 0.94
+    },
+    "doctrine:enemy-love-and-forgiveness": {
+      "id": "doctrine:enemy-love-and-forgiveness",
+      "name": "Kasih kepada musuh dan pengampunan",
+      "summary": "Memberi makan musuh dan menolak dendam adalah jalan hikmat yang dilanjutkan PB.",
+      "supportingRefs": [
+        "ref:proverbs.25.21-22",
+        "ref:romans.12.20",
+        "ref:proverbs.24.17"
+      ],
+      "contrastingRefs": [],
+      "boundaries": [
+        "Bukan meniadakan keadilan publik.",
+        "Pengampunan pribadi tidak sama dengan membiarkan kekerasan berlanjut tanpa batas."
+      ],
+      "relatedTopics": [
+        "forgiveness",
+        "love",
+        "peace"
+      ],
+      "interpretiveNotes": [
+        "Roma 12 mengutip Amsal 25 secara langsung."
+      ],
+      "confidence": 0.92
+    }
+  },
+  "byTopic": {
+    "fear_of_god": [
+      "doctrine:fear-of-the-lord"
+    ],
+    "wisdom": [
+      "doctrine:fear-of-the-lord",
+      "doctrine:wisdom-from-god"
+    ],
+    "faith": [
+      "doctrine:providence-and-plans"
+    ],
+    "decision_making": [
+      "doctrine:providence-and-plans",
+      "doctrine:friendship-and-counsel"
+    ],
+    "discipline": [
+      "doctrine:discipline-as-love"
+    ],
+    "family": [
+      "doctrine:discipline-as-love"
+    ],
+    "speech": [
+      "doctrine:speech-ethics"
+    ],
+    "character": [
+      "doctrine:integrity-and-justice",
+      "doctrine:heart-formation"
+    ],
+    "money": [
+      "doctrine:integrity-and-justice",
+      "doctrine:generosity-and-stewardship"
+    ],
+    "work": [
+      "doctrine:work-and-diligence"
+    ],
+    "friendship": [
+      "doctrine:friendship-and-counsel"
+    ],
+    "temptation": [
+      "doctrine:sexual-faithfulness",
+      "doctrine:heart-formation"
+    ],
+    "marriage": [
+      "doctrine:sexual-faithfulness"
+    ],
+    "love": [
+      "doctrine:generosity-and-stewardship",
+      "doctrine:enemy-love-and-forgiveness"
+    ],
+    "forgiveness": [
+      "doctrine:enemy-love-and-forgiveness"
+    ],
+    "peace": [
+      "doctrine:enemy-love-and-forgiveness"
+    ]
+  },
+  "byRef": {
+    "ref:proverbs.1.7": [
+      "doctrine:fear-of-the-lord"
+    ],
+    "ref:proverbs.9.10": [
+      "doctrine:fear-of-the-lord"
+    ],
+    "ref:proverbs.14.26": [
+      "doctrine:fear-of-the-lord"
+    ],
+    "ref:psalms.111.10": [
+      "doctrine:fear-of-the-lord"
+    ],
+    "ref:proverbs.2.6": [
+      "doctrine:wisdom-from-god"
+    ],
+    "ref:proverbs.8.1-36": [
+      "doctrine:wisdom-from-god"
+    ],
+    "ref:james.1.5": [
+      "doctrine:wisdom-from-god"
+    ],
+    "ref:1corinthians.1.24": [
+      "doctrine:wisdom-from-god"
+    ],
+    "ref:proverbs.16.9": [
+      "doctrine:providence-and-plans"
+    ],
+    "ref:proverbs.19.21": [
+      "doctrine:providence-and-plans"
+    ],
+    "ref:proverbs.21.30": [
+      "doctrine:providence-and-plans"
+    ],
+    "ref:romans.8.28": [
+      "doctrine:providence-and-plans"
+    ],
+    "ref:proverbs.3.11-12": [
+      "doctrine:discipline-as-love"
+    ],
+    "ref:proverbs.13.24": [
+      "doctrine:discipline-as-love"
+    ],
+    "ref:hebrews.12.5-6": [
+      "doctrine:discipline-as-love"
+    ],
+    "ref:proverbs.10.19": [
+      "doctrine:speech-ethics"
+    ],
+    "ref:proverbs.15.1": [
+      "doctrine:speech-ethics"
+    ],
+    "ref:proverbs.18.21": [
+      "doctrine:speech-ethics"
+    ],
+    "ref:james.3.5-10": [
+      "doctrine:speech-ethics"
+    ],
+    "ref:ephesians.4.29": [
+      "doctrine:speech-ethics"
+    ],
+    "ref:proverbs.11.1": [
+      "doctrine:integrity-and-justice"
+    ],
+    "ref:proverbs.21.3": [
+      "doctrine:integrity-and-justice"
+    ],
+    "ref:proverbs.28.6": [
+      "doctrine:integrity-and-justice"
+    ],
+    "ref:proverbs.6.6-11": [
+      "doctrine:work-and-diligence"
+    ],
+    "ref:proverbs.10.4": [
+      "doctrine:work-and-diligence"
+    ],
+    "ref:proverbs.14.23": [
+      "doctrine:work-and-diligence"
+    ],
+    "ref:2thessalonians.3.10": [
+      "doctrine:work-and-diligence"
+    ],
+    "ref:proverbs.13.20": [
+      "doctrine:friendship-and-counsel"
+    ],
+    "ref:proverbs.15.22": [
+      "doctrine:friendship-and-counsel"
+    ],
+    "ref:proverbs.27.17": [
+      "doctrine:friendship-and-counsel"
+    ],
+    "ref:hebrews.10.24-25": [
+      "doctrine:friendship-and-counsel"
+    ],
+    "ref:proverbs.5.15-23": [
+      "doctrine:sexual-faithfulness"
+    ],
+    "ref:proverbs.6.20-35": [
+      "doctrine:sexual-faithfulness"
+    ],
+    "ref:proverbs.7": [
+      "doctrine:sexual-faithfulness"
+    ],
+    "ref:1corinthians.6.18-20": [
+      "doctrine:sexual-faithfulness"
+    ],
+    "ref:hebrews.13.4": [
+      "doctrine:sexual-faithfulness"
+    ],
+    "ref:proverbs.11.24-25": [
+      "doctrine:generosity-and-stewardship"
+    ],
+    "ref:proverbs.19.17": [
+      "doctrine:generosity-and-stewardship"
+    ],
+    "ref:proverbs.22.9": [
+      "doctrine:generosity-and-stewardship"
+    ],
+    "ref:2corinthians.9.6-7": [
+      "doctrine:generosity-and-stewardship"
+    ],
+    "ref:proverbs.4.23": [
+      "doctrine:heart-formation"
+    ],
+    "ref:proverbs.23.26": [
+      "doctrine:heart-formation"
+    ],
+    "ref:matthew.6.21": [
+      "doctrine:heart-formation"
+    ],
+    "ref:philippians.4.8": [
+      "doctrine:heart-formation"
+    ],
+    "ref:proverbs.25.21-22": [
+      "doctrine:enemy-love-and-forgiveness"
+    ],
+    "ref:romans.12.20": [
+      "doctrine:enemy-love-and-forgiveness"
+    ],
+    "ref:proverbs.24.17": [
+      "doctrine:enemy-love-and-forgiveness"
+    ]
+  },
+  "ids": [
+    "doctrine:fear-of-the-lord",
+    "doctrine:wisdom-from-god",
+    "doctrine:providence-and-plans",
+    "doctrine:discipline-as-love",
+    "doctrine:speech-ethics",
+    "doctrine:integrity-and-justice",
+    "doctrine:work-and-diligence",
+    "doctrine:friendship-and-counsel",
+    "doctrine:sexual-faithfulness",
+    "doctrine:generosity-and-stewardship",
+    "doctrine:heart-formation",
+    "doctrine:enemy-love-and-forgiveness"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "salomo": [
+    "proverbs-chapter-01",
+    "proverbs-verse-01",
+    "proverbs-chapter-10",
+    "proverbs-verse-10",
+    "dict-solomon"
+  ],
+  "agur": [
+    "proverbs-chapter-30",
+    "proverbs-verse-30",
+    "dict-agur"
+  ],
+  "lemuel": [
+    "proverbs-chapter-31",
+    "proverbs-verse-31",
+    "dict-lemuel"
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "version": "1.0.0",
+  "language": "id",
+  "source": "Kurasi editorial Bible Time — tokoh dan figur sastra Amsal.",
+  "characters": [
+    {
+      "id": "character:solomon",
+      "name": "Salomo",
+      "roles": ["king", "wisdom-teacher", "attributed-author"],
+      "relationships": ["father:david", "collection:hezekiah-men"],
+      "events": ["timeline:solomon-wisdom-era"],
+      "lessons": ["Hikmat adalah anugerah yang harus dihidupi, bukan hanya dikumpulkan."],
+      "references": ["ref:proverbs.1.1", "ref:proverbs.10.1", "ref:proverbs.25.1"],
+      "boundaries": ["Atribusi tradisional tidak meniadakan redaksi koleksi kemudian."],
+      "confidence": 0.9
+    },
+    {
+      "id": "character:agur",
+      "name": "Agur bin Yake",
+      "roles": ["wisdom-teacher", "petitioner"],
+      "relationships": [],
+      "events": ["timeline:agur-oracle"],
+      "lessons": ["Kerendahan hati dan doa 'jangan beri aku kemiskinan atau kekayaan' adalah hikmat."],
+      "references": ["ref:proverbs.30.1-9"],
+      "boundaries": ["Identitas historis Agur tidak sepenuhnya diketahui."],
+      "confidence": 0.8
+    },
+    {
+      "id": "character:lemuel",
+      "name": "Lemuel",
+      "roles": ["king", "son", "wisdom-recipient"],
+      "relationships": ["mother:lemuel-mother"],
+      "events": ["timeline:lemuel-oracle"],
+      "lessons": ["Kepemimpinan butuh kewaspadaan terhadap nafsu dan pembelaan orang tertindas."],
+      "references": ["ref:proverbs.31.1-9"],
+      "boundaries": ["Lemuel mungkin gelar atau tokoh non-Israel; jangan dipaksa sebagai identitas pasti."],
+      "confidence": 0.75
+    },
+    {
+      "id": "character:lemuel-mother",
+      "name": "Ibu Lemuel",
+      "roles": ["wisdom-teacher", "mother", "royal-counselor"],
+      "relationships": ["son:lemuel"],
+      "events": ["timeline:lemuel-oracle"],
+      "lessons": ["Nasihat ibu dapat membentuk etika kepemimpinan publik."],
+      "references": ["ref:proverbs.31.1-9"],
+      "boundaries": [],
+      "confidence": 0.8
+    },
+    {
+      "id": "character:woman-wisdom",
+      "name": "Hikmat (personifikasi)",
+      "roles": ["literary-figure", "teacher", "creator-companion"],
+      "relationships": ["contrast:woman-folly"],
+      "events": ["timeline:wisdom-personification"],
+      "lessons": ["Hikmat memanggil di tempat umum; menolaknya adalah memilih kehancuran."],
+      "references": ["ref:proverbs.1.20-33", "ref:proverbs.8", "ref:proverbs.9.1-6"],
+      "boundaries": ["Figur sastra; kristologi Amsal 8 adalah salah satu tafsiran yang diakui, bukan satu-satunya."],
+      "confidence": 0.9
+    },
+    {
+      "id": "character:woman-folly",
+      "name": "Kebodohan (personifikasi)",
+      "roles": ["literary-figure", "tempter"],
+      "relationships": ["contrast:woman-wisdom"],
+      "events": ["timeline:wisdom-personification"],
+      "lessons": ["Undangan kebodohan terdengar mudah tetapi berujung maut."],
+      "references": ["ref:proverbs.9.13-18"],
+      "boundaries": ["Bukan stereotip gender modern; ini tipologi moral sastra."],
+      "confidence": 0.88
+    },
+    {
+      "id": "character:strange-woman",
+      "name": "Perempuan asing / penggoda",
+      "roles": ["literary-figure", "tempter"],
+      "relationships": [],
+      "events": [],
+      "lessons": ["Godaan seksual dan tipu daya memerlukan kewaspadaan hati dan komunitas."],
+      "references": ["ref:proverbs.5", "ref:proverbs.6.24-35", "ref:proverbs.7"],
+      "boundaries": ["Jangan dipakai untuk menyalahkan korban pelecehan; fokus pada kewaspadaan dan kesetiaan."],
+      "confidence": 0.85
+    },
+    {
+      "id": "character:noble-wife",
+      "name": "Istri yang cakap",
+      "roles": ["literary-figure", "exemplar", "economic-agent"],
+      "relationships": [],
+      "events": ["timeline:noble-wife-poem"],
+      "lessons": ["Keunggulan diukur dari takut akan Tuhan, kerja, kemurahan, dan kekuatan karakter."],
+      "references": ["ref:proverbs.31.10-31"],
+      "boundaries": ["Bukan daftar periksa legalistik untuk semua perempuan sepanjang zaman."],
+      "confidence": 0.9
+    },
+    {
+      "id": "character:hezekiah-men",
+      "name": "Pegawai Hizkia",
+      "roles": ["scribes", "editors", "transmitters"],
+      "relationships": ["collection:solomon"],
+      "events": ["timeline:hezekiah-collection"],
+      "lessons": ["Tradisi hikmat dipelihara melalui penyuntingan dan transmisi setia."],
+      "references": ["ref:proverbs.25.1"],
+      "boundaries": ["Peran mereka redaksional; bukan pengarang seluruh kitab."],
+      "confidence": 0.85
+    }
+  ]
+}

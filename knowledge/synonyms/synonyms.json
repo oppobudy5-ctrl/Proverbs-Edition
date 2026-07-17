@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0",
+  "language": "id",
+  "source": "Sinonimi & perluasan istilah Bible Time (kurasi editorial).",
+  "license": "editorial-cc-by-nc",
+  "entries": [
+    { "canonical": "hikmat", "synonyms": ["kebijaksanaan", "bijaksana", "bijak", "kecakapan", "chokmah", "hikma", "pengertian"] },
+    { "canonical": "takut akan tuhan", "synonyms": ["takut kepada tuhan", "hormat kepada tuhan", "takut akan allah", "yirat"] },
+    { "canonical": "integritas", "synonyms": ["kejujuran", "ketulusan", "kelurusan", "jujur"] },
+    { "canonical": "kerendahan hati", "synonyms": ["rendah hati", "tidak sombong", "humble"] },
+    { "canonical": "kesombongan", "synonyms": ["sombong", "angkuh", "tinggi hati", "arogan"] },
+    { "canonical": "disiplin", "synonyms": ["didikan", "teguran", "koreksi", "ganjaran"] },
+    { "canonical": "perkataan", "synonyms": ["lidah", "mulut", "ucapan", "bicara", "kata-kata"] },
+    { "canonical": "damai", "synonyms": ["ketenteraman", "damai sejahtera", "tenang"] },
+    { "canonical": "pengharapan", "synonyms": ["harapan", "menanti", "optimis iman"] },
+    { "canonical": "godaan", "synonyms": ["rayuan", "pencobaan", "jerat", "bujukan"] },
+    { "canonical": "kerja", "synonyms": ["kerajinan", "bekerja", "pekerjaan", "usaha"] },
+    { "canonical": "uang", "synonyms": ["harta", "kekayaan", "keuangan", "materi"] },
+    { "canonical": "keluarga", "synonyms": ["anak", "orang tua", "rumah tangga", "mendidik"] },
+    { "canonical": "pernikahan", "synonyms": ["suami", "istri", "pasangan", "kesetiaan"] },
+    { "canonical": "persahabatan", "synonyms": ["teman", "sahabat", "relasi"] },
+    { "canonical": "keadilan", "synonyms": ["adil", "hak", "membela yang lemah"] },
+    { "canonical": "iman", "synonyms": ["percaya", "kepercayaan", "bersandar"] },
+    { "canonical": "doa", "synonyms": ["berdoa", "permohonan", "doa singkat"] },
+    { "canonical": "salomo", "synonyms": ["solomon", "raja salomo"] },
+    { "canonical": "kemalasan", "synonyms": ["malas", "menunda", "prokrastinasi"] },
+    { "canonical": "kesabaran", "synonyms": ["sabar", "panjang sabar", "menahan diri"] },
+    { "canonical": "marah", "synonyms": ["emosi", "geram", "naik darah", "kegeraman"] }
+  ]
+}

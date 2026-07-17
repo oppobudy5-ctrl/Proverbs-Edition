@@ -1,0 +1,206 @@
+{
+  "version": "1.0.0",
+  "language": "id",
+  "source": "Kamus istilah Bible Time berdasarkan leksikon Ibrani/Yunani standar (BDB, HALOT, ringkasan editorial).",
+  "license": "editorial-cc-by-nc",
+  "entries": [
+    {
+      "id": "dict-chokmah",
+      "category": "Hebrew",
+      "term": "חָכְמָה",
+      "transliteration": "chokmah",
+      "meaning": "hikmat, kecakapan",
+      "definition": "Kemampuan praktis dan moral untuk menjalani hidup dengan terampil di hadapan Allah; mencakup keterampilan kerja, penilaian etis, dan kebijaksanaan hidup.",
+      "references": ["Amsal 1:2", "Amsal 2:6", "Amsal 9:10"],
+      "relatedTerms": ["binah", "musar", "daat"],
+      "topics": ["wisdom"]
+    },
+    {
+      "id": "dict-musar",
+      "category": "Hebrew",
+      "term": "מוּסָר",
+      "transliteration": "musar",
+      "meaning": "didikan, disiplin, teguran",
+      "definition": "Pembentukan watak melalui pengajaran dan koreksi; bukan sekadar hukuman, tetapi proses membentuk kedewasaan moral.",
+      "references": ["Amsal 1:2", "Amsal 3:11", "Amsal 13:24"],
+      "relatedTerms": ["chokmah", "tokhachat"],
+      "topics": ["discipline"]
+    },
+    {
+      "id": "dict-daat",
+      "category": "Hebrew",
+      "term": "דַּעַת",
+      "transliteration": "daat",
+      "meaning": "pengetahuan",
+      "definition": "Pengenalan yang lebih dari sekadar informasi; melibatkan hubungan dan pengalaman, khususnya pengenalan akan Allah.",
+      "references": ["Amsal 1:7", "Amsal 2:5", "Amsal 9:10"],
+      "relatedTerms": ["chokmah", "binah"],
+      "topics": ["wisdom", "fear_of_god"]
+    },
+    {
+      "id": "dict-binah",
+      "category": "Hebrew",
+      "term": "בִּינָה",
+      "transliteration": "binah",
+      "meaning": "pengertian, kemampuan membedakan",
+      "definition": "Kemampuan membedakan antara yang benar dan yang salah, memahami hubungan sebab-akibat secara moral.",
+      "references": ["Amsal 2:3", "Amsal 3:5", "Amsal 9:10"],
+      "relatedTerms": ["chokmah", "daat"],
+      "topics": ["wisdom", "decision_making"]
+    },
+    {
+      "id": "dict-yirat-yhwh",
+      "category": "Biblical Terms",
+      "term": "יִרְאַת יְהוָה",
+      "transliteration": "yirat YHWH",
+      "meaning": "takut akan TUHAN",
+      "definition": "Sikap hormat, kagum, dan tunduk kepada Allah yang menjadi permulaan dan prinsip pengarah pengetahuan; bukan ketakutan yang melumpuhkan, melainkan penghormatan penuh kepercayaan.",
+      "references": ["Amsal 1:7", "Amsal 9:10", "Amsal 31:30"],
+      "relatedTerms": ["chokmah", "daat"],
+      "topics": ["fear_of_god"]
+    },
+    {
+      "id": "dict-mezimmah",
+      "category": "Hebrew",
+      "term": "מְזִמָּה",
+      "transliteration": "mezimmah",
+      "meaning": "kebijaksanaan merencanakan, kehati-hatian",
+      "definition": "Kemampuan merencanakan dengan pertimbangan moral; dalam konteks positif berarti kebijaksanaan, dalam konteks negatif dapat berarti persekongkolan.",
+      "references": ["Amsal 1:4", "Amsal 2:11", "Amsal 3:21"],
+      "relatedTerms": ["chokmah", "binah"],
+      "topics": ["decision_making", "wisdom"]
+    },
+    {
+      "id": "dict-tsedeq",
+      "category": "Hebrew",
+      "term": "צֶדֶק",
+      "transliteration": "tsedeq",
+      "meaning": "kebenaran, keadilan",
+      "definition": "Kesesuaian dengan standar Allah dalam relasi dan tindakan; hidup benar terhadap Allah dan sesama.",
+      "references": ["Amsal 8:15", "Amsal 11:4", "Amsal 21:3"],
+      "relatedTerms": ["mishpat", "emet"],
+      "topics": ["justice", "integrity"]
+    },
+    {
+      "id": "dict-mishpat",
+      "category": "Hebrew",
+      "term": "מִשְׁפָּט",
+      "transliteration": "mishpat",
+      "meaning": "keadilan, hukum",
+      "definition": "Keputusan dan tindakan yang adil, penegakan hak, khususnya bagi yang lemah dan tertindas.",
+      "references": ["Amsal 21:3", "Amsal 29:7", "Amsal 31:9"],
+      "relatedTerms": ["tsedeq"],
+      "topics": ["justice"]
+    },
+    {
+      "id": "dict-lev",
+      "category": "Hebrew",
+      "term": "לֵב",
+      "transliteration": "lev",
+      "meaning": "hati",
+      "definition": "Pusat batin manusia yang mencakup pikiran, kehendak, dan keputusan—bukan sekadar emosi; tempat hikmat berakar dan arah hidup ditentukan.",
+      "references": ["Amsal 3:5", "Amsal 4:23", "Amsal 16:9"],
+      "relatedTerms": ["chokmah"],
+      "topics": ["character", "temptation"]
+    },
+    {
+      "id": "dict-emet",
+      "category": "Hebrew",
+      "term": "אֱמֶת",
+      "transliteration": "emet",
+      "meaning": "kebenaran, kesetiaan",
+      "definition": "Keandalan dan kejujuran; sesuatu atau seseorang yang dapat dipercaya karena selaras dengan kenyataan.",
+      "references": ["Amsal 3:3", "Amsal 12:19", "Amsal 8:7"],
+      "relatedTerms": ["chesed", "tsedeq"],
+      "topics": ["integrity", "speech"]
+    },
+    {
+      "id": "dict-chesed",
+      "category": "Hebrew",
+      "term": "חֶסֶד",
+      "transliteration": "chesed",
+      "meaning": "kasih setia",
+      "definition": "Kasih yang setia dan teguh dalam ikatan perjanjian; kebaikan yang tidak bergantung pada kelayakan penerima.",
+      "references": ["Amsal 3:3", "Amsal 16:6", "Amsal 20:28"],
+      "relatedTerms": ["emet"],
+      "topics": ["love", "marriage"]
+    },
+    {
+      "id": "dict-sophia",
+      "category": "Greek",
+      "term": "σοφία",
+      "transliteration": "sophia",
+      "meaning": "hikmat",
+      "definition": "Padanan Yunani untuk hikmat dalam Septuaginta dan Perjanjian Baru; dalam teologi Kristen dikaitkan dengan Kristus sebagai hikmat Allah.",
+      "references": ["Amsal 8:1", "1 Korintus 1:24", "Yakobus 3:17"],
+      "relatedTerms": ["chokmah"],
+      "topics": ["wisdom"]
+    },
+    {
+      "id": "dict-phobos-theou",
+      "category": "Greek",
+      "term": "φόβος θεοῦ",
+      "transliteration": "phobos theou",
+      "meaning": "takut akan Allah",
+      "definition": "Padanan Yunani untuk takut akan TUHAN; penghormatan penuh hormat kepada Allah yang menuntun pada kekudusan.",
+      "references": ["Amsal 1:7", "Kisah 9:31", "2 Korintus 7:1"],
+      "relatedTerms": ["yirat YHWH"],
+      "topics": ["fear_of_god"]
+    },
+    {
+      "id": "dict-solomon",
+      "category": "People",
+      "term": "Salomo",
+      "transliteration": "Shelomoh",
+      "meaning": "damai",
+      "definition": "Raja Israel, putra Daud, yang dikenal karena hikmatnya dan menjadi penulis tradisional sebagian besar Amsal.",
+      "references": ["Amsal 1:1", "1 Raja-raja 3:12", "Amsal 10:1"],
+      "relatedTerms": ["Agur", "Lemuel"],
+      "topics": ["wisdom", "leadership"]
+    },
+    {
+      "id": "dict-agur",
+      "category": "People",
+      "term": "Agur",
+      "transliteration": "Agur",
+      "meaning": "pengumpul",
+      "definition": "Bin Yake, penulis Amsal 30 yang dikenal karena kerendahan hati dan pengamatan tajam terhadap keterbatasan manusia.",
+      "references": ["Amsal 30:1"],
+      "relatedTerms": ["Salomo", "Lemuel"],
+      "topics": ["humility"]
+    },
+    {
+      "id": "dict-lemuel",
+      "category": "People",
+      "term": "Lemuel",
+      "transliteration": "Lemuel",
+      "meaning": "milik Allah",
+      "definition": "Raja yang menerima nasihat dari ibunya, tercatat dalam Amsal 31, termasuk peringatan terhadap anggur dan seruan membela keadilan.",
+      "references": ["Amsal 31:1"],
+      "relatedTerms": ["Salomo", "Agur"],
+      "topics": ["leadership", "justice"]
+    },
+    {
+      "id": "dict-sheol",
+      "category": "Biblical Terms",
+      "term": "שְׁאוֹל",
+      "transliteration": "sheol",
+      "meaning": "dunia orang mati",
+      "definition": "Tempat orang mati dalam pandangan Perjanjian Lama; dalam Amsal sering menjadi gambaran arah dan tujuan akhir jalan kebodohan.",
+      "references": ["Amsal 5:5", "Amsal 7:27", "Amsal 9:18"],
+      "relatedTerms": [],
+      "topics": ["temptation"]
+    },
+    {
+      "id": "dict-ant",
+      "category": "Animals",
+      "term": "Semut",
+      "transliteration": "nemalah",
+      "meaning": "semut",
+      "definition": "Serangga kecil yang dijadikan teladan kerajinan dalam Amsal 6 karena bekerja dan menyiapkan makanan tanpa perlu diawasi.",
+      "references": ["Amsal 6:6", "Amsal 30:25"],
+      "relatedTerms": [],
+      "topics": ["work"]
+    }
+  ]
+}

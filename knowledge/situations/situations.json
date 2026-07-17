@@ -1,0 +1,113 @@
+{
+  "version": "1.0.0",
+  "language": "id",
+  "source": "Life-situation ontology Bible Time (kurasi editorial).",
+  "license": "editorial-cc-by-nc",
+  "situations": [
+    {
+      "id": "fear_anxiety",
+      "label": "Takut atau cemas",
+      "phrases": ["saya sedang takut", "saya takut", "cemas", "khawatir", "ketakutan", "gelisah", "panik"],
+      "topics": ["fear_of_god", "faith", "peace", "hope"],
+      "reason": "Situasi takut diarahkan kepada takut akan TUHAN, iman, damai, dan pengharapan."
+    },
+    {
+      "id": "lost_hope",
+      "label": "Kehilangan harapan",
+      "phrases": ["kehilangan harapan", "putus asa", "tidak ada harapan", "lelah berharap", "sedih berat"],
+      "topics": ["hope", "suffering", "faith", "joy"],
+      "reason": "Pengharapan Alkitab menolong saat masa depan terasa gelap."
+    },
+    {
+      "id": "temptation",
+      "label": "Menghadapi godaan",
+      "phrases": ["menghadapi godaan", "godaan", "tergoda", "rayuan", "pencobaan", "sulit menolak"],
+      "topics": ["temptation", "character", "discipline", "prayer"],
+      "reason": "Hikmat menolong mengenali jerat dan menjaga hati."
+    },
+    {
+      "id": "speech_control",
+      "label": "Mengendalikan lidah",
+      "phrases": ["mengendalikan lidah", "sulit mengendalikan lidah", "kata-kata kasar", "marah bicara", "gosip", "perkataan"],
+      "topics": ["speech", "peace", "character", "humility"],
+      "reason": "Amsal banyak mengajarkan kuasa perkataan untuk membangun atau merusak."
+    },
+    {
+      "id": "good_leader",
+      "label": "Menjadi pemimpin yang baik",
+      "phrases": ["pemimpin yang baik", "kepemimpinan", "memimpin", "jadi pemimpin", "otoritas"],
+      "topics": ["leadership", "justice", "humility", "integrity"],
+      "reason": "Kepemimpinan bijak berakar pada keadilan, kerendahan hati, dan integritas."
+    },
+    {
+      "id": "decision",
+      "label": "Mengambil keputusan",
+      "phrases": ["mengambil keputusan", "bingung mengambil keputusan", "pilihan sulit", "ragu memutuskan", "tidak tahu harus memilih"],
+      "topics": ["decision_making", "wisdom", "faith", "prayer"],
+      "reason": "Keputusan bijak lahir dari hikmat, doa, dan percaya kepada TUHAN."
+    },
+    {
+      "id": "conflict",
+      "label": "Menghadapi konflik",
+      "phrases": ["menghadapi konflik", "bertengkar", "perselisihan", "ribut", "konflik"],
+      "topics": ["peace", "speech", "forgiveness", "friendship"],
+      "reason": "Damai, perkataan lembut, dan pengampunan menolong meredakan konflik."
+    },
+    {
+      "id": "choose_partner",
+      "label": "Memilih pasangan",
+      "phrases": ["memilih pasangan", "pacaran", "mencari pasangan", "siap menikah"],
+      "topics": ["marriage", "character", "wisdom", "faith"],
+      "reason": "Karakter dan takut akan TUHAN lebih penting daripada daya tarik sesaat."
+    },
+    {
+      "id": "raise_children",
+      "label": "Mendidik anak",
+      "phrases": ["mendidik anak", "mengasuh anak", "anak sulit diatur", "pendidikan anak"],
+      "topics": ["family", "discipline", "love", "wisdom"],
+      "reason": "Didikan dan kasih membentuk generasi dalam jalan hikmat."
+    },
+    {
+      "id": "manage_money",
+      "label": "Mengatur uang",
+      "phrases": ["mengatur uang", "keuangan", "utang", "boros", "hemat", "kekayaan"],
+      "topics": ["money", "work", "integrity", "wisdom"],
+      "reason": "Hikmat mengatur harta dengan kejujuran, kerajinan, dan kemurahan."
+    },
+    {
+      "id": "failure",
+      "label": "Menghadapi kegagalan",
+      "phrases": ["menghadapi kegagalan", "gagal", "jatuh", "kecewa", "salah langkah"],
+      "topics": ["hope", "discipline", "humility", "faith"],
+      "reason": "Kegagalan dapat menjadi didikan yang membentuk karakter dan pengharapan."
+    },
+    {
+      "id": "honest_work",
+      "label": "Bekerja dengan jujur",
+      "phrases": ["bekerja dengan jujur", "kerja jujur", "integritas di kantor", "korupsi", "kerja keras"],
+      "topics": ["work", "integrity", "justice", "character"],
+      "reason": "Kerajinan dan kejujuran adalah buah hikmat di tempat kerja."
+    },
+    {
+      "id": "anger",
+      "label": "Menghadapi marah",
+      "phrases": ["marah", "emosi", "geram", "cepat naik darah", "mengendalikan marah"],
+      "topics": ["speech", "peace", "character", "discipline"],
+      "reason": "Jawaban lemah lembut dan penguasaan diri meredakan kemarahan."
+    },
+    {
+      "id": "laziness",
+      "label": "Melawan kemalasan",
+      "phrases": ["malas", "kemalasan", "menunda-nunda", "prokrastinasi", "tidak produktif"],
+      "topics": ["work", "discipline", "character"],
+      "reason": "Amsal meneladankan kerajinan (misalnya semut) sebagai respons bijak."
+    },
+    {
+      "id": "pride",
+      "label": "Melawan kesombongan",
+      "phrases": ["sombong", "kesombongan", "angkuh", "tinggi hati", "merasa paling benar"],
+      "topics": ["humility", "character", "wisdom", "fear_of_god"],
+      "reason": "Kerendahan hati adalah jalan hikmat; kesombongan mendatangkan kehancuran."
+    }
+  ]
+}

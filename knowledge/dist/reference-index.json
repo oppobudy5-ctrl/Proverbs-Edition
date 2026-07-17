@@ -1,0 +1,2638 @@
+{
+  "version": "1.0.0",
+  "byCanonicalId": {
+    "book:proverbs": {
+      "id": "book:proverbs",
+      "display": "Amsal",
+      "type": "canon-book",
+      "legacyId": "proverbs"
+    },
+    "chapter:proverbs.01": {
+      "id": "chapter:proverbs.01",
+      "display": "Amsal 1",
+      "type": "reference"
+    },
+    "chapter:proverbs.02": {
+      "id": "chapter:proverbs.02",
+      "display": "Amsal 2",
+      "type": "reference"
+    },
+    "chapter:proverbs.03": {
+      "id": "chapter:proverbs.03",
+      "display": "Amsal 3",
+      "type": "reference"
+    },
+    "chapter:proverbs.04": {
+      "id": "chapter:proverbs.04",
+      "display": "Amsal 4",
+      "type": "reference"
+    },
+    "chapter:proverbs.05": {
+      "id": "chapter:proverbs.05",
+      "display": "Amsal 5",
+      "type": "reference"
+    },
+    "chapter:proverbs.06": {
+      "id": "chapter:proverbs.06",
+      "display": "Amsal 6",
+      "type": "reference"
+    },
+    "chapter:proverbs.07": {
+      "id": "chapter:proverbs.07",
+      "display": "Amsal 7",
+      "type": "reference"
+    },
+    "chapter:proverbs.08": {
+      "id": "chapter:proverbs.08",
+      "display": "Amsal 8",
+      "type": "reference"
+    },
+    "chapter:proverbs.09": {
+      "id": "chapter:proverbs.09",
+      "display": "Amsal 9",
+      "type": "reference"
+    },
+    "chapter:proverbs.10": {
+      "id": "chapter:proverbs.10",
+      "display": "Amsal 10",
+      "type": "reference"
+    },
+    "chapter:proverbs.11": {
+      "id": "chapter:proverbs.11",
+      "display": "Amsal 11",
+      "type": "reference"
+    },
+    "chapter:proverbs.12": {
+      "id": "chapter:proverbs.12",
+      "display": "Amsal 12",
+      "type": "reference"
+    },
+    "chapter:proverbs.13": {
+      "id": "chapter:proverbs.13",
+      "display": "Amsal 13",
+      "type": "reference"
+    },
+    "chapter:proverbs.14": {
+      "id": "chapter:proverbs.14",
+      "display": "Amsal 14",
+      "type": "reference"
+    },
+    "chapter:proverbs.15": {
+      "id": "chapter:proverbs.15",
+      "display": "Amsal 15",
+      "type": "reference"
+    },
+    "chapter:proverbs.16": {
+      "id": "chapter:proverbs.16",
+      "display": "Amsal 16",
+      "type": "reference"
+    },
+    "chapter:proverbs.17": {
+      "id": "chapter:proverbs.17",
+      "display": "Amsal 17",
+      "type": "reference"
+    },
+    "chapter:proverbs.18": {
+      "id": "chapter:proverbs.18",
+      "display": "Amsal 18",
+      "type": "reference"
+    },
+    "chapter:proverbs.19": {
+      "id": "chapter:proverbs.19",
+      "display": "Amsal 19",
+      "type": "reference"
+    },
+    "chapter:proverbs.20": {
+      "id": "chapter:proverbs.20",
+      "display": "Amsal 20",
+      "type": "reference"
+    },
+    "chapter:proverbs.21": {
+      "id": "chapter:proverbs.21",
+      "display": "Amsal 21",
+      "type": "reference"
+    },
+    "chapter:proverbs.22": {
+      "id": "chapter:proverbs.22",
+      "display": "Amsal 22",
+      "type": "reference"
+    },
+    "chapter:proverbs.23": {
+      "id": "chapter:proverbs.23",
+      "display": "Amsal 23",
+      "type": "reference"
+    },
+    "chapter:proverbs.24": {
+      "id": "chapter:proverbs.24",
+      "display": "Amsal 24",
+      "type": "reference"
+    },
+    "chapter:proverbs.25": {
+      "id": "chapter:proverbs.25",
+      "display": "Amsal 25",
+      "type": "reference"
+    },
+    "chapter:proverbs.26": {
+      "id": "chapter:proverbs.26",
+      "display": "Amsal 26",
+      "type": "reference"
+    },
+    "chapter:proverbs.27": {
+      "id": "chapter:proverbs.27",
+      "display": "Amsal 27",
+      "type": "reference"
+    },
+    "chapter:proverbs.28": {
+      "id": "chapter:proverbs.28",
+      "display": "Amsal 28",
+      "type": "reference"
+    },
+    "chapter:proverbs.29": {
+      "id": "chapter:proverbs.29",
+      "display": "Amsal 29",
+      "type": "reference"
+    },
+    "chapter:proverbs.30": {
+      "id": "chapter:proverbs.30",
+      "display": "Amsal 30",
+      "type": "reference"
+    },
+    "chapter:proverbs.31": {
+      "id": "chapter:proverbs.31",
+      "display": "Amsal 31",
+      "type": "reference"
+    },
+    "book:psalms": {
+      "id": "book:psalms",
+      "display": "Mazmur",
+      "type": "canon-book",
+      "legacyId": "psalms"
+    },
+    "book:ecclesiastes": {
+      "id": "book:ecclesiastes",
+      "display": "Pengkhotbah",
+      "type": "canon-book",
+      "legacyId": "ecclesiastes"
+    },
+    "book:matthew": {
+      "id": "book:matthew",
+      "display": "Matius",
+      "type": "canon-book",
+      "legacyId": "matthew"
+    },
+    "book:romans": {
+      "id": "book:romans",
+      "display": "Roma",
+      "type": "canon-book",
+      "legacyId": "romans"
+    },
+    "book:1corinthians": {
+      "id": "book:1corinthians",
+      "display": "1 Korintus",
+      "type": "canon-book",
+      "legacyId": "1corinthians"
+    },
+    "book:2corinthians": {
+      "id": "book:2corinthians",
+      "display": "2 Korintus",
+      "type": "canon-book",
+      "legacyId": "2corinthians"
+    },
+    "book:galatians": {
+      "id": "book:galatians",
+      "display": "Galatia",
+      "type": "canon-book",
+      "legacyId": "galatians"
+    },
+    "book:ephesians": {
+      "id": "book:ephesians",
+      "display": "Efesus",
+      "type": "canon-book",
+      "legacyId": "ephesians"
+    },
+    "book:philippians": {
+      "id": "book:philippians",
+      "display": "Filipi",
+      "type": "canon-book",
+      "legacyId": "philippians"
+    },
+    "book:colossians": {
+      "id": "book:colossians",
+      "display": "Kolose",
+      "type": "canon-book",
+      "legacyId": "colossians"
+    },
+    "book:2thessalonians": {
+      "id": "book:2thessalonians",
+      "display": "2 Tesalonika",
+      "type": "canon-book",
+      "legacyId": "2thessalonians"
+    },
+    "book:hebrews": {
+      "id": "book:hebrews",
+      "display": "Ibrani",
+      "type": "canon-book",
+      "legacyId": "hebrews"
+    },
+    "book:james": {
+      "id": "book:james",
+      "display": "Yakobus",
+      "type": "canon-book",
+      "legacyId": "james"
+    },
+    "book:1peter": {
+      "id": "book:1peter",
+      "display": "1 Petrus",
+      "type": "canon-book",
+      "legacyId": "1peter"
+    },
+    "ref:proverbs.1.1": {
+      "id": "ref:proverbs.1.1",
+      "display": "ref:proverbs.1.1",
+      "type": "reference"
+    },
+    "ref:proverbs.1.7": {
+      "id": "ref:proverbs.1.7",
+      "display": "ref:proverbs.1.7",
+      "type": "reference"
+    },
+    "ref:psalms.111.10": {
+      "id": "ref:psalms.111.10",
+      "display": "ref:psalms.111.10",
+      "type": "reference"
+    },
+    "ref:james.1.5": {
+      "id": "ref:james.1.5",
+      "display": "ref:james.1.5",
+      "type": "reference"
+    },
+    "ref:proverbs.2.6": {
+      "id": "ref:proverbs.2.6",
+      "display": "ref:proverbs.2.6",
+      "type": "reference"
+    },
+    "ref:proverbs.3.5": {
+      "id": "ref:proverbs.3.5",
+      "display": "Amsal 3:5",
+      "type": "reference"
+    },
+    "ref:psalms.37.3": {
+      "id": "ref:psalms.37.3",
+      "display": "Mazmur 37:3-5",
+      "type": "reference"
+    },
+    "ref:hebrews.12.5": {
+      "id": "ref:hebrews.12.5",
+      "display": "Ibrani 12:5-6",
+      "type": "reference"
+    },
+    "ref:matthew.6.33": {
+      "id": "ref:matthew.6.33",
+      "display": "ref:matthew.6.33",
+      "type": "reference"
+    },
+    "ref:psalms.37.5": {
+      "id": "ref:psalms.37.5",
+      "display": "Mazmur 37:5",
+      "type": "reference"
+    },
+    "ref:proverbs.4.23": {
+      "id": "ref:proverbs.4.23",
+      "display": "ref:proverbs.4.23",
+      "type": "reference"
+    },
+    "ref:matthew.6.21": {
+      "id": "ref:matthew.6.21",
+      "display": "ref:matthew.6.21",
+      "type": "reference"
+    },
+    "ref:philippians.4.8": {
+      "id": "ref:philippians.4.8",
+      "display": "ref:philippians.4.8",
+      "type": "reference"
+    },
+    "ref:proverbs.5.21": {
+      "id": "ref:proverbs.5.21",
+      "display": "Amsal 5:21",
+      "type": "reference"
+    },
+    "ref:1corinthians.6.18": {
+      "id": "ref:1corinthians.6.18",
+      "display": "1 Korintus 6:18-20",
+      "type": "reference"
+    },
+    "ref:hebrews.13.4": {
+      "id": "ref:hebrews.13.4",
+      "display": "ref:hebrews.13.4",
+      "type": "reference"
+    },
+    "ref:proverbs.6.6": {
+      "id": "ref:proverbs.6.6",
+      "display": "Amsal 6:6",
+      "type": "reference"
+    },
+    "ref:2thessalonians.3.10": {
+      "id": "ref:2thessalonians.3.10",
+      "display": "ref:2thessalonians.3.10",
+      "type": "reference"
+    },
+    "ref:romans.12.18": {
+      "id": "ref:romans.12.18",
+      "display": "Roma 12:18",
+      "type": "reference"
+    },
+    "ref:proverbs.7.2": {
+      "id": "ref:proverbs.7.2",
+      "display": "Amsal 7:2",
+      "type": "reference"
+    },
+    "ref:matthew.26.41": {
+      "id": "ref:matthew.26.41",
+      "display": "Matius 26:41",
+      "type": "reference"
+    },
+    "ref:proverbs.8.11": {
+      "id": "ref:proverbs.8.11",
+      "display": "Amsal 8:11",
+      "type": "reference"
+    },
+    "ref:1corinthians.1.24": {
+      "id": "ref:1corinthians.1.24",
+      "display": "ref:1corinthians.1.24",
+      "type": "reference"
+    },
+    "ref:colossians.1.15": {
+      "id": "ref:colossians.1.15",
+      "display": "Kolose 1:15-17",
+      "type": "reference"
+    },
+    "ref:proverbs.9.10": {
+      "id": "ref:proverbs.9.10",
+      "display": "ref:proverbs.9.10",
+      "type": "reference"
+    },
+    "ref:proverbs.10.12": {
+      "id": "ref:proverbs.10.12",
+      "display": "Amsal 10:12",
+      "type": "reference"
+    },
+    "ref:james.3.5": {
+      "id": "ref:james.3.5",
+      "display": "Yakobus 3:5-10",
+      "type": "reference"
+    },
+    "ref:proverbs.11.3": {
+      "id": "ref:proverbs.11.3",
+      "display": "Amsal 11:3",
+      "type": "reference"
+    },
+    "ref:2corinthians.9.6": {
+      "id": "ref:2corinthians.9.6",
+      "display": "2 Korintus 9:6-7",
+      "type": "reference"
+    },
+    "ref:proverbs.12.1": {
+      "id": "ref:proverbs.12.1",
+      "display": "Amsal 12:1",
+      "type": "reference"
+    },
+    "ref:hebrews.12.11": {
+      "id": "ref:hebrews.12.11",
+      "display": "Ibrani 12:11",
+      "type": "reference"
+    },
+    "ref:proverbs.13.20": {
+      "id": "ref:proverbs.13.20",
+      "display": "ref:proverbs.13.20",
+      "type": "reference"
+    },
+    "ref:ephesians.6.4": {
+      "id": "ref:ephesians.6.4",
+      "display": "Efesus 6:4",
+      "type": "reference"
+    },
+    "ref:proverbs.22.6": {
+      "id": "ref:proverbs.22.6",
+      "display": "Amsal 22:6",
+      "type": "reference"
+    },
+    "ref:proverbs.14.1": {
+      "id": "ref:proverbs.14.1",
+      "display": "ref:proverbs.14.1",
+      "type": "reference"
+    },
+    "ref:james.1.19": {
+      "id": "ref:james.1.19",
+      "display": "ref:james.1.19",
+      "type": "reference"
+    },
+    "ref:proverbs.15.1": {
+      "id": "ref:proverbs.15.1",
+      "display": "ref:proverbs.15.1",
+      "type": "reference"
+    },
+    "ref:ephesians.4.29": {
+      "id": "ref:ephesians.4.29",
+      "display": "ref:ephesians.4.29",
+      "type": "reference"
+    },
+    "ref:proverbs.16.3": {
+      "id": "ref:proverbs.16.3",
+      "display": "ref:proverbs.16.3",
+      "type": "reference"
+    },
+    "ref:james.4.13": {
+      "id": "ref:james.4.13",
+      "display": "Yakobus 4:13-15",
+      "type": "reference"
+    },
+    "ref:proverbs.17.1": {
+      "id": "ref:proverbs.17.1",
+      "display": "Amsal 17:1",
+      "type": "reference"
+    },
+    "ref:proverbs.15.17": {
+      "id": "ref:proverbs.15.17",
+      "display": "Amsal 15:17",
+      "type": "reference"
+    },
+    "ref:proverbs.18.21": {
+      "id": "ref:proverbs.18.21",
+      "display": "ref:proverbs.18.21",
+      "type": "reference"
+    },
+    "ref:proverbs.19.21": {
+      "id": "ref:proverbs.19.21",
+      "display": "ref:proverbs.19.21",
+      "type": "reference"
+    },
+    "ref:romans.8.28": {
+      "id": "ref:romans.8.28",
+      "display": "ref:romans.8.28",
+      "type": "reference"
+    },
+    "ref:proverbs.20.7": {
+      "id": "ref:proverbs.20.7",
+      "display": "Amsal 20:7",
+      "type": "reference"
+    },
+    "ref:ephesians.5.15": {
+      "id": "ref:ephesians.5.15",
+      "display": "Efesus 5:15-16",
+      "type": "reference"
+    },
+    "ref:proverbs.16.32": {
+      "id": "ref:proverbs.16.32",
+      "display": "Amsal 16:32",
+      "type": "reference"
+    },
+    "ref:proverbs.21.3": {
+      "id": "ref:proverbs.21.3",
+      "display": "ref:proverbs.21.3",
+      "type": "reference"
+    },
+    "ref:matthew.23.23": {
+      "id": "ref:matthew.23.23",
+      "display": "Matius 23:23",
+      "type": "reference"
+    },
+    "ref:proverbs.15.8": {
+      "id": "ref:proverbs.15.8",
+      "display": "Amsal 15:8",
+      "type": "reference"
+    },
+    "ref:proverbs.23.26": {
+      "id": "ref:proverbs.23.26",
+      "display": "ref:proverbs.23.26",
+      "type": "reference"
+    },
+    "ref:ephesians.5.18": {
+      "id": "ref:ephesians.5.18",
+      "display": "Efesus 5:18",
+      "type": "reference"
+    },
+    "ref:proverbs.20.1": {
+      "id": "ref:proverbs.20.1",
+      "display": "Amsal 20:1",
+      "type": "reference"
+    },
+    "ref:proverbs.24.16": {
+      "id": "ref:proverbs.24.16",
+      "display": "Amsal 24:16",
+      "type": "reference"
+    },
+    "ref:romans.12.17": {
+      "id": "ref:romans.12.17",
+      "display": "Roma 12:17-21",
+      "type": "reference"
+    },
+    "ref:proverbs.25.21": {
+      "id": "ref:proverbs.25.21",
+      "display": "Amsal 25:21-22",
+      "type": "reference"
+    },
+    "ref:proverbs.25.6": {
+      "id": "ref:proverbs.25.6",
+      "display": "Amsal 25:6-7",
+      "type": "reference"
+    },
+    "ref:romans.12.20": {
+      "id": "ref:romans.12.20",
+      "display": "ref:romans.12.20",
+      "type": "reference"
+    },
+    "ref:proverbs.26.4": {
+      "id": "ref:proverbs.26.4",
+      "display": "Amsal 26:4-5",
+      "type": "reference"
+    },
+    "ref:proverbs.27.17": {
+      "id": "ref:proverbs.27.17",
+      "display": "ref:proverbs.27.17",
+      "type": "reference"
+    },
+    "ref:hebrews.10.24": {
+      "id": "ref:hebrews.10.24",
+      "display": "Ibrani 10:24-25",
+      "type": "reference"
+    },
+    "ref:proverbs.28.1": {
+      "id": "ref:proverbs.28.1",
+      "display": "Amsal 28:1",
+      "type": "reference"
+    },
+    "ref:james.5.16": {
+      "id": "ref:james.5.16",
+      "display": "Yakobus 5:16",
+      "type": "reference"
+    },
+    "ref:proverbs.28.13": {
+      "id": "ref:proverbs.28.13",
+      "display": "Amsal 28:13",
+      "type": "reference"
+    },
+    "ref:proverbs.29.25": {
+      "id": "ref:proverbs.29.25",
+      "display": "ref:proverbs.29.25",
+      "type": "reference"
+    },
+    "ref:galatians.1.10": {
+      "id": "ref:galatians.1.10",
+      "display": "Galatia 1:10",
+      "type": "reference"
+    },
+    "ref:proverbs.30.5": {
+      "id": "ref:proverbs.30.5",
+      "display": "ref:proverbs.30.5",
+      "type": "reference"
+    },
+    "ref:matthew.6.11": {
+      "id": "ref:matthew.6.11",
+      "display": "Matius 6:11",
+      "type": "reference"
+    },
+    "ref:proverbs.31.30": {
+      "id": "ref:proverbs.31.30",
+      "display": "Amsal 31:30",
+      "type": "reference"
+    },
+    "ref:1peter.3.1": {
+      "id": "ref:1peter.3.1",
+      "display": "1 Petrus 3:1-6",
+      "type": "reference"
+    },
+    "ref:proverbs.16.12": {
+      "id": "ref:proverbs.16.12",
+      "display": "Amsal 16:12",
+      "type": "reference"
+    },
+    "ref:proverbs.29.2": {
+      "id": "ref:proverbs.29.2",
+      "display": "Amsal 29:2",
+      "type": "reference"
+    },
+    "ref:proverbs.8.15": {
+      "id": "ref:proverbs.8.15",
+      "display": "Amsal 8:15",
+      "type": "reference"
+    },
+    "ref:proverbs.10.9": {
+      "id": "ref:proverbs.10.9",
+      "display": "Amsal 10:9",
+      "type": "reference"
+    },
+    "ref:proverbs.3.34": {
+      "id": "ref:proverbs.3.34",
+      "display": "Amsal 3:34",
+      "type": "reference"
+    },
+    "ref:proverbs.11.2": {
+      "id": "ref:proverbs.11.2",
+      "display": "Amsal 11:2",
+      "type": "reference"
+    },
+    "ref:proverbs.22.4": {
+      "id": "ref:proverbs.22.4",
+      "display": "Amsal 22:4",
+      "type": "reference"
+    },
+    "ref:proverbs.5.18": {
+      "id": "ref:proverbs.5.18",
+      "display": "Amsal 5:18",
+      "type": "reference"
+    },
+    "ref:proverbs.18.22": {
+      "id": "ref:proverbs.18.22",
+      "display": "Amsal 18:22",
+      "type": "reference"
+    },
+    "ref:proverbs.31.10": {
+      "id": "ref:proverbs.31.10",
+      "display": "Amsal 31:10-31",
+      "type": "reference"
+    },
+    "ref:proverbs.1.8": {
+      "id": "ref:proverbs.1.8",
+      "display": "Amsal 1:8",
+      "type": "reference"
+    },
+    "ref:proverbs.13.24": {
+      "id": "ref:proverbs.13.24",
+      "display": "ref:proverbs.13.24",
+      "type": "reference"
+    },
+    "ref:proverbs.3.9": {
+      "id": "ref:proverbs.3.9",
+      "display": "Amsal 3:9",
+      "type": "reference"
+    },
+    "ref:proverbs.11.24": {
+      "id": "ref:proverbs.11.24",
+      "display": "Amsal 11:24",
+      "type": "reference"
+    },
+    "ref:proverbs.30.8": {
+      "id": "ref:proverbs.30.8",
+      "display": "Amsal 30:8-9",
+      "type": "reference"
+    },
+    "ref:proverbs.12.11": {
+      "id": "ref:proverbs.12.11",
+      "display": "Amsal 12:11",
+      "type": "reference"
+    },
+    "ref:proverbs.14.23": {
+      "id": "ref:proverbs.14.23",
+      "display": "ref:proverbs.14.23",
+      "type": "reference"
+    },
+    "ref:proverbs.31.8": {
+      "id": "ref:proverbs.31.8",
+      "display": "Amsal 31:8",
+      "type": "reference"
+    },
+    "ref:proverbs.29.7": {
+      "id": "ref:proverbs.29.7",
+      "display": "Amsal 29:7",
+      "type": "reference"
+    },
+    "ref:proverbs.17.9": {
+      "id": "ref:proverbs.17.9",
+      "display": "Amsal 17:9",
+      "type": "reference"
+    },
+    "ref:proverbs.19.11": {
+      "id": "ref:proverbs.19.11",
+      "display": "Amsal 19:11",
+      "type": "reference"
+    },
+    "ref:proverbs.15.29": {
+      "id": "ref:proverbs.15.29",
+      "display": "Amsal 15:29",
+      "type": "reference"
+    },
+    "ref:proverbs.16.20": {
+      "id": "ref:proverbs.16.20",
+      "display": "Amsal 16:20",
+      "type": "reference"
+    },
+    "ref:proverbs.13.12": {
+      "id": "ref:proverbs.13.12",
+      "display": "Amsal 13:12",
+      "type": "reference"
+    },
+    "ref:proverbs.23.18": {
+      "id": "ref:proverbs.23.18",
+      "display": "Amsal 23:18",
+      "type": "reference"
+    },
+    "ref:proverbs.24.14": {
+      "id": "ref:proverbs.24.14",
+      "display": "Amsal 24:14",
+      "type": "reference"
+    },
+    "ref:proverbs.17.17": {
+      "id": "ref:proverbs.17.17",
+      "display": "Amsal 17:17",
+      "type": "reference"
+    },
+    "ref:proverbs.3.3": {
+      "id": "ref:proverbs.3.3",
+      "display": "Amsal 3:3",
+      "type": "reference"
+    },
+    "ref:proverbs.5.8": {
+      "id": "ref:proverbs.5.8",
+      "display": "Amsal 5:8",
+      "type": "reference"
+    },
+    "ref:proverbs.7.25": {
+      "id": "ref:proverbs.7.25",
+      "display": "Amsal 7:25",
+      "type": "reference"
+    },
+    "ref:proverbs.16.9": {
+      "id": "ref:proverbs.16.9",
+      "display": "ref:proverbs.16.9",
+      "type": "reference"
+    },
+    "ref:proverbs.15.22": {
+      "id": "ref:proverbs.15.22",
+      "display": "ref:proverbs.15.22",
+      "type": "reference"
+    },
+    "ref:proverbs.18.24": {
+      "id": "ref:proverbs.18.24",
+      "display": "ref:proverbs.18.24",
+      "type": "reference"
+    },
+    "ref:proverbs.20.11": {
+      "id": "ref:proverbs.20.11",
+      "display": "Amsal 20:11",
+      "type": "reference"
+    },
+    "ref:proverbs.27.19": {
+      "id": "ref:proverbs.27.19",
+      "display": "Amsal 27:19",
+      "type": "reference"
+    },
+    "ref:proverbs.3.11": {
+      "id": "ref:proverbs.3.11",
+      "display": "Amsal 3:11",
+      "type": "reference"
+    },
+    "ref:proverbs.24.10": {
+      "id": "ref:proverbs.24.10",
+      "display": "Amsal 24:10",
+      "type": "reference"
+    },
+    "ref:proverbs.17.3": {
+      "id": "ref:proverbs.17.3",
+      "display": "Amsal 17:3",
+      "type": "reference"
+    },
+    "ref:proverbs.17.22": {
+      "id": "ref:proverbs.17.22",
+      "display": "Amsal 17:22",
+      "type": "reference"
+    },
+    "ref:proverbs.15.13": {
+      "id": "ref:proverbs.15.13",
+      "display": "Amsal 15:13",
+      "type": "reference"
+    },
+    "ref:proverbs.15.15": {
+      "id": "ref:proverbs.15.15",
+      "display": "Amsal 15:15",
+      "type": "reference"
+    },
+    "ref:proverbs.16.7": {
+      "id": "ref:proverbs.16.7",
+      "display": "Amsal 16:7",
+      "type": "reference"
+    },
+    "ref:proverbs.12.20": {
+      "id": "ref:proverbs.12.20",
+      "display": "Amsal 12:20",
+      "type": "reference"
+    },
+    "ref:proverbs.1.2": {
+      "id": "ref:proverbs.1.2",
+      "display": "Amsal 1:2-6",
+      "type": "reference"
+    },
+    "ref:proverbs.2.5": {
+      "id": "ref:proverbs.2.5",
+      "display": "Amsal 2:5-6",
+      "type": "reference"
+    },
+    "ref:proverbs.2.3": {
+      "id": "ref:proverbs.2.3",
+      "display": "Amsal 2:3",
+      "type": "reference"
+    },
+    "ref:proverbs.1.4": {
+      "id": "ref:proverbs.1.4",
+      "display": "Amsal 1:4",
+      "type": "reference"
+    },
+    "ref:proverbs.2.11": {
+      "id": "ref:proverbs.2.11",
+      "display": "Amsal 2:11",
+      "type": "reference"
+    },
+    "ref:proverbs.3.21": {
+      "id": "ref:proverbs.3.21",
+      "display": "Amsal 3:21",
+      "type": "reference"
+    },
+    "ref:proverbs.11.4": {
+      "id": "ref:proverbs.11.4",
+      "display": "Amsal 11:4",
+      "type": "reference"
+    },
+    "ref:proverbs.31.9": {
+      "id": "ref:proverbs.31.9",
+      "display": "Amsal 31:9",
+      "type": "reference"
+    },
+    "ref:proverbs.12.19": {
+      "id": "ref:proverbs.12.19",
+      "display": "Amsal 12:19",
+      "type": "reference"
+    },
+    "ref:proverbs.8.7": {
+      "id": "ref:proverbs.8.7",
+      "display": "Amsal 8:7",
+      "type": "reference"
+    },
+    "ref:proverbs.16.6": {
+      "id": "ref:proverbs.16.6",
+      "display": "Amsal 16:6",
+      "type": "reference"
+    },
+    "ref:proverbs.20.28": {
+      "id": "ref:proverbs.20.28",
+      "display": "Amsal 20:28",
+      "type": "reference"
+    },
+    "ref:proverbs.8.1": {
+      "id": "ref:proverbs.8.1",
+      "display": "Amsal 8:1-11",
+      "type": "reference"
+    },
+    "ref:james.3.17": {
+      "id": "ref:james.3.17",
+      "display": "Yakobus 3:17",
+      "type": "reference"
+    },
+    "ref:2corinthians.7.1": {
+      "id": "ref:2corinthians.7.1",
+      "display": "2 Korintus 7:1",
+      "type": "reference"
+    },
+    "ref:proverbs.10.1": {
+      "id": "ref:proverbs.10.1",
+      "display": "ref:proverbs.10.1",
+      "type": "reference"
+    },
+    "ref:proverbs.30.1": {
+      "id": "ref:proverbs.30.1",
+      "display": "Amsal 30:1",
+      "type": "reference"
+    },
+    "ref:proverbs.31.1": {
+      "id": "ref:proverbs.31.1",
+      "display": "Amsal 31:1",
+      "type": "reference"
+    },
+    "ref:proverbs.5.5": {
+      "id": "ref:proverbs.5.5",
+      "display": "Amsal 5:5",
+      "type": "reference"
+    },
+    "ref:proverbs.7.27": {
+      "id": "ref:proverbs.7.27",
+      "display": "Amsal 7:27",
+      "type": "reference"
+    },
+    "ref:proverbs.9.18": {
+      "id": "ref:proverbs.9.18",
+      "display": "Amsal 9:18",
+      "type": "reference"
+    },
+    "ref:proverbs.30.25": {
+      "id": "ref:proverbs.30.25",
+      "display": "Amsal 30:25",
+      "type": "reference"
+    },
+    "ref:proverbs.8.22": {
+      "id": "ref:proverbs.8.22",
+      "display": "Amsal 8:22-31",
+      "type": "reference"
+    },
+    "ref:proverbs.25.1": {
+      "id": "ref:proverbs.25.1",
+      "display": "ref:proverbs.25.1",
+      "type": "reference"
+    },
+    "ref:colossians.2.3": {
+      "id": "ref:colossians.2.3",
+      "display": "Kolose 2:3",
+      "type": "reference"
+    },
+    "ref:proverbs.5.3": {
+      "id": "ref:proverbs.5.3",
+      "display": "Amsal 5:3-5",
+      "type": "reference"
+    },
+    "ref:proverbs.13.23": {
+      "id": "ref:proverbs.13.23",
+      "display": "Amsal 13:23",
+      "type": "reference"
+    },
+    "ref:proverbs.22.2": {
+      "id": "ref:proverbs.22.2",
+      "display": "Amsal 22:2",
+      "type": "reference"
+    },
+    "ref:proverbs.5.1": {
+      "id": "ref:proverbs.5.1",
+      "display": "Amsal 5:1-6",
+      "type": "reference"
+    },
+    "doctrine:fear-of-the-lord": {
+      "id": "doctrine:fear-of-the-lord",
+      "display": "ref:proverbs.1.7",
+      "type": "doctrine",
+      "legacyId": "doctrine:fear-of-the-lord"
+    },
+    "ref:proverbs.14.26": {
+      "id": "ref:proverbs.14.26",
+      "display": "ref:proverbs.14.26",
+      "type": "reference"
+    },
+    "doctrine:wisdom-from-god": {
+      "id": "doctrine:wisdom-from-god",
+      "display": "ref:proverbs.2.6",
+      "type": "doctrine",
+      "legacyId": "doctrine:wisdom-from-god"
+    },
+    "ref:proverbs.8.1-36": {
+      "id": "ref:proverbs.8.1-36",
+      "display": "ref:proverbs.8.1-36",
+      "type": "reference"
+    },
+    "ref:proverbs.14.12": {
+      "id": "ref:proverbs.14.12",
+      "display": "ref:proverbs.14.12",
+      "type": "reference"
+    },
+    "doctrine:providence-and-plans": {
+      "id": "doctrine:providence-and-plans",
+      "display": "ref:proverbs.16.9",
+      "type": "doctrine",
+      "legacyId": "doctrine:providence-and-plans"
+    },
+    "ref:proverbs.21.30": {
+      "id": "ref:proverbs.21.30",
+      "display": "ref:proverbs.21.30",
+      "type": "reference"
+    },
+    "doctrine:discipline-as-love": {
+      "id": "doctrine:discipline-as-love",
+      "display": "ref:proverbs.3.11-12",
+      "type": "doctrine",
+      "legacyId": "doctrine:discipline-as-love"
+    },
+    "ref:proverbs.3.11-12": {
+      "id": "ref:proverbs.3.11-12",
+      "display": "ref:proverbs.3.11-12",
+      "type": "reference"
+    },
+    "ref:hebrews.12.5-6": {
+      "id": "ref:hebrews.12.5-6",
+      "display": "ref:hebrews.12.5-6",
+      "type": "reference"
+    },
+    "doctrine:speech-ethics": {
+      "id": "doctrine:speech-ethics",
+      "display": "ref:proverbs.10.19",
+      "type": "doctrine",
+      "legacyId": "doctrine:speech-ethics"
+    },
+    "ref:proverbs.10.19": {
+      "id": "ref:proverbs.10.19",
+      "display": "ref:proverbs.10.19",
+      "type": "reference"
+    },
+    "ref:james.3.5-10": {
+      "id": "ref:james.3.5-10",
+      "display": "ref:james.3.5-10",
+      "type": "reference"
+    },
+    "doctrine:integrity-and-justice": {
+      "id": "doctrine:integrity-and-justice",
+      "display": "ref:proverbs.11.1",
+      "type": "doctrine",
+      "legacyId": "doctrine:integrity-and-justice"
+    },
+    "ref:proverbs.11.1": {
+      "id": "ref:proverbs.11.1",
+      "display": "ref:proverbs.11.1",
+      "type": "reference"
+    },
+    "ref:proverbs.28.6": {
+      "id": "ref:proverbs.28.6",
+      "display": "ref:proverbs.28.6",
+      "type": "reference"
+    },
+    "ref:proverbs.17.23": {
+      "id": "ref:proverbs.17.23",
+      "display": "ref:proverbs.17.23",
+      "type": "reference"
+    },
+    "doctrine:work-and-diligence": {
+      "id": "doctrine:work-and-diligence",
+      "display": "ref:proverbs.6.6-11",
+      "type": "doctrine",
+      "legacyId": "doctrine:work-and-diligence"
+    },
+    "ref:proverbs.6.6-11": {
+      "id": "ref:proverbs.6.6-11",
+      "display": "ref:proverbs.6.6-11",
+      "type": "reference"
+    },
+    "ref:proverbs.10.4": {
+      "id": "ref:proverbs.10.4",
+      "display": "ref:proverbs.10.4",
+      "type": "reference"
+    },
+    "doctrine:friendship-and-counsel": {
+      "id": "doctrine:friendship-and-counsel",
+      "display": "ref:proverbs.13.20",
+      "type": "doctrine",
+      "legacyId": "doctrine:friendship-and-counsel"
+    },
+    "ref:hebrews.10.24-25": {
+      "id": "ref:hebrews.10.24-25",
+      "display": "ref:hebrews.10.24-25",
+      "type": "reference"
+    },
+    "doctrine:sexual-faithfulness": {
+      "id": "doctrine:sexual-faithfulness",
+      "display": "ref:proverbs.5.15-23",
+      "type": "doctrine",
+      "legacyId": "doctrine:sexual-faithfulness"
+    },
+    "ref:proverbs.5.15-23": {
+      "id": "ref:proverbs.5.15-23",
+      "display": "ref:proverbs.5.15-23",
+      "type": "reference"
+    },
+    "ref:proverbs.6.20-35": {
+      "id": "ref:proverbs.6.20-35",
+      "display": "ref:proverbs.6.20-35",
+      "type": "reference"
+    },
+    "ref:proverbs.7": {
+      "id": "ref:proverbs.7",
+      "display": "ref:proverbs.7",
+      "type": "reference"
+    },
+    "ref:1corinthians.6.18-20": {
+      "id": "ref:1corinthians.6.18-20",
+      "display": "ref:1corinthians.6.18-20",
+      "type": "reference"
+    },
+    "doctrine:generosity-and-stewardship": {
+      "id": "doctrine:generosity-and-stewardship",
+      "display": "ref:proverbs.11.24-25",
+      "type": "doctrine",
+      "legacyId": "doctrine:generosity-and-stewardship"
+    },
+    "ref:proverbs.11.24-25": {
+      "id": "ref:proverbs.11.24-25",
+      "display": "ref:proverbs.11.24-25",
+      "type": "reference"
+    },
+    "ref:proverbs.19.17": {
+      "id": "ref:proverbs.19.17",
+      "display": "ref:proverbs.19.17",
+      "type": "reference"
+    },
+    "ref:proverbs.22.9": {
+      "id": "ref:proverbs.22.9",
+      "display": "ref:proverbs.22.9",
+      "type": "reference"
+    },
+    "ref:2corinthians.9.6-7": {
+      "id": "ref:2corinthians.9.6-7",
+      "display": "ref:2corinthians.9.6-7",
+      "type": "reference"
+    },
+    "doctrine:heart-formation": {
+      "id": "doctrine:heart-formation",
+      "display": "ref:proverbs.4.23",
+      "type": "doctrine",
+      "legacyId": "doctrine:heart-formation"
+    },
+    "doctrine:enemy-love-and-forgiveness": {
+      "id": "doctrine:enemy-love-and-forgiveness",
+      "display": "ref:proverbs.25.21-22",
+      "type": "doctrine",
+      "legacyId": "doctrine:enemy-love-and-forgiveness"
+    },
+    "ref:proverbs.25.21-22": {
+      "id": "ref:proverbs.25.21-22",
+      "display": "ref:proverbs.25.21-22",
+      "type": "reference"
+    },
+    "ref:proverbs.24.17": {
+      "id": "ref:proverbs.24.17",
+      "display": "ref:proverbs.24.17",
+      "type": "reference"
+    },
+    "character:solomon": {
+      "id": "character:solomon",
+      "display": "ref:proverbs.1.1",
+      "type": "character",
+      "legacyId": "character:solomon"
+    },
+    "character:agur": {
+      "id": "character:agur",
+      "display": "ref:proverbs.30.1-9",
+      "type": "character",
+      "legacyId": "character:agur"
+    },
+    "ref:proverbs.30.1-9": {
+      "id": "ref:proverbs.30.1-9",
+      "display": "ref:proverbs.30.1-9",
+      "type": "reference"
+    },
+    "character:lemuel": {
+      "id": "character:lemuel",
+      "display": "ref:proverbs.31.1-9",
+      "type": "character",
+      "legacyId": "character:lemuel"
+    },
+    "ref:proverbs.31.1-9": {
+      "id": "ref:proverbs.31.1-9",
+      "display": "ref:proverbs.31.1-9",
+      "type": "reference"
+    },
+    "character:lemuel-mother": {
+      "id": "character:lemuel-mother",
+      "display": "ref:proverbs.31.1-9",
+      "type": "character",
+      "legacyId": "character:lemuel-mother"
+    },
+    "character:woman-wisdom": {
+      "id": "character:woman-wisdom",
+      "display": "ref:proverbs.1.20-33",
+      "type": "character",
+      "legacyId": "character:woman-wisdom"
+    },
+    "ref:proverbs.1.20-33": {
+      "id": "ref:proverbs.1.20-33",
+      "display": "ref:proverbs.1.20-33",
+      "type": "reference"
+    },
+    "ref:proverbs.8": {
+      "id": "ref:proverbs.8",
+      "display": "ref:proverbs.8",
+      "type": "reference"
+    },
+    "ref:proverbs.9.1-6": {
+      "id": "ref:proverbs.9.1-6",
+      "display": "ref:proverbs.9.1-6",
+      "type": "reference"
+    },
+    "character:woman-folly": {
+      "id": "character:woman-folly",
+      "display": "ref:proverbs.9.13-18",
+      "type": "character",
+      "legacyId": "character:woman-folly"
+    },
+    "ref:proverbs.9.13-18": {
+      "id": "ref:proverbs.9.13-18",
+      "display": "ref:proverbs.9.13-18",
+      "type": "reference"
+    },
+    "character:strange-woman": {
+      "id": "character:strange-woman",
+      "display": "ref:proverbs.5",
+      "type": "character",
+      "legacyId": "character:strange-woman"
+    },
+    "ref:proverbs.5": {
+      "id": "ref:proverbs.5",
+      "display": "ref:proverbs.5",
+      "type": "reference"
+    },
+    "ref:proverbs.6.24-35": {
+      "id": "ref:proverbs.6.24-35",
+      "display": "ref:proverbs.6.24-35",
+      "type": "reference"
+    },
+    "character:noble-wife": {
+      "id": "character:noble-wife",
+      "display": "ref:proverbs.31.10-31",
+      "type": "character",
+      "legacyId": "character:noble-wife"
+    },
+    "ref:proverbs.31.10-31": {
+      "id": "ref:proverbs.31.10-31",
+      "display": "ref:proverbs.31.10-31",
+      "type": "reference"
+    },
+    "character:hezekiah-men": {
+      "id": "character:hezekiah-men",
+      "display": "ref:proverbs.25.1",
+      "type": "character",
+      "legacyId": "character:hezekiah-men"
+    },
+    "timeline:solomon-wisdom-era": {
+      "id": "timeline:solomon-wisdom-era",
+      "display": "ref:proverbs.1.1",
+      "type": "timeline",
+      "legacyId": "timeline:solomon-wisdom-era"
+    },
+    "timeline:hezekiah-collection": {
+      "id": "timeline:hezekiah-collection",
+      "display": "ref:proverbs.25.1",
+      "type": "timeline",
+      "legacyId": "timeline:hezekiah-collection"
+    },
+    "timeline:agur-oracle": {
+      "id": "timeline:agur-oracle",
+      "display": "ref:proverbs.30",
+      "type": "timeline",
+      "legacyId": "timeline:agur-oracle"
+    },
+    "ref:proverbs.30": {
+      "id": "ref:proverbs.30",
+      "display": "ref:proverbs.30",
+      "type": "reference"
+    },
+    "timeline:lemuel-oracle": {
+      "id": "timeline:lemuel-oracle",
+      "display": "ref:proverbs.31.1-9",
+      "type": "timeline",
+      "legacyId": "timeline:lemuel-oracle"
+    },
+    "timeline:noble-wife-poem": {
+      "id": "timeline:noble-wife-poem",
+      "display": "ref:proverbs.31.10-31",
+      "type": "timeline",
+      "legacyId": "timeline:noble-wife-poem"
+    },
+    "timeline:wisdom-personification": {
+      "id": "timeline:wisdom-personification",
+      "display": "ref:proverbs.1.20-33",
+      "type": "timeline",
+      "legacyId": "timeline:wisdom-personification"
+    },
+    "ref:proverbs.9": {
+      "id": "ref:proverbs.9",
+      "display": "ref:proverbs.9",
+      "type": "reference"
+    },
+    "timeline:nt-reception": {
+      "id": "timeline:nt-reception",
+      "display": "ref:hebrews.12.5-6",
+      "type": "timeline",
+      "legacyId": "timeline:nt-reception"
+    },
+    "symbol:path": {
+      "id": "symbol:path",
+      "display": "ref:proverbs.4.18-19",
+      "type": "symbol",
+      "legacyId": "symbol:path"
+    },
+    "ref:proverbs.4.18-19": {
+      "id": "ref:proverbs.4.18-19",
+      "display": "ref:proverbs.4.18-19",
+      "type": "reference"
+    },
+    "symbol:heart": {
+      "id": "symbol:heart",
+      "display": "ref:proverbs.4.23",
+      "type": "symbol",
+      "legacyId": "symbol:heart"
+    },
+    "symbol:tongue": {
+      "id": "symbol:tongue",
+      "display": "ref:proverbs.18.21",
+      "type": "symbol",
+      "legacyId": "symbol:tongue"
+    },
+    "symbol:tree-of-life": {
+      "id": "symbol:tree-of-life",
+      "display": "ref:proverbs.3.18",
+      "type": "symbol",
+      "legacyId": "symbol:tree-of-life"
+    },
+    "ref:proverbs.3.18": {
+      "id": "ref:proverbs.3.18",
+      "display": "ref:proverbs.3.18",
+      "type": "reference"
+    },
+    "ref:proverbs.11.30": {
+      "id": "ref:proverbs.11.30",
+      "display": "ref:proverbs.11.30",
+      "type": "reference"
+    },
+    "ref:proverbs.15.4": {
+      "id": "ref:proverbs.15.4",
+      "display": "ref:proverbs.15.4",
+      "type": "reference"
+    },
+    "symbol:house": {
+      "id": "symbol:house",
+      "display": "ref:proverbs.9.1",
+      "type": "symbol",
+      "legacyId": "symbol:house"
+    },
+    "ref:proverbs.9.1": {
+      "id": "ref:proverbs.9.1",
+      "display": "ref:proverbs.9.1",
+      "type": "reference"
+    },
+    "ref:proverbs.24.3-4": {
+      "id": "ref:proverbs.24.3-4",
+      "display": "ref:proverbs.24.3-4",
+      "type": "reference"
+    },
+    "symbol:house-folly": {
+      "id": "symbol:house-folly",
+      "display": "ref:proverbs.9.13-18",
+      "type": "symbol",
+      "legacyId": "symbol:house-folly"
+    },
+    "symbol:gold-silver": {
+      "id": "symbol:gold-silver",
+      "display": "ref:proverbs.3.13-15",
+      "type": "symbol",
+      "legacyId": "symbol:gold-silver"
+    },
+    "ref:proverbs.3.13-15": {
+      "id": "ref:proverbs.3.13-15",
+      "display": "ref:proverbs.3.13-15",
+      "type": "reference"
+    },
+    "ref:proverbs.8.10-11": {
+      "id": "ref:proverbs.8.10-11",
+      "display": "ref:proverbs.8.10-11",
+      "type": "reference"
+    },
+    "ref:proverbs.16.16": {
+      "id": "ref:proverbs.16.16",
+      "display": "ref:proverbs.16.16",
+      "type": "reference"
+    },
+    "symbol:scales": {
+      "id": "symbol:scales",
+      "display": "ref:proverbs.11.1",
+      "type": "symbol",
+      "legacyId": "symbol:scales"
+    },
+    "ref:proverbs.16.11": {
+      "id": "ref:proverbs.16.11",
+      "display": "ref:proverbs.16.11",
+      "type": "reference"
+    },
+    "ref:proverbs.20.23": {
+      "id": "ref:proverbs.20.23",
+      "display": "ref:proverbs.20.23",
+      "type": "reference"
+    },
+    "symbol:lamp": {
+      "id": "symbol:lamp",
+      "display": "ref:proverbs.6.23",
+      "type": "symbol",
+      "legacyId": "symbol:lamp"
+    },
+    "ref:proverbs.6.23": {
+      "id": "ref:proverbs.6.23",
+      "display": "ref:proverbs.6.23",
+      "type": "reference"
+    },
+    "ref:proverbs.20.27": {
+      "id": "ref:proverbs.20.27",
+      "display": "ref:proverbs.20.27",
+      "type": "reference"
+    },
+    "symbol:darkness": {
+      "id": "symbol:darkness",
+      "display": "ref:proverbs.4.19",
+      "type": "symbol",
+      "legacyId": "symbol:darkness"
+    },
+    "ref:proverbs.4.19": {
+      "id": "ref:proverbs.4.19",
+      "display": "ref:proverbs.4.19",
+      "type": "reference"
+    },
+    "symbol:ant": {
+      "id": "symbol:ant",
+      "display": "ref:proverbs.6.6-8",
+      "type": "symbol",
+      "legacyId": "symbol:ant"
+    },
+    "ref:proverbs.6.6-8": {
+      "id": "ref:proverbs.6.6-8",
+      "display": "ref:proverbs.6.6-8",
+      "type": "reference"
+    },
+    "symbol:snare": {
+      "id": "symbol:snare",
+      "display": "ref:proverbs.1.17",
+      "type": "symbol",
+      "legacyId": "symbol:snare"
+    },
+    "ref:proverbs.1.17": {
+      "id": "ref:proverbs.1.17",
+      "display": "ref:proverbs.1.17",
+      "type": "reference"
+    },
+    "symbol:fountain": {
+      "id": "symbol:fountain",
+      "display": "ref:proverbs.10.11",
+      "type": "symbol",
+      "legacyId": "symbol:fountain"
+    },
+    "ref:proverbs.10.11": {
+      "id": "ref:proverbs.10.11",
+      "display": "ref:proverbs.10.11",
+      "type": "reference"
+    },
+    "ref:proverbs.13.14": {
+      "id": "ref:proverbs.13.14",
+      "display": "ref:proverbs.13.14",
+      "type": "reference"
+    },
+    "ref:proverbs.18.4": {
+      "id": "ref:proverbs.18.4",
+      "display": "ref:proverbs.18.4",
+      "type": "reference"
+    },
+    "symbol:crown": {
+      "id": "symbol:crown",
+      "display": "ref:proverbs.4.9",
+      "type": "symbol",
+      "legacyId": "symbol:crown"
+    },
+    "ref:proverbs.4.9": {
+      "id": "ref:proverbs.4.9",
+      "display": "ref:proverbs.4.9",
+      "type": "reference"
+    },
+    "ref:proverbs.16.31": {
+      "id": "ref:proverbs.16.31",
+      "display": "ref:proverbs.16.31",
+      "type": "reference"
+    },
+    "symbol:honey": {
+      "id": "symbol:honey",
+      "display": "ref:proverbs.24.13-14",
+      "type": "symbol",
+      "legacyId": "symbol:honey"
+    },
+    "ref:proverbs.24.13-14": {
+      "id": "ref:proverbs.24.13-14",
+      "display": "ref:proverbs.24.13-14",
+      "type": "reference"
+    },
+    "ref:proverbs.25.16": {
+      "id": "ref:proverbs.25.16",
+      "display": "ref:proverbs.25.16",
+      "type": "reference"
+    },
+    "symbol:shield": {
+      "id": "symbol:shield",
+      "display": "ref:proverbs.2.7",
+      "type": "symbol",
+      "legacyId": "symbol:shield"
+    },
+    "ref:proverbs.2.7": {
+      "id": "ref:proverbs.2.7",
+      "display": "ref:proverbs.2.7",
+      "type": "reference"
+    },
+    "wisdom-pattern:situational-pair": {
+      "id": "wisdom-pattern:situational-pair",
+      "display": "ref:proverbs.26.4-5",
+      "type": "wisdom-pattern",
+      "legacyId": "wisdom-pattern:situational-pair"
+    },
+    "ref:proverbs.26.4-5": {
+      "id": "ref:proverbs.26.4-5",
+      "display": "ref:proverbs.26.4-5",
+      "type": "reference"
+    },
+    "ref:ecclesiastes.3.1-8": {
+      "id": "ref:ecclesiastes.3.1-8",
+      "display": "ref:ecclesiastes.3.1-8",
+      "type": "reference"
+    },
+    "wisdom-pattern:fear-foundation": {
+      "id": "wisdom-pattern:fear-foundation",
+      "display": "ref:proverbs.1.7",
+      "type": "wisdom-pattern",
+      "legacyId": "wisdom-pattern:fear-foundation"
+    },
+    "wisdom-pattern:ask-for-wisdom": {
+      "id": "wisdom-pattern:ask-for-wisdom",
+      "display": "ref:proverbs.2.1-6",
+      "type": "wisdom-pattern",
+      "legacyId": "wisdom-pattern:ask-for-wisdom"
+    },
+    "ref:proverbs.2.1-6": {
+      "id": "ref:proverbs.2.1-6",
+      "display": "ref:proverbs.2.1-6",
+      "type": "reference"
+    },
+    "wisdom-pattern:speech-power": {
+      "id": "wisdom-pattern:speech-power",
+      "display": "ref:proverbs.18.21",
+      "type": "wisdom-pattern",
+      "legacyId": "wisdom-pattern:speech-power"
+    },
+    "wisdom-pattern:jesus-kingdom-priority": {
+      "id": "wisdom-pattern:jesus-kingdom-priority",
+      "display": "ref:proverbs.3.9-10",
+      "type": "wisdom-pattern",
+      "legacyId": "wisdom-pattern:jesus-kingdom-priority"
+    },
+    "ref:proverbs.3.9-10": {
+      "id": "ref:proverbs.3.9-10",
+      "display": "ref:proverbs.3.9-10",
+      "type": "reference"
+    },
+    "wisdom-pattern:enemy-kindness": {
+      "id": "wisdom-pattern:enemy-kindness",
+      "display": "ref:proverbs.25.21-22",
+      "type": "wisdom-pattern",
+      "legacyId": "wisdom-pattern:enemy-kindness"
+    },
+    "wisdom-pattern:discipline-love": {
+      "id": "wisdom-pattern:discipline-love",
+      "display": "ref:proverbs.3.11-12",
+      "type": "wisdom-pattern",
+      "legacyId": "wisdom-pattern:discipline-love"
+    },
+    "wisdom-pattern:vanity-check": {
+      "id": "wisdom-pattern:vanity-check",
+      "display": "ref:proverbs.16.3",
+      "type": "wisdom-pattern",
+      "legacyId": "wisdom-pattern:vanity-check"
+    },
+    "ref:proverbs.23.4-5": {
+      "id": "ref:proverbs.23.4-5",
+      "display": "ref:proverbs.23.4-5",
+      "type": "reference"
+    },
+    "ref:ecclesiastes.1.2": {
+      "id": "ref:ecclesiastes.1.2",
+      "display": "ref:ecclesiastes.1.2",
+      "type": "reference"
+    },
+    "ref:ecclesiastes.12.13": {
+      "id": "ref:ecclesiastes.12.13",
+      "display": "ref:ecclesiastes.12.13",
+      "type": "reference"
+    },
+    "wisdom-pattern:christ-wisdom": {
+      "id": "wisdom-pattern:christ-wisdom",
+      "display": "ref:proverbs.8.22-31",
+      "type": "wisdom-pattern",
+      "legacyId": "wisdom-pattern:christ-wisdom"
+    },
+    "ref:proverbs.8.22-31": {
+      "id": "ref:proverbs.8.22-31",
+      "display": "ref:proverbs.8.22-31",
+      "type": "reference"
+    },
+    "ref:colossians.1.15-17": {
+      "id": "ref:colossians.1.15-17",
+      "display": "ref:colossians.1.15-17",
+      "type": "reference"
+    },
+    "application:proverbs.01": {
+      "id": "application:proverbs.01",
+      "display": "ref:proverbs.1",
+      "type": "application",
+      "legacyId": "proverbs-challenge-01"
+    },
+    "ref:proverbs.1": {
+      "id": "ref:proverbs.1",
+      "display": "ref:proverbs.1",
+      "type": "reference"
+    },
+    "application:proverbs.02": {
+      "id": "application:proverbs.02",
+      "display": "ref:proverbs.2",
+      "type": "application",
+      "legacyId": "proverbs-challenge-02"
+    },
+    "ref:proverbs.2": {
+      "id": "ref:proverbs.2",
+      "display": "ref:proverbs.2",
+      "type": "reference"
+    },
+    "application:proverbs.03": {
+      "id": "application:proverbs.03",
+      "display": "ref:proverbs.3",
+      "type": "application",
+      "legacyId": "proverbs-challenge-03"
+    },
+    "ref:proverbs.3": {
+      "id": "ref:proverbs.3",
+      "display": "ref:proverbs.3",
+      "type": "reference"
+    },
+    "application:proverbs.04": {
+      "id": "application:proverbs.04",
+      "display": "ref:proverbs.4",
+      "type": "application",
+      "legacyId": "proverbs-challenge-04"
+    },
+    "ref:proverbs.4": {
+      "id": "ref:proverbs.4",
+      "display": "ref:proverbs.4",
+      "type": "reference"
+    },
+    "application:proverbs.05": {
+      "id": "application:proverbs.05",
+      "display": "ref:proverbs.5",
+      "type": "application",
+      "legacyId": "proverbs-challenge-05"
+    },
+    "application:proverbs.06": {
+      "id": "application:proverbs.06",
+      "display": "ref:proverbs.6",
+      "type": "application",
+      "legacyId": "proverbs-challenge-06"
+    },
+    "ref:proverbs.6": {
+      "id": "ref:proverbs.6",
+      "display": "ref:proverbs.6",
+      "type": "reference"
+    },
+    "application:proverbs.07": {
+      "id": "application:proverbs.07",
+      "display": "ref:proverbs.7",
+      "type": "application",
+      "legacyId": "proverbs-challenge-07"
+    },
+    "application:proverbs.08": {
+      "id": "application:proverbs.08",
+      "display": "ref:proverbs.8",
+      "type": "application",
+      "legacyId": "proverbs-challenge-08"
+    },
+    "application:proverbs.09": {
+      "id": "application:proverbs.09",
+      "display": "ref:proverbs.9",
+      "type": "application",
+      "legacyId": "proverbs-challenge-09"
+    },
+    "application:proverbs.10": {
+      "id": "application:proverbs.10",
+      "display": "ref:proverbs.10",
+      "type": "application",
+      "legacyId": "proverbs-challenge-10"
+    },
+    "ref:proverbs.10": {
+      "id": "ref:proverbs.10",
+      "display": "ref:proverbs.10",
+      "type": "reference"
+    },
+    "application:proverbs.11": {
+      "id": "application:proverbs.11",
+      "display": "ref:proverbs.11",
+      "type": "application",
+      "legacyId": "proverbs-challenge-11"
+    },
+    "ref:proverbs.11": {
+      "id": "ref:proverbs.11",
+      "display": "ref:proverbs.11",
+      "type": "reference"
+    },
+    "application:proverbs.12": {
+      "id": "application:proverbs.12",
+      "display": "ref:proverbs.12",
+      "type": "application",
+      "legacyId": "proverbs-challenge-12"
+    },
+    "ref:proverbs.12": {
+      "id": "ref:proverbs.12",
+      "display": "ref:proverbs.12",
+      "type": "reference"
+    },
+    "application:proverbs.13": {
+      "id": "application:proverbs.13",
+      "display": "ref:proverbs.13",
+      "type": "application",
+      "legacyId": "proverbs-challenge-13"
+    },
+    "ref:proverbs.13": {
+      "id": "ref:proverbs.13",
+      "display": "ref:proverbs.13",
+      "type": "reference"
+    },
+    "application:proverbs.14": {
+      "id": "application:proverbs.14",
+      "display": "ref:proverbs.14",
+      "type": "application",
+      "legacyId": "proverbs-challenge-14"
+    },
+    "ref:proverbs.14": {
+      "id": "ref:proverbs.14",
+      "display": "ref:proverbs.14",
+      "type": "reference"
+    },
+    "application:proverbs.15": {
+      "id": "application:proverbs.15",
+      "display": "ref:proverbs.15",
+      "type": "application",
+      "legacyId": "proverbs-challenge-15"
+    },
+    "ref:proverbs.15": {
+      "id": "ref:proverbs.15",
+      "display": "ref:proverbs.15",
+      "type": "reference"
+    },
+    "application:proverbs.16": {
+      "id": "application:proverbs.16",
+      "display": "ref:proverbs.16",
+      "type": "application",
+      "legacyId": "proverbs-challenge-16"
+    },
+    "ref:proverbs.16": {
+      "id": "ref:proverbs.16",
+      "display": "ref:proverbs.16",
+      "type": "reference"
+    },
+    "application:proverbs.17": {
+      "id": "application:proverbs.17",
+      "display": "ref:proverbs.17",
+      "type": "application",
+      "legacyId": "proverbs-challenge-17"
+    },
+    "ref:proverbs.17": {
+      "id": "ref:proverbs.17",
+      "display": "ref:proverbs.17",
+      "type": "reference"
+    },
+    "application:proverbs.18": {
+      "id": "application:proverbs.18",
+      "display": "ref:proverbs.18",
+      "type": "application",
+      "legacyId": "proverbs-challenge-18"
+    },
+    "ref:proverbs.18": {
+      "id": "ref:proverbs.18",
+      "display": "ref:proverbs.18",
+      "type": "reference"
+    },
+    "application:proverbs.19": {
+      "id": "application:proverbs.19",
+      "display": "ref:proverbs.19",
+      "type": "application",
+      "legacyId": "proverbs-challenge-19"
+    },
+    "ref:proverbs.19": {
+      "id": "ref:proverbs.19",
+      "display": "ref:proverbs.19",
+      "type": "reference"
+    },
+    "application:proverbs.20": {
+      "id": "application:proverbs.20",
+      "display": "ref:proverbs.20",
+      "type": "application",
+      "legacyId": "proverbs-challenge-20"
+    },
+    "ref:proverbs.20": {
+      "id": "ref:proverbs.20",
+      "display": "ref:proverbs.20",
+      "type": "reference"
+    },
+    "application:proverbs.21": {
+      "id": "application:proverbs.21",
+      "display": "ref:proverbs.21",
+      "type": "application",
+      "legacyId": "proverbs-challenge-21"
+    },
+    "ref:proverbs.21": {
+      "id": "ref:proverbs.21",
+      "display": "ref:proverbs.21",
+      "type": "reference"
+    },
+    "application:proverbs.22": {
+      "id": "application:proverbs.22",
+      "display": "ref:proverbs.22",
+      "type": "application",
+      "legacyId": "proverbs-challenge-22"
+    },
+    "ref:proverbs.22": {
+      "id": "ref:proverbs.22",
+      "display": "ref:proverbs.22",
+      "type": "reference"
+    },
+    "application:proverbs.23": {
+      "id": "application:proverbs.23",
+      "display": "ref:proverbs.23",
+      "type": "application",
+      "legacyId": "proverbs-challenge-23"
+    },
+    "ref:proverbs.23": {
+      "id": "ref:proverbs.23",
+      "display": "ref:proverbs.23",
+      "type": "reference"
+    },
+    "application:proverbs.24": {
+      "id": "application:proverbs.24",
+      "display": "ref:proverbs.24",
+      "type": "application",
+      "legacyId": "proverbs-challenge-24"
+    },
+    "ref:proverbs.24": {
+      "id": "ref:proverbs.24",
+      "display": "ref:proverbs.24",
+      "type": "reference"
+    },
+    "application:proverbs.25": {
+      "id": "application:proverbs.25",
+      "display": "ref:proverbs.25",
+      "type": "application",
+      "legacyId": "proverbs-challenge-25"
+    },
+    "ref:proverbs.25": {
+      "id": "ref:proverbs.25",
+      "display": "ref:proverbs.25",
+      "type": "reference"
+    },
+    "application:proverbs.26": {
+      "id": "application:proverbs.26",
+      "display": "ref:proverbs.26",
+      "type": "application",
+      "legacyId": "proverbs-challenge-26"
+    },
+    "ref:proverbs.26": {
+      "id": "ref:proverbs.26",
+      "display": "ref:proverbs.26",
+      "type": "reference"
+    },
+    "application:proverbs.27": {
+      "id": "application:proverbs.27",
+      "display": "ref:proverbs.27",
+      "type": "application",
+      "legacyId": "proverbs-challenge-27"
+    },
+    "ref:proverbs.27": {
+      "id": "ref:proverbs.27",
+      "display": "ref:proverbs.27",
+      "type": "reference"
+    },
+    "application:proverbs.28": {
+      "id": "application:proverbs.28",
+      "display": "ref:proverbs.28",
+      "type": "application",
+      "legacyId": "proverbs-challenge-28"
+    },
+    "ref:proverbs.28": {
+      "id": "ref:proverbs.28",
+      "display": "ref:proverbs.28",
+      "type": "reference"
+    },
+    "application:proverbs.29": {
+      "id": "application:proverbs.29",
+      "display": "ref:proverbs.29",
+      "type": "application",
+      "legacyId": "proverbs-challenge-29"
+    },
+    "ref:proverbs.29": {
+      "id": "ref:proverbs.29",
+      "display": "ref:proverbs.29",
+      "type": "reference"
+    },
+    "application:proverbs.30": {
+      "id": "application:proverbs.30",
+      "display": "ref:proverbs.30",
+      "type": "application",
+      "legacyId": "proverbs-challenge-30"
+    },
+    "application:proverbs.31": {
+      "id": "application:proverbs.31",
+      "display": "ref:proverbs.31",
+      "type": "application",
+      "legacyId": "proverbs-challenge-31"
+    },
+    "ref:proverbs.31": {
+      "id": "ref:proverbs.31",
+      "display": "ref:proverbs.31",
+      "type": "reference"
+    }
+  },
+  "byDisplay": {
+    "amsal": "book:proverbs",
+    "amsal 1": "chapter:proverbs.01",
+    "amsal 2": "chapter:proverbs.02",
+    "amsal 3": "chapter:proverbs.03",
+    "amsal 4": "chapter:proverbs.04",
+    "amsal 5": "chapter:proverbs.05",
+    "amsal 6": "chapter:proverbs.06",
+    "amsal 7": "chapter:proverbs.07",
+    "amsal 8": "chapter:proverbs.08",
+    "amsal 9": "chapter:proverbs.09",
+    "amsal 10": "chapter:proverbs.10",
+    "amsal 11": "chapter:proverbs.11",
+    "amsal 12": "chapter:proverbs.12",
+    "amsal 13": "chapter:proverbs.13",
+    "amsal 14": "chapter:proverbs.14",
+    "amsal 15": "chapter:proverbs.15",
+    "amsal 16": "chapter:proverbs.16",
+    "amsal 17": "chapter:proverbs.17",
+    "amsal 18": "chapter:proverbs.18",
+    "amsal 19": "chapter:proverbs.19",
+    "amsal 20": "chapter:proverbs.20",
+    "amsal 21": "chapter:proverbs.21",
+    "amsal 22": "chapter:proverbs.22",
+    "amsal 23": "chapter:proverbs.23",
+    "amsal 24": "chapter:proverbs.24",
+    "amsal 25": "chapter:proverbs.25",
+    "amsal 26": "chapter:proverbs.26",
+    "amsal 27": "chapter:proverbs.27",
+    "amsal 28": "chapter:proverbs.28",
+    "amsal 29": "chapter:proverbs.29",
+    "amsal 30": "chapter:proverbs.30",
+    "amsal 31": "chapter:proverbs.31",
+    "mazmur": "book:psalms",
+    "pengkhotbah": "book:ecclesiastes",
+    "matius": "book:matthew",
+    "roma": "book:romans",
+    "1 korintus": "book:1corinthians",
+    "2 korintus": "book:2corinthians",
+    "galatia": "book:galatians",
+    "efesus": "book:ephesians",
+    "filipi": "book:philippians",
+    "kolose": "book:colossians",
+    "2 tesalonika": "book:2thessalonians",
+    "ibrani": "book:hebrews",
+    "yakobus": "book:james",
+    "1 petrus": "book:1peter",
+    "amsal 1 1": "ref:proverbs.1.1",
+    "amsal 1 7": "ref:proverbs.1.7",
+    "mazmur 111 10": "ref:psalms.111.10",
+    "yakobus 1 5": "ref:james.1.5",
+    "amsal 2 6": "ref:proverbs.2.6",
+    "amsal 3 5": "ref:proverbs.3.5",
+    "mazmur 37 3 5": "ref:psalms.37.3",
+    "ibrani 12 5 6": "ref:hebrews.12.5",
+    "matius 6 33": "ref:matthew.6.33",
+    "mazmur 37 5": "ref:psalms.37.5",
+    "amsal 4 23": "ref:proverbs.4.23",
+    "matius 6 21": "ref:matthew.6.21",
+    "filipi 4 8": "ref:philippians.4.8",
+    "amsal 5 21": "ref:proverbs.5.21",
+    "1 korintus 6 18 20": "ref:1corinthians.6.18",
+    "ibrani 13 4": "ref:hebrews.13.4",
+    "amsal 6 6": "ref:proverbs.6.6",
+    "2 tesalonika 3 10": "ref:2thessalonians.3.10",
+    "roma 12 18": "ref:romans.12.18",
+    "amsal 7 2": "ref:proverbs.7.2",
+    "matius 26 41": "ref:matthew.26.41",
+    "amsal 8 11": "ref:proverbs.8.11",
+    "1 korintus 1 24": "ref:1corinthians.1.24",
+    "kolose 1 15 17": "ref:colossians.1.15",
+    "amsal 9 10": "ref:proverbs.9.10",
+    "amsal 10 12": "ref:proverbs.10.12",
+    "yakobus 3 5 10": "ref:james.3.5",
+    "amsal 11 3": "ref:proverbs.11.3",
+    "2 korintus 9 6 7": "ref:2corinthians.9.6",
+    "amsal 12 1": "ref:proverbs.12.1",
+    "ibrani 12 11": "ref:hebrews.12.11",
+    "amsal 13 20": "ref:proverbs.13.20",
+    "efesus 6 4": "ref:ephesians.6.4",
+    "amsal 22 6": "ref:proverbs.22.6",
+    "amsal 14 1": "ref:proverbs.14.1",
+    "yakobus 1 19 20": "ref:james.1.19",
+    "amsal 15 1": "ref:proverbs.15.1",
+    "efesus 4 29": "ref:ephesians.4.29",
+    "amsal 16 3": "ref:proverbs.16.3",
+    "yakobus 4 13 15": "ref:james.4.13",
+    "amsal 17 1": "ref:proverbs.17.1",
+    "amsal 15 17": "ref:proverbs.15.17",
+    "amsal 18 21": "ref:proverbs.18.21",
+    "yakobus 1 19": "ref:james.1.19",
+    "amsal 19 21": "ref:proverbs.19.21",
+    "roma 8 28": "ref:romans.8.28",
+    "amsal 20 7": "ref:proverbs.20.7",
+    "efesus 5 15 16": "ref:ephesians.5.15",
+    "amsal 16 32": "ref:proverbs.16.32",
+    "amsal 21 3": "ref:proverbs.21.3",
+    "matius 23 23": "ref:matthew.23.23",
+    "amsal 15 8": "ref:proverbs.15.8",
+    "amsal 23 26": "ref:proverbs.23.26",
+    "efesus 5 18": "ref:ephesians.5.18",
+    "amsal 20 1": "ref:proverbs.20.1",
+    "amsal 24 16": "ref:proverbs.24.16",
+    "roma 12 17 21": "ref:romans.12.17",
+    "amsal 25 21 22": "ref:proverbs.25.21",
+    "amsal 25 6 7": "ref:proverbs.25.6",
+    "roma 12 20": "ref:romans.12.20",
+    "amsal 26 4 5": "ref:proverbs.26.4",
+    "amsal 27 17": "ref:proverbs.27.17",
+    "ibrani 10 24 25": "ref:hebrews.10.24",
+    "amsal 28 1": "ref:proverbs.28.1",
+    "yakobus 5 16": "ref:james.5.16",
+    "amsal 28 13": "ref:proverbs.28.13",
+    "amsal 29 25": "ref:proverbs.29.25",
+    "galatia 1 10": "ref:galatians.1.10",
+    "amsal 30 5": "ref:proverbs.30.5",
+    "matius 6 11": "ref:matthew.6.11",
+    "amsal 31 30": "ref:proverbs.31.30",
+    "1 petrus 3 1 6": "ref:1peter.3.1",
+    "yakobus 3 5": "ref:james.3.5",
+    "amsal 16 12": "ref:proverbs.16.12",
+    "amsal 29 2": "ref:proverbs.29.2",
+    "amsal 8 15": "ref:proverbs.8.15",
+    "amsal 10 9": "ref:proverbs.10.9",
+    "amsal 3 34": "ref:proverbs.3.34",
+    "amsal 11 2": "ref:proverbs.11.2",
+    "amsal 22 4": "ref:proverbs.22.4",
+    "amsal 5 18": "ref:proverbs.5.18",
+    "amsal 18 22": "ref:proverbs.18.22",
+    "amsal 31 10": "ref:proverbs.31.10",
+    "amsal 1 8": "ref:proverbs.1.8",
+    "amsal 13 24": "ref:proverbs.13.24",
+    "amsal 3 9": "ref:proverbs.3.9",
+    "amsal 11 24": "ref:proverbs.11.24",
+    "amsal 30 8": "ref:proverbs.30.8",
+    "amsal 12 11": "ref:proverbs.12.11",
+    "amsal 14 23": "ref:proverbs.14.23",
+    "amsal 31 8": "ref:proverbs.31.8",
+    "amsal 29 7": "ref:proverbs.29.7",
+    "amsal 17 9": "ref:proverbs.17.9",
+    "amsal 19 11": "ref:proverbs.19.11",
+    "amsal 15 29": "ref:proverbs.15.29",
+    "amsal 16 20": "ref:proverbs.16.20",
+    "amsal 13 12": "ref:proverbs.13.12",
+    "amsal 23 18": "ref:proverbs.23.18",
+    "amsal 24 14": "ref:proverbs.24.14",
+    "amsal 17 17": "ref:proverbs.17.17",
+    "amsal 3 3": "ref:proverbs.3.3",
+    "amsal 5 8": "ref:proverbs.5.8",
+    "amsal 7 25": "ref:proverbs.7.25",
+    "amsal 16 9": "ref:proverbs.16.9",
+    "amsal 15 22": "ref:proverbs.15.22",
+    "amsal 18 24": "ref:proverbs.18.24",
+    "amsal 20 11": "ref:proverbs.20.11",
+    "amsal 27 19": "ref:proverbs.27.19",
+    "amsal 3 11": "ref:proverbs.3.11",
+    "amsal 24 10": "ref:proverbs.24.10",
+    "amsal 17 3": "ref:proverbs.17.3",
+    "amsal 17 22": "ref:proverbs.17.22",
+    "amsal 15 13": "ref:proverbs.15.13",
+    "amsal 15 15": "ref:proverbs.15.15",
+    "amsal 16 7": "ref:proverbs.16.7",
+    "amsal 12 20": "ref:proverbs.12.20",
+    "amsal 1 2": "ref:proverbs.1.2",
+    "amsal 2 5": "ref:proverbs.2.5",
+    "amsal 2 3": "ref:proverbs.2.3",
+    "amsal 1 4": "ref:proverbs.1.4",
+    "amsal 2 11": "ref:proverbs.2.11",
+    "amsal 3 21": "ref:proverbs.3.21",
+    "amsal 11 4": "ref:proverbs.11.4",
+    "amsal 31 9": "ref:proverbs.31.9",
+    "amsal 12 19": "ref:proverbs.12.19",
+    "amsal 8 7": "ref:proverbs.8.7",
+    "amsal 16 6": "ref:proverbs.16.6",
+    "amsal 20 28": "ref:proverbs.20.28",
+    "amsal 8 1": "ref:proverbs.8.1",
+    "yakobus 3 17": "ref:james.3.17",
+    "2 korintus 7 1": "ref:2corinthians.7.1",
+    "amsal 10 1": "ref:proverbs.10.1",
+    "amsal 30 1": "ref:proverbs.30.1",
+    "amsal 31 1": "ref:proverbs.31.1",
+    "amsal 5 5": "ref:proverbs.5.5",
+    "amsal 7 27": "ref:proverbs.7.27",
+    "amsal 9 18": "ref:proverbs.9.18",
+    "amsal 30 25": "ref:proverbs.30.25",
+    "amsal 3 5 6": "ref:proverbs.3.5",
+    "amsal 8 22": "ref:proverbs.8.22",
+    "amsal 1 1 6": "ref:proverbs.1.1",
+    "amsal 2 5 6": "ref:proverbs.2.5",
+    "amsal 25 1": "ref:proverbs.25.1",
+    "amsal 8 1 11": "ref:proverbs.8.1",
+    "amsal 8 22 31": "ref:proverbs.8.22",
+    "kolose 2 3": "ref:colossians.2.3",
+    "amsal 5 3 5": "ref:proverbs.5.3",
+    "amsal 1 2 6": "ref:proverbs.1.2",
+    "amsal 13 23": "ref:proverbs.13.23",
+    "amsal 22 2": "ref:proverbs.22.2",
+    "amsal 30 8 9": "ref:proverbs.30.8",
+    "amsal 5 1 6": "ref:proverbs.5.1",
+    "amsal 31 10 31": "ref:proverbs.31.10",
+    "ref proverbs 1 7": "ref:proverbs.1.7",
+    "ref proverbs 9 10": "ref:proverbs.9.10",
+    "ref proverbs 14 26": "ref:proverbs.14.26",
+    "ref psalms 111 10": "ref:psalms.111.10",
+    "ref proverbs 29 25": "ref:proverbs.29.25",
+    "ref proverbs 2 6": "ref:proverbs.2.6",
+    "ref proverbs 8 1 36": "ref:proverbs.8.1-36",
+    "ref james 1 5": "ref:james.1.5",
+    "ref 1corinthians 1 24": "ref:1corinthians.1.24",
+    "ref proverbs 14 12": "ref:proverbs.14.12",
+    "ref proverbs 16 9": "ref:proverbs.16.9",
+    "ref proverbs 19 21": "ref:proverbs.19.21",
+    "ref proverbs 21 30": "ref:proverbs.21.30",
+    "ref romans 8 28": "ref:romans.8.28",
+    "ref proverbs 3 11 12": "ref:proverbs.3.11-12",
+    "ref proverbs 13 24": "ref:proverbs.13.24",
+    "ref hebrews 12 5 6": "ref:hebrews.12.5-6",
+    "ref proverbs 10 19": "ref:proverbs.10.19",
+    "ref proverbs 15 1": "ref:proverbs.15.1",
+    "ref proverbs 18 21": "ref:proverbs.18.21",
+    "ref james 3 5 10": "ref:james.3.5-10",
+    "ref ephesians 4 29": "ref:ephesians.4.29",
+    "ref proverbs 11 1": "ref:proverbs.11.1",
+    "ref proverbs 21 3": "ref:proverbs.21.3",
+    "ref proverbs 28 6": "ref:proverbs.28.6",
+    "ref proverbs 17 23": "ref:proverbs.17.23",
+    "ref proverbs 6 6 11": "ref:proverbs.6.6-11",
+    "ref proverbs 10 4": "ref:proverbs.10.4",
+    "ref proverbs 14 23": "ref:proverbs.14.23",
+    "ref 2thessalonians 3 10": "ref:2thessalonians.3.10",
+    "ref proverbs 13 20": "ref:proverbs.13.20",
+    "ref proverbs 15 22": "ref:proverbs.15.22",
+    "ref proverbs 27 17": "ref:proverbs.27.17",
+    "ref hebrews 10 24 25": "ref:hebrews.10.24-25",
+    "ref proverbs 18 24": "ref:proverbs.18.24",
+    "ref proverbs 5 15 23": "ref:proverbs.5.15-23",
+    "ref proverbs 6 20 35": "ref:proverbs.6.20-35",
+    "ref proverbs 7": "ref:proverbs.7",
+    "ref 1corinthians 6 18 20": "ref:1corinthians.6.18-20",
+    "ref hebrews 13 4": "ref:hebrews.13.4",
+    "ref proverbs 11 24 25": "ref:proverbs.11.24-25",
+    "ref proverbs 19 17": "ref:proverbs.19.17",
+    "ref proverbs 22 9": "ref:proverbs.22.9",
+    "ref 2corinthians 9 6 7": "ref:2corinthians.9.6-7",
+    "ref proverbs 4 23": "ref:proverbs.4.23",
+    "ref proverbs 23 26": "ref:proverbs.23.26",
+    "ref matthew 6 21": "ref:matthew.6.21",
+    "ref philippians 4 8": "ref:philippians.4.8",
+    "ref proverbs 25 21 22": "ref:proverbs.25.21-22",
+    "ref romans 12 20": "ref:romans.12.20",
+    "ref proverbs 24 17": "ref:proverbs.24.17",
+    "ref proverbs 1 1": "ref:proverbs.1.1",
+    "ref proverbs 10 1": "ref:proverbs.10.1",
+    "ref proverbs 25 1": "ref:proverbs.25.1",
+    "ref proverbs 30 1 9": "ref:proverbs.30.1-9",
+    "ref proverbs 31 1 9": "ref:proverbs.31.1-9",
+    "ref proverbs 1 20 33": "ref:proverbs.1.20-33",
+    "ref proverbs 8": "ref:proverbs.8",
+    "ref proverbs 9 1 6": "ref:proverbs.9.1-6",
+    "ref proverbs 9 13 18": "ref:proverbs.9.13-18",
+    "ref proverbs 5": "ref:proverbs.5",
+    "ref proverbs 6 24 35": "ref:proverbs.6.24-35",
+    "ref proverbs 31 10 31": "ref:proverbs.31.10-31",
+    "ref proverbs 30": "ref:proverbs.30",
+    "ref proverbs 9": "ref:proverbs.9",
+    "ref proverbs 4 18 19": "ref:proverbs.4.18-19",
+    "ref proverbs 3 18": "ref:proverbs.3.18",
+    "ref proverbs 11 30": "ref:proverbs.11.30",
+    "ref proverbs 15 4": "ref:proverbs.15.4",
+    "ref proverbs 9 1": "ref:proverbs.9.1",
+    "ref proverbs 14 1": "ref:proverbs.14.1",
+    "ref proverbs 24 3 4": "ref:proverbs.24.3-4",
+    "ref proverbs 3 13 15": "ref:proverbs.3.13-15",
+    "ref proverbs 8 10 11": "ref:proverbs.8.10-11",
+    "ref proverbs 16 16": "ref:proverbs.16.16",
+    "ref proverbs 16 11": "ref:proverbs.16.11",
+    "ref proverbs 20 23": "ref:proverbs.20.23",
+    "ref proverbs 6 23": "ref:proverbs.6.23",
+    "ref proverbs 20 27": "ref:proverbs.20.27",
+    "ref proverbs 4 19": "ref:proverbs.4.19",
+    "ref proverbs 6 6 8": "ref:proverbs.6.6-8",
+    "ref proverbs 1 17": "ref:proverbs.1.17",
+    "ref proverbs 10 11": "ref:proverbs.10.11",
+    "ref proverbs 13 14": "ref:proverbs.13.14",
+    "ref proverbs 18 4": "ref:proverbs.18.4",
+    "ref proverbs 4 9": "ref:proverbs.4.9",
+    "ref proverbs 16 31": "ref:proverbs.16.31",
+    "ref proverbs 24 13 14": "ref:proverbs.24.13-14",
+    "ref proverbs 25 16": "ref:proverbs.25.16",
+    "ref proverbs 2 7": "ref:proverbs.2.7",
+    "ref proverbs 30 5": "ref:proverbs.30.5",
+    "ref proverbs 26 4 5": "ref:proverbs.26.4-5",
+    "ref ecclesiastes 3 1 8": "ref:ecclesiastes.3.1-8",
+    "ref james 1 19": "ref:james.1.19",
+    "ref proverbs 2 1 6": "ref:proverbs.2.1-6",
+    "ref proverbs 3 9 10": "ref:proverbs.3.9-10",
+    "ref matthew 6 33": "ref:matthew.6.33",
+    "ref proverbs 16 3": "ref:proverbs.16.3",
+    "ref proverbs 23 4 5": "ref:proverbs.23.4-5",
+    "ref ecclesiastes 1 2": "ref:ecclesiastes.1.2",
+    "ref ecclesiastes 12 13": "ref:ecclesiastes.12.13",
+    "ref proverbs 8 22 31": "ref:proverbs.8.22-31",
+    "ref colossians 1 15 17": "ref:colossians.1.15-17",
+    "ref proverbs 1": "ref:proverbs.1",
+    "ref proverbs 2": "ref:proverbs.2",
+    "ref proverbs 3": "ref:proverbs.3",
+    "ref proverbs 4": "ref:proverbs.4",
+    "ref proverbs 6": "ref:proverbs.6",
+    "ref proverbs 10": "ref:proverbs.10",
+    "ref proverbs 11": "ref:proverbs.11",
+    "ref proverbs 12": "ref:proverbs.12",
+    "ref proverbs 13": "ref:proverbs.13",
+    "ref proverbs 14": "ref:proverbs.14",
+    "ref proverbs 15": "ref:proverbs.15",
+    "ref proverbs 16": "ref:proverbs.16",
+    "ref proverbs 17": "ref:proverbs.17",
+    "ref proverbs 18": "ref:proverbs.18",
+    "ref proverbs 19": "ref:proverbs.19",
+    "ref proverbs 20": "ref:proverbs.20",
+    "ref proverbs 21": "ref:proverbs.21",
+    "ref proverbs 22": "ref:proverbs.22",
+    "ref proverbs 23": "ref:proverbs.23",
+    "ref proverbs 24": "ref:proverbs.24",
+    "ref proverbs 25": "ref:proverbs.25",
+    "ref proverbs 26": "ref:proverbs.26",
+    "ref proverbs 27": "ref:proverbs.27",
+    "ref proverbs 28": "ref:proverbs.28",
+    "ref proverbs 29": "ref:proverbs.29",
+    "ref proverbs 31": "ref:proverbs.31"
+  },
+  "resolvable": [
+    "book:proverbs",
+    "chapter:proverbs.01",
+    "chapter:proverbs.02",
+    "chapter:proverbs.03",
+    "chapter:proverbs.04",
+    "chapter:proverbs.05",
+    "chapter:proverbs.06",
+    "chapter:proverbs.07",
+    "chapter:proverbs.08",
+    "chapter:proverbs.09",
+    "chapter:proverbs.10",
+    "chapter:proverbs.11",
+    "chapter:proverbs.12",
+    "chapter:proverbs.13",
+    "chapter:proverbs.14",
+    "chapter:proverbs.15",
+    "chapter:proverbs.16",
+    "chapter:proverbs.17",
+    "chapter:proverbs.18",
+    "chapter:proverbs.19",
+    "chapter:proverbs.20",
+    "chapter:proverbs.21",
+    "chapter:proverbs.22",
+    "chapter:proverbs.23",
+    "chapter:proverbs.24",
+    "chapter:proverbs.25",
+    "chapter:proverbs.26",
+    "chapter:proverbs.27",
+    "chapter:proverbs.28",
+    "chapter:proverbs.29",
+    "chapter:proverbs.30",
+    "chapter:proverbs.31",
+    "book:psalms",
+    "book:ecclesiastes",
+    "book:matthew",
+    "book:romans",
+    "book:1corinthians",
+    "book:2corinthians",
+    "book:galatians",
+    "book:ephesians",
+    "book:philippians",
+    "book:colossians",
+    "book:2thessalonians",
+    "book:hebrews",
+    "book:james",
+    "book:1peter",
+    "ref:proverbs.1.1",
+    "ref:proverbs.1.7",
+    "ref:psalms.111.10",
+    "ref:james.1.5",
+    "ref:proverbs.2.6",
+    "ref:proverbs.3.5",
+    "ref:psalms.37.3",
+    "ref:hebrews.12.5",
+    "ref:matthew.6.33",
+    "ref:psalms.37.5",
+    "ref:proverbs.4.23",
+    "ref:matthew.6.21",
+    "ref:philippians.4.8",
+    "ref:proverbs.5.21",
+    "ref:1corinthians.6.18",
+    "ref:hebrews.13.4",
+    "ref:proverbs.6.6",
+    "ref:2thessalonians.3.10",
+    "ref:romans.12.18",
+    "ref:proverbs.7.2",
+    "ref:matthew.26.41",
+    "ref:proverbs.8.11",
+    "ref:1corinthians.1.24",
+    "ref:colossians.1.15",
+    "ref:proverbs.9.10",
+    "ref:proverbs.10.12",
+    "ref:james.3.5",
+    "ref:proverbs.11.3",
+    "ref:2corinthians.9.6",
+    "ref:proverbs.12.1",
+    "ref:hebrews.12.11",
+    "ref:proverbs.13.20",
+    "ref:ephesians.6.4",
+    "ref:proverbs.22.6",
+    "ref:proverbs.14.1",
+    "ref:james.1.19",
+    "ref:proverbs.15.1",
+    "ref:ephesians.4.29",
+    "ref:proverbs.16.3",
+    "ref:james.4.13",
+    "ref:proverbs.17.1",
+    "ref:proverbs.15.17",
+    "ref:proverbs.18.21",
+    "ref:proverbs.19.21",
+    "ref:romans.8.28",
+    "ref:proverbs.20.7",
+    "ref:ephesians.5.15",
+    "ref:proverbs.16.32",
+    "ref:proverbs.21.3",
+    "ref:matthew.23.23",
+    "ref:proverbs.15.8",
+    "ref:proverbs.23.26",
+    "ref:ephesians.5.18",
+    "ref:proverbs.20.1",
+    "ref:proverbs.24.16",
+    "ref:romans.12.17",
+    "ref:proverbs.25.21",
+    "ref:proverbs.25.6",
+    "ref:romans.12.20",
+    "ref:proverbs.26.4",
+    "ref:proverbs.27.17",
+    "ref:hebrews.10.24",
+    "ref:proverbs.28.1",
+    "ref:james.5.16",
+    "ref:proverbs.28.13",
+    "ref:proverbs.29.25",
+    "ref:galatians.1.10",
+    "ref:proverbs.30.5",
+    "ref:matthew.6.11",
+    "ref:proverbs.31.30",
+    "ref:1peter.3.1",
+    "ref:proverbs.16.12",
+    "ref:proverbs.29.2",
+    "ref:proverbs.8.15",
+    "ref:proverbs.10.9",
+    "ref:proverbs.3.34",
+    "ref:proverbs.11.2",
+    "ref:proverbs.22.4",
+    "ref:proverbs.5.18",
+    "ref:proverbs.18.22",
+    "ref:proverbs.31.10",
+    "ref:proverbs.1.8",
+    "ref:proverbs.13.24",
+    "ref:proverbs.3.9",
+    "ref:proverbs.11.24",
+    "ref:proverbs.30.8",
+    "ref:proverbs.12.11",
+    "ref:proverbs.14.23",
+    "ref:proverbs.31.8",
+    "ref:proverbs.29.7",
+    "ref:proverbs.17.9",
+    "ref:proverbs.19.11",
+    "ref:proverbs.15.29",
+    "ref:proverbs.16.20",
+    "ref:proverbs.13.12",
+    "ref:proverbs.23.18",
+    "ref:proverbs.24.14",
+    "ref:proverbs.17.17",
+    "ref:proverbs.3.3",
+    "ref:proverbs.5.8",
+    "ref:proverbs.7.25",
+    "ref:proverbs.16.9",
+    "ref:proverbs.15.22",
+    "ref:proverbs.18.24",
+    "ref:proverbs.20.11",
+    "ref:proverbs.27.19",
+    "ref:proverbs.3.11",
+    "ref:proverbs.24.10",
+    "ref:proverbs.17.3",
+    "ref:proverbs.17.22",
+    "ref:proverbs.15.13",
+    "ref:proverbs.15.15",
+    "ref:proverbs.16.7",
+    "ref:proverbs.12.20",
+    "ref:proverbs.1.2",
+    "ref:proverbs.2.5",
+    "ref:proverbs.2.3",
+    "ref:proverbs.1.4",
+    "ref:proverbs.2.11",
+    "ref:proverbs.3.21",
+    "ref:proverbs.11.4",
+    "ref:proverbs.31.9",
+    "ref:proverbs.12.19",
+    "ref:proverbs.8.7",
+    "ref:proverbs.16.6",
+    "ref:proverbs.20.28",
+    "ref:proverbs.8.1",
+    "ref:james.3.17",
+    "ref:2corinthians.7.1",
+    "ref:proverbs.10.1",
+    "ref:proverbs.30.1",
+    "ref:proverbs.31.1",
+    "ref:proverbs.5.5",
+    "ref:proverbs.7.27",
+    "ref:proverbs.9.18",
+    "ref:proverbs.30.25",
+    "ref:proverbs.8.22",
+    "ref:proverbs.25.1",
+    "ref:colossians.2.3",
+    "ref:proverbs.5.3",
+    "ref:proverbs.13.23",
+    "ref:proverbs.22.2",
+    "ref:proverbs.5.1",
+    "doctrine:fear-of-the-lord",
+    "ref:proverbs.14.26",
+    "doctrine:wisdom-from-god",
+    "ref:proverbs.8.1-36",
+    "ref:proverbs.14.12",
+    "doctrine:providence-and-plans",
+    "ref:proverbs.21.30",
+    "doctrine:discipline-as-love",
+    "ref:proverbs.3.11-12",
+    "ref:hebrews.12.5-6",
+    "doctrine:speech-ethics",
+    "ref:proverbs.10.19",
+    "ref:james.3.5-10",
+    "doctrine:integrity-and-justice",
+    "ref:proverbs.11.1",
+    "ref:proverbs.28.6",
+    "ref:proverbs.17.23",
+    "doctrine:work-and-diligence",
+    "ref:proverbs.6.6-11",
+    "ref:proverbs.10.4",
+    "doctrine:friendship-and-counsel",
+    "ref:hebrews.10.24-25",
+    "doctrine:sexual-faithfulness",
+    "ref:proverbs.5.15-23",
+    "ref:proverbs.6.20-35",
+    "ref:proverbs.7",
+    "ref:1corinthians.6.18-20",
+    "doctrine:generosity-and-stewardship",
+    "ref:proverbs.11.24-25",
+    "ref:proverbs.19.17",
+    "ref:proverbs.22.9",
+    "ref:2corinthians.9.6-7",
+    "doctrine:heart-formation",
+    "doctrine:enemy-love-and-forgiveness",
+    "ref:proverbs.25.21-22",
+    "ref:proverbs.24.17",
+    "character:solomon",
+    "character:agur",
+    "ref:proverbs.30.1-9",
+    "character:lemuel",
+    "ref:proverbs.31.1-9",
+    "character:lemuel-mother",
+    "character:woman-wisdom",
+    "ref:proverbs.1.20-33",
+    "ref:proverbs.8",
+    "ref:proverbs.9.1-6",
+    "character:woman-folly",
+    "ref:proverbs.9.13-18",
+    "character:strange-woman",
+    "ref:proverbs.5",
+    "ref:proverbs.6.24-35",
+    "character:noble-wife",
+    "ref:proverbs.31.10-31",
+    "character:hezekiah-men",
+    "timeline:solomon-wisdom-era",
+    "timeline:hezekiah-collection",
+    "timeline:agur-oracle",
+    "ref:proverbs.30",
+    "timeline:lemuel-oracle",
+    "timeline:noble-wife-poem",
+    "timeline:wisdom-personification",
+    "ref:proverbs.9",
+    "timeline:nt-reception",
+    "symbol:path",
+    "ref:proverbs.4.18-19",
+    "symbol:heart",
+    "symbol:tongue",
+    "symbol:tree-of-life",
+    "ref:proverbs.3.18",
+    "ref:proverbs.11.30",
+    "ref:proverbs.15.4",
+    "symbol:house",
+    "ref:proverbs.9.1",
+    "ref:proverbs.24.3-4",
+    "symbol:house-folly",
+    "symbol:gold-silver",
+    "ref:proverbs.3.13-15",
+    "ref:proverbs.8.10-11",
+    "ref:proverbs.16.16",
+    "symbol:scales",
+    "ref:proverbs.16.11",
+    "ref:proverbs.20.23",
+    "symbol:lamp",
+    "ref:proverbs.6.23",
+    "ref:proverbs.20.27",
+    "symbol:darkness",
+    "ref:proverbs.4.19",
+    "symbol:ant",
+    "ref:proverbs.6.6-8",
+    "symbol:snare",
+    "ref:proverbs.1.17",
+    "symbol:fountain",
+    "ref:proverbs.10.11",
+    "ref:proverbs.13.14",
+    "ref:proverbs.18.4",
+    "symbol:crown",
+    "ref:proverbs.4.9",
+    "ref:proverbs.16.31",
+    "symbol:honey",
+    "ref:proverbs.24.13-14",
+    "ref:proverbs.25.16",
+    "symbol:shield",
+    "ref:proverbs.2.7",
+    "wisdom-pattern:situational-pair",
+    "ref:proverbs.26.4-5",
+    "ref:ecclesiastes.3.1-8",
+    "wisdom-pattern:fear-foundation",
+    "wisdom-pattern:ask-for-wisdom",
+    "ref:proverbs.2.1-6",
+    "wisdom-pattern:speech-power",
+    "wisdom-pattern:jesus-kingdom-priority",
+    "ref:proverbs.3.9-10",
+    "wisdom-pattern:enemy-kindness",
+    "wisdom-pattern:discipline-love",
+    "wisdom-pattern:vanity-check",
+    "ref:proverbs.23.4-5",
+    "ref:ecclesiastes.1.2",
+    "ref:ecclesiastes.12.13",
+    "wisdom-pattern:christ-wisdom",
+    "ref:proverbs.8.22-31",
+    "ref:colossians.1.15-17",
+    "application:proverbs.01",
+    "ref:proverbs.1",
+    "application:proverbs.02",
+    "ref:proverbs.2",
+    "application:proverbs.03",
+    "ref:proverbs.3",
+    "application:proverbs.04",
+    "ref:proverbs.4",
+    "application:proverbs.05",
+    "application:proverbs.06",
+    "ref:proverbs.6",
+    "application:proverbs.07",
+    "application:proverbs.08",
+    "application:proverbs.09",
+    "application:proverbs.10",
+    "ref:proverbs.10",
+    "application:proverbs.11",
+    "ref:proverbs.11",
+    "application:proverbs.12",
+    "ref:proverbs.12",
+    "application:proverbs.13",
+    "ref:proverbs.13",
+    "application:proverbs.14",
+    "ref:proverbs.14",
+    "application:proverbs.15",
+    "ref:proverbs.15",
+    "application:proverbs.16",
+    "ref:proverbs.16",
+    "application:proverbs.17",
+    "ref:proverbs.17",
+    "application:proverbs.18",
+    "ref:proverbs.18",
+    "application:proverbs.19",
+    "ref:proverbs.19",
+    "application:proverbs.20",
+    "ref:proverbs.20",
+    "application:proverbs.21",
+    "ref:proverbs.21",
+    "application:proverbs.22",
+    "ref:proverbs.22",
+    "application:proverbs.23",
+    "ref:proverbs.23",
+    "application:proverbs.24",
+    "ref:proverbs.24",
+    "application:proverbs.25",
+    "ref:proverbs.25",
+    "application:proverbs.26",
+    "ref:proverbs.26",
+    "application:proverbs.27",
+    "ref:proverbs.27",
+    "application:proverbs.28",
+    "ref:proverbs.28",
+    "application:proverbs.29",
+    "ref:proverbs.29",
+    "application:proverbs.30",
+    "application:proverbs.31",
+    "ref:proverbs.31"
+  ]
+}

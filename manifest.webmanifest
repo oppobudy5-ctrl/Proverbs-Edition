@@ -1,0 +1,50 @@
+{
+  "name": "Bible Time Proverbs Edition — 31 Hari Hidup dalam Hikmat",
+  "short_name": "Bible Time",
+  "description": "Daily Wisdom Journey selama 31 hari melalui Amsal 1-31. Bisa offline.",
+  "id": "/",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "background_color": "#06080d",
+  "theme_color": "#0b0d12",
+  "orientation": "portrait-primary",
+  "lang": "id-ID",
+  "dir": "ltr",
+  "categories": ["lifestyle", "education", "books"],
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Hari ini",
+      "short_name": "Hari ini",
+      "url": "./?route=home",
+      "description": "Buka renungan hari ini"
+    },
+    {
+      "name": "Kalender",
+      "short_name": "Kalender",
+      "url": "./?route=calendar",
+      "description": "Lihat perjalanan 31 hari"
+    }
+  ]
+}

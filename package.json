@@ -1,0 +1,47 @@
+{
+  "name": "bible-time",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Bible Time Proverbs Edition — Daily Wisdom Journey selama 31 hari melalui Amsal 1–31.",
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes serve . -p 8080",
+    "start": "npx --yes serve . -p 8080",
+    "build": "npm run build-knowledge",
+    "lint": "node scripts/lint.mjs",
+    "icons": "node scripts/gen-icons.mjs",
+    "validate-content": "node scripts/validate-content.mjs",
+    "validate-ai": "node scripts/validate-ai.mjs",
+    "build-knowledge": "node scripts/build-knowledge.mjs",
+    "validate-knowledge": "node scripts/validate-knowledge.mjs",
+    "validate-cil": "node scripts/validate-cil.mjs",
+    "test-knowledge": "node scripts/test-knowledge.mjs",
+    "test-semantic": "node scripts/test-semantic.mjs",
+    "test-journal": "node scripts/test-journal.mjs",
+    "test-storage": "node scripts/test-storage.mjs",
+    "test-cil": "npm run validate-cil && node scripts/test-cil-engines.mjs && node scripts/test-cil-context.mjs && node scripts/test-cil-guardrails.mjs && node scripts/test-cil-confidence.mjs",
+    "test": "npm run validate-content && npm run validate-knowledge && npm run validate-cil && npm run test-knowledge && npm run test-semantic && npm run test-journal && npm run test-storage && npm run test-cil && npm run validate-ai",
+    "knowledge": "npm run build-knowledge && npm run validate-knowledge && npm run test-knowledge",
+    "validate-semantic": "npm run test-semantic"
+  },
+  "keywords": [
+    "bible",
+    "alkitab",
+    "amsal",
+    "proverbs",
+    "hikmat",
+    "devosional",
+    "renungan",
+    "pwa",
+    "offline",
+    "indonesia"
+  ],
+  "author": "@parestemy",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  }
+}

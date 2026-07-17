@@ -1,0 +1,26 @@
+{
+  "bookId": "proverbs",
+  "bookName": "Amsal",
+  "englishName": "Proverbs",
+  "abbreviation": "Ams",
+  "testament": "Perjanjian Lama",
+  "genre": "Sastra Hikmat",
+  "authorTraditional": "Salomo (dengan koleksi tambahan: Agur, Lemuel, dan para orang bijak)",
+  "estimatedDate": "Abad ke-10 SM (koleksi inti Salomo) hingga masa Hizkia, abad ke-8 SM (redaksi Amsal 25-29)",
+  "historicalSetting": "Kerajaan Israel bersatu dan periode monarki Yehuda. Amsal 25:1 menyebut para pegawai Hizkia menyalin kembali amsal-amsal Salomo, menandai proses pengumpulan lintas generasi.",
+  "audience": "Terutama kaum muda dan setiap orang yang ingin belajar menjalani hidup di hadapan Allah dengan bijak; awalnya dibingkai sebagai pengajaran orang tua kepada anak.",
+  "purpose": "Menanamkan hikmat praktis dan takut akan TUHAN sebagai fondasi kehidupan, membentuk watak, dan menolong pembaca membedakan jalan kehidupan dari jalan kebodohan.",
+  "outline": [
+    { "section": "Amsal 1-9", "title": "Panggilan Hikmat", "summary": "Serangkaian wejangan panjang seorang ayah dan seruan Hikmat yang dipersonifikasikan; fondasi takut akan TUHAN." },
+    { "section": "Amsal 10-22:16", "title": "Amsal-amsal Salomo", "summary": "Kumpulan amsal dua baris yang mempertentangkan orang benar dan orang fasik dalam banyak bidang hidup." },
+    { "section": "Amsal 22:17-24:34", "title": "Perkataan Orang Bijak", "summary": "Tiga puluh ucapan dan tambahan nasihat orang bijak." },
+    { "section": "Amsal 25-29", "title": "Koleksi Hizkia", "summary": "Amsal Salomo yang dikumpulkan kembali oleh para pegawai Hizkia." },
+    { "section": "Amsal 30", "title": "Perkataan Agur", "summary": "Refleksi kerendahan hati, keterbatasan manusia, dan pengamatan alam." },
+    { "section": "Amsal 31", "title": "Perkataan Lemuel & Istri yang Cakap", "summary": "Nasihat seorang ibu raja dan puisi akrostik tentang perempuan yang cakap dan takut akan TUHAN." }
+  ],
+  "keywords": ["hikmat", "takut akan Tuhan", "didikan", "orang benar", "orang fasik", "amsal", "kebodohan", "pengetahuan", "kecakapan hidup"],
+  "themes": ["takut akan Tuhan", "hikmat vs kebodohan", "perkataan", "kerajinan", "integritas", "keadilan", "keluarga", "kekayaan dan kemiskinan", "penguasaan diri"],
+  "source": "Ringkasan editorial Bible Time berdasarkan teks Amsal (Alkitab Terjemahan Baru) dan konsensus kesarjanaan sastra hikmat.",
+  "license": "editorial-cc-by-nc",
+  "language": "id"
+}

@@ -1,0 +1,427 @@
+{
+  "version": "1.0.0",
+  "byId": {
+    "book:proverbs": {
+      "bookId": "book:proverbs",
+      "osis": "Prov",
+      "slug": "proverbs",
+      "names": {
+        "id": "Amsal",
+        "en": "Proverbs"
+      },
+      "aliases": [
+        "Ams",
+        "Amsal",
+        "Prov",
+        "Proverbs",
+        "Pr"
+      ],
+      "canonicalOrder": 20,
+      "testament": "OT",
+      "genre": "wisdom",
+      "chapterCount": 31,
+      "status": "production",
+      "authors": [
+        "solomon",
+        "agur",
+        "lemuel",
+        "hezekiah-men"
+      ],
+      "audience": "Israel and later wisdom communities",
+      "purpose": "Form wise, righteous, God-fearing character for daily life"
+    },
+    "book:psalms": {
+      "bookId": "book:psalms",
+      "osis": "Ps",
+      "slug": "psalms",
+      "names": {
+        "id": "Mazmur",
+        "en": "Psalms"
+      },
+      "aliases": [
+        "Mzm",
+        "Mazmur",
+        "Ps",
+        "Psalm",
+        "Psalms"
+      ],
+      "canonicalOrder": 19,
+      "testament": "OT",
+      "genre": "poetry",
+      "chapterCount": 150,
+      "status": "seed"
+    },
+    "book:ecclesiastes": {
+      "bookId": "book:ecclesiastes",
+      "osis": "Eccl",
+      "slug": "ecclesiastes",
+      "names": {
+        "id": "Pengkhotbah",
+        "en": "Ecclesiastes"
+      },
+      "aliases": [
+        "Pkh",
+        "Pengkhotbah",
+        "Eccl",
+        "Qoheleth"
+      ],
+      "canonicalOrder": 21,
+      "testament": "OT",
+      "genre": "wisdom",
+      "chapterCount": 12,
+      "status": "seed"
+    },
+    "book:matthew": {
+      "bookId": "book:matthew",
+      "osis": "Matt",
+      "slug": "matthew",
+      "names": {
+        "id": "Matius",
+        "en": "Matthew"
+      },
+      "aliases": [
+        "Mat",
+        "Matius",
+        "Matt",
+        "Matthew",
+        "Mt"
+      ],
+      "canonicalOrder": 40,
+      "testament": "NT",
+      "genre": "gospel",
+      "chapterCount": 28,
+      "status": "seed"
+    },
+    "book:romans": {
+      "bookId": "book:romans",
+      "osis": "Rom",
+      "slug": "romans",
+      "names": {
+        "id": "Roma",
+        "en": "Romans"
+      },
+      "aliases": [
+        "Rm",
+        "Roma",
+        "Rom",
+        "Romans"
+      ],
+      "canonicalOrder": 45,
+      "testament": "NT",
+      "genre": "epistle",
+      "chapterCount": 16,
+      "status": "seed"
+    },
+    "book:1corinthians": {
+      "bookId": "book:1corinthians",
+      "osis": "1Cor",
+      "slug": "1corinthians",
+      "names": {
+        "id": "1 Korintus",
+        "en": "1 Corinthians"
+      },
+      "aliases": [
+        "1Kor",
+        "1 Kor",
+        "1 Korintus",
+        "1Cor",
+        "1 Cor"
+      ],
+      "canonicalOrder": 46,
+      "testament": "NT",
+      "genre": "epistle",
+      "chapterCount": 16,
+      "status": "seed"
+    },
+    "book:2corinthians": {
+      "bookId": "book:2corinthians",
+      "osis": "2Cor",
+      "slug": "2corinthians",
+      "names": {
+        "id": "2 Korintus",
+        "en": "2 Corinthians"
+      },
+      "aliases": [
+        "2Kor",
+        "2 Kor",
+        "2 Korintus",
+        "2Cor",
+        "2 Cor"
+      ],
+      "canonicalOrder": 47,
+      "testament": "NT",
+      "genre": "epistle",
+      "chapterCount": 13,
+      "status": "seed"
+    },
+    "book:galatians": {
+      "bookId": "book:galatians",
+      "osis": "Gal",
+      "slug": "galatians",
+      "names": {
+        "id": "Galatia",
+        "en": "Galatians"
+      },
+      "aliases": [
+        "Gal",
+        "Galatia",
+        "Galatians"
+      ],
+      "canonicalOrder": 48,
+      "testament": "NT",
+      "genre": "epistle",
+      "chapterCount": 6,
+      "status": "seed"
+    },
+    "book:ephesians": {
+      "bookId": "book:ephesians",
+      "osis": "Eph",
+      "slug": "ephesians",
+      "names": {
+        "id": "Efesus",
+        "en": "Ephesians"
+      },
+      "aliases": [
+        "Ef",
+        "Efesus",
+        "Eph",
+        "Ephesians"
+      ],
+      "canonicalOrder": 49,
+      "testament": "NT",
+      "genre": "epistle",
+      "chapterCount": 6,
+      "status": "seed"
+    },
+    "book:philippians": {
+      "bookId": "book:philippians",
+      "osis": "Phil",
+      "slug": "philippians",
+      "names": {
+        "id": "Filipi",
+        "en": "Philippians"
+      },
+      "aliases": [
+        "Flp",
+        "Filipi",
+        "Phil",
+        "Philippians"
+      ],
+      "canonicalOrder": 50,
+      "testament": "NT",
+      "genre": "epistle",
+      "chapterCount": 4,
+      "status": "seed"
+    },
+    "book:colossians": {
+      "bookId": "book:colossians",
+      "osis": "Col",
+      "slug": "colossians",
+      "names": {
+        "id": "Kolose",
+        "en": "Colossians"
+      },
+      "aliases": [
+        "Kol",
+        "Kolose",
+        "Col",
+        "Colossians"
+      ],
+      "canonicalOrder": 51,
+      "testament": "NT",
+      "genre": "epistle",
+      "chapterCount": 4,
+      "status": "seed"
+    },
+    "book:2thessalonians": {
+      "bookId": "book:2thessalonians",
+      "osis": "2Thess",
+      "slug": "2thessalonians",
+      "names": {
+        "id": "2 Tesalonika",
+        "en": "2 Thessalonians"
+      },
+      "aliases": [
+        "2Tes",
+        "2 Tes",
+        "2 Tesalonika",
+        "2Thess",
+        "2 Thess"
+      ],
+      "canonicalOrder": 53,
+      "testament": "NT",
+      "genre": "epistle",
+      "chapterCount": 3,
+      "status": "seed"
+    },
+    "book:hebrews": {
+      "bookId": "book:hebrews",
+      "osis": "Heb",
+      "slug": "hebrews",
+      "names": {
+        "id": "Ibrani",
+        "en": "Hebrews"
+      },
+      "aliases": [
+        "Ibr",
+        "Ibrani",
+        "Heb",
+        "Hebrews"
+      ],
+      "canonicalOrder": 58,
+      "testament": "NT",
+      "genre": "epistle",
+      "chapterCount": 13,
+      "status": "seed"
+    },
+    "book:james": {
+      "bookId": "book:james",
+      "osis": "Jas",
+      "slug": "james",
+      "names": {
+        "id": "Yakobus",
+        "en": "James"
+      },
+      "aliases": [
+        "Yak",
+        "Yakobus",
+        "Jas",
+        "James",
+        "Jm"
+      ],
+      "canonicalOrder": 59,
+      "testament": "NT",
+      "genre": "epistle",
+      "chapterCount": 5,
+      "status": "seed"
+    },
+    "book:1peter": {
+      "bookId": "book:1peter",
+      "osis": "1Pet",
+      "slug": "1peter",
+      "names": {
+        "id": "1 Petrus",
+        "en": "1 Peter"
+      },
+      "aliases": [
+        "1Ptr",
+        "1 Pet",
+        "1 Petrus",
+        "1Pet",
+        "1 Peter"
+      ],
+      "canonicalOrder": 60,
+      "testament": "NT",
+      "genre": "epistle",
+      "chapterCount": 5,
+      "status": "seed"
+    }
+  },
+  "byOsis": {
+    "Prov": "book:proverbs",
+    "Ps": "book:psalms",
+    "Eccl": "book:ecclesiastes",
+    "Matt": "book:matthew",
+    "Rom": "book:romans",
+    "1Cor": "book:1corinthians",
+    "2Cor": "book:2corinthians",
+    "Gal": "book:galatians",
+    "Eph": "book:ephesians",
+    "Phil": "book:philippians",
+    "Col": "book:colossians",
+    "2Thess": "book:2thessalonians",
+    "Heb": "book:hebrews",
+    "Jas": "book:james",
+    "1Pet": "book:1peter"
+  },
+  "bySlug": {
+    "proverbs": "book:proverbs",
+    "psalms": "book:psalms",
+    "ecclesiastes": "book:ecclesiastes",
+    "matthew": "book:matthew",
+    "romans": "book:romans",
+    "1corinthians": "book:1corinthians",
+    "2corinthians": "book:2corinthians",
+    "galatians": "book:galatians",
+    "ephesians": "book:ephesians",
+    "philippians": "book:philippians",
+    "colossians": "book:colossians",
+    "2thessalonians": "book:2thessalonians",
+    "hebrews": "book:hebrews",
+    "james": "book:james",
+    "1peter": "book:1peter"
+  },
+  "aliases": {
+    "amsal": "book:proverbs",
+    "ams": "book:proverbs",
+    "prov": "book:proverbs",
+    "proverbs": "book:proverbs",
+    "pr": "book:proverbs",
+    "mazmur": "book:psalms",
+    "mzm": "book:psalms",
+    "ps": "book:psalms",
+    "psalm": "book:psalms",
+    "psalms": "book:psalms",
+    "pengkhotbah": "book:ecclesiastes",
+    "pkh": "book:ecclesiastes",
+    "eccl": "book:ecclesiastes",
+    "matius": "book:matthew",
+    "mat": "book:matthew",
+    "matt": "book:matthew",
+    "matthew": "book:matthew",
+    "mt": "book:matthew",
+    "roma": "book:romans",
+    "rm": "book:romans",
+    "rom": "book:romans",
+    "romans": "book:romans",
+    "1korintus": "book:1corinthians",
+    "1kor": "book:1corinthians",
+    "1cor": "book:1corinthians",
+    "2korintus": "book:2corinthians",
+    "2kor": "book:2corinthians",
+    "2cor": "book:2corinthians",
+    "galatia": "book:galatians",
+    "gal": "book:galatians",
+    "efesus": "book:ephesians",
+    "ef": "book:ephesians",
+    "eph": "book:ephesians",
+    "filipi": "book:philippians",
+    "flp": "book:philippians",
+    "phil": "book:philippians",
+    "kolose": "book:colossians",
+    "kol": "book:colossians",
+    "col": "book:colossians",
+    "2tesalonika": "book:2thessalonians",
+    "2tes": "book:2thessalonians",
+    "2thess": "book:2thessalonians",
+    "ibrani": "book:hebrews",
+    "ibr": "book:hebrews",
+    "heb": "book:hebrews",
+    "yakobus": "book:james",
+    "yak": "book:james",
+    "jas": "book:james",
+    "james": "book:james",
+    "1petrus": "book:1peter",
+    "1ptr": "book:1peter",
+    "1pet": "book:1peter"
+  },
+  "productionBookIds": [
+    "book:proverbs"
+  ],
+  "seedBookIds": [
+    "book:psalms",
+    "book:ecclesiastes",
+    "book:matthew",
+    "book:romans",
+    "book:1corinthians",
+    "book:2corinthians",
+    "book:galatians",
+    "book:ephesians",
+    "book:philippians",
+    "book:colossians",
+    "book:2thessalonians",
+    "book:hebrews",
+    "book:james",
+    "book:1peter"
+  ]
+}

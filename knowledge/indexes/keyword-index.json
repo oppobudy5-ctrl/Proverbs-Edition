@@ -1,0 +1,3418 @@
+{
+  "hikmat": [
+    "book-proverbs",
+    "proverbs-chapter-01",
+    "proverbs-golden-01",
+    "proverbs-verse-01",
+    "proverbs-reflection-01",
+    "proverbs-prayer-01",
+    "proverbs-challenge-01",
+    "proverbs-devotional-01",
+    "proverbs-chapter-09",
+    "proverbs-golden-09",
+    "proverbs-verse-09",
+    "proverbs-reflection-09",
+    "proverbs-prayer-09",
+    "proverbs-challenge-09",
+    "proverbs-devotional-09",
+    "proverbs-chapter-14",
+    "proverbs-golden-14",
+    "proverbs-verse-14",
+    "proverbs-reflection-14",
+    "proverbs-prayer-14",
+    "proverbs-challenge-14",
+    "proverbs-devotional-14",
+    "proverbs-chapter-16",
+    "proverbs-golden-16",
+    "proverbs-verse-16",
+    "proverbs-reflection-16",
+    "proverbs-prayer-16",
+    "proverbs-challenge-16",
+    "proverbs-devotional-16",
+    "proverbs-chapter-18",
+    "proverbs-golden-18",
+    "proverbs-verse-18",
+    "proverbs-reflection-18",
+    "proverbs-prayer-18",
+    "proverbs-challenge-18",
+    "proverbs-devotional-18",
+    "proverbs-chapter-24",
+    "proverbs-golden-24",
+    "proverbs-verse-24",
+    "proverbs-reflection-24",
+    "proverbs-prayer-24",
+    "proverbs-challenge-24",
+    "proverbs-devotional-24",
+    "proverbs-chapter-30",
+    "proverbs-golden-30",
+    "proverbs-verse-30",
+    "proverbs-reflection-30",
+    "proverbs-prayer-30",
+    "proverbs-challenge-30",
+    "proverbs-devotional-30",
+    "topic-wisdom",
+    "dict-sophia",
+    "quote-proverbs-01",
+    "quote-proverbs-09",
+    "quote-proverbs-14",
+    "quote-proverbs-16",
+    "quote-proverbs-18",
+    "quote-proverbs-24",
+    "quote-proverbs-30"
+  ],
+  "takut akan tuhan": [
+    "book-proverbs",
+    "proverbs-chapter-01",
+    "proverbs-golden-01",
+    "proverbs-verse-01",
+    "proverbs-reflection-01",
+    "proverbs-prayer-01",
+    "proverbs-challenge-01",
+    "proverbs-devotional-01",
+    "proverbs-chapter-09",
+    "proverbs-golden-09",
+    "proverbs-verse-09",
+    "proverbs-reflection-09",
+    "proverbs-prayer-09",
+    "proverbs-challenge-09",
+    "proverbs-devotional-09",
+    "proverbs-chapter-14",
+    "proverbs-golden-14",
+    "proverbs-verse-14",
+    "proverbs-reflection-14",
+    "proverbs-prayer-14",
+    "proverbs-challenge-14",
+    "proverbs-devotional-14",
+    "proverbs-chapter-22",
+    "proverbs-golden-22",
+    "proverbs-verse-22",
+    "proverbs-reflection-22",
+    "proverbs-prayer-22",
+    "proverbs-challenge-22",
+    "proverbs-devotional-22",
+    "proverbs-chapter-31",
+    "proverbs-golden-31",
+    "proverbs-verse-31",
+    "proverbs-reflection-31",
+    "proverbs-prayer-31",
+    "proverbs-challenge-31",
+    "proverbs-devotional-31",
+    "topic-fear_of_god",
+    "dict-yirat-yhwh",
+    "quote-proverbs-01",
+    "quote-proverbs-09",
+    "quote-proverbs-14",
+    "quote-proverbs-22",
+    "quote-proverbs-31",
+    "doctrine:fear-of-the-lord"
+  ],
+  "didikan": [
+    "book-proverbs",
+    "proverbs-chapter-01",
+    "proverbs-golden-01",
+    "proverbs-verse-01",
+    "proverbs-reflection-01",
+    "proverbs-prayer-01",
+    "proverbs-challenge-01",
+    "proverbs-devotional-01",
+    "proverbs-chapter-03",
+    "proverbs-golden-03",
+    "proverbs-verse-03",
+    "proverbs-reflection-03",
+    "proverbs-prayer-03",
+    "proverbs-challenge-03",
+    "proverbs-devotional-03",
+    "proverbs-chapter-10",
+    "proverbs-golden-10",
+    "proverbs-verse-10",
+    "proverbs-reflection-10",
+    "proverbs-prayer-10",
+    "proverbs-challenge-10",
+    "proverbs-devotional-10",
+    "proverbs-chapter-12",
+    "proverbs-golden-12",
+    "proverbs-verse-12",
+    "proverbs-reflection-12",
+    "proverbs-prayer-12",
+    "proverbs-challenge-12",
+    "proverbs-devotional-12",
+    "proverbs-chapter-13",
+    "proverbs-golden-13",
+    "proverbs-verse-13",
+    "proverbs-reflection-13",
+    "proverbs-prayer-13",
+    "proverbs-challenge-13",
+    "proverbs-devotional-13",
+    "proverbs-chapter-19",
+    "proverbs-golden-19",
+    "proverbs-verse-19",
+    "proverbs-reflection-19",
+    "proverbs-prayer-19",
+    "proverbs-challenge-19",
+    "proverbs-devotional-19",
+    "topic-discipline",
+    "quote-proverbs-01",
+    "quote-proverbs-03",
+    "quote-proverbs-10",
+    "quote-proverbs-12",
+    "quote-proverbs-13",
+    "quote-proverbs-19"
+  ],
+  "orang benar": [
+    "book-proverbs",
+    "proverbs-chapter-10",
+    "proverbs-golden-10",
+    "proverbs-verse-10",
+    "proverbs-reflection-10",
+    "proverbs-prayer-10",
+    "proverbs-challenge-10",
+    "proverbs-devotional-10",
+    "proverbs-chapter-28",
+    "proverbs-golden-28",
+    "proverbs-verse-28",
+    "proverbs-reflection-28",
+    "proverbs-prayer-28",
+    "proverbs-challenge-28",
+    "proverbs-devotional-28",
+    "quote-proverbs-10",
+    "quote-proverbs-28"
+  ],
+  "orang fasik": [
+    "book-proverbs",
+    "proverbs-chapter-28",
+    "proverbs-golden-28",
+    "proverbs-verse-28",
+    "proverbs-reflection-28",
+    "proverbs-prayer-28",
+    "proverbs-challenge-28",
+    "proverbs-devotional-28",
+    "quote-proverbs-28"
+  ],
+  "amsal": [
+    "book-proverbs",
+    "book:proverbs"
+  ],
+  "kebodohan": [
+    "book-proverbs",
+    "proverbs-chapter-09",
+    "proverbs-golden-09",
+    "proverbs-verse-09",
+    "proverbs-reflection-09",
+    "proverbs-prayer-09",
+    "proverbs-challenge-09",
+    "proverbs-devotional-09",
+    "quote-proverbs-09",
+    "symbol:darkness"
+  ],
+  "pengetahuan": [
+    "book-proverbs",
+    "dict-daat"
+  ],
+  "kecakapan hidup": [
+    "book-proverbs",
+    "topic-wisdom"
+  ],
+  "bujukan": [
+    "proverbs-chapter-01",
+    "proverbs-golden-01",
+    "proverbs-verse-01",
+    "proverbs-reflection-01",
+    "proverbs-prayer-01",
+    "proverbs-challenge-01",
+    "proverbs-devotional-01",
+    "topic-temptation",
+    "quote-proverbs-01"
+  ],
+  "pertobatan": [
+    "proverbs-chapter-01",
+    "proverbs-golden-01",
+    "proverbs-verse-01",
+    "proverbs-reflection-01",
+    "proverbs-prayer-01",
+    "proverbs-challenge-01",
+    "proverbs-devotional-01",
+    "proverbs-chapter-05",
+    "proverbs-golden-05",
+    "proverbs-verse-05",
+    "proverbs-reflection-05",
+    "proverbs-prayer-05",
+    "proverbs-challenge-05",
+    "proverbs-devotional-05",
+    "quote-proverbs-01",
+    "quote-proverbs-05"
+  ],
+  "ketaatan": [
+    "proverbs-chapter-01",
+    "proverbs-golden-01",
+    "proverbs-verse-01",
+    "proverbs-reflection-01",
+    "proverbs-prayer-01",
+    "proverbs-challenge-01",
+    "proverbs-devotional-01",
+    "proverbs-chapter-03",
+    "proverbs-golden-03",
+    "proverbs-verse-03",
+    "proverbs-reflection-03",
+    "proverbs-prayer-03",
+    "proverbs-challenge-03",
+    "proverbs-devotional-03",
+    "quote-proverbs-01",
+    "quote-proverbs-03"
+  ],
+  "pilihan": [
+    "proverbs-chapter-01",
+    "proverbs-golden-01",
+    "proverbs-verse-01",
+    "proverbs-reflection-01",
+    "proverbs-prayer-01",
+    "proverbs-challenge-01",
+    "proverbs-devotional-01",
+    "proverbs-chapter-09",
+    "proverbs-golden-09",
+    "proverbs-verse-09",
+    "proverbs-reflection-09",
+    "proverbs-prayer-09",
+    "proverbs-challenge-09",
+    "proverbs-devotional-09",
+    "quote-proverbs-01",
+    "quote-proverbs-09"
+  ],
+  "mencari hikmat": [
+    "proverbs-chapter-02",
+    "proverbs-golden-02",
+    "proverbs-verse-02",
+    "proverbs-reflection-02",
+    "proverbs-prayer-02",
+    "proverbs-challenge-02",
+    "proverbs-devotional-02",
+    "quote-proverbs-02"
+  ],
+  "harta": [
+    "proverbs-chapter-02",
+    "proverbs-golden-02",
+    "proverbs-verse-02",
+    "proverbs-reflection-02",
+    "proverbs-prayer-02",
+    "proverbs-challenge-02",
+    "proverbs-devotional-02",
+    "topic-money",
+    "quote-proverbs-02"
+  ],
+  "firman tuhan": [
+    "proverbs-chapter-02",
+    "proverbs-golden-02",
+    "proverbs-verse-02",
+    "proverbs-reflection-02",
+    "proverbs-prayer-02",
+    "proverbs-challenge-02",
+    "proverbs-devotional-02",
+    "quote-proverbs-02"
+  ],
+  "ketekunan": [
+    "proverbs-chapter-02",
+    "proverbs-golden-02",
+    "proverbs-verse-02",
+    "proverbs-reflection-02",
+    "proverbs-prayer-02",
+    "proverbs-challenge-02",
+    "proverbs-devotional-02",
+    "proverbs-chapter-13",
+    "proverbs-golden-13",
+    "proverbs-verse-13",
+    "proverbs-reflection-13",
+    "proverbs-prayer-13",
+    "proverbs-challenge-13",
+    "proverbs-devotional-13",
+    "proverbs-chapter-19",
+    "proverbs-golden-19",
+    "proverbs-verse-19",
+    "proverbs-reflection-19",
+    "proverbs-prayer-19",
+    "proverbs-challenge-19",
+    "proverbs-devotional-19",
+    "proverbs-chapter-24",
+    "proverbs-golden-24",
+    "proverbs-verse-24",
+    "proverbs-reflection-24",
+    "proverbs-prayer-24",
+    "proverbs-challenge-24",
+    "proverbs-devotional-24",
+    "topic-work",
+    "quote-proverbs-02",
+    "quote-proverbs-13",
+    "quote-proverbs-19",
+    "quote-proverbs-24",
+    "symbol:ant"
+  ],
+  "perlindungan": [
+    "proverbs-chapter-02",
+    "proverbs-golden-02",
+    "proverbs-verse-02",
+    "proverbs-reflection-02",
+    "proverbs-prayer-02",
+    "proverbs-challenge-02",
+    "proverbs-devotional-02",
+    "proverbs-chapter-18",
+    "proverbs-golden-18",
+    "proverbs-verse-18",
+    "proverbs-reflection-18",
+    "proverbs-prayer-18",
+    "proverbs-challenge-18",
+    "proverbs-devotional-18",
+    "proverbs-chapter-29",
+    "proverbs-golden-29",
+    "proverbs-verse-29",
+    "proverbs-reflection-29",
+    "proverbs-prayer-29",
+    "proverbs-challenge-29",
+    "proverbs-devotional-29",
+    "quote-proverbs-02",
+    "quote-proverbs-18",
+    "quote-proverbs-29"
+  ],
+  "kesetiaan": [
+    "proverbs-chapter-02",
+    "proverbs-golden-02",
+    "proverbs-verse-02",
+    "proverbs-reflection-02",
+    "proverbs-prayer-02",
+    "proverbs-challenge-02",
+    "proverbs-devotional-02",
+    "proverbs-chapter-05",
+    "proverbs-golden-05",
+    "proverbs-verse-05",
+    "proverbs-reflection-05",
+    "proverbs-prayer-05",
+    "proverbs-challenge-05",
+    "proverbs-devotional-05",
+    "topic-marriage",
+    "quote-proverbs-02",
+    "quote-proverbs-05"
+  ],
+  "ketajaman rohani": [
+    "proverbs-chapter-02",
+    "proverbs-golden-02",
+    "proverbs-verse-02",
+    "proverbs-reflection-02",
+    "proverbs-prayer-02",
+    "proverbs-challenge-02",
+    "proverbs-devotional-02",
+    "quote-proverbs-02"
+  ],
+  "percaya kepada tuhan": [
+    "proverbs-chapter-03",
+    "proverbs-golden-03",
+    "proverbs-verse-03",
+    "proverbs-reflection-03",
+    "proverbs-prayer-03",
+    "proverbs-challenge-03",
+    "proverbs-devotional-03",
+    "proverbs-chapter-28",
+    "proverbs-golden-28",
+    "proverbs-verse-28",
+    "proverbs-reflection-28",
+    "proverbs-prayer-28",
+    "proverbs-challenge-28",
+    "proverbs-devotional-28",
+    "proverbs-chapter-29",
+    "proverbs-golden-29",
+    "proverbs-verse-29",
+    "proverbs-reflection-29",
+    "proverbs-prayer-29",
+    "proverbs-challenge-29",
+    "proverbs-devotional-29",
+    "topic-faith",
+    "quote-proverbs-03",
+    "quote-proverbs-28",
+    "quote-proverbs-29"
+  ],
+  "segenap hati": [
+    "proverbs-chapter-03",
+    "proverbs-golden-03",
+    "proverbs-verse-03",
+    "proverbs-reflection-03",
+    "proverbs-prayer-03",
+    "proverbs-challenge-03",
+    "proverbs-devotional-03",
+    "topic-faith",
+    "quote-proverbs-03"
+  ],
+  "kerendahan hati": [
+    "proverbs-chapter-03",
+    "proverbs-golden-03",
+    "proverbs-verse-03",
+    "proverbs-reflection-03",
+    "proverbs-prayer-03",
+    "proverbs-challenge-03",
+    "proverbs-devotional-03",
+    "proverbs-chapter-08",
+    "proverbs-golden-08",
+    "proverbs-verse-08",
+    "proverbs-reflection-08",
+    "proverbs-prayer-08",
+    "proverbs-challenge-08",
+    "proverbs-devotional-08",
+    "proverbs-chapter-11",
+    "proverbs-golden-11",
+    "proverbs-verse-11",
+    "proverbs-reflection-11",
+    "proverbs-prayer-11",
+    "proverbs-challenge-11",
+    "proverbs-devotional-11",
+    "proverbs-chapter-15",
+    "proverbs-golden-15",
+    "proverbs-verse-15",
+    "proverbs-reflection-15",
+    "proverbs-prayer-15",
+    "proverbs-challenge-15",
+    "proverbs-devotional-15",
+    "proverbs-chapter-16",
+    "proverbs-golden-16",
+    "proverbs-verse-16",
+    "proverbs-reflection-16",
+    "proverbs-prayer-16",
+    "proverbs-challenge-16",
+    "proverbs-devotional-16",
+    "proverbs-chapter-18",
+    "proverbs-golden-18",
+    "proverbs-verse-18",
+    "proverbs-reflection-18",
+    "proverbs-prayer-18",
+    "proverbs-challenge-18",
+    "proverbs-devotional-18",
+    "proverbs-chapter-21",
+    "proverbs-golden-21",
+    "proverbs-verse-21",
+    "proverbs-reflection-21",
+    "proverbs-prayer-21",
+    "proverbs-challenge-21",
+    "proverbs-devotional-21",
+    "proverbs-chapter-25",
+    "proverbs-golden-25",
+    "proverbs-verse-25",
+    "proverbs-reflection-25",
+    "proverbs-prayer-25",
+    "proverbs-challenge-25",
+    "proverbs-devotional-25",
+    "proverbs-chapter-30",
+    "proverbs-golden-30",
+    "proverbs-verse-30",
+    "proverbs-reflection-30",
+    "proverbs-prayer-30",
+    "proverbs-challenge-30",
+    "proverbs-devotional-30",
+    "topic-humility",
+    "quote-proverbs-03",
+    "quote-proverbs-08",
+    "quote-proverbs-11",
+    "quote-proverbs-15",
+    "quote-proverbs-16",
+    "quote-proverbs-18",
+    "quote-proverbs-21",
+    "quote-proverbs-25",
+    "quote-proverbs-30"
+  ],
+  "kemurahan hati": [
+    "proverbs-chapter-03",
+    "proverbs-golden-03",
+    "proverbs-verse-03",
+    "proverbs-reflection-03",
+    "proverbs-prayer-03",
+    "proverbs-challenge-03",
+    "proverbs-devotional-03",
+    "proverbs-chapter-11",
+    "proverbs-golden-11",
+    "proverbs-verse-11",
+    "proverbs-reflection-11",
+    "proverbs-prayer-11",
+    "proverbs-challenge-11",
+    "proverbs-devotional-11",
+    "proverbs-chapter-22",
+    "proverbs-golden-22",
+    "proverbs-verse-22",
+    "proverbs-reflection-22",
+    "proverbs-prayer-22",
+    "proverbs-challenge-22",
+    "proverbs-devotional-22",
+    "topic-money",
+    "quote-proverbs-03",
+    "quote-proverbs-11",
+    "quote-proverbs-22"
+  ],
+  "damai": [
+    "proverbs-chapter-03",
+    "proverbs-golden-03",
+    "proverbs-verse-03",
+    "proverbs-reflection-03",
+    "proverbs-prayer-03",
+    "proverbs-challenge-03",
+    "proverbs-devotional-03",
+    "proverbs-chapter-06",
+    "proverbs-golden-06",
+    "proverbs-verse-06",
+    "proverbs-reflection-06",
+    "proverbs-prayer-06",
+    "proverbs-challenge-06",
+    "proverbs-devotional-06",
+    "proverbs-chapter-17",
+    "proverbs-golden-17",
+    "proverbs-verse-17",
+    "proverbs-reflection-17",
+    "proverbs-prayer-17",
+    "proverbs-challenge-17",
+    "proverbs-devotional-17",
+    "topic-peace",
+    "dict-solomon",
+    "quote-proverbs-03",
+    "quote-proverbs-06",
+    "quote-proverbs-17"
+  ],
+  "menjaga hati": [
+    "proverbs-chapter-04",
+    "proverbs-golden-04",
+    "proverbs-verse-04",
+    "proverbs-reflection-04",
+    "proverbs-prayer-04",
+    "proverbs-challenge-04",
+    "proverbs-devotional-04",
+    "quote-proverbs-04"
+  ],
+  "jalan benar": [
+    "proverbs-chapter-04",
+    "proverbs-golden-04",
+    "proverbs-verse-04",
+    "proverbs-reflection-04",
+    "proverbs-prayer-04",
+    "proverbs-challenge-04",
+    "proverbs-devotional-04",
+    "quote-proverbs-04"
+  ],
+  "firman": [
+    "proverbs-chapter-04",
+    "proverbs-golden-04",
+    "proverbs-verse-04",
+    "proverbs-reflection-04",
+    "proverbs-prayer-04",
+    "proverbs-challenge-04",
+    "proverbs-devotional-04",
+    "quote-proverbs-04"
+  ],
+  "kebiasaan": [
+    "proverbs-chapter-04",
+    "proverbs-golden-04",
+    "proverbs-verse-04",
+    "proverbs-reflection-04",
+    "proverbs-prayer-04",
+    "proverbs-challenge-04",
+    "proverbs-devotional-04",
+    "quote-proverbs-04"
+  ],
+  "kewaspadaan": [
+    "proverbs-chapter-04",
+    "proverbs-golden-04",
+    "proverbs-verse-04",
+    "proverbs-reflection-04",
+    "proverbs-prayer-04",
+    "proverbs-challenge-04",
+    "proverbs-devotional-04",
+    "proverbs-chapter-06",
+    "proverbs-golden-06",
+    "proverbs-verse-06",
+    "proverbs-reflection-06",
+    "proverbs-prayer-06",
+    "proverbs-challenge-06",
+    "proverbs-devotional-06",
+    "proverbs-chapter-07",
+    "proverbs-golden-07",
+    "proverbs-verse-07",
+    "proverbs-reflection-07",
+    "proverbs-prayer-07",
+    "proverbs-challenge-07",
+    "proverbs-devotional-07",
+    "quote-proverbs-04",
+    "quote-proverbs-06",
+    "quote-proverbs-07"
+  ],
+  "integritas": [
+    "proverbs-chapter-04",
+    "proverbs-golden-04",
+    "proverbs-verse-04",
+    "proverbs-reflection-04",
+    "proverbs-prayer-04",
+    "proverbs-challenge-04",
+    "proverbs-devotional-04",
+    "proverbs-chapter-11",
+    "proverbs-golden-11",
+    "proverbs-verse-11",
+    "proverbs-reflection-11",
+    "proverbs-prayer-11",
+    "proverbs-challenge-11",
+    "proverbs-devotional-11",
+    "proverbs-chapter-19",
+    "proverbs-golden-19",
+    "proverbs-verse-19",
+    "proverbs-reflection-19",
+    "proverbs-prayer-19",
+    "proverbs-challenge-19",
+    "proverbs-devotional-19",
+    "proverbs-chapter-20",
+    "proverbs-golden-20",
+    "proverbs-verse-20",
+    "proverbs-reflection-20",
+    "proverbs-prayer-20",
+    "proverbs-challenge-20",
+    "proverbs-devotional-20",
+    "proverbs-chapter-26",
+    "proverbs-golden-26",
+    "proverbs-verse-26",
+    "proverbs-reflection-26",
+    "proverbs-prayer-26",
+    "proverbs-challenge-26",
+    "proverbs-devotional-26",
+    "proverbs-chapter-28",
+    "proverbs-golden-28",
+    "proverbs-verse-28",
+    "proverbs-reflection-28",
+    "proverbs-prayer-28",
+    "proverbs-challenge-28",
+    "proverbs-devotional-28",
+    "topic-integrity",
+    "quote-proverbs-04",
+    "quote-proverbs-11",
+    "quote-proverbs-19",
+    "quote-proverbs-20",
+    "quote-proverbs-26",
+    "quote-proverbs-28",
+    "symbol:scales"
+  ],
+  "pertumbuhan": [
+    "proverbs-chapter-04",
+    "proverbs-golden-04",
+    "proverbs-verse-04",
+    "proverbs-reflection-04",
+    "proverbs-prayer-04",
+    "proverbs-challenge-04",
+    "proverbs-devotional-04",
+    "quote-proverbs-04"
+  ],
+  "pernikahan": [
+    "proverbs-chapter-05",
+    "proverbs-golden-05",
+    "proverbs-verse-05",
+    "proverbs-reflection-05",
+    "proverbs-prayer-05",
+    "proverbs-challenge-05",
+    "proverbs-devotional-05",
+    "topic-marriage",
+    "quote-proverbs-05"
+  ],
+  "kemurnian": [
+    "proverbs-chapter-05",
+    "proverbs-golden-05",
+    "proverbs-verse-05",
+    "proverbs-reflection-05",
+    "proverbs-prayer-05",
+    "proverbs-challenge-05",
+    "proverbs-devotional-05",
+    "proverbs-chapter-07",
+    "proverbs-golden-07",
+    "proverbs-verse-07",
+    "proverbs-reflection-07",
+    "proverbs-prayer-07",
+    "proverbs-challenge-07",
+    "proverbs-devotional-07",
+    "proverbs-chapter-23",
+    "proverbs-golden-23",
+    "proverbs-verse-23",
+    "proverbs-reflection-23",
+    "proverbs-prayer-23",
+    "proverbs-challenge-23",
+    "proverbs-devotional-23",
+    "topic-temptation",
+    "quote-proverbs-05",
+    "quote-proverbs-07",
+    "quote-proverbs-23"
+  ],
+  "godaan": [
+    "proverbs-chapter-05",
+    "proverbs-golden-05",
+    "proverbs-verse-05",
+    "proverbs-reflection-05",
+    "proverbs-prayer-05",
+    "proverbs-challenge-05",
+    "proverbs-devotional-05",
+    "proverbs-chapter-07",
+    "proverbs-golden-07",
+    "proverbs-verse-07",
+    "proverbs-reflection-07",
+    "proverbs-prayer-07",
+    "proverbs-challenge-07",
+    "proverbs-devotional-07",
+    "proverbs-chapter-23",
+    "proverbs-golden-23",
+    "proverbs-verse-23",
+    "proverbs-reflection-23",
+    "proverbs-prayer-23",
+    "proverbs-challenge-23",
+    "proverbs-devotional-23",
+    "topic-temptation",
+    "quote-proverbs-05",
+    "quote-proverbs-07",
+    "quote-proverbs-23",
+    "symbol:snare"
+  ],
+  "batas sehat": [
+    "proverbs-chapter-05",
+    "proverbs-golden-05",
+    "proverbs-verse-05",
+    "proverbs-reflection-05",
+    "proverbs-prayer-05",
+    "proverbs-challenge-05",
+    "proverbs-devotional-05",
+    "quote-proverbs-05"
+  ],
+  "kasih perjanjian": [
+    "proverbs-chapter-05",
+    "proverbs-golden-05",
+    "proverbs-verse-05",
+    "proverbs-reflection-05",
+    "proverbs-prayer-05",
+    "proverbs-challenge-05",
+    "proverbs-devotional-05",
+    "topic-marriage",
+    "quote-proverbs-05"
+  ],
+  "kerajinan": [
+    "proverbs-chapter-06",
+    "proverbs-golden-06",
+    "proverbs-verse-06",
+    "proverbs-reflection-06",
+    "proverbs-prayer-06",
+    "proverbs-challenge-06",
+    "proverbs-devotional-06",
+    "proverbs-chapter-10",
+    "proverbs-golden-10",
+    "proverbs-verse-10",
+    "proverbs-reflection-10",
+    "proverbs-prayer-10",
+    "proverbs-challenge-10",
+    "proverbs-devotional-10",
+    "proverbs-chapter-12",
+    "proverbs-golden-12",
+    "proverbs-verse-12",
+    "proverbs-reflection-12",
+    "proverbs-prayer-12",
+    "proverbs-challenge-12",
+    "proverbs-devotional-12",
+    "proverbs-chapter-13",
+    "proverbs-golden-13",
+    "proverbs-verse-13",
+    "proverbs-reflection-13",
+    "proverbs-prayer-13",
+    "proverbs-challenge-13",
+    "proverbs-devotional-13",
+    "proverbs-chapter-21",
+    "proverbs-golden-21",
+    "proverbs-verse-21",
+    "proverbs-reflection-21",
+    "proverbs-prayer-21",
+    "proverbs-challenge-21",
+    "proverbs-devotional-21",
+    "proverbs-chapter-24",
+    "proverbs-golden-24",
+    "proverbs-verse-24",
+    "proverbs-reflection-24",
+    "proverbs-prayer-24",
+    "proverbs-challenge-24",
+    "proverbs-devotional-24",
+    "topic-work",
+    "quote-proverbs-06",
+    "quote-proverbs-10",
+    "quote-proverbs-12",
+    "quote-proverbs-13",
+    "quote-proverbs-21",
+    "quote-proverbs-24"
+  ],
+  "semut": [
+    "proverbs-chapter-06",
+    "proverbs-golden-06",
+    "proverbs-verse-06",
+    "proverbs-reflection-06",
+    "proverbs-prayer-06",
+    "proverbs-challenge-06",
+    "proverbs-devotional-06",
+    "topic-work",
+    "dict-ant",
+    "dict-ant",
+    "quote-proverbs-06",
+    "symbol:ant"
+  ],
+  "tanggung jawab": [
+    "proverbs-chapter-06",
+    "proverbs-golden-06",
+    "proverbs-verse-06",
+    "proverbs-reflection-06",
+    "proverbs-prayer-06",
+    "proverbs-challenge-06",
+    "proverbs-devotional-06",
+    "proverbs-chapter-19",
+    "proverbs-golden-19",
+    "proverbs-verse-19",
+    "proverbs-reflection-19",
+    "proverbs-prayer-19",
+    "proverbs-challenge-19",
+    "proverbs-devotional-19",
+    "proverbs-chapter-27",
+    "proverbs-golden-27",
+    "proverbs-verse-27",
+    "proverbs-reflection-27",
+    "proverbs-prayer-27",
+    "proverbs-challenge-27",
+    "proverbs-devotional-27",
+    "topic-work",
+    "quote-proverbs-06",
+    "quote-proverbs-19",
+    "quote-proverbs-27"
+  ],
+  "kejujuran": [
+    "proverbs-chapter-06",
+    "proverbs-golden-06",
+    "proverbs-verse-06",
+    "proverbs-reflection-06",
+    "proverbs-prayer-06",
+    "proverbs-challenge-06",
+    "proverbs-devotional-06",
+    "proverbs-chapter-10",
+    "proverbs-golden-10",
+    "proverbs-verse-10",
+    "proverbs-reflection-10",
+    "proverbs-prayer-10",
+    "proverbs-challenge-10",
+    "proverbs-devotional-10",
+    "proverbs-chapter-11",
+    "proverbs-golden-11",
+    "proverbs-verse-11",
+    "proverbs-reflection-11",
+    "proverbs-prayer-11",
+    "proverbs-challenge-11",
+    "proverbs-devotional-11",
+    "proverbs-chapter-20",
+    "proverbs-golden-20",
+    "proverbs-verse-20",
+    "proverbs-reflection-20",
+    "proverbs-prayer-20",
+    "proverbs-challenge-20",
+    "proverbs-devotional-20",
+    "topic-speech",
+    "topic-integrity",
+    "quote-proverbs-06",
+    "quote-proverbs-10",
+    "quote-proverbs-11",
+    "quote-proverbs-20"
+  ],
+  "komitmen": [
+    "proverbs-chapter-06",
+    "proverbs-golden-06",
+    "proverbs-verse-06",
+    "proverbs-reflection-06",
+    "proverbs-prayer-06",
+    "proverbs-challenge-06",
+    "proverbs-devotional-06",
+    "quote-proverbs-06"
+  ],
+  "firman dalam hati": [
+    "proverbs-chapter-07",
+    "proverbs-golden-07",
+    "proverbs-verse-07",
+    "proverbs-reflection-07",
+    "proverbs-prayer-07",
+    "proverbs-challenge-07",
+    "proverbs-devotional-07",
+    "quote-proverbs-07"
+  ],
+  "batas": [
+    "proverbs-chapter-07",
+    "proverbs-golden-07",
+    "proverbs-verse-07",
+    "proverbs-reflection-07",
+    "proverbs-prayer-07",
+    "proverbs-challenge-07",
+    "proverbs-devotional-07",
+    "quote-proverbs-07"
+  ],
+  "manipulasi": [
+    "proverbs-chapter-07",
+    "proverbs-golden-07",
+    "proverbs-verse-07",
+    "proverbs-reflection-07",
+    "proverbs-prayer-07",
+    "proverbs-challenge-07",
+    "proverbs-devotional-07",
+    "quote-proverbs-07"
+  ],
+  "akuntabilitas": [
+    "proverbs-chapter-07",
+    "proverbs-golden-07",
+    "proverbs-verse-07",
+    "proverbs-reflection-07",
+    "proverbs-prayer-07",
+    "proverbs-challenge-07",
+    "proverbs-devotional-07",
+    "quote-proverbs-07"
+  ],
+  "panggilan hikmat": [
+    "proverbs-chapter-08",
+    "proverbs-golden-08",
+    "proverbs-verse-08",
+    "proverbs-reflection-08",
+    "proverbs-prayer-08",
+    "proverbs-challenge-08",
+    "proverbs-devotional-08",
+    "quote-proverbs-08"
+  ],
+  "kebenaran": [
+    "proverbs-chapter-08",
+    "proverbs-golden-08",
+    "proverbs-verse-08",
+    "proverbs-reflection-08",
+    "proverbs-prayer-08",
+    "proverbs-challenge-08",
+    "proverbs-devotional-08",
+    "proverbs-chapter-12",
+    "proverbs-golden-12",
+    "proverbs-verse-12",
+    "proverbs-reflection-12",
+    "proverbs-prayer-12",
+    "proverbs-challenge-12",
+    "proverbs-devotional-12",
+    "proverbs-chapter-21",
+    "proverbs-golden-21",
+    "proverbs-verse-21",
+    "proverbs-reflection-21",
+    "proverbs-prayer-21",
+    "proverbs-challenge-21",
+    "proverbs-devotional-21",
+    "proverbs-chapter-23",
+    "proverbs-golden-23",
+    "proverbs-verse-23",
+    "proverbs-reflection-23",
+    "proverbs-prayer-23",
+    "proverbs-challenge-23",
+    "proverbs-devotional-23",
+    "topic-justice",
+    "quote-proverbs-08",
+    "quote-proverbs-12",
+    "quote-proverbs-21",
+    "quote-proverbs-23"
+  ],
+  "keadilan": [
+    "proverbs-chapter-08",
+    "proverbs-golden-08",
+    "proverbs-verse-08",
+    "proverbs-reflection-08",
+    "proverbs-prayer-08",
+    "proverbs-challenge-08",
+    "proverbs-devotional-08",
+    "proverbs-chapter-11",
+    "proverbs-golden-11",
+    "proverbs-verse-11",
+    "proverbs-reflection-11",
+    "proverbs-prayer-11",
+    "proverbs-challenge-11",
+    "proverbs-devotional-11",
+    "proverbs-chapter-16",
+    "proverbs-golden-16",
+    "proverbs-verse-16",
+    "proverbs-reflection-16",
+    "proverbs-prayer-16",
+    "proverbs-challenge-16",
+    "proverbs-devotional-16",
+    "proverbs-chapter-17",
+    "proverbs-golden-17",
+    "proverbs-verse-17",
+    "proverbs-reflection-17",
+    "proverbs-prayer-17",
+    "proverbs-challenge-17",
+    "proverbs-devotional-17",
+    "proverbs-chapter-20",
+    "proverbs-golden-20",
+    "proverbs-verse-20",
+    "proverbs-reflection-20",
+    "proverbs-prayer-20",
+    "proverbs-challenge-20",
+    "proverbs-devotional-20",
+    "proverbs-chapter-21",
+    "proverbs-golden-21",
+    "proverbs-verse-21",
+    "proverbs-reflection-21",
+    "proverbs-prayer-21",
+    "proverbs-challenge-21",
+    "proverbs-devotional-21",
+    "proverbs-chapter-22",
+    "proverbs-golden-22",
+    "proverbs-verse-22",
+    "proverbs-reflection-22",
+    "proverbs-prayer-22",
+    "proverbs-challenge-22",
+    "proverbs-devotional-22",
+    "proverbs-chapter-24",
+    "proverbs-golden-24",
+    "proverbs-verse-24",
+    "proverbs-reflection-24",
+    "proverbs-prayer-24",
+    "proverbs-challenge-24",
+    "proverbs-devotional-24",
+    "proverbs-chapter-28",
+    "proverbs-golden-28",
+    "proverbs-verse-28",
+    "proverbs-reflection-28",
+    "proverbs-prayer-28",
+    "proverbs-challenge-28",
+    "proverbs-devotional-28",
+    "proverbs-chapter-29",
+    "proverbs-golden-29",
+    "proverbs-verse-29",
+    "proverbs-reflection-29",
+    "proverbs-prayer-29",
+    "proverbs-challenge-29",
+    "proverbs-devotional-29",
+    "proverbs-chapter-31",
+    "proverbs-golden-31",
+    "proverbs-verse-31",
+    "proverbs-reflection-31",
+    "proverbs-prayer-31",
+    "proverbs-challenge-31",
+    "proverbs-devotional-31",
+    "topic-justice",
+    "quote-proverbs-08",
+    "quote-proverbs-11",
+    "quote-proverbs-16",
+    "quote-proverbs-17",
+    "quote-proverbs-20",
+    "quote-proverbs-21",
+    "quote-proverbs-22",
+    "quote-proverbs-24",
+    "quote-proverbs-28",
+    "quote-proverbs-29",
+    "quote-proverbs-31"
+  ],
+  "penciptaan": [
+    "proverbs-chapter-08",
+    "proverbs-golden-08",
+    "proverbs-verse-08",
+    "proverbs-reflection-08",
+    "proverbs-prayer-08",
+    "proverbs-challenge-08",
+    "proverbs-devotional-08",
+    "quote-proverbs-08"
+  ],
+  "nilai sejati": [
+    "proverbs-chapter-08",
+    "proverbs-golden-08",
+    "proverbs-verse-08",
+    "proverbs-reflection-08",
+    "proverbs-prayer-08",
+    "proverbs-challenge-08",
+    "proverbs-devotional-08",
+    "quote-proverbs-08"
+  ],
+  "kristus": [
+    "proverbs-chapter-08",
+    "proverbs-golden-08",
+    "proverbs-verse-08",
+    "proverbs-reflection-08",
+    "proverbs-prayer-08",
+    "proverbs-challenge-08",
+    "proverbs-devotional-08",
+    "quote-proverbs-08"
+  ],
+  "teguran": [
+    "proverbs-chapter-09",
+    "proverbs-golden-09",
+    "proverbs-verse-09",
+    "proverbs-reflection-09",
+    "proverbs-prayer-09",
+    "proverbs-challenge-09",
+    "proverbs-devotional-09",
+    "proverbs-chapter-12",
+    "proverbs-golden-12",
+    "proverbs-verse-12",
+    "proverbs-reflection-12",
+    "proverbs-prayer-12",
+    "proverbs-challenge-12",
+    "proverbs-devotional-12",
+    "topic-humility",
+    "topic-discipline",
+    "quote-proverbs-09",
+    "quote-proverbs-12"
+  ],
+  "pengertian": [
+    "proverbs-chapter-09",
+    "proverbs-golden-09",
+    "proverbs-verse-09",
+    "proverbs-reflection-09",
+    "proverbs-prayer-09",
+    "proverbs-challenge-09",
+    "proverbs-devotional-09",
+    "topic-wisdom",
+    "quote-proverbs-09"
+  ],
+  "kehidupan": [
+    "proverbs-chapter-09",
+    "proverbs-golden-09",
+    "proverbs-verse-09",
+    "proverbs-reflection-09",
+    "proverbs-prayer-09",
+    "proverbs-challenge-09",
+    "proverbs-devotional-09",
+    "quote-proverbs-09"
+  ],
+  "perkataan": [
+    "proverbs-chapter-10",
+    "proverbs-golden-10",
+    "proverbs-verse-10",
+    "proverbs-reflection-10",
+    "proverbs-prayer-10",
+    "proverbs-challenge-10",
+    "proverbs-devotional-10",
+    "proverbs-chapter-12",
+    "proverbs-golden-12",
+    "proverbs-verse-12",
+    "proverbs-reflection-12",
+    "proverbs-prayer-12",
+    "proverbs-challenge-12",
+    "proverbs-devotional-12",
+    "proverbs-chapter-15",
+    "proverbs-golden-15",
+    "proverbs-verse-15",
+    "proverbs-reflection-15",
+    "proverbs-prayer-15",
+    "proverbs-challenge-15",
+    "proverbs-devotional-15",
+    "proverbs-chapter-17",
+    "proverbs-golden-17",
+    "proverbs-verse-17",
+    "proverbs-reflection-17",
+    "proverbs-prayer-17",
+    "proverbs-challenge-17",
+    "proverbs-devotional-17",
+    "proverbs-chapter-18",
+    "proverbs-golden-18",
+    "proverbs-verse-18",
+    "proverbs-reflection-18",
+    "proverbs-prayer-18",
+    "proverbs-challenge-18",
+    "proverbs-devotional-18",
+    "topic-speech",
+    "quote-proverbs-10",
+    "quote-proverbs-12",
+    "quote-proverbs-15",
+    "quote-proverbs-17",
+    "quote-proverbs-18"
+  ],
+  "kasih": [
+    "proverbs-chapter-10",
+    "proverbs-golden-10",
+    "proverbs-verse-10",
+    "proverbs-reflection-10",
+    "proverbs-prayer-10",
+    "proverbs-challenge-10",
+    "proverbs-devotional-10",
+    "proverbs-chapter-15",
+    "proverbs-golden-15",
+    "proverbs-verse-15",
+    "proverbs-reflection-15",
+    "proverbs-prayer-15",
+    "proverbs-challenge-15",
+    "proverbs-devotional-15",
+    "topic-love",
+    "quote-proverbs-10",
+    "quote-proverbs-15"
+  ],
+  "jalan hidup": [
+    "proverbs-chapter-10",
+    "proverbs-golden-10",
+    "proverbs-verse-10",
+    "proverbs-reflection-10",
+    "proverbs-prayer-10",
+    "proverbs-challenge-10",
+    "proverbs-devotional-10",
+    "quote-proverbs-10"
+  ],
+  "kepercayaan": [
+    "proverbs-chapter-11",
+    "proverbs-golden-11",
+    "proverbs-verse-11",
+    "proverbs-reflection-11",
+    "proverbs-prayer-11",
+    "proverbs-challenge-11",
+    "proverbs-devotional-11",
+    "quote-proverbs-11"
+  ],
+  "komunitas": [
+    "proverbs-chapter-11",
+    "proverbs-golden-11",
+    "proverbs-verse-11",
+    "proverbs-reflection-11",
+    "proverbs-prayer-11",
+    "proverbs-challenge-11",
+    "proverbs-devotional-11",
+    "proverbs-chapter-27",
+    "proverbs-golden-27",
+    "proverbs-verse-27",
+    "proverbs-reflection-27",
+    "proverbs-prayer-27",
+    "proverbs-challenge-27",
+    "proverbs-devotional-27",
+    "quote-proverbs-11",
+    "quote-proverbs-27"
+  ],
+  "belas kasih": [
+    "proverbs-chapter-12",
+    "proverbs-golden-12",
+    "proverbs-verse-12",
+    "proverbs-reflection-12",
+    "proverbs-prayer-12",
+    "proverbs-challenge-12",
+    "proverbs-devotional-12",
+    "proverbs-chapter-14",
+    "proverbs-golden-14",
+    "proverbs-verse-14",
+    "proverbs-reflection-14",
+    "proverbs-prayer-14",
+    "proverbs-challenge-14",
+    "proverbs-devotional-14",
+    "proverbs-chapter-21",
+    "proverbs-golden-21",
+    "proverbs-verse-21",
+    "proverbs-reflection-21",
+    "proverbs-prayer-21",
+    "proverbs-challenge-21",
+    "proverbs-devotional-21",
+    "proverbs-chapter-31",
+    "proverbs-golden-31",
+    "proverbs-verse-31",
+    "proverbs-reflection-31",
+    "proverbs-prayer-31",
+    "proverbs-challenge-31",
+    "proverbs-devotional-31",
+    "quote-proverbs-12",
+    "quote-proverbs-14",
+    "quote-proverbs-21",
+    "quote-proverbs-31"
+  ],
+  "kesembuhan": [
+    "proverbs-chapter-12",
+    "proverbs-golden-12",
+    "proverbs-verse-12",
+    "proverbs-reflection-12",
+    "proverbs-prayer-12",
+    "proverbs-challenge-12",
+    "proverbs-devotional-12",
+    "quote-proverbs-12"
+  ],
+  "disiplin": [
+    "proverbs-chapter-13",
+    "proverbs-golden-13",
+    "proverbs-verse-13",
+    "proverbs-reflection-13",
+    "proverbs-prayer-13",
+    "proverbs-challenge-13",
+    "proverbs-devotional-13",
+    "proverbs-chapter-22",
+    "proverbs-golden-22",
+    "proverbs-verse-22",
+    "proverbs-reflection-22",
+    "proverbs-prayer-22",
+    "proverbs-challenge-22",
+    "proverbs-devotional-22",
+    "proverbs-chapter-29",
+    "proverbs-golden-29",
+    "proverbs-verse-29",
+    "proverbs-reflection-29",
+    "proverbs-prayer-29",
+    "proverbs-challenge-29",
+    "proverbs-devotional-29",
+    "topic-discipline",
+    "quote-proverbs-13",
+    "quote-proverbs-22",
+    "quote-proverbs-29"
+  ],
+  "pengharapan": [
+    "proverbs-chapter-13",
+    "proverbs-golden-13",
+    "proverbs-verse-13",
+    "proverbs-reflection-13",
+    "proverbs-prayer-13",
+    "proverbs-challenge-13",
+    "proverbs-devotional-13",
+    "proverbs-chapter-23",
+    "proverbs-golden-23",
+    "proverbs-verse-23",
+    "proverbs-reflection-23",
+    "proverbs-prayer-23",
+    "proverbs-challenge-23",
+    "proverbs-devotional-23",
+    "topic-hope",
+    "quote-proverbs-13",
+    "quote-proverbs-23"
+  ],
+  "persahabatan": [
+    "proverbs-chapter-13",
+    "proverbs-golden-13",
+    "proverbs-verse-13",
+    "proverbs-reflection-13",
+    "proverbs-prayer-13",
+    "proverbs-challenge-13",
+    "proverbs-devotional-13",
+    "proverbs-chapter-17",
+    "proverbs-golden-17",
+    "proverbs-verse-17",
+    "proverbs-reflection-17",
+    "proverbs-prayer-17",
+    "proverbs-challenge-17",
+    "proverbs-devotional-17",
+    "proverbs-chapter-18",
+    "proverbs-golden-18",
+    "proverbs-verse-18",
+    "proverbs-reflection-18",
+    "proverbs-prayer-18",
+    "proverbs-challenge-18",
+    "proverbs-devotional-18",
+    "proverbs-chapter-27",
+    "proverbs-golden-27",
+    "proverbs-verse-27",
+    "proverbs-reflection-27",
+    "proverbs-prayer-27",
+    "proverbs-challenge-27",
+    "proverbs-devotional-27",
+    "topic-friendship",
+    "quote-proverbs-13",
+    "quote-proverbs-17",
+    "quote-proverbs-18",
+    "quote-proverbs-27"
+  ],
+  "penantian": [
+    "proverbs-chapter-13",
+    "proverbs-golden-13",
+    "proverbs-verse-13",
+    "proverbs-reflection-13",
+    "proverbs-prayer-13",
+    "proverbs-challenge-13",
+    "proverbs-devotional-13",
+    "quote-proverbs-13"
+  ],
+  "rumah": [
+    "proverbs-chapter-14",
+    "proverbs-golden-14",
+    "proverbs-verse-14",
+    "proverbs-reflection-14",
+    "proverbs-prayer-14",
+    "proverbs-challenge-14",
+    "proverbs-devotional-14",
+    "quote-proverbs-14",
+    "symbol:house"
+  ],
+  "pertimbangan": [
+    "proverbs-chapter-14",
+    "proverbs-golden-14",
+    "proverbs-verse-14",
+    "proverbs-reflection-14",
+    "proverbs-prayer-14",
+    "proverbs-challenge-14",
+    "proverbs-devotional-14",
+    "topic-decision_making",
+    "quote-proverbs-14"
+  ],
+  "kemarahan": [
+    "proverbs-chapter-14",
+    "proverbs-golden-14",
+    "proverbs-verse-14",
+    "proverbs-reflection-14",
+    "proverbs-prayer-14",
+    "proverbs-challenge-14",
+    "proverbs-devotional-14",
+    "proverbs-chapter-15",
+    "proverbs-golden-15",
+    "proverbs-verse-15",
+    "proverbs-reflection-15",
+    "proverbs-prayer-15",
+    "proverbs-challenge-15",
+    "proverbs-devotional-15",
+    "quote-proverbs-14",
+    "quote-proverbs-15"
+  ],
+  "kerja": [
+    "proverbs-chapter-14",
+    "proverbs-golden-14",
+    "proverbs-verse-14",
+    "proverbs-reflection-14",
+    "proverbs-prayer-14",
+    "proverbs-challenge-14",
+    "proverbs-devotional-14",
+    "topic-work",
+    "quote-proverbs-14"
+  ],
+  "kelembutan": [
+    "proverbs-chapter-15",
+    "proverbs-golden-15",
+    "proverbs-verse-15",
+    "proverbs-reflection-15",
+    "proverbs-prayer-15",
+    "proverbs-challenge-15",
+    "proverbs-devotional-15",
+    "quote-proverbs-15"
+  ],
+  "nasihat": [
+    "proverbs-chapter-15",
+    "proverbs-golden-15",
+    "proverbs-verse-15",
+    "proverbs-reflection-15",
+    "proverbs-prayer-15",
+    "proverbs-challenge-15",
+    "proverbs-devotional-15",
+    "proverbs-chapter-19",
+    "proverbs-golden-19",
+    "proverbs-verse-19",
+    "proverbs-reflection-19",
+    "proverbs-prayer-19",
+    "proverbs-challenge-19",
+    "proverbs-devotional-19",
+    "proverbs-chapter-20",
+    "proverbs-golden-20",
+    "proverbs-verse-20",
+    "proverbs-reflection-20",
+    "proverbs-prayer-20",
+    "proverbs-challenge-20",
+    "proverbs-devotional-20",
+    "proverbs-chapter-24",
+    "proverbs-golden-24",
+    "proverbs-verse-24",
+    "proverbs-reflection-24",
+    "proverbs-prayer-24",
+    "proverbs-challenge-24",
+    "proverbs-devotional-24",
+    "topic-decision_making",
+    "quote-proverbs-15",
+    "quote-proverbs-19",
+    "quote-proverbs-20",
+    "quote-proverbs-24"
+  ],
+  "doa": [
+    "proverbs-chapter-15",
+    "proverbs-golden-15",
+    "proverbs-verse-15",
+    "proverbs-reflection-15",
+    "proverbs-prayer-15",
+    "proverbs-challenge-15",
+    "proverbs-devotional-15",
+    "topic-prayer",
+    "quote-proverbs-15"
+  ],
+  "rencana": [
+    "proverbs-chapter-16",
+    "proverbs-golden-16",
+    "proverbs-verse-16",
+    "proverbs-reflection-16",
+    "proverbs-prayer-16",
+    "proverbs-challenge-16",
+    "proverbs-devotional-16",
+    "proverbs-chapter-19",
+    "proverbs-golden-19",
+    "proverbs-verse-19",
+    "proverbs-reflection-19",
+    "proverbs-prayer-19",
+    "proverbs-challenge-19",
+    "proverbs-devotional-19",
+    "quote-proverbs-16",
+    "quote-proverbs-19"
+  ],
+  "kedaulatan": [
+    "proverbs-chapter-16",
+    "proverbs-golden-16",
+    "proverbs-verse-16",
+    "proverbs-reflection-16",
+    "proverbs-prayer-16",
+    "proverbs-challenge-16",
+    "proverbs-devotional-16",
+    "quote-proverbs-16"
+  ],
+  "penyerahan": [
+    "proverbs-chapter-16",
+    "proverbs-golden-16",
+    "proverbs-verse-16",
+    "proverbs-reflection-16",
+    "proverbs-prayer-16",
+    "proverbs-challenge-16",
+    "proverbs-devotional-16",
+    "topic-prayer",
+    "quote-proverbs-16"
+  ],
+  "penguasaan diri": [
+    "proverbs-chapter-16",
+    "proverbs-golden-16",
+    "proverbs-verse-16",
+    "proverbs-reflection-16",
+    "proverbs-prayer-16",
+    "proverbs-challenge-16",
+    "proverbs-devotional-16",
+    "proverbs-chapter-20",
+    "proverbs-golden-20",
+    "proverbs-verse-20",
+    "proverbs-reflection-20",
+    "proverbs-prayer-20",
+    "proverbs-challenge-20",
+    "proverbs-devotional-20",
+    "proverbs-chapter-23",
+    "proverbs-golden-23",
+    "proverbs-verse-23",
+    "proverbs-reflection-23",
+    "proverbs-prayer-23",
+    "proverbs-challenge-23",
+    "proverbs-devotional-23",
+    "quote-proverbs-16",
+    "quote-proverbs-20",
+    "quote-proverbs-23"
+  ],
+  "keluarga": [
+    "proverbs-chapter-17",
+    "proverbs-golden-17",
+    "proverbs-verse-17",
+    "proverbs-reflection-17",
+    "proverbs-prayer-17",
+    "proverbs-challenge-17",
+    "proverbs-devotional-17",
+    "topic-family",
+    "quote-proverbs-17"
+  ],
+  "pengampunan": [
+    "proverbs-chapter-17",
+    "proverbs-golden-17",
+    "proverbs-verse-17",
+    "proverbs-reflection-17",
+    "proverbs-prayer-17",
+    "proverbs-challenge-17",
+    "proverbs-devotional-17",
+    "topic-forgiveness",
+    "quote-proverbs-17"
+  ],
+  "pengendalian diri": [
+    "proverbs-chapter-17",
+    "proverbs-golden-17",
+    "proverbs-verse-17",
+    "proverbs-reflection-17",
+    "proverbs-prayer-17",
+    "proverbs-challenge-17",
+    "proverbs-devotional-17",
+    "quote-proverbs-17"
+  ],
+  "sukacita": [
+    "proverbs-chapter-17",
+    "proverbs-golden-17",
+    "proverbs-verse-17",
+    "proverbs-reflection-17",
+    "proverbs-prayer-17",
+    "proverbs-challenge-17",
+    "proverbs-devotional-17",
+    "topic-joy",
+    "quote-proverbs-17"
+  ],
+  "lidah": [
+    "proverbs-chapter-18",
+    "proverbs-golden-18",
+    "proverbs-verse-18",
+    "proverbs-reflection-18",
+    "proverbs-prayer-18",
+    "proverbs-challenge-18",
+    "proverbs-devotional-18",
+    "proverbs-chapter-26",
+    "proverbs-golden-26",
+    "proverbs-verse-26",
+    "proverbs-reflection-26",
+    "proverbs-prayer-26",
+    "proverbs-challenge-26",
+    "proverbs-devotional-26",
+    "topic-speech",
+    "quote-proverbs-18",
+    "quote-proverbs-26"
+  ],
+  "mendengar": [
+    "proverbs-chapter-18",
+    "proverbs-golden-18",
+    "proverbs-verse-18",
+    "proverbs-reflection-18",
+    "proverbs-prayer-18",
+    "proverbs-challenge-18",
+    "proverbs-devotional-18",
+    "quote-proverbs-18"
+  ],
+  "fitnah": [
+    "proverbs-chapter-18",
+    "proverbs-golden-18",
+    "proverbs-verse-18",
+    "proverbs-reflection-18",
+    "proverbs-prayer-18",
+    "proverbs-challenge-18",
+    "proverbs-devotional-18",
+    "proverbs-chapter-26",
+    "proverbs-golden-26",
+    "proverbs-verse-26",
+    "proverbs-reflection-26",
+    "proverbs-prayer-26",
+    "proverbs-challenge-26",
+    "proverbs-devotional-26",
+    "quote-proverbs-18",
+    "quote-proverbs-26"
+  ],
+  "kedaulatan tuhan": [
+    "proverbs-chapter-19",
+    "proverbs-golden-19",
+    "proverbs-verse-19",
+    "proverbs-reflection-19",
+    "proverbs-prayer-19",
+    "proverbs-challenge-19",
+    "proverbs-devotional-19",
+    "proverbs-chapter-21",
+    "proverbs-golden-21",
+    "proverbs-verse-21",
+    "proverbs-reflection-21",
+    "proverbs-prayer-21",
+    "proverbs-challenge-21",
+    "proverbs-devotional-21",
+    "quote-proverbs-19",
+    "quote-proverbs-21"
+  ],
+  "belas kasihan": [
+    "proverbs-chapter-19",
+    "proverbs-golden-19",
+    "proverbs-verse-19",
+    "proverbs-reflection-19",
+    "proverbs-prayer-19",
+    "proverbs-challenge-19",
+    "proverbs-devotional-19",
+    "topic-love",
+    "quote-proverbs-19"
+  ],
+  "rajin": [
+    "proverbs-chapter-20",
+    "proverbs-golden-20",
+    "proverbs-verse-20",
+    "proverbs-reflection-20",
+    "proverbs-prayer-20",
+    "proverbs-challenge-20",
+    "proverbs-devotional-20",
+    "quote-proverbs-20"
+  ],
+  "warisan": [
+    "proverbs-chapter-20",
+    "proverbs-golden-20",
+    "proverbs-verse-20",
+    "proverbs-reflection-20",
+    "proverbs-prayer-20",
+    "proverbs-challenge-20",
+    "proverbs-devotional-20",
+    "quote-proverbs-20"
+  ],
+  "motif": [
+    "proverbs-chapter-20",
+    "proverbs-golden-20",
+    "proverbs-verse-20",
+    "proverbs-reflection-20",
+    "proverbs-prayer-20",
+    "proverbs-challenge-20",
+    "proverbs-devotional-20",
+    "quote-proverbs-20"
+  ],
+  "ibadah": [
+    "proverbs-chapter-21",
+    "proverbs-golden-21",
+    "proverbs-verse-21",
+    "proverbs-reflection-21",
+    "proverbs-prayer-21",
+    "proverbs-challenge-21",
+    "proverbs-devotional-21",
+    "quote-proverbs-21"
+  ],
+  "orang lemah": [
+    "proverbs-chapter-21",
+    "proverbs-golden-21",
+    "proverbs-verse-21",
+    "proverbs-reflection-21",
+    "proverbs-prayer-21",
+    "proverbs-challenge-21",
+    "proverbs-devotional-21",
+    "quote-proverbs-21"
+  ],
+  "pendidikan": [
+    "proverbs-chapter-22",
+    "proverbs-golden-22",
+    "proverbs-verse-22",
+    "proverbs-reflection-22",
+    "proverbs-prayer-22",
+    "proverbs-challenge-22",
+    "proverbs-devotional-22",
+    "quote-proverbs-22"
+  ],
+  "generasi": [
+    "proverbs-chapter-22",
+    "proverbs-golden-22",
+    "proverbs-verse-22",
+    "proverbs-reflection-22",
+    "proverbs-prayer-22",
+    "proverbs-challenge-22",
+    "proverbs-devotional-22",
+    "quote-proverbs-22"
+  ],
+  "teladan": [
+    "proverbs-chapter-22",
+    "proverbs-golden-22",
+    "proverbs-verse-22",
+    "proverbs-reflection-22",
+    "proverbs-prayer-22",
+    "proverbs-challenge-22",
+    "proverbs-devotional-22",
+    "quote-proverbs-22"
+  ],
+  "nama baik": [
+    "proverbs-chapter-22",
+    "proverbs-golden-22",
+    "proverbs-verse-22",
+    "proverbs-reflection-22",
+    "proverbs-prayer-22",
+    "proverbs-challenge-22",
+    "proverbs-devotional-22",
+    "quote-proverbs-22"
+  ],
+  "hati": [
+    "proverbs-chapter-23",
+    "proverbs-golden-23",
+    "proverbs-verse-23",
+    "proverbs-reflection-23",
+    "proverbs-prayer-23",
+    "proverbs-challenge-23",
+    "proverbs-devotional-23",
+    "topic-character",
+    "dict-lev",
+    "quote-proverbs-23",
+    "symbol:heart"
+  ],
+  "kekayaan": [
+    "proverbs-chapter-23",
+    "proverbs-golden-23",
+    "proverbs-verse-23",
+    "proverbs-reflection-23",
+    "proverbs-prayer-23",
+    "proverbs-challenge-23",
+    "proverbs-devotional-23",
+    "topic-money",
+    "quote-proverbs-23"
+  ],
+  "kecanduan": [
+    "proverbs-chapter-23",
+    "proverbs-golden-23",
+    "proverbs-verse-23",
+    "proverbs-reflection-23",
+    "proverbs-prayer-23",
+    "proverbs-challenge-23",
+    "proverbs-devotional-23",
+    "quote-proverbs-23"
+  ],
+  "iri": [
+    "proverbs-chapter-24",
+    "proverbs-golden-24",
+    "proverbs-verse-24",
+    "proverbs-reflection-24",
+    "proverbs-prayer-24",
+    "proverbs-challenge-24",
+    "proverbs-devotional-24",
+    "quote-proverbs-24"
+  ],
+  "kejahatan": [
+    "proverbs-chapter-24",
+    "proverbs-golden-24",
+    "proverbs-verse-24",
+    "proverbs-reflection-24",
+    "proverbs-prayer-24",
+    "proverbs-challenge-24",
+    "proverbs-devotional-24",
+    "quote-proverbs-24"
+  ],
+  "bangkit": [
+    "proverbs-chapter-24",
+    "proverbs-golden-24",
+    "proverbs-verse-24",
+    "proverbs-reflection-24",
+    "proverbs-prayer-24",
+    "proverbs-challenge-24",
+    "proverbs-devotional-24",
+    "quote-proverbs-24"
+  ],
+  "kemuliaan": [
+    "proverbs-chapter-25",
+    "proverbs-golden-25",
+    "proverbs-verse-25",
+    "proverbs-reflection-25",
+    "proverbs-prayer-25",
+    "proverbs-challenge-25",
+    "proverbs-devotional-25",
+    "quote-proverbs-25"
+  ],
+  "kata yang tepat": [
+    "proverbs-chapter-25",
+    "proverbs-golden-25",
+    "proverbs-verse-25",
+    "proverbs-reflection-25",
+    "proverbs-prayer-25",
+    "proverbs-challenge-25",
+    "proverbs-devotional-25",
+    "quote-proverbs-25"
+  ],
+  "menahan diri": [
+    "proverbs-chapter-25",
+    "proverbs-golden-25",
+    "proverbs-verse-25",
+    "proverbs-reflection-25",
+    "proverbs-prayer-25",
+    "proverbs-challenge-25",
+    "proverbs-devotional-25",
+    "quote-proverbs-25"
+  ],
+  "rahasia": [
+    "proverbs-chapter-25",
+    "proverbs-golden-25",
+    "proverbs-verse-25",
+    "proverbs-reflection-25",
+    "proverbs-prayer-25",
+    "proverbs-challenge-25",
+    "proverbs-devotional-25",
+    "quote-proverbs-25"
+  ],
+  "batas hubungan": [
+    "proverbs-chapter-25",
+    "proverbs-golden-25",
+    "proverbs-verse-25",
+    "proverbs-reflection-25",
+    "proverbs-prayer-25",
+    "proverbs-challenge-25",
+    "proverbs-devotional-25",
+    "quote-proverbs-25"
+  ],
+  "nasihat lembut": [
+    "proverbs-chapter-25",
+    "proverbs-golden-25",
+    "proverbs-verse-25",
+    "proverbs-reflection-25",
+    "proverbs-prayer-25",
+    "proverbs-challenge-25",
+    "proverbs-devotional-25",
+    "quote-proverbs-25"
+  ],
+  "kehormatan": [
+    "proverbs-chapter-25",
+    "proverbs-golden-25",
+    "proverbs-verse-25",
+    "proverbs-reflection-25",
+    "proverbs-prayer-25",
+    "proverbs-challenge-25",
+    "proverbs-devotional-25",
+    "quote-proverbs-25"
+  ],
+  "orang bebal": [
+    "proverbs-chapter-26",
+    "proverbs-golden-26",
+    "proverbs-verse-26",
+    "proverbs-reflection-26",
+    "proverbs-prayer-26",
+    "proverbs-challenge-26",
+    "proverbs-devotional-26",
+    "quote-proverbs-26"
+  ],
+  "hikmat situasional": [
+    "proverbs-chapter-26",
+    "proverbs-golden-26",
+    "proverbs-verse-26",
+    "proverbs-reflection-26",
+    "proverbs-prayer-26",
+    "proverbs-challenge-26",
+    "proverbs-devotional-26",
+    "quote-proverbs-26"
+  ],
+  "kemalasan": [
+    "proverbs-chapter-26",
+    "proverbs-golden-26",
+    "proverbs-verse-26",
+    "proverbs-reflection-26",
+    "proverbs-prayer-26",
+    "proverbs-challenge-26",
+    "proverbs-devotional-26",
+    "topic-work",
+    "quote-proverbs-26"
+  ],
+  "bisik bisik": [
+    "proverbs-chapter-26",
+    "proverbs-golden-26",
+    "proverbs-verse-26",
+    "proverbs-reflection-26",
+    "proverbs-prayer-26",
+    "proverbs-challenge-26",
+    "proverbs-devotional-26",
+    "quote-proverbs-26"
+  ],
+  "menjawab dengan bijak": [
+    "proverbs-chapter-26",
+    "proverbs-golden-26",
+    "proverbs-verse-26",
+    "proverbs-reflection-26",
+    "proverbs-prayer-26",
+    "proverbs-challenge-26",
+    "proverbs-devotional-26",
+    "quote-proverbs-26"
+  ],
+  "besi menajamkan besi": [
+    "proverbs-chapter-27",
+    "proverbs-golden-27",
+    "proverbs-verse-27",
+    "proverbs-reflection-27",
+    "proverbs-prayer-27",
+    "proverbs-challenge-27",
+    "proverbs-devotional-27",
+    "quote-proverbs-27"
+  ],
+  "kasih yang jujur": [
+    "proverbs-chapter-27",
+    "proverbs-golden-27",
+    "proverbs-verse-27",
+    "proverbs-reflection-27",
+    "proverbs-prayer-27",
+    "proverbs-challenge-27",
+    "proverbs-devotional-27",
+    "quote-proverbs-27"
+  ],
+  "hari esok": [
+    "proverbs-chapter-27",
+    "proverbs-golden-27",
+    "proverbs-verse-27",
+    "proverbs-reflection-27",
+    "proverbs-prayer-27",
+    "proverbs-challenge-27",
+    "proverbs-devotional-27",
+    "quote-proverbs-27"
+  ],
+  "pemuridan": [
+    "proverbs-chapter-27",
+    "proverbs-golden-27",
+    "proverbs-verse-27",
+    "proverbs-reflection-27",
+    "proverbs-prayer-27",
+    "proverbs-challenge-27",
+    "proverbs-devotional-27",
+    "quote-proverbs-27"
+  ],
+  "karakter": [
+    "proverbs-chapter-27",
+    "proverbs-golden-27",
+    "proverbs-verse-27",
+    "proverbs-reflection-27",
+    "proverbs-prayer-27",
+    "proverbs-challenge-27",
+    "proverbs-devotional-27",
+    "topic-character",
+    "quote-proverbs-27"
+  ],
+  "keberanian": [
+    "proverbs-chapter-28",
+    "proverbs-golden-28",
+    "proverbs-verse-28",
+    "proverbs-reflection-28",
+    "proverbs-prayer-28",
+    "proverbs-challenge-28",
+    "proverbs-devotional-28",
+    "quote-proverbs-28"
+  ],
+  "pengakuan dosa": [
+    "proverbs-chapter-28",
+    "proverbs-golden-28",
+    "proverbs-verse-28",
+    "proverbs-reflection-28",
+    "proverbs-prayer-28",
+    "proverbs-challenge-28",
+    "proverbs-devotional-28",
+    "quote-proverbs-28"
+  ],
+  "pemimpin": [
+    "proverbs-chapter-28",
+    "proverbs-golden-28",
+    "proverbs-verse-28",
+    "proverbs-reflection-28",
+    "proverbs-prayer-28",
+    "proverbs-challenge-28",
+    "proverbs-devotional-28",
+    "quote-proverbs-28"
+  ],
+  "takut kepada manusia": [
+    "proverbs-chapter-29",
+    "proverbs-golden-29",
+    "proverbs-verse-29",
+    "proverbs-reflection-29",
+    "proverbs-prayer-29",
+    "proverbs-challenge-29",
+    "proverbs-devotional-29",
+    "quote-proverbs-29"
+  ],
+  "jerat": [
+    "proverbs-chapter-29",
+    "proverbs-golden-29",
+    "proverbs-verse-29",
+    "proverbs-reflection-29",
+    "proverbs-prayer-29",
+    "proverbs-challenge-29",
+    "proverbs-devotional-29",
+    "topic-temptation",
+    "quote-proverbs-29",
+    "symbol:snare"
+  ],
+  "kepemimpinan": [
+    "proverbs-chapter-29",
+    "proverbs-golden-29",
+    "proverbs-verse-29",
+    "proverbs-reflection-29",
+    "proverbs-prayer-29",
+    "proverbs-challenge-29",
+    "proverbs-devotional-29",
+    "proverbs-chapter-31",
+    "proverbs-golden-31",
+    "proverbs-verse-31",
+    "proverbs-reflection-31",
+    "proverbs-prayer-31",
+    "proverbs-challenge-31",
+    "proverbs-devotional-31",
+    "topic-leadership",
+    "quote-proverbs-29",
+    "quote-proverbs-31"
+  ],
+  "amarah": [
+    "proverbs-chapter-29",
+    "proverbs-golden-29",
+    "proverbs-verse-29",
+    "proverbs-reflection-29",
+    "proverbs-prayer-29",
+    "proverbs-challenge-29",
+    "proverbs-devotional-29",
+    "quote-proverbs-29"
+  ],
+  "agur": [
+    "proverbs-chapter-30",
+    "proverbs-golden-30",
+    "proverbs-verse-30",
+    "proverbs-reflection-30",
+    "proverbs-prayer-30",
+    "proverbs-challenge-30",
+    "proverbs-devotional-30",
+    "dict-agur",
+    "quote-proverbs-30"
+  ],
+  "firman yang murni": [
+    "proverbs-chapter-30",
+    "proverbs-golden-30",
+    "proverbs-verse-30",
+    "proverbs-reflection-30",
+    "proverbs-prayer-30",
+    "proverbs-challenge-30",
+    "proverbs-devotional-30",
+    "quote-proverbs-30"
+  ],
+  "perisai": [
+    "proverbs-chapter-30",
+    "proverbs-golden-30",
+    "proverbs-verse-30",
+    "proverbs-reflection-30",
+    "proverbs-prayer-30",
+    "proverbs-challenge-30",
+    "proverbs-devotional-30",
+    "quote-proverbs-30",
+    "symbol:shield"
+  ],
+  "jangan menambah firman": [
+    "proverbs-chapter-30",
+    "proverbs-golden-30",
+    "proverbs-verse-30",
+    "proverbs-reflection-30",
+    "proverbs-prayer-30",
+    "proverbs-challenge-30",
+    "proverbs-devotional-30",
+    "quote-proverbs-30"
+  ],
+  "kecukupan": [
+    "proverbs-chapter-30",
+    "proverbs-golden-30",
+    "proverbs-verse-30",
+    "proverbs-reflection-30",
+    "proverbs-prayer-30",
+    "proverbs-challenge-30",
+    "proverbs-devotional-30",
+    "quote-proverbs-30"
+  ],
+  "ketergantungan": [
+    "proverbs-chapter-30",
+    "proverbs-golden-30",
+    "proverbs-verse-30",
+    "proverbs-reflection-30",
+    "proverbs-prayer-30",
+    "proverbs-challenge-30",
+    "proverbs-devotional-30",
+    "quote-proverbs-30"
+  ],
+  "lemuel": [
+    "proverbs-chapter-31",
+    "proverbs-golden-31",
+    "proverbs-verse-31",
+    "proverbs-reflection-31",
+    "proverbs-prayer-31",
+    "proverbs-challenge-31",
+    "proverbs-devotional-31",
+    "dict-lemuel",
+    "quote-proverbs-31",
+    "character:lemuel"
+  ],
+  "eshet chayil": [
+    "proverbs-chapter-31",
+    "proverbs-golden-31",
+    "proverbs-verse-31",
+    "proverbs-reflection-31",
+    "proverbs-prayer-31",
+    "proverbs-challenge-31",
+    "proverbs-devotional-31",
+    "quote-proverbs-31"
+  ],
+  "kecakapan": [
+    "proverbs-chapter-31",
+    "proverbs-golden-31",
+    "proverbs-verse-31",
+    "proverbs-reflection-31",
+    "proverbs-prayer-31",
+    "proverbs-challenge-31",
+    "proverbs-devotional-31",
+    "quote-proverbs-31"
+  ],
+  "pujian sejati": [
+    "proverbs-chapter-31",
+    "proverbs-golden-31",
+    "proverbs-verse-31",
+    "proverbs-reflection-31",
+    "proverbs-prayer-31",
+    "proverbs-challenge-31",
+    "proverbs-devotional-31",
+    "quote-proverbs-31"
+  ],
+  "kebijaksanaan": [
+    "topic-wisdom"
+  ],
+  "akal budi": [
+    "topic-wisdom"
+  ],
+  "hormat": [
+    "topic-fear_of_god"
+  ],
+  "penyembahan": [
+    "topic-fear_of_god"
+  ],
+  "permulaan pengetahuan": [
+    "topic-fear_of_god"
+  ],
+  "mulut": [
+    "topic-speech"
+  ],
+  "jawaban lemah lembut": [
+    "topic-speech"
+  ],
+  "dusta": [
+    "topic-speech"
+  ],
+  "raja": [
+    "topic-leadership"
+  ],
+  "pemerintahan": [
+    "topic-leadership"
+  ],
+  "keadilan pemimpin": [
+    "topic-leadership"
+  ],
+  "otoritas": [
+    "topic-leadership"
+  ],
+  "ketulusan": [
+    "topic-integrity"
+  ],
+  "kelurusan hati": [
+    "topic-integrity"
+  ],
+  "rendah hati": [
+    "topic-humility"
+  ],
+  "kesombongan": [
+    "topic-humility"
+  ],
+  "istri": [
+    "topic-marriage"
+  ],
+  "suami": [
+    "topic-marriage"
+  ],
+  "anak": [
+    "topic-family"
+  ],
+  "orang tua": [
+    "topic-family"
+  ],
+  "didikan anak": [
+    "topic-family"
+  ],
+  "warisan iman": [
+    "topic-family"
+  ],
+  "uang": [
+    "topic-money"
+  ],
+  "kemiskinan": [
+    "topic-money"
+  ],
+  "utang": [
+    "topic-money"
+  ],
+  "hak": [
+    "topic-justice"
+  ],
+  "membela yang lemah": [
+    "topic-justice"
+  ],
+  "menutupi pelanggaran": [
+    "topic-forgiveness"
+  ],
+  "dendam": [
+    "topic-forgiveness"
+  ],
+  "pemulihan": [
+    "topic-forgiveness"
+  ],
+  "permohonan": [
+    "topic-prayer"
+  ],
+  "menyerahkan rencana": [
+    "topic-prayer"
+  ],
+  "iman": [
+    "topic-faith"
+  ],
+  "bersandar": [
+    "topic-faith"
+  ],
+  "harapan": [
+    "topic-hope"
+  ],
+  "menanti": [
+    "topic-hope"
+  ],
+  "masa depan": [
+    "topic-hope"
+  ],
+  "kasih setia": [
+    "topic-love",
+    "dict-chesed"
+  ],
+  "kemurahan": [
+    "topic-love"
+  ],
+  "rayuan": [
+    "topic-temptation"
+  ],
+  "keputusan": [
+    "topic-decision_making"
+  ],
+  "rancangan": [
+    "topic-decision_making"
+  ],
+  "perencanaan": [
+    "topic-decision_making"
+  ],
+  "teman": [
+    "topic-friendship"
+  ],
+  "sahabat": [
+    "topic-friendship"
+  ],
+  "menajamkan": [
+    "topic-friendship"
+  ],
+  "setia": [
+    "topic-friendship"
+  ],
+  "watak": [
+    "topic-character"
+  ],
+  "pembentukan": [
+    "topic-character"
+  ],
+  "koreksi": [
+    "topic-discipline"
+  ],
+  "ganjaran": [
+    "topic-discipline"
+  ],
+  "penderitaan": [
+    "topic-suffering"
+  ],
+  "kesulitan": [
+    "topic-suffering"
+  ],
+  "ujian": [
+    "topic-suffering"
+  ],
+  "ketabahan": [
+    "topic-suffering"
+  ],
+  "hati gembira": [
+    "topic-joy"
+  ],
+  "kegembiraan": [
+    "topic-joy"
+  ],
+  "ketenteraman": [
+    "topic-peace"
+  ],
+  "damai sejahtera": [
+    "topic-peace"
+  ],
+  "pembawa damai": [
+    "topic-peace"
+  ],
+  "ח כ מ ה": [
+    "dict-chokmah"
+  ],
+  "chokmah": [
+    "dict-chokmah"
+  ],
+  "hikmat kecakapan": [
+    "dict-chokmah"
+  ],
+  "מו ס ר": [
+    "dict-musar"
+  ],
+  "musar": [
+    "dict-musar"
+  ],
+  "didikan disiplin teguran": [
+    "dict-musar"
+  ],
+  "ד ע ת": [
+    "dict-daat"
+  ],
+  "daat": [
+    "dict-daat"
+  ],
+  "ב ינ ה": [
+    "dict-binah"
+  ],
+  "binah": [
+    "dict-binah"
+  ],
+  "pengertian kemampuan membedakan": [
+    "dict-binah"
+  ],
+  "י ר א ת י הו ה": [
+    "dict-yirat-yhwh"
+  ],
+  "yirat yhwh": [
+    "dict-yirat-yhwh"
+  ],
+  "מ ז מ ה": [
+    "dict-mezimmah"
+  ],
+  "mezimmah": [
+    "dict-mezimmah"
+  ],
+  "kebijaksanaan merencanakan kehati hatian": [
+    "dict-mezimmah"
+  ],
+  "צ ד ק": [
+    "dict-tsedeq"
+  ],
+  "tsedeq": [
+    "dict-tsedeq"
+  ],
+  "kebenaran keadilan": [
+    "dict-tsedeq"
+  ],
+  "מ ש פ ט": [
+    "dict-mishpat"
+  ],
+  "mishpat": [
+    "dict-mishpat"
+  ],
+  "keadilan hukum": [
+    "dict-mishpat"
+  ],
+  "ל ב": [
+    "dict-lev"
+  ],
+  "lev": [
+    "dict-lev"
+  ],
+  "א מ ת": [
+    "dict-emet"
+  ],
+  "emet": [
+    "dict-emet"
+  ],
+  "kebenaran kesetiaan": [
+    "dict-emet"
+  ],
+  "ח ס ד": [
+    "dict-chesed"
+  ],
+  "chesed": [
+    "dict-chesed"
+  ],
+  "σοφια": [
+    "dict-sophia"
+  ],
+  "sophia": [
+    "dict-sophia"
+  ],
+  "φοβος θεου": [
+    "dict-phobos-theou"
+  ],
+  "phobos theou": [
+    "dict-phobos-theou"
+  ],
+  "takut akan allah": [
+    "dict-phobos-theou"
+  ],
+  "salomo": [
+    "dict-solomon",
+    "character:solomon"
+  ],
+  "shelomoh": [
+    "dict-solomon"
+  ],
+  "pengumpul": [
+    "dict-agur"
+  ],
+  "milik allah": [
+    "dict-lemuel"
+  ],
+  "ש או ל": [
+    "dict-sheol"
+  ],
+  "sheol": [
+    "dict-sheol"
+  ],
+  "dunia orang mati": [
+    "dict-sheol"
+  ],
+  "nemalah": [
+    "dict-ant"
+  ],
+  "parallel": [
+    "xref-001",
+    "xref-004",
+    "xref-010",
+    "xref-016",
+    "xref-021",
+    "xref-022",
+    "xref-032",
+    "xref-036",
+    "xref-040",
+    "xref-042",
+    "xref-047",
+    "xref-048",
+    "xref-050",
+    "xref-052",
+    "xref-056",
+    "xref-060",
+    "xref-062",
+    "xref-067",
+    "xref-068",
+    "xref-070"
+  ],
+  "amplification": [
+    "xref-002",
+    "xref-008",
+    "xref-011",
+    "xref-017",
+    "xref-020",
+    "xref-025",
+    "xref-041",
+    "xref-046",
+    "xref-061",
+    "xref-066"
+  ],
+  "thematic": [
+    "xref-003",
+    "xref-006",
+    "xref-007",
+    "xref-009",
+    "xref-012",
+    "xref-013",
+    "xref-018",
+    "xref-019",
+    "xref-023",
+    "xref-024",
+    "xref-027",
+    "xref-028",
+    "xref-029",
+    "xref-030",
+    "xref-031",
+    "xref-033",
+    "xref-035",
+    "xref-037",
+    "xref-039",
+    "xref-043",
+    "xref-045",
+    "xref-049",
+    "xref-051",
+    "xref-053",
+    "xref-055",
+    "xref-057",
+    "xref-059",
+    "xref-063",
+    "xref-065",
+    "xref-069"
+  ],
+  "quotation": [
+    "xref-005",
+    "xref-026"
+  ],
+  "fulfillment": [
+    "xref-014",
+    "xref-015"
+  ],
+  "contrast": [
+    "xref-034",
+    "xref-038",
+    "xref-044",
+    "xref-054",
+    "xref-058",
+    "xref-064"
+  ],
+  "matthew henry": [
+    "comm-henry-proverbs"
+  ],
+  "commentary on the whole bible proverbs": [
+    "comm-henry-proverbs"
+  ],
+  "carl friedrich keil franz delitzsch": [
+    "comm-keil-delitzsch-proverbs"
+  ],
+  "commentary on the old testament proverbs": [
+    "comm-keil-delitzsch-proverbs"
+  ],
+  "john gill": [
+    "comm-gill-proverbs"
+  ],
+  "exposition of the entire bible proverbs": [
+    "comm-gill-proverbs"
+  ],
+  "charles h spurgeon": [
+    "comm-spurgeon-proverbs"
+  ],
+  "the treasury of david sermons on proverbs": [
+    "comm-spurgeon-proverbs"
+  ],
+  "albert barnes": [
+    "comm-barnes-proverbs"
+  ],
+  "notes on the bible proverbs": [
+    "comm-barnes-proverbs"
+  ],
+  "wisdom": [
+    "faq-what-is-wisdom",
+    "faq-fear-of-the-lord",
+    "faq-why-proverbs-written",
+    "faq-how-to-read-wisdom-literature",
+    "faq-wisdom-vs-knowledge",
+    "faq-who-wrote-proverbs",
+    "faq-personified-wisdom",
+    "faq-wisdom-and-christ",
+    "apol-hard-verses",
+    "apol-proverbs-contradict",
+    "apol-wisdom-literature-genre",
+    "doctrine:fear-of-the-lord",
+    "doctrine:wisdom-from-god",
+    "wisdom-pattern:fear-foundation",
+    "wisdom-pattern:ask-for-wisdom",
+    "wisdom-pattern:christ-wisdom"
+  ],
+  "fear of god": [
+    "faq-what-is-wisdom",
+    "faq-fear-of-the-lord",
+    "doctrine:fear-of-the-lord",
+    "wisdom-pattern:fear-foundation",
+    "wisdom-pattern:vanity-check"
+  ],
+  "discipline": [
+    "faq-why-proverbs-written",
+    "doctrine:discipline-as-love",
+    "wisdom-pattern:discipline-love"
+  ],
+  "family": [
+    "faq-are-proverbs-promises",
+    "doctrine:discipline-as-love",
+    "wisdom-pattern:discipline-love",
+    "application:proverbs.01",
+    "application:proverbs.03",
+    "application:proverbs.04",
+    "application:proverbs.05",
+    "application:proverbs.13",
+    "application:proverbs.15",
+    "application:proverbs.22",
+    "application:proverbs.23",
+    "application:proverbs.31"
+  ],
+  "suffering": [
+    "faq-are-proverbs-promises"
+  ],
+  "decision making": [
+    "faq-wisdom-vs-knowledge",
+    "apol-use-proverbs-rightly",
+    "doctrine:providence-and-plans",
+    "doctrine:friendship-and-counsel",
+    "wisdom-pattern:situational-pair"
+  ],
+  "leadership": [
+    "faq-who-wrote-proverbs",
+    "application:proverbs.06",
+    "application:proverbs.08",
+    "application:proverbs.11",
+    "application:proverbs.14",
+    "application:proverbs.16",
+    "application:proverbs.20",
+    "application:proverbs.21",
+    "application:proverbs.24",
+    "application:proverbs.25",
+    "application:proverbs.28",
+    "application:proverbs.29",
+    "application:proverbs.31"
+  ],
+  "character": [
+    "faq-guard-your-heart",
+    "doctrine:integrity-and-justice",
+    "doctrine:heart-formation",
+    "application:proverbs.04",
+    "application:proverbs.07",
+    "application:proverbs.12",
+    "application:proverbs.14",
+    "application:proverbs.20",
+    "application:proverbs.26"
+  ],
+  "temptation": [
+    "faq-guard-your-heart",
+    "apol-women-in-proverbs",
+    "doctrine:sexual-faithfulness",
+    "doctrine:heart-formation",
+    "application:proverbs.23"
+  ],
+  "faith": [
+    "faq-wisdom-and-christ",
+    "apol-use-proverbs-rightly",
+    "doctrine:providence-and-plans",
+    "wisdom-pattern:jesus-kingdom-priority",
+    "application:proverbs.03",
+    "application:proverbs.19"
+  ],
+  "speech": [
+    "apol-proverbs-contradict",
+    "doctrine:speech-ethics",
+    "wisdom-pattern:situational-pair",
+    "wisdom-pattern:speech-power",
+    "application:proverbs.10",
+    "application:proverbs.15",
+    "application:proverbs.18",
+    "application:proverbs.26"
+  ],
+  "money": [
+    "apol-wealth-and-poverty",
+    "doctrine:integrity-and-justice",
+    "doctrine:generosity-and-stewardship",
+    "wisdom-pattern:jesus-kingdom-priority",
+    "wisdom-pattern:vanity-check"
+  ],
+  "justice": [
+    "apol-wealth-and-poverty",
+    "application:proverbs.21",
+    "application:proverbs.28",
+    "application:proverbs.29"
+  ],
+  "marriage": [
+    "apol-women-in-proverbs",
+    "doctrine:sexual-faithfulness"
+  ],
+  "ams": [
+    "book:proverbs"
+  ],
+  "prov": [
+    "book:proverbs"
+  ],
+  "proverbs": [
+    "book:proverbs",
+    "book:proverbs"
+  ],
+  "pr": [
+    "book:proverbs"
+  ],
+  "mzm": [
+    "book:psalms"
+  ],
+  "mazmur": [
+    "book:psalms"
+  ],
+  "ps": [
+    "book:psalms"
+  ],
+  "psalm": [
+    "book:psalms"
+  ],
+  "psalms": [
+    "book:psalms",
+    "book:psalms"
+  ],
+  "pkh": [
+    "book:ecclesiastes"
+  ],
+  "pengkhotbah": [
+    "book:ecclesiastes"
+  ],
+  "eccl": [
+    "book:ecclesiastes"
+  ],
+  "qoheleth": [
+    "book:ecclesiastes"
+  ],
+  "ecclesiastes": [
+    "book:ecclesiastes"
+  ],
+  "mat": [
+    "book:matthew"
+  ],
+  "matius": [
+    "book:matthew"
+  ],
+  "matt": [
+    "book:matthew"
+  ],
+  "matthew": [
+    "book:matthew",
+    "book:matthew"
+  ],
+  "mt": [
+    "book:matthew"
+  ],
+  "rm": [
+    "book:romans"
+  ],
+  "roma": [
+    "book:romans"
+  ],
+  "rom": [
+    "book:romans"
+  ],
+  "romans": [
+    "book:romans",
+    "book:romans"
+  ],
+  "1kor": [
+    "book:1corinthians"
+  ],
+  "1 kor": [
+    "book:1corinthians"
+  ],
+  "1 korintus": [
+    "book:1corinthians"
+  ],
+  "1cor": [
+    "book:1corinthians"
+  ],
+  "1 cor": [
+    "book:1corinthians"
+  ],
+  "1corinthians": [
+    "book:1corinthians"
+  ],
+  "2kor": [
+    "book:2corinthians"
+  ],
+  "2 kor": [
+    "book:2corinthians"
+  ],
+  "2 korintus": [
+    "book:2corinthians"
+  ],
+  "2cor": [
+    "book:2corinthians"
+  ],
+  "2 cor": [
+    "book:2corinthians"
+  ],
+  "2corinthians": [
+    "book:2corinthians"
+  ],
+  "gal": [
+    "book:galatians"
+  ],
+  "galatia": [
+    "book:galatians"
+  ],
+  "galatians": [
+    "book:galatians",
+    "book:galatians"
+  ],
+  "ef": [
+    "book:ephesians"
+  ],
+  "efesus": [
+    "book:ephesians"
+  ],
+  "eph": [
+    "book:ephesians"
+  ],
+  "ephesians": [
+    "book:ephesians",
+    "book:ephesians"
+  ],
+  "flp": [
+    "book:philippians"
+  ],
+  "filipi": [
+    "book:philippians"
+  ],
+  "phil": [
+    "book:philippians"
+  ],
+  "philippians": [
+    "book:philippians",
+    "book:philippians"
+  ],
+  "kol": [
+    "book:colossians"
+  ],
+  "kolose": [
+    "book:colossians"
+  ],
+  "col": [
+    "book:colossians"
+  ],
+  "colossians": [
+    "book:colossians",
+    "book:colossians"
+  ],
+  "2tes": [
+    "book:2thessalonians"
+  ],
+  "2 tes": [
+    "book:2thessalonians"
+  ],
+  "2 tesalonika": [
+    "book:2thessalonians"
+  ],
+  "2thess": [
+    "book:2thessalonians"
+  ],
+  "2 thess": [
+    "book:2thessalonians"
+  ],
+  "2thessalonians": [
+    "book:2thessalonians"
+  ],
+  "ibr": [
+    "book:hebrews"
+  ],
+  "ibrani": [
+    "book:hebrews"
+  ],
+  "heb": [
+    "book:hebrews"
+  ],
+  "hebrews": [
+    "book:hebrews",
+    "book:hebrews"
+  ],
+  "yak": [
+    "book:james"
+  ],
+  "yakobus": [
+    "book:james"
+  ],
+  "jas": [
+    "book:james"
+  ],
+  "james": [
+    "book:james",
+    "book:james"
+  ],
+  "jm": [
+    "book:james"
+  ],
+  "1ptr": [
+    "book:1peter"
+  ],
+  "1 pet": [
+    "book:1peter"
+  ],
+  "1 petrus": [
+    "book:1peter"
+  ],
+  "1pet": [
+    "book:1peter"
+  ],
+  "1 peter": [
+    "book:1peter"
+  ],
+  "1peter": [
+    "book:1peter"
+  ],
+  "hikmat dari allah": [
+    "doctrine:wisdom-from-god"
+  ],
+  "pemeliharaan dan rencana manusia": [
+    "doctrine:providence-and-plans"
+  ],
+  "didikan sebagai kasih": [
+    "doctrine:discipline-as-love",
+    "wisdom-pattern:discipline-love"
+  ],
+  "etika perkataan": [
+    "doctrine:speech-ethics"
+  ],
+  "integritas dan keadilan": [
+    "doctrine:integrity-and-justice"
+  ],
+  "kerja dan ketekunan": [
+    "doctrine:work-and-diligence"
+  ],
+  "work": [
+    "doctrine:work-and-diligence",
+    "wisdom-pattern:vanity-check",
+    "application:proverbs.06",
+    "application:proverbs.10",
+    "application:proverbs.12",
+    "application:proverbs.27"
+  ],
+  "persahabatan dan nasihat": [
+    "doctrine:friendship-and-counsel"
+  ],
+  "friendship": [
+    "doctrine:friendship-and-counsel",
+    "application:proverbs.17",
+    "application:proverbs.18",
+    "application:proverbs.27"
+  ],
+  "kesetiaan seksual": [
+    "doctrine:sexual-faithfulness"
+  ],
+  "kemurahan dan penatalayanan": [
+    "doctrine:generosity-and-stewardship"
+  ],
+  "love": [
+    "doctrine:generosity-and-stewardship",
+    "doctrine:enemy-love-and-forgiveness",
+    "wisdom-pattern:enemy-kindness"
+  ],
+  "pembentukan hati": [
+    "doctrine:heart-formation"
+  ],
+  "kasih kepada musuh dan pengampunan": [
+    "doctrine:enemy-love-and-forgiveness"
+  ],
+  "forgiveness": [
+    "doctrine:enemy-love-and-forgiveness",
+    "wisdom-pattern:enemy-kindness",
+    "application:proverbs.05",
+    "application:proverbs.24",
+    "application:proverbs.25"
+  ],
+  "peace": [
+    "doctrine:enemy-love-and-forgiveness",
+    "application:proverbs.17"
+  ],
+  "king": [
+    "character:solomon",
+    "character:lemuel"
+  ],
+  "wisdom teacher": [
+    "character:solomon",
+    "character:agur",
+    "character:lemuel-mother"
+  ],
+  "attributed author": [
+    "character:solomon"
+  ],
+  "agur bin yake": [
+    "character:agur"
+  ],
+  "petitioner": [
+    "character:agur"
+  ],
+  "son": [
+    "character:lemuel"
+  ],
+  "wisdom recipient": [
+    "character:lemuel"
+  ],
+  "ibu lemuel": [
+    "character:lemuel-mother"
+  ],
+  "mother": [
+    "character:lemuel-mother"
+  ],
+  "royal counselor": [
+    "character:lemuel-mother"
+  ],
+  "hikmat personifikasi": [
+    "character:woman-wisdom"
+  ],
+  "literary figure": [
+    "character:woman-wisdom",
+    "character:woman-folly",
+    "character:strange-woman",
+    "character:noble-wife"
+  ],
+  "teacher": [
+    "character:woman-wisdom"
+  ],
+  "creator companion": [
+    "character:woman-wisdom"
+  ],
+  "kebodohan personifikasi": [
+    "character:woman-folly"
+  ],
+  "tempter": [
+    "character:woman-folly",
+    "character:strange-woman"
+  ],
+  "perempuan asing penggoda": [
+    "character:strange-woman"
+  ],
+  "istri yang cakap": [
+    "character:noble-wife"
+  ],
+  "exemplar": [
+    "character:noble-wife"
+  ],
+  "economic agent": [
+    "character:noble-wife"
+  ],
+  "pegawai hizkia": [
+    "character:hezekiah-men"
+  ],
+  "scribes": [
+    "character:hezekiah-men"
+  ],
+  "editors": [
+    "character:hezekiah-men"
+  ],
+  "transmitters": [
+    "character:hezekiah-men"
+  ],
+  "early monarchy": [
+    "timeline:solomon-wisdom-era"
+  ],
+  "era hikmat salomo": [
+    "timeline:solomon-wisdom-era"
+  ],
+  "late monarchy": [
+    "timeline:hezekiah-collection"
+  ],
+  "koleksi pegawai hizkia": [
+    "timeline:hezekiah-collection"
+  ],
+  "wisdom appendix": [
+    "timeline:agur-oracle",
+    "timeline:lemuel-oracle",
+    "timeline:noble-wife-poem"
+  ],
+  "perkataan agur": [
+    "timeline:agur-oracle"
+  ],
+  "perkataan lemuel": [
+    "timeline:lemuel-oracle"
+  ],
+  "puisi istri yang cakap": [
+    "timeline:noble-wife-poem"
+  ],
+  "instructional prologues": [
+    "timeline:wisdom-personification"
+  ],
+  "personifikasi hikmat dan kebodohan": [
+    "timeline:wisdom-personification"
+  ],
+  "early church": [
+    "timeline:nt-reception"
+  ],
+  "resepsi perjanjian baru": [
+    "timeline:nt-reception"
+  ],
+  "jalan jalur": [
+    "symbol:path"
+  ],
+  "arah hidup": [
+    "symbol:path"
+  ],
+  "pilihan moral": [
+    "symbol:path"
+  ],
+  "pusat kehendak": [
+    "symbol:heart"
+  ],
+  "sumber kehidupan": [
+    "symbol:heart",
+    "symbol:fountain"
+  ],
+  "lidah mulut": [
+    "symbol:tongue"
+  ],
+  "kuasa perkataan": [
+    "symbol:tongue"
+  ],
+  "berkat atau kutuk": [
+    "symbol:tongue"
+  ],
+  "pohon kehidupan": [
+    "symbol:tree-of-life"
+  ],
+  "buah hikmat": [
+    "symbol:tree-of-life"
+  ],
+  "penyembuhan komunitas": [
+    "symbol:tree-of-life"
+  ],
+  "keamanan": [
+    "symbol:house"
+  ],
+  "bangunan karakter keluarga": [
+    "symbol:house"
+  ],
+  "rumah kebodohan": [
+    "symbol:house-folly"
+  ],
+  "undangan maut": [
+    "symbol:house-folly"
+  ],
+  "kesenangan palsu": [
+    "symbol:house-folly"
+  ],
+  "emas dan perak": [
+    "symbol:gold-silver"
+  ],
+  "nilai yang diuji": [
+    "symbol:gold-silver"
+  ],
+  "hikmat lebih berharga": [
+    "symbol:gold-silver"
+  ],
+  "timbangan": [
+    "symbol:scales"
+  ],
+  "keadilan ekonomi": [
+    "symbol:scales"
+  ],
+  "pelita terang": [
+    "symbol:lamp"
+  ],
+  "petunjuk tuhan": [
+    "symbol:lamp"
+  ],
+  "kesadaran nurani": [
+    "symbol:lamp"
+  ],
+  "kegelapan": [
+    "symbol:darkness"
+  ],
+  "jalan orang fasik": [
+    "symbol:darkness"
+  ],
+  "persiapan": [
+    "symbol:ant"
+  ],
+  "akibat dosa": [
+    "symbol:snare"
+  ],
+  "takut manusia": [
+    "symbol:snare"
+  ],
+  "mata air": [
+    "symbol:fountain"
+  ],
+  "perkataan menyembuhkan": [
+    "symbol:fountain"
+  ],
+  "mahkota": [
+    "symbol:crown"
+  ],
+  "kehormatan hikmat": [
+    "symbol:crown"
+  ],
+  "buah usia gray hair": [
+    "symbol:crown"
+  ],
+  "madu": [
+    "symbol:honey"
+  ],
+  "manisnya hikmat": [
+    "symbol:honey"
+  ],
+  "batas kenikmatan": [
+    "symbol:honey"
+  ],
+  "perlindungan tuhan": [
+    "symbol:shield"
+  ],
+  "keamanan orang jujur": [
+    "symbol:shield"
+  ],
+  "pasangan situasional": [
+    "wisdom-pattern:situational-pair"
+  ],
+  "fondasi takut akan tuhan": [
+    "wisdom-pattern:fear-foundation"
+  ],
+  "meminta hikmat": [
+    "wisdom-pattern:ask-for-wisdom"
+  ],
+  "prayer": [
+    "wisdom-pattern:ask-for-wisdom",
+    "application:proverbs.01",
+    "application:proverbs.02",
+    "application:proverbs.07",
+    "application:proverbs.09",
+    "application:proverbs.16",
+    "application:proverbs.30"
+  ],
+  "kuasa lidah": [
+    "wisdom-pattern:speech-power"
+  ],
+  "prioritas kerajaan": [
+    "wisdom-pattern:jesus-kingdom-priority"
+  ],
+  "kebaikan kepada musuh": [
+    "wisdom-pattern:enemy-kindness"
+  ],
+  "cek kesia siaan": [
+    "wisdom-pattern:vanity-check"
+  ],
+  "kristus sebagai hikmat allah": [
+    "wisdom-pattern:christ-wisdom"
+  ],
+  "takut akan tuhan membentuk pilihan yang bijaksana di tengah banyak suara": [
+    "application:proverbs.01"
+  ],
+  "ministry": [
+    "application:proverbs.01",
+    "application:proverbs.08",
+    "application:proverbs.09",
+    "application:proverbs.31"
+  ],
+  "allah mengaruniakan hikmat kepada orang yang tekun mencari dan bersedia dibentuk": [
+    "application:proverbs.02"
+  ],
+  "decision": [
+    "application:proverbs.02",
+    "application:proverbs.16"
+  ],
+  "kepercayaan penuh kepada tuhan dinyatakan melalui ketaatan kerendahan hati dan kasih kepada sesama": [
+    "application:proverbs.03"
+  ],
+  "finance": [
+    "application:proverbs.03",
+    "application:proverbs.11",
+    "application:proverbs.13",
+    "application:proverbs.19",
+    "application:proverbs.22",
+    "application:proverbs.30"
+  ],
+  "menjaga pusat batin menolong seluruh hidup tetap berada di jalan terang": [
+    "application:proverbs.04"
+  ],
+  "hikmat menjaga kesetiaan pernikahan dan menyingkap mahalnya kenikmatan yang menipu": [
+    "application:proverbs.05"
+  ],
+  "hikmat menata tanggung jawab kerja perkataan relasi dan kemurnian dengan kewaspadaan": [
+    "application:proverbs.06"
+  ],
+  "firman yang disimpan dalam hati memberi kewaspadaan terhadap rayuan yang menuju kehancuran": [
+    "application:proverbs.07"
+  ],
+  "hikmat allah berseru terbuka lebih berharga daripada kekayaan dan selaras dengan tatanan ciptaan": [
+    "application:proverbs.08"
+  ],
+  "memilih undangan hikmat yang berakar pada takut akan tuhan": [
+    "application:proverbs.09"
+  ],
+  "buah kebenaran terlihat dalam kerja perkataan dan jalan hidup": [
+    "application:proverbs.10"
+  ],
+  "ketulusan kemurahan hati dan kerendahan hati menuntun pada kehidupan": [
+    "application:proverbs.11"
+  ],
+  "kerendahan hati menerima didikan dan kesetiaan menjalankan kebenaran": [
+    "application:proverbs.12"
+  ],
+  "didikan yang penuh kasih harapan yang terarah dan pergaulan yang membentuk": [
+    "application:proverbs.13"
+  ],
+  "hikmat membangun rumah melalui takut akan tuhan belas kasih dan pertimbangan": [
+    "application:proverbs.14"
+  ],
+  "lidah yang lembut hati yang dapat diajar dan hidup yang terbuka di hadapan allah": [
+    "application:proverbs.15"
+  ],
+  "merencanakan dengan tekun sambil tunduk pada kedaulatan dan penilaian tuhan": [
+    "application:proverbs.16"
+  ],
+  "memilih damai kesetiaan dan hati yang teruji di atas kemewahan serta pertengkaran": [
+    "application:proverbs.17"
+  ],
+  "menggunakan perkataan untuk memberi hidup dan membangun relasi yang setia": [
+    "application:proverbs.18"
+  ],
+  "menyerahkan rencana kepada kedaulatan tuhan sambil hidup jujur rajin dan terbuka pada didikan": [
+    "application:proverbs.19"
+  ],
+  "menjalani kehidupan yang jujur rajin sabar dan terkendali di hadapan tuhan": [
+    "application:proverbs.20"
+  ],
+  "mengutamakan keadilan kebenaran dan belas kasih sebagai ibadah yang berkenan kepada tuhan": [
+    "application:proverbs.21"
+  ],
+  "mewariskan takut akan tuhan melalui teladan didikan keadilan dan kebiasaan yang bijaksana": [
+    "application:proverbs.22"
+  ],
+  "menjaga keinginan pergaulan ucapan dan kesenangan agar hati tetap tertuju pada hikmat": [
+    "application:proverbs.23"
+  ],
+  "menolak iri terhadap kejahatan membangun dengan hikmat dan bangkit kembali dalam kebenaran": [
+    "application:proverbs.24"
+  ],
+  "kehormatan sejati tumbuh dari sikap rendah hati kata yang tepat dan menahan diri bukan dari memamerkan diri di hadapan orang besar": [
+    "application:proverbs.25"
+  ],
+  "kebodohan kemalasan dan fitnah menuntut respons hikmat bukan ikut ikutan bukan juga pembiaran yang naif": [
+    "application:proverbs.26"
+  ],
+  "sahabat sejati menajamkan karakter berkata jujur karena kasih dan menolong kita hidup waspada terhadap hari esok": [
+    "application:proverbs.27"
+  ],
+  "integritas memberi keberanian seperti singa tipu daya dan penindasan membuat hidup penuh ketakutan dan goyah": [
+    "application:proverbs.28"
+  ],
+  "ketakutan pada opini manusia menjadi perangkap kepercayaan kepada tuhan menjadi perlindungan dan menuntun kepemimpinan yang adil": [
+    "application:proverbs.29"
+  ],
+  "pengakuan keterbatasan agur dan kemurnian firman allah menuntun kita kepada ketergantungan bukan keangkuhan intelektual": [
+    "application:proverbs.30"
+  ],
+  "humility": [
+    "application:proverbs.30"
+  ],
+  "kepemimpinan yang adil dan hidup yang cakap menemukan mahkotanya dalam takut akan tuhan bukan sekadar penampilan atau tipuan daya tarik": [
+    "application:proverbs.31"
+  ]
+}

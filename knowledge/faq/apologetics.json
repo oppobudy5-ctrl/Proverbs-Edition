@@ -1,0 +1,50 @@
+{
+  "version": "1.0.0",
+  "language": "id",
+  "source": "Apologetika Bible Time (kurasi editorial, nada pastoral dan reflektif).",
+  "license": "editorial-cc-by-nc",
+  "entries": [
+    {
+      "id": "apol-hard-verses",
+      "question": "Mengapa ada ayat Amsal yang sulit dipahami atau tampak keras?",
+      "answer": "Amsal ditulis dalam budaya, bahasa, dan bentuk sastra kuno. Sebagian gambaran (misalnya ganjaran atau bahasa 'perempuan asing') memerlukan pemahaman konteks historis dan genre. Ayat yang sulit sebaiknya dibaca dalam konteks pasal, dibandingkan dengan bagian Alkitab lain, dan ditafsir dengan bantuan hikmat komunitas serta rujukan tepercaya, bukan diambil sepotong-sepotong.",
+      "references": ["Amsal 5:3-5", "Amsal 26:4-5"],
+      "relatedTopics": ["wisdom"]
+    },
+    {
+      "id": "apol-proverbs-contradict",
+      "question": "Bukankah Amsal 26:4 dan 26:5 saling bertentangan?",
+      "answer": "Kedua ayat sengaja diletakkan berdampingan untuk menunjukkan bahwa hikmat bersifat situasional. Kadang orang bodoh tidak perlu dijawab menurut kebodohannya; kadang perlu dijawab agar ia tidak merasa benar sendiri. Amsal mengajar kita membedakan kapan setiap prinsip berlaku—itulah inti hikmat praktis.",
+      "references": ["Amsal 26:4-5"],
+      "relatedTopics": ["wisdom", "speech"]
+    },
+    {
+      "id": "apol-wisdom-literature-genre",
+      "question": "Bagaimana memahami sastra hikmat secara sehat?",
+      "answer": "Sastra hikmat menyajikan pengamatan tentang bagaimana hidup umumnya berjalan menurut tatanan Allah. Ia bukan hukum atau nubuat, melainkan bimbingan untuk pertimbangan bijak. Membacanya dengan sehat berarti menerima prinsip umumnya, menyadari pengecualian yang diakui Alkitab sendiri (Ayub, Pengkhotbah), dan menerapkannya dengan kerendahan hati.",
+      "references": ["Amsal 1:2-6"],
+      "relatedTopics": ["wisdom"]
+    },
+    {
+      "id": "apol-use-proverbs-rightly",
+      "question": "Bagaimana menggunakan Amsal dengan benar tanpa menjadikannya rumus?",
+      "answer": "Amsal bukan mesin sebab-akibat yang menjamin hasil. Gunakan amsal untuk membentuk watak dan pertimbangan, bukan untuk memanipulasi Allah agar memberi hasil tertentu. Hikmat sejati berjalan bersama iman, kesabaran, dan penyerahan pada kedaulatan Allah, terutama ketika hidup tidak berjalan sesuai harapan.",
+      "references": ["Amsal 16:9", "Amsal 19:21"],
+      "relatedTopics": ["faith", "decision_making"]
+    },
+    {
+      "id": "apol-wealth-and-poverty",
+      "question": "Apakah Amsal mengajarkan bahwa orang benar pasti kaya dan orang miskin pasti berdosa?",
+      "answer": "Tidak. Amsal memang menghubungkan kerajinan dan integritas dengan berkat secara umum, tetapi juga mengakui kemiskinan akibat ketidakadilan dan menyerukan kemurahan bagi yang lemah. Kekayaan tidak selalu tanda perkenan, dan kemiskinan tidak selalu tanda dosa; keduanya harus dilihat dengan keadilan dan belas kasihan.",
+      "references": ["Amsal 13:23", "Amsal 22:2", "Amsal 30:8-9"],
+      "relatedTopics": ["money", "justice"]
+    },
+    {
+      "id": "apol-women-in-proverbs",
+      "question": "Mengapa Amsal sering berbicara tentang 'perempuan asing' — apakah ini merendahkan perempuan?",
+      "answer": "Kitab ini awalnya dibingkai sebagai nasihat seorang ayah kepada anak laki-laki, sehingga godaan digambarkan lewat sosok 'perempuan asing' (di luar ikatan perjanjian). Ini bukan penilaian terhadap perempuan secara umum. Amsal justru memuncak pada pujian bagi 'perempuan yang cakap' (pasal 31) dan mempersonifikasikan Hikmat sebagai perempuan yang mulia. Prinsip moralnya berlaku untuk semua orang: jauhi godaan dan hormati martabat sesama.",
+      "references": ["Amsal 5:1-6", "Amsal 31:10-31"],
+      "relatedTopics": ["temptation", "marriage"]
+    }
+  ]
+}

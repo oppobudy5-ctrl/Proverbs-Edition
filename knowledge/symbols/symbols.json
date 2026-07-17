@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "language": "id",
+  "source": "Kurasi editorial Bible Time — simbol dan metafora Amsal.",
+  "symbols": [
+    { "id": "symbol:path", "name": "Jalan / jalur", "meanings": ["arah hidup", "pilihan moral"], "contrasts": ["symbol:snare"], "references": ["ref:proverbs.4.18-19", "ref:proverbs.14.12"], "topics": ["decision_making", "character"], "confidence": 0.95 },
+    { "id": "symbol:heart", "name": "Hati", "meanings": ["pusat kehendak", "sumber kehidupan"], "contrasts": [], "references": ["ref:proverbs.4.23", "ref:proverbs.23.26"], "topics": ["character"], "confidence": 0.95 },
+    { "id": "symbol:tongue", "name": "Lidah / mulut", "meanings": ["kuasa perkataan", "berkat atau kutuk"], "contrasts": [], "references": ["ref:proverbs.18.21", "ref:proverbs.15.1"], "topics": ["speech"], "confidence": 0.95 },
+    { "id": "symbol:tree-of-life", "name": "Pohon kehidupan", "meanings": ["buah hikmat", "penyembuhan komunitas"], "contrasts": [], "references": ["ref:proverbs.3.18", "ref:proverbs.11.30", "ref:proverbs.15.4"], "topics": ["wisdom", "speech"], "confidence": 0.9 },
+    { "id": "symbol:house", "name": "Rumah", "meanings": ["keamanan", "bangunan karakter/keluarga"], "contrasts": ["symbol:house-folly"], "references": ["ref:proverbs.9.1", "ref:proverbs.14.1", "ref:proverbs.24.3-4"], "topics": ["family", "wisdom"], "confidence": 0.9 },
+    { "id": "symbol:house-folly", "name": "Rumah kebodohan", "meanings": ["undangan maut", "kesenangan palsu"], "contrasts": ["symbol:house"], "references": ["ref:proverbs.9.13-18"], "topics": ["temptation"], "confidence": 0.88 },
+    { "id": "symbol:gold-silver", "name": "Emas dan perak", "meanings": ["nilai yang diuji", "hikmat lebih berharga"], "contrasts": [], "references": ["ref:proverbs.3.13-15", "ref:proverbs.8.10-11", "ref:proverbs.16.16"], "topics": ["wisdom", "money"], "confidence": 0.92 },
+    { "id": "symbol:scales", "name": "Timbangan", "meanings": ["keadilan ekonomi", "integritas"], "contrasts": [], "references": ["ref:proverbs.11.1", "ref:proverbs.16.11", "ref:proverbs.20.23"], "topics": ["money", "character"], "confidence": 0.9 },
+    { "id": "symbol:lamp", "name": "Pelita / terang", "meanings": ["petunjuk Tuhan", "kesadaran nurani"], "contrasts": ["symbol:darkness"], "references": ["ref:proverbs.6.23", "ref:proverbs.20.27"], "topics": ["wisdom", "discipline"], "confidence": 0.88 },
+    { "id": "symbol:darkness", "name": "Kegelapan", "meanings": ["kebodohan", "jalan orang fasik"], "contrasts": ["symbol:lamp", "symbol:path"], "references": ["ref:proverbs.4.19"], "topics": ["character"], "confidence": 0.88 },
+    { "id": "symbol:ant", "name": "Semut", "meanings": ["ketekunan", "persiapan"], "contrasts": [], "references": ["ref:proverbs.6.6-8"], "topics": ["work"], "confidence": 0.9 },
+    { "id": "symbol:snare", "name": "Jerat", "meanings": ["godaan", "akibat dosa", "takut manusia"], "contrasts": ["symbol:path"], "references": ["ref:proverbs.1.17", "ref:proverbs.29.25"], "topics": ["temptation", "fear_of_god"], "confidence": 0.9 },
+    { "id": "symbol:fountain", "name": "Mata air", "meanings": ["sumber kehidupan", "perkataan menyembuhkan"], "contrasts": [], "references": ["ref:proverbs.10.11", "ref:proverbs.13.14", "ref:proverbs.18.4"], "topics": ["speech", "wisdom"], "confidence": 0.88 },
+    { "id": "symbol:crown", "name": "Mahkota", "meanings": ["kehormatan hikmat", "buah usia/gray hair"], "contrasts": [], "references": ["ref:proverbs.4.9", "ref:proverbs.16.31"], "topics": ["wisdom", "character"], "confidence": 0.85 },
+    { "id": "symbol:honey", "name": "Madu", "meanings": ["manisnya hikmat", "batas kenikmatan"], "contrasts": [], "references": ["ref:proverbs.24.13-14", "ref:proverbs.25.16"], "topics": ["wisdom", "temptation"], "confidence": 0.85 },
+    { "id": "symbol:shield", "name": "Perisai", "meanings": ["perlindungan Tuhan", "keamanan orang jujur"], "contrasts": [], "references": ["ref:proverbs.2.7", "ref:proverbs.30.5"], "topics": ["faith", "fear_of_god"], "confidence": 0.88 }
+  ]
+}

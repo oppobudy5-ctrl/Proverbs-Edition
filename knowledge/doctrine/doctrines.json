@@ -1,0 +1,139 @@
+{
+  "version": "1.0.0",
+  "language": "id",
+  "source": "Kurasi editorial Bible Time — doktrin berakar Amsal dengan batas interpretasi.",
+  "doctrines": [
+    {
+      "id": "doctrine:fear-of-the-lord",
+      "name": "Takut akan TUHAN",
+      "summary": "Takut akan TUHAN adalah fondasi hikmat, pengetahuan, dan hidup yang benar.",
+      "supportingRefs": ["ref:proverbs.1.7", "ref:proverbs.9.10", "ref:proverbs.14.26", "ref:psalms.111.10"],
+      "contrastingRefs": ["ref:proverbs.29.25"],
+      "boundaries": ["Bukan teror irasional, melainkan hormat dan ketaatan yang hidup.", "Tidak digantikan oleh moralitas sekuler semata."],
+      "relatedTopics": ["fear_of_god", "wisdom"],
+      "interpretiveNotes": ["Tradisi hikmat menekankan awal hikmat; PB menghubungkan takut Tuhan dengan hidup dalam Kristus."],
+      "confidence": 0.95
+    },
+    {
+      "id": "doctrine:wisdom-from-god",
+      "name": "Hikmat dari Allah",
+      "summary": "Hikmat sejati adalah anugerah Allah yang dicari, diterima, dan dihidupi.",
+      "supportingRefs": ["ref:proverbs.2.6", "ref:proverbs.8.1-36", "ref:james.1.5", "ref:1corinthians.1.24"],
+      "contrastingRefs": ["ref:proverbs.14.12"],
+      "boundaries": ["Hikmat tidak otomatis dari kecerdasan dunia.", "Personifikasi Hikmat tidak harus dipaksa sebagai kristologi penuh tanpa catatan interpretasi."],
+      "relatedTopics": ["wisdom"],
+      "interpretiveNotes": ["Beberapa tradisi membaca Amsal 8 kristologis; yang lain menekankan personifikasi sastra."],
+      "confidence": 0.9
+    },
+    {
+      "id": "doctrine:providence-and-plans",
+      "name": "Pemeliharaan dan rencana manusia",
+      "summary": "Manusia merancang, tetapi TUHAN menetapkan langkah dan hasil akhir.",
+      "supportingRefs": ["ref:proverbs.16.9", "ref:proverbs.19.21", "ref:proverbs.21.30", "ref:romans.8.28"],
+      "contrastingRefs": [],
+      "boundaries": ["Bukan fatalisme yang meniadakan tanggung jawab.", "Bukan jaminan bahwa setiap keinginan orang percaya selalu terkabul."],
+      "relatedTopics": ["faith", "decision_making"],
+      "interpretiveNotes": ["Tekankan kerjasama tanggung jawab manusia dan kedaulatan Allah."],
+      "confidence": 0.92
+    },
+    {
+      "id": "doctrine:discipline-as-love",
+      "name": "Didikan sebagai kasih",
+      "summary": "Didikan Tuhan dan orang tua yang benar adalah tanda kasih, bukan penolakan.",
+      "supportingRefs": ["ref:proverbs.3.11-12", "ref:proverbs.13.24", "ref:hebrews.12.5-6"],
+      "contrastingRefs": [],
+      "boundaries": ["Tidak membenarkan kekerasan atau pelecehan.", "Konteks budaya kuno harus ditafsirkan dengan hikmat pastoral modern."],
+      "relatedTopics": ["discipline", "family"],
+      "interpretiveNotes": ["Ibrani mengutip Amsal untuk kerangka didikan Bapa."],
+      "confidence": 0.9
+    },
+    {
+      "id": "doctrine:speech-ethics",
+      "name": "Etika perkataan",
+      "summary": "Lidah membentuk kehidupan: dapat membangun atau merusak komunitas.",
+      "supportingRefs": ["ref:proverbs.10.19", "ref:proverbs.15.1", "ref:proverbs.18.21", "ref:james.3.5-10", "ref:ephesians.4.29"],
+      "contrastingRefs": [],
+      "boundaries": ["Kebenaran tanpa kasih tetap berbahaya.", "Keheningan bukan selalu hikmat jika dibutuhkan kesaksian."],
+      "relatedTopics": ["speech"],
+      "interpretiveNotes": [],
+      "confidence": 0.93
+    },
+    {
+      "id": "doctrine:integrity-and-justice",
+      "name": "Integritas dan keadilan",
+      "summary": "Hidup benar meliputi kejujuran, keadilan sosial, dan keteguhan karakter.",
+      "supportingRefs": ["ref:proverbs.11.1", "ref:proverbs.21.3", "ref:proverbs.28.6"],
+      "contrastingRefs": ["ref:proverbs.17.23"],
+      "boundaries": ["Kebenaran ritual tanpa keadilan ditolak.", "Kaya atau miskin bukan ukuran otomatis kebenaran."],
+      "relatedTopics": ["character", "money"],
+      "interpretiveNotes": [],
+      "confidence": 0.9
+    },
+    {
+      "id": "doctrine:work-and-diligence",
+      "name": "Kerja dan ketekunan",
+      "summary": "Ketekunan dihormati; kemalasan membawa kekurangan; kerja adalah arena hikmat.",
+      "supportingRefs": ["ref:proverbs.6.6-11", "ref:proverbs.10.4", "ref:proverbs.14.23", "ref:2thessalonians.3.10"],
+      "contrastingRefs": [],
+      "boundaries": ["Bukan injil kemakmuran.", "Orang miskin tidak otomatis malas; konteks struktural tetap relevan."],
+      "relatedTopics": ["work"],
+      "interpretiveNotes": [],
+      "confidence": 0.88
+    },
+    {
+      "id": "doctrine:friendship-and-counsel",
+      "name": "Persahabatan dan nasihat",
+      "summary": "Sahabat setia dan nasihat banyak menajamkan hikmat keputusan.",
+      "supportingRefs": ["ref:proverbs.13.20", "ref:proverbs.15.22", "ref:proverbs.27.17", "ref:hebrews.10.24-25"],
+      "contrastingRefs": ["ref:proverbs.18.24"],
+      "boundaries": ["Jumlah teman tidak sama dengan kedalaman sahabat.", "Nasihat banyak tetap diuji dengan takut akan Tuhan."],
+      "relatedTopics": ["friendship", "decision_making"],
+      "interpretiveNotes": [],
+      "confidence": 0.9
+    },
+    {
+      "id": "doctrine:sexual-faithfulness",
+      "name": "Kesetiaan seksual",
+      "summary": "Hikmat melindungi dari godaan zina dan memelihara perjanjian pernikahan.",
+      "supportingRefs": ["ref:proverbs.5.15-23", "ref:proverbs.6.20-35", "ref:proverbs.7", "ref:1corinthians.6.18-20", "ref:hebrews.13.4"],
+      "contrastingRefs": [],
+      "boundaries": ["Bahasa metaforik Amsal 5–7 tidak boleh digeneralisasi untuk menyalahkan korban.", "Fokus pada kesetiaan dan kewaspadaan hati."],
+      "relatedTopics": ["temptation", "marriage"],
+      "interpretiveNotes": [],
+      "confidence": 0.9
+    },
+    {
+      "id": "doctrine:generosity-and-stewardship",
+      "name": "Kemurahan dan penatalayanan",
+      "summary": "Kemurahan memperkaya; menahan diri secara egois membawa kerugian moral.",
+      "supportingRefs": ["ref:proverbs.11.24-25", "ref:proverbs.19.17", "ref:proverbs.22.9", "ref:2corinthians.9.6-7"],
+      "contrastingRefs": [],
+      "boundaries": ["Bukan manipulasi pemberian demi berkat otomatis.", "Kemurahan mengalir dari keadilan dan belas kasih."],
+      "relatedTopics": ["money", "love"],
+      "interpretiveNotes": [],
+      "confidence": 0.88
+    },
+    {
+      "id": "doctrine:heart-formation",
+      "name": "Pembentukan hati",
+      "summary": "Hati adalah pusat kehidupan; menjaganya adalah tugas hikmat utama.",
+      "supportingRefs": ["ref:proverbs.4.23", "ref:proverbs.23.26", "ref:matthew.6.21", "ref:philippians.4.8"],
+      "contrastingRefs": [],
+      "boundaries": ["Transformasi hati bukan hanya teknik perilaku.", "Emosi saja bukan ukuran maturitas rohani."],
+      "relatedTopics": ["character", "temptation"],
+      "interpretiveNotes": [],
+      "confidence": 0.94
+    },
+    {
+      "id": "doctrine:enemy-love-and-forgiveness",
+      "name": "Kasih kepada musuh dan pengampunan",
+      "summary": "Memberi makan musuh dan menolak dendam adalah jalan hikmat yang dilanjutkan PB.",
+      "supportingRefs": ["ref:proverbs.25.21-22", "ref:romans.12.20", "ref:proverbs.24.17"],
+      "contrastingRefs": [],
+      "boundaries": ["Bukan meniadakan keadilan publik.", "Pengampunan pribadi tidak sama dengan membiarkan kekerasan berlanjut tanpa batas."],
+      "relatedTopics": ["forgiveness", "love", "peace"],
+      "interpretiveNotes": ["Roma 12 mengutip Amsal 25 secara langsung."],
+      "confidence": 0.92
+    }
+  ]
+}
