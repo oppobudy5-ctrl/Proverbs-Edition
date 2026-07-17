@@ -1,5 +1,29 @@
 # Changelog
 
+## Phase 006B.1 — Production Provider Activation
+
+### Perubahan
+- Startup menjalankan registry → runtime config → health check → activation,
+  lalu menyimpan status provider aktif.
+- `AIService.getProviderStatus()` menyediakan provider, model, mode, health,
+  alasan, latency, streaming, offline, timestamp, retry/fallback, token, dan
+  status environment.
+- Mock dibatasi ke Development/Test. Production yang kehilangan seluruh
+  provider beralih ke `Offline Canonical`, bukan silent mock.
+- Halaman `/ai-diagnostics` dan indikator di Pengaturan menampilkan status
+  aktivasi serta health dashboard tanpa mengekspos key atau prompt.
+- Debug trace diperluas dengan Provider, Model, Mode, Latency, Fallback,
+  Reason, Tokens, dan Streaming.
+- Tes aktivasi mencakup OpenAI, Gemini, Ollama, switch/refresh, Development,
+  Production, Offline, missing key, dan pertanyaan nyata tanpa sample text.
+- Dokumentasi: `docs/ai/PROVIDER_ACTIVATION.md`.
+
+### Batas perubahan
+Tidak mengubah Bible Knowledge Base, CIL, Biblical Reasoning Engine, dataset
+editorial, Prompt Builder, AI Reasoning, AI Validation, atau kontrak method AI
+yang sudah ada. Perubahan terbatas pada aktivasi provider, runtime config,
+health, diagnostics, dan penambahan status API.
+
 ## Phase 006B — Production AI Provider Integration
 
 ### Perubahan

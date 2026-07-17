@@ -49,6 +49,7 @@ export function providerCredentialStatus(providerId) {
 }
 
 export function publicAiConfig() {
+  const runtimeMode = readEnv("AI_RUNTIME_MODE", readEnv("NODE_ENV", "production")).toLowerCase();
   const providers = {};
   for (const id of ["mock", "openai", "gemini", "claude", "azure", "ollama"]) {
     const creds = providerCredentialStatus(id);
@@ -56,24 +57,42 @@ export function publicAiConfig() {
       id,
       configured: creds.configured,
       authentication: creds.authentication,
-      defaultModel: AI_CONFIG.models[id],
+      defaultModel: runtimeModel(id),
       proxyOnly: id !== "mock" && id !== "ollama",
     };
   }
   return {
-    defaultProvider: AI_CONFIG.defaultProvider,
-    failoverOrder: AI_CONFIG.failoverOrder,
-    streaming: AI_CONFIG.streaming,
-    timeoutMs: AI_CONFIG.timeoutMs,
-    models: AI_CONFIG.models,
+    defaultProvider: resolveProviderId(readEnv("AI_PROVIDER", AI_CONFIG.defaultProvider)),
+    failoverOrder: readEnv("AI_FAILOVER_ORDER", AI_CONFIG.failoverOrder.join(","))
+      .split(",")
+      .map((id) => resolveProviderId(id.trim())),
+    streaming: /^(1|true|yes|on)$/i.test(readEnv("AI_STREAMING", String(AI_CONFIG.streaming))),
+    timeoutMs: Number(readEnv("AI_TIMEOUT_MS", AI_CONFIG.timeoutMs)) || AI_CONFIG.timeoutMs,
+    runtimeMode,
+    environmentLoaded: true,
+    models: Object.fromEntries(
+      ["mock", "openai", "gemini", "claude", "azure", "ollama"]
+        .map((id) => [id, runtimeModel(id)]),
+    ),
     providers,
   };
+}
+
+function runtimeModel(id) {
+  const envNames = {
+    openai: "OPENAI_MODEL",
+    gemini: "GEMINI_MODEL",
+    claude: "ANTHROPIC_MODEL",
+    azure: "AZURE_OPENAI_DEPLOYMENT",
+    ollama: "OLLAMA_MODEL",
+  };
+  return envNames[id] ? readEnv(envNames[id], AI_CONFIG.models[id]) : AI_CONFIG.models[id];
 }
 
 export async function handleAiProxyRequest({ provider, method, body, signal }) {
   const id = resolveProviderId(provider);
   if (method === "GET") {
-    return healthFor(id);
+    return healthFor(id, signal);
   }
   if (method !== "POST") {
     return jsonResponse(405, { ok: false, message: "Method not allowed" });
@@ -108,7 +127,7 @@ export async function handleAiProxyRequest({ provider, method, body, signal }) {
   }
 }
 
-async function healthFor(id) {
+async function healthFor(id, signal) {
   const startedAt = Date.now();
   const creds = providerCredentialStatus(id);
   if (id === "mock") {
@@ -137,23 +156,109 @@ async function healthFor(id) {
       healthTimestamp: new Date().toISOString(),
     });
   }
-  return jsonResponse(200, {
-    ok: true,
-    provider: id,
-    model: AI_CONFIG.models[id],
+  try {
+    const probe = await probeProvider(id, runtimeModel(id), signal);
+    return jsonResponse(probe.ok ? 200 : (probe.httpStatus || 503), {
+      ok: probe.ok,
+      provider: id,
+      model: runtimeModel(id),
+      reachable: probe.reachable,
+      authentication: probe.authentication,
+      modelExists: probe.modelExists,
+      latencyMs: Date.now() - startedAt,
+      status: probe.status,
+      reason: probe.reason || null,
+      healthTimestamp: new Date().toISOString(),
+    });
+  } catch (error) {
+    return jsonResponse(503, {
+      ok: false,
+      provider: id,
+      model: runtimeModel(id),
+      reachable: false,
+      authentication: "unknown",
+      modelExists: false,
+      latencyMs: Date.now() - startedAt,
+      status: "unreachable",
+      reason: error?.name === "TimeoutError" ? "timeout" : "network_offline",
+      healthTimestamp: new Date().toISOString(),
+    });
+  }
+}
+
+async function probeProvider(id, model, signal) {
+  let url;
+  let headers = { Accept: "application/json" };
+  if (id === "openai") {
+    url = `https://api.openai.com/v1/models/${encodeURIComponent(model)}`;
+    headers.Authorization = `Bearer ${readEnv("OPENAI_API_KEY")}`;
+  } else if (id === "gemini") {
+    url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}?key=${encodeURIComponent(readEnv("GEMINI_API_KEY"))}`;
+  } else if (id === "claude") {
+    url = `https://api.anthropic.com/v1/models/${encodeURIComponent(model)}`;
+    headers["x-api-key"] = readEnv("ANTHROPIC_API_KEY");
+    headers["anthropic-version"] = "2023-06-01";
+  } else if (id === "azure") {
+    const endpoint = readEnv("AZURE_OPENAI_ENDPOINT").replace(/\/$/, "");
+    const version = readEnv("AZURE_OPENAI_API_VERSION", "2024-10-21");
+    url = `${endpoint}/openai/deployments?api-version=${encodeURIComponent(version)}`;
+    headers["api-key"] = readEnv("AZURE_OPENAI_KEY");
+  } else if (id === "ollama") {
+    url = new URL("/api/tags", readEnv("OLLAMA_BASE_URL", AI_CONFIG.endpoints.ollama)).toString();
+  } else {
+    return {
+      ok: false,
+      reachable: false,
+      authentication: "unknown",
+      modelExists: false,
+      status: "unsupported",
+      reason: "unsupported_provider",
+      httpStatus: 400,
+    };
+  }
+
+  const response = await fetch(url, { headers, signal });
+  const authentication = response.status === 401 || response.status === 403
+    ? "failed"
+    : response.ok ? (id === "ollama" ? "not_required" : "ok") : "unknown";
+  if (!response.ok) {
+    return {
+      ok: false,
+      reachable: true,
+      authentication,
+      modelExists: response.status !== 404,
+      status: authentication === "failed" ? "authentication_failed" : `http_${response.status}`,
+      reason: authentication === "failed" ? "authentication" : response.status === 404 ? "model_not_found" : "provider_unavailable",
+      httpStatus: response.status,
+    };
+  }
+
+  let modelExists = true;
+  if (id === "ollama") {
+    const data = await response.json().catch(() => ({}));
+    const models = (data.models || []).map((item) => item.name || item.model || "");
+    modelExists = models.some((name) => name === model || name.startsWith(`${model}:`));
+  } else if (id === "azure") {
+    const data = await response.json().catch(() => ({}));
+    const deployments = data.data || data.value || [];
+    modelExists = deployments.length === 0
+      || deployments.some((item) => item.id === model || item.name === model);
+  }
+  return {
+    ok: modelExists,
     reachable: true,
-    authentication: creds.authentication,
-    modelExists: true,
-    latencyMs: Date.now() - startedAt,
-    status: "healthy",
-    healthTimestamp: new Date().toISOString(),
-  });
+    authentication,
+    modelExists,
+    status: modelExists ? "healthy" : "model_missing",
+    reason: modelExists ? null : "model_not_found",
+    httpStatus: modelExists ? 200 : 404,
+  };
 }
 
 async function dispatchProvider(id, body, signal) {
   const messages = Array.isArray(body.messages) ? body.messages : [];
   const options = body.options || {};
-  const model = body.model || AI_CONFIG.models[id];
+  const model = body.model || runtimeModel(id);
   const temperature = Number.isFinite(options.temperature) ? options.temperature : AI_CONFIG.defaultTemperature;
   const maxTokens = Number.isFinite(options.maxTokens) ? options.maxTokens : AI_CONFIG.defaultMaxTokens;
 

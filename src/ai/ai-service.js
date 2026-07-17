@@ -25,6 +25,10 @@ import {
 } from "./search-prefs.js";
 import { isJournalAiConsentGranted } from "../../js/journal/consent.js";
 import { initCIL, canonicalContextGateway, getCILServices } from "./cil/index.js";
+import {
+  getRuntimeProviderStatus,
+  recordOfflineCanonical,
+} from "./providers/provider-runtime.js";
 
 export const AI_SERVICE_STATUS = Object.freeze({
   SUCCESS: "success",
@@ -35,6 +39,15 @@ export const AI_SERVICE_STATUS = Object.freeze({
 // Public entry point for every future AI-facing UI.
 // UI code must not import providers, prompt templates, retrieval, or stores.
 export const AIService = Object.freeze({
+  /**
+   * Runtime provider diagnostics. Refresh performs registry → health →
+   * activation; the default call is a side-effect-free status read.
+   */
+  async getProviderStatus(options = {}) {
+    if (options.refresh) return aiController.activate({ ...options, force: true });
+    return getRuntimeProviderStatus();
+  },
+
   async ask(question, options = {}) {
     return runCapability("ask", "biblical-reasoning-engine", async () => {
       requireText(question, "question");
@@ -519,6 +532,13 @@ function _wrapReviewOutput(reviewOutput) {
 }
 
 function wrapReasoningOutput(output) {
+  if (output.provider === "local" || output.reasoning_metadata?.canonical_only) {
+    recordOfflineCanonical(
+      output.validation?.status === "fallback"
+        ? "Production provider unavailable; canonical offline answer used."
+        : "Canonical offline answer used.",
+    );
+  }
   return {
     ...output,
     content: output.summary || "",

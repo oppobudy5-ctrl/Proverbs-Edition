@@ -18,8 +18,10 @@ assert.match(src, /export function initRouter\(/);
 assert.match(src, /export function buildPath\(/);
 assert.match(src, /export function parsePath\(/);
 assert.match(src, /\/lesson\//);
+assert.match(src, /\/ai-diagnostics/);
 assert.doesNotMatch(mainSrc, /go\("home"\)/, "boot tidak boleh memaksa home (deep link harus dihormati)");
 assert.match(vercel, /\/lesson\/:day/, "Vercel harus rewrite /lesson/:day ke index.html");
+assert.match(vercel, /\/ai-diagnostics/, "Vercel harus rewrite AI Diagnostics ke index.html");
 
 function buildPath(route, params = {}) {
   if (route === "day") {

@@ -5,6 +5,7 @@ import { handleAiProxyRequest, publicAiConfig } from "./ai-proxy.mjs";
 
 const ROOT = resolve(import.meta.dirname, "..");
 loadDotEnv(resolve(ROOT, ".env"));
+if (!process.env.AI_RUNTIME_MODE) process.env.AI_RUNTIME_MODE = "development";
 const PORT = Number(process.env.PORT) || 8080;
 const BIBLE_API = "https://mayicu.id/api/alkitab/v1/";
 

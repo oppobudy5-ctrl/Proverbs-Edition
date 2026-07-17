@@ -13,6 +13,21 @@ import { installSkipLink } from "./a11y.js";
 import { initOffline } from "./ui/offline.js";
 import { openSettingsPanel } from "./ui/settings-panel.js";
 import { evaluateAchievements } from "./achievement.js";
+import { AIService } from "../src/ai/ai-service.js";
+
+async function verifyProviderRuntime() {
+  try {
+    const status = await AIService.getProviderStatus({ refresh: true });
+    document.documentElement.dataset.aiMode = status.mode;
+    document.documentElement.dataset.aiProvider = status.provider || "local";
+    globalThis.dispatchEvent?.(new CustomEvent("bible-time:ai-provider-status", {
+      detail: status,
+    }));
+  } catch {
+    document.documentElement.dataset.aiMode = "offline-canonical";
+    document.documentElement.dataset.aiProvider = "local";
+  }
+}
 
 function wireSettingsButtons() {
   const open = (e) => { e.preventDefault(); openSettingsPanel(); };
@@ -47,6 +62,7 @@ function boot() {
   installSkipLink();
   injectFooterIcons();
   initOffline();
+  void verifyProviderRuntime();
   wireSettingsButtons();
   wireFooterNavigation();
   Bgm.init();

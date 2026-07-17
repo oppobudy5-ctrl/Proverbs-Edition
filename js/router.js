@@ -1,6 +1,6 @@
 // =============================================================================
 // router.js — SPA router dengan History API (PR-004).
-// Route: home | calendar | about | day | library | companion | planning.
+// Route: home | calendar | about | day | library | companion | planning | aiDiagnostics.
 // Public API tetap: go(route, params), initRouter().
 // =============================================================================
 import { $, $$ } from "./dom.js";
@@ -10,6 +10,7 @@ import { renderAbout } from "./ui/about.js";
 import { renderLibrary } from "./ui/library.js";
 import { renderBibleCompanion } from "./ui/bible-companion.js";
 import { renderPlanning } from "./ui/planning.js";
+import { renderAiDiagnostics } from "./ui/ai-diagnostics.js";
 import { runLeave } from "./lifecycle.js";
 import { announce } from "./a11y.js";
 import { planCount } from "./plan.js";
@@ -24,6 +25,7 @@ const ROUTE_META = Object.freeze({
   day: Object.freeze({ id: "day", path: "/lesson/:day", title: "Bacaan" }),
   companion: Object.freeze({ id: "companion", path: "/companion/:book/:chapter", title: "Bible Companion" }),
   planning: Object.freeze({ id: "planning", path: "/plans", title: "Rencana Belajar" }),
+  aiDiagnostics: Object.freeze({ id: "aiDiagnostics", path: "/ai-diagnostics", title: "AI Diagnostics" }),
 });
 
 const routes = {
@@ -34,6 +36,7 @@ const routes = {
   library: renderLibrary,
   companion: renderBibleCompanion,
   planning: renderPlanning,
+  aiDiagnostics: renderAiDiagnostics,
 };
 
 let initialized = false;
@@ -55,6 +58,7 @@ export function buildPath(route, params = {}) {
     return `/companion/${encodeURIComponent(book)}/${chapter}`;
   }
   if (id === "planning") return "/plans";
+  if (id === "aiDiagnostics") return "/ai-diagnostics";
   if (id === "home") return "/";
   return ROUTE_META[id]?.path || "/";
 }
@@ -77,6 +81,9 @@ export function parsePath(pathname = "/") {
   if (path === "/about" || path === "/profile") return { route: "about", params: {} };
   if (path === "/plans" || path === "/planning" || path === "/discipleship") {
     return { route: "planning", params: {} };
+  }
+  if (path === "/ai-diagnostics" || path === "/ai-status") {
+    return { route: "aiDiagnostics", params: {} };
   }
 
   const lesson = path.match(/^\/(?:lesson|day)\/(\d{1,2})$/i);
@@ -224,7 +231,7 @@ function updateDocumentTitle(route, params) {
 
 function restoreScroll(route, params) {
   // Scroll ke atas untuk halaman perjalanan utama.
-  if (route === "home" || route === "day" || route === "planning") {
+  if (route === "home" || route === "day" || route === "planning" || route === "aiDiagnostics") {
     if (params.resume) return; // day-runtime menangani scroll resume
     window.scrollTo({ top: 0, behavior: "smooth" });
   }

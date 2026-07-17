@@ -9,8 +9,10 @@ import {
 } from "../settings.js";
 import { THEMES, getTheme, setTheme } from "../theme.js";
 import { AISettings } from "../../src/ai/ai-settings.js";
+import { AIService } from "../../src/ai/ai-service.js";
 import { AI_PROVIDER_IDS } from "../../config/ai.config.js";
 import { ModelRegistry } from "../../src/ai/providers/model-registry.js";
+import { go } from "../router.js";
 
 let openEl = null;
 
@@ -121,9 +123,35 @@ export function openSettingsPanel() {
   renderModelPicker(ai.provider, ai.model);
 
   const providerOptions = AI_PROVIDER_IDS.map((id) => ({ id, label: id }));
+  const providerStatus = el("div", {
+    class: "reader-note",
+    role: "status",
+    "aria-live": "polite",
+  }, "Memuat status provider…");
+
+  async function refreshProviderStatus(force = false) {
+    try {
+      const status = await AIService.getProviderStatus(force ? { refresh: true } : {});
+      const provider = status.mode === "offline-canonical"
+        ? "Offline Canonical"
+        : status.mode === "development-mock"
+          ? "Development Mock"
+          : `${status.provider || "Unknown"}${status.model ? ` · ${status.model}` : ""}`;
+      providerStatus.replaceChildren(
+        el("strong", {}, provider),
+        el("p", { class: "sp-hint" },
+          `${status.healthy ? "Healthy" : "Unhealthy"} · ${status.mode} · ${status.reason || "Tanpa fallback"}`,
+        ),
+      );
+    } catch {
+      providerStatus.textContent = "Status provider tidak tersedia.";
+    }
+  }
+
   const aiSection = el("div", { class: "sp-section", "aria-label": "Pengaturan AI" },
     el("h3", { class: "sp-label" }, "AI Provider"),
     el("p", { class: "sp-hint" }, "Kunci API hanya disimpan di server. UI hanya memilih provider dan model."),
+    providerStatus,
     field("Provider", segmented({
       options: providerOptions,
       activeId: ai.provider,
@@ -132,6 +160,7 @@ export function openSettingsPanel() {
         const nextModel = ModelRegistry.defaultModel(id);
         ai = AISettings.update({ provider: id, model: nextModel });
         renderModelPicker(id, nextModel);
+        void refreshProviderStatus(true);
         announce(`Provider ${id}`);
       },
     })),
@@ -160,7 +189,16 @@ export function openSettingsPanel() {
         ai = AISettings.update({ temperature: Number(id) });
       },
     })),
+    el("button", {
+      type: "button",
+      class: "btn ghost",
+      onclick: () => {
+        close();
+        go("aiDiagnostics");
+      },
+    }, "Buka AI Diagnostics"),
   );
+  void refreshProviderStatus(false);
 
   const body = el("div", { class: "sp-body" },
     el("div", { class: "sp-row" },

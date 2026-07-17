@@ -1,6 +1,7 @@
 import { AI_CONFIG, AI_FAILOVER_ORDER, resolveProviderId } from "../../../config/ai.config.js";
 import { AI_ERROR_CODES, AILogger } from "../ai-utils.js";
 import { ModelRegistry } from "./model-registry.js";
+import { getRuntimeProviderStatus, isDevelopmentRuntime } from "./provider-runtime.js";
 
 /**
  * Provider selection + failover (Phase 006B).
@@ -15,11 +16,10 @@ import { ModelRegistry } from "./model-registry.js";
  */
 export function buildProviderChain(settings = {}, options = {}) {
   const offlineMode = Boolean(settings.offlineMode ?? AI_CONFIG.offlineMode);
-  if (offlineMode) {
-    return Object.freeze(["mock"]);
-  }
+  if (offlineMode) return Object.freeze([]);
 
   const preferred = resolveProviderId(settings.provider || AI_CONFIG.defaultProvider);
+  const development = options.development ?? isDevelopmentRuntime(options.runtimeConfig);
   const order = Array.isArray(options.failoverOrder) && options.failoverOrder.length
     ? options.failoverOrder
     : AI_FAILOVER_ORDER;
@@ -32,9 +32,9 @@ export function buildProviderChain(settings = {}, options = {}) {
 
   push(preferred);
   for (const id of order) push(id);
-  push("mock");
+  if (development) push("mock");
 
-  return Object.freeze(chain);
+  return Object.freeze(chain.filter((id) => development || id !== "mock"));
 }
 
 export function isFailoverWorthy(error) {
@@ -55,7 +55,16 @@ export function isFailoverWorthy(error) {
  * Optionally probes health and skips known-unhealthy adapters (except mock).
  */
 export async function selectProviders(controller, settings = {}, options = {}) {
-  const chain = buildProviderChain(settings, options);
+  const runtime = options.runtimeStatus || getRuntimeProviderStatus();
+  const development = options.development
+    ?? (runtime.mode === "development-mock" || isDevelopmentRuntime(options.runtimeConfig));
+  const activeProvider = runtime.provider && runtime.provider !== "local"
+    ? runtime.provider
+    : settings.provider;
+  const chain = buildProviderChain(
+    { ...settings, provider: activeProvider },
+    { ...options, development },
+  );
   const model = ModelRegistry.resolve(settings.provider || chain[0], settings.model);
   const selected = [];
   const healthCache = options.health || {};
@@ -84,7 +93,7 @@ export async function selectProviders(controller, settings = {}, options = {}) {
     }));
   }
 
-  if (!selected.length) {
+  if (!selected.length && development && !settings.offlineMode) {
     selected.push({
       provider: controller.getProvider("mock"),
       id: "mock",
@@ -95,6 +104,7 @@ export async function selectProviders(controller, settings = {}, options = {}) {
   AILogger.debug("provider chain", {
     preferred: settings.provider,
     offlineMode: Boolean(settings.offlineMode),
+    runtimeMode: runtime.mode,
     chain: selected.map((item) => item.id),
   });
 

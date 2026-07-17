@@ -10,7 +10,7 @@
    - CACHE_VERSION adalah sumber tunggal; bump ini saat app shell berubah.
    - CACHE_STATIC menyimpan shell + aset offline; cache lama dihapus di activate.
 */
-const CACHE_VERSION = "bibletime-v31-production-provider";
+const CACHE_VERSION = "bibletime-v32-provider-activation";
 const CACHE_STATIC = `static-${CACHE_VERSION}`;
 
 const APP_SHELL = [
@@ -87,6 +87,7 @@ const APP_SHELL = [
   "./js/ui/ai-lesson-assist.js",
   "./js/ui/bible-companion.js",
   "./js/ui/planning.js",
+  "./js/ui/ai-diagnostics.js",
   "./js/ui/journal-insights.js",
   "./js/ui/growth-timeline.js",
   "./js/ui/save-actions.js",
@@ -117,6 +118,7 @@ const APP_SHELL = [
   "./src/ai/planning/index.js",
   "./src/ai/providers/provider-base.js",
   "./src/ai/providers/provider-selector.js",
+  "./src/ai/providers/provider-runtime.js",
   "./src/ai/providers/model-registry.js",
   "./src/ai/providers/index.js",
   "./src/ai/providers/openai-provider.js",

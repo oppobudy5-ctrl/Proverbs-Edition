@@ -38,6 +38,7 @@ const { OllamaProvider } = await import("../src/ai/providers/ollama-provider.js"
 const { ClaudeProvider } = await import("../src/ai/providers/claude-provider.js");
 const { AzureOpenAIProvider } = await import("../src/ai/providers/azure-provider.js");
 const { AIController } = await import("../src/ai/ai-controller.js");
+const { AIService } = await import("../src/ai/ai-service.js");
 const { providerCredentialStatus, publicAiConfig, handleAiProxyRequest } = await import("./ai-proxy.mjs");
 
 // --- Registry & config ---
@@ -97,7 +98,7 @@ assert.ok("latencyMs" in mockHealth);
 console.log("PASS: provider adapters + health shape");
 
 // --- Selection / offline / failover chain ---
-assert.deepEqual(buildProviderChain({ offlineMode: true }), ["mock"]);
+assert.deepEqual(buildProviderChain({ offlineMode: true }), []);
 const chain = buildProviderChain({ provider: "openai" });
 assert.equal(chain[0], "openai");
 assert.equal(chain[chain.length - 1], "mock");
@@ -160,21 +161,22 @@ const response = await controller.execute("qa", {
 assert.equal(response.provider, "mock");
 assert.ok(response.content.length > 20);
 assert.ok(Array.isArray(response.metadata.failover));
-assert.ok(response.metadata.failover.length >= 1);
+const runtimeAfterFailover = await AIService.getProviderStatus();
+assert.equal(runtimeAfterFailover.mode, "development-mock");
+assert.ok(runtimeAfterFailover.fallbackCount >= 1);
+assert.match(runtimeAfterFailover.reason, /openai|gemini|ollama/i);
 console.log("PASS: provider failover → mock");
 
-// --- Offline mode forces mock ---
+// --- Offline mode returns canonical answer, never mock ---
 AISettings.update({ offlineMode: true, provider: "openai" });
-const offline = await controller.execute("summary", {
-  question: "Ringkas pasal ini",
+const offline = await AIService.ask("Ringkas pasal ini", {
   chapter: 1,
   day: 1,
   cache: false,
   persist: false,
-  settings: { offlineMode: true, provider: "openai", streaming: false },
 });
-assert.equal(offline.provider, "mock");
-assert.equal(offline.metadata.offlineMode, true);
+assert.equal(offline.provider, "local");
+assert.equal(offline.metadata.canonical_only, true);
 console.log("PASS: offline mode");
 
 // --- Streaming fallback (mock streams tokens) ---

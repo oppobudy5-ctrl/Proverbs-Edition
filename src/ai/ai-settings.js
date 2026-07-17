@@ -28,7 +28,12 @@ export const AISettings = {
     return sanitize({ ...DEFAULTS, ...stored });
   },
   update(patch = {}) {
-    const next = sanitize({ ...this.get(), ...patch });
+    const current = this.get();
+    const providerChanged = patch.provider && resolveProviderId(patch.provider) !== current.provider;
+    const normalizedPatch = providerChanged && !patch.model
+      ? { ...patch, model: defaultModelFor(patch.provider) }
+      : patch;
+    const next = sanitize({ ...current, ...normalizedPatch });
     try { localStorage.setItem(KEY, JSON.stringify(next)); } catch { /* storage may be unavailable */ }
     applyDebugMode(next.debugMode);
     globalThis.dispatchEvent?.(new CustomEvent("bible-time:ai-settings", { detail: next }));

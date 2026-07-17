@@ -9,7 +9,7 @@ AIService (unchanged API)
  ↓
 Biblical Reasoning Engine / AI Controller (Gateway)
  ↓
-Provider Selector (configured → healthy → mock)
+Provider Selector (configured → healthy → Offline Canonical)
  ↓
 Provider Adapter (OpenAI | Gemini | Claude | Azure | Ollama | Mock)
  ↓
@@ -91,7 +91,8 @@ Public endpoints (no secrets):
 
 1. Preferred / configured provider  
 2. Remaining providers in `AI_FAILOVER_ORDER`  
-3. `mock` (last resort)
+3. `mock` only in Development/Test
+4. Offline Canonical in Production when no provider is healthy
 
 Failover triggers: timeout, offline, 429 / rate limit, quota, 5xx, authentication / missing key.  
 Cancelled requests never fail over.  
@@ -109,7 +110,8 @@ Triggered when:
 Then:
 
 Reasoning Engine → Knowledge Bundle → Canonical Context → Offline Answer  
-(`provider: "local"` / `canonical_only`, or `mock` when the Gateway uses the mock adapter).
+(`provider: "local"` / `canonical_only`). Development/Test may explicitly use
+the mock adapter; Production never silently selects it.
 
 ## 8. Streaming
 

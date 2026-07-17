@@ -23,6 +23,11 @@ import { AzureOpenAIProvider } from "./providers/azure-provider.js";
 import { OllamaProvider } from "./providers/ollama-provider.js";
 import { isFailoverWorthy, selectProviders, probeProviderHealth } from "./providers/provider-selector.js";
 import { ModelRegistry } from "./providers/model-registry.js";
+import {
+  activateRuntimeProvider,
+  getRuntimeProviderStatus,
+  recordProviderExecution,
+} from "./providers/provider-runtime.js";
 import { canonicalContextGateway, initCIL } from "./cil/index.js";
 import { theologicalGuardrails } from "./cil/theological-guardrails.js";
 
@@ -84,6 +89,15 @@ export class AIController {
     const conversationId = payload.conversationId || createConversationId();
     const startedAt = performanceNow();
     let activeProviderId = settings.provider;
+
+    const runtimeBefore = getRuntimeProviderStatus();
+    await activateRuntimeProvider(this, {
+      settings,
+      force: runtimeBefore.mode === "initializing"
+        || runtimeBefore.configuredProvider !== settings.provider
+        || (settings.offlineMode && runtimeBefore.mode !== "offline-canonical")
+        || (!settings.offlineMode && runtimeBefore.mode === "offline-canonical"),
+    });
 
     AIEvents.emit(AI_EVENTS.STARTED, { requestId, intent, provider: activeProviderId, conversationId });
     AILogger.debug("request started", { requestId, intent, provider: activeProviderId });
@@ -161,6 +175,7 @@ export class AIController {
           });
           callbacks.onFinish?.(response);
           AIEvents.emit(AI_EVENTS.FINISHED, { requestId, response, cached: true });
+          recordProviderExecution(response);
           return response;
         }
       }
@@ -285,8 +300,25 @@ export class AIController {
         tokens: response.usage || null,
         fallback: failoverLog.length > 0,
       });
+      AIDebug.trace({
+        Provider: used.id,
+        Model: response.model,
+        Mode: getRuntimeProviderStatus().mode,
+        Reasoning: "Completed",
+        Gateway: "Success",
+        Validation: validation.status,
+        Renderer: "Ready",
+        Latency: `${response.metadata.durationMs}ms`,
+        Fallback: failoverLog.length > 0,
+        Reason: failoverLog.length
+          ? failoverLog.map((item) => `${item.provider}: ${item.reason}`).join("; ")
+          : "none",
+        Tokens: response.usage ? JSON.stringify(response.usage) : "n/a",
+        Streaming: Boolean(response.metadata.streamed),
+      });
       callbacks.onFinish?.(response);
       AIEvents.emit(AI_EVENTS.FINISHED, { requestId, response, cached: false });
+      recordProviderExecution(response);
       return response;
     } catch (error) {
       const aiError = toAIError(error);
@@ -323,6 +355,14 @@ export class AIController {
 
   async healthCheckAll() {
     return probeProviderHealth(this, this.listProviders().map((item) => item.id));
+  }
+
+  async activate(options = {}) {
+    return activateRuntimeProvider(this, options);
+  }
+
+  getProviderStatus() {
+    return getRuntimeProviderStatus();
   }
 
   async #runProvider(provider, prompt, settings, callbacks) {
