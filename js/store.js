@@ -8,6 +8,9 @@ import {
   DEFAULT_MAIN_VERSION, DEFAULT_SECONDARY_VERSION,
 } from "./versions.js";
 import {
+  VALIDATION_LIMITS,
+  isPlainObject,
+  isValidDateString,
   listKeys,
   readJSON,
   readValue,
@@ -32,7 +35,7 @@ export const Store = {
     return normalizeProgress(readJSON(STORAGE_KEY, DEFAULT_PROGRESS));
   },
   save(s) {
-    writeJSON(STORAGE_KEY, s);
+    writeJSON(STORAGE_KEY, normalizeProgress(s));
   },
   clear() {
     removeKey(STORAGE_KEY);
@@ -65,10 +68,10 @@ export const Store = {
 export const Bookmarks = {
   load() {
     const value = readJSON(BOOKMARKS_KEY, []);
-    return Array.isArray(value) ? value : [];
+    return normalizeBookmarks(value);
   },
   save(items) {
-    writeJSON(BOOKMARKS_KEY, items);
+    writeJSON(BOOKMARKS_KEY, normalizeBookmarks(items));
   },
   has(day) {
     return this.load().some((item) => item && item.day === day && item.book === "Amsal");
@@ -168,13 +171,65 @@ export function setReaderLayout(v) {
 }
 
 function normalizeProgress(value) {
-  if (!value || typeof value !== "object" || Array.isArray(value)) {
+  if (!isPlainObject(value)) {
     return { done: {}, quiz: {}, lastVisit: null, streak: 0 };
   }
   return {
-    done: value.done && typeof value.done === "object" && !Array.isArray(value.done) ? value.done : {},
-    quiz: value.quiz && typeof value.quiz === "object" && !Array.isArray(value.quiz) ? value.quiz : {},
-    lastVisit: typeof value.lastVisit === "string" ? value.lastVisit : null,
-    streak: Number.isFinite(Number(value.streak)) ? Number(value.streak) : 0,
+    done: normalizeDone(value.done),
+    quiz: normalizeQuiz(value.quiz),
+    lastVisit: /^\d{4}-\d{2}-\d{2}$/.test(value.lastVisit || "")
+      && isValidDateString(value.lastVisit)
+      ? value.lastVisit
+      : null,
+    streak: Number.isFinite(Number(value.streak)) ? Math.max(0, Math.floor(Number(value.streak))) : 0,
   };
+}
+
+function normalizeDone(value) {
+  if (!isPlainObject(value)) return {};
+  const out = {};
+  for (const [key, record] of Object.entries(value)) {
+    const day = Number(key);
+    if (!Number.isInteger(day) || day < 1 || day > 31 || !isPlainObject(record)) continue;
+    out[day] = typeof record.at === "string" ? { at: record.at } : {};
+  }
+  return out;
+}
+
+function normalizeQuiz(value) {
+  if (!isPlainObject(value)) return {};
+  const out = {};
+  for (const [key, record] of Object.entries(value)) {
+    const day = Number(key);
+    if (!Number.isInteger(day) || day < 1 || day > 31 || !isPlainObject(record)) continue;
+    const score = Number(record.score);
+    const total = Number(record.total);
+    if (!Number.isFinite(score) || !Number.isFinite(total) || total < 0) continue;
+    out[day] = {
+      score,
+      total,
+      at: typeof record.at === "string" ? record.at : new Date(0).toISOString(),
+    };
+  }
+  return out;
+}
+
+function normalizeBookmarks(value) {
+  if (!Array.isArray(value)) return [];
+  const seen = new Set();
+  const out = [];
+  for (const item of value) {
+    if (!isPlainObject(item)) continue;
+    const day = Number(item.day);
+    const chapter = Number(item.chapter);
+    const book = typeof item.book === "string" && item.book.trim() ? item.book.trim() : "Amsal";
+    if (!Number.isInteger(day) || day < 1 || day > 31) continue;
+    if (!Number.isInteger(chapter) || chapter < 1 || chapter > 31) continue;
+    const key = `${book.toLowerCase()}:${day}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push({ day, book, chapter });
+    if (out.length >= VALIDATION_LIMITS.maxBookmarks) break;
+  }
+  return out;
 }

@@ -3,26 +3,38 @@
 // =============================================================================
 import { listEntries } from "./store.js";
 import { recordJournalExport } from "./analytics.js";
+import {
+  JOURNAL_EXPORT_FORMAT,
+  JOURNAL_SCHEMA_VERSION,
+  normalizeEntry,
+} from "./schema.js";
+import { DATA_SCHEMA_VERSION, VALIDATION_LIMITS, safeStringify } from "../safe-store.js";
 
 export function buildJournalExportPayload(entries = listEntries()) {
+  const safeEntries = normalizeExportEntries(entries);
   return {
-    format: "bibletime-journal",
-    version: 4,
+    format: JOURNAL_EXPORT_FORMAT,
+    version: JOURNAL_SCHEMA_VERSION,
+    schemaVersion: JOURNAL_SCHEMA_VERSION,
+    dataVersion: DATA_SCHEMA_VERSION,
     exportedAt: new Date().toISOString(),
-    count: entries.length,
-    entries,
+    count: safeEntries.length,
+    entries: safeEntries,
   };
 }
 
 export function exportJournalJSON(entries = listEntries(), { track = true } = {}) {
   if (track) recordJournalExport();
-  return JSON.stringify(buildJournalExportPayload(entries), null, 2);
+  const payload = buildJournalExportPayload(entries);
+  return safeStringify(payload, JSON_FALLBACK, 2) || JSON_FALLBACK;
 }
+
+const JSON_FALLBACK = `{"format":"${JOURNAL_EXPORT_FORMAT}","version":${JOURNAL_SCHEMA_VERSION},"schemaVersion":${JOURNAL_SCHEMA_VERSION},"entries":[]}`;
 
 export function exportJournalMarkdown(entries = listEntries(), { track = true } = {}) {
   if (track) recordJournalExport();
   const lines = ["# Bible Time — Jurnal", "", `Diekspor: ${new Date().toISOString()}`, ""];
-  entries.forEach((e) => {
+  normalizeExportEntries(entries).forEach((e) => {
     const ref = [e.book, e.chapter, e.verse].filter((x) => x != null && x !== "").join(" ");
     lines.push(`## ${e.title || ref || e.type || "Catatan"}`);
     lines.push("");
@@ -67,7 +79,7 @@ export function exportJournalMarkdown(entries = listEntries(), { track = true } 
 
 export function exportJournalText(entries = listEntries(), { track = true } = {}) {
   if (track) recordJournalExport();
-  return entries.map((e) => {
+  return normalizeExportEntries(entries).map((e) => {
     const ref = [e.book, e.chapter, e.verse].filter((x) => x != null && x !== "").join(" ");
     const p = e.prayer || {};
     return [
@@ -100,6 +112,12 @@ export function downloadTextFile(filename, content, mime = "text/plain") {
   a.click();
   a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function normalizeExportEntries(entries) {
+  return (Array.isArray(entries) ? entries : [])
+    .slice(0, VALIDATION_LIMITS.maxJournalEntries)
+    .map((entry) => normalizeEntry(entry));
 }
 
 function escapeHtml(value) {

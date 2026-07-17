@@ -2,10 +2,20 @@
 // store.js — CRUD jurnal v4: memory cache + localStorage mirror + IndexedDB.
 // IndexedDB adalah sumber durable; LS adalah mirror cepat untuk UI sync.
 // =============================================================================
-import { readJSON, writeJSON, removeKey, emitChange, uid } from "../safe-store.js";
+import {
+  VALIDATION_LIMITS,
+  readJSON,
+  writeJSON,
+  removeKey,
+  emitChange,
+  uid,
+} from "../safe-store.js";
 import {
   createEntry,
   normalizeEntry,
+  normalizeStoredEntries,
+  normalizeStoredJournalPayload,
+  validateAndNormalizeEntries,
   migrateV3Map,
   isEmptyEntry,
   toLegacyFields,
@@ -45,13 +55,17 @@ export async function initJournalStore() {
 
     const fromIdbRaw = await idbGetAll();
     const fromIdb = Array.isArray(fromIdbRaw) && fromIdbRaw.length
-      ? (await JournalCrypto.unwrapEntries(fromIdbRaw)).map(normalizeEntry)
+      ? normalizeStoredEntries(await JournalCrypto.unwrapEntries(
+        fromIdbRaw.slice(0, VALIDATION_LIMITS.maxJournalEntries),
+      ))
       : [];
 
-    const lsV4 = readJSON(LS_KEY_V4, null);
-    const fromLs = lsV4 && typeof lsV4 === "object" && Array.isArray(lsV4.entries)
-      ? lsV4.entries.map(normalizeEntry)
-      : [];
+    const lsV4 = readJSON(
+      LS_KEY_V4,
+      null,
+      { maxBytes: VALIDATION_LIMITS.maxJournalImportBytes },
+    );
+    const fromLs = normalizeStoredJournalPayload(lsV4);
 
     // Prioritas durable: jika IDB punya data, merge dengan LS (menang updatedAt lebih baru).
     if (fromIdb.length) {
@@ -64,7 +78,11 @@ export async function initJournalStore() {
       if (cache.size) await idbPutAll([...cache.values()]);
     } else {
       // Keduanya kosong — coba migrasi v3.
-      const v3 = readJSON(LS_KEY_V3, null);
+      const v3 = readJSON(
+        LS_KEY_V3,
+        null,
+        { maxBytes: VALIDATION_LIMITS.maxJournalImportBytes },
+      );
       if (v3 && typeof v3 === "object" && Object.keys(v3).length) {
         const migrated = migrateV3Map(v3);
         replaceCache(migrated);
@@ -93,12 +111,21 @@ export async function initJournalStore() {
  */
 export function bootstrapJournalSync() {
   if (!ready) {
-    const lsV4 = readJSON(LS_KEY_V4, null);
-    if (lsV4 && typeof lsV4 === "object" && Array.isArray(lsV4.entries) && lsV4.entries.length) {
-      replaceCache(lsV4.entries.map(normalizeEntry));
+    const lsV4 = readJSON(
+      LS_KEY_V4,
+      null,
+      { maxBytes: VALIDATION_LIMITS.maxJournalImportBytes },
+    );
+    const storedEntries = normalizeStoredJournalPayload(lsV4);
+    if (storedEntries.length) {
+      replaceCache(storedEntries);
       ready = true;
     } else {
-      const v3 = readJSON(LS_KEY_V3, null);
+      const v3 = readJSON(
+        LS_KEY_V3,
+        null,
+        { maxBytes: VALIDATION_LIMITS.maxJournalImportBytes },
+      );
       if (v3 && typeof v3 === "object" && Object.keys(v3).length) {
         const migrated = migrateV3Map(v3);
         replaceCache(migrated);
@@ -158,8 +185,9 @@ export function getPrimaryDayEntry(day) {
   return items.find((e) => e.type === "reflection") || items[0];
 }
 
-export function saveEntry(partial) {
+export function saveEntry(partial = {}) {
   ensureBoot();
+  if (!partial || typeof partial !== "object" || Array.isArray(partial)) partial = {};
   const existing = partial.id ? cache.get(partial.id) : null;
   const base = existing
     ? createEntry({ ...existing, ...partial, id: existing.id, createdAt: existing.createdAt })
@@ -268,7 +296,7 @@ export async function clearAllEntries() {
 
 export async function importEntries(entries, { merge = true } = {}) {
   ensureBoot();
-  const list = Array.isArray(entries) ? entries.map(normalizeEntry) : [];
+  const list = validateAndNormalizeEntries(entries);
   if (!merge) {
     cache.clear();
     await idbClear();
@@ -290,9 +318,8 @@ function ensureBoot() {
 
 function replaceCache(entries) {
   cache.clear();
-  (entries || []).forEach((entry) => {
-    const n = normalizeEntry(entry);
-    cache.set(n.id, n);
+  normalizeStoredEntries(entries).forEach((entry) => {
+    cache.set(entry.id, entry);
   });
 }
 

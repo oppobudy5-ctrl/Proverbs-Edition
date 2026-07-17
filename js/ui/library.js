@@ -24,6 +24,7 @@ import {
   printJournalAsPdf,
 } from "../journal/export.js";
 import { importJournalJSON } from "../journal/import.js";
+import { VALIDATION_LIMITS } from "../safe-store.js";
 import { renderJournalInsights } from "./journal-insights.js";
 import { renderGrowthTimeline } from "./growth-timeline.js";
 import {
@@ -269,6 +270,9 @@ function journalView() {
           const file = e.target.files?.[0];
           if (!file) return;
           try {
+            if (file.size > VALIDATION_LIMITS.maxJournalImportBytes) {
+              throw new Error("File jurnal terlalu besar untuk diimpor");
+            }
             const text = await file.text();
             const { count } = await importJournalJSON(text, { merge: true });
             toast(`Impor ${count} catatan`);

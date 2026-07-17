@@ -2,19 +2,20 @@
 // import.js — Impor hasil ekspor jurnal (JSON primer).
 // =============================================================================
 import { importEntries } from "./store.js";
-import { normalizeEntry } from "./schema.js";
+import { validateJournalPayload } from "./schema.js";
 import { recordJournalImport } from "./analytics.js";
+import { VALIDATION_LIMITS, safeParse, utf8ByteLength } from "../safe-store.js";
 
 export function parseJournalImport(raw) {
   const text = typeof raw === "string" ? raw : String(raw || "");
-  const data = JSON.parse(text);
-  if (Array.isArray(data)) {
-    return data.map(normalizeEntry);
+  if (text.length > VALIDATION_LIMITS.maxJournalImportBytes
+    || utf8ByteLength(text) > VALIDATION_LIMITS.maxJournalImportBytes) {
+    throw new Error("File jurnal terlalu besar untuk diimpor");
   }
-  if (data && Array.isArray(data.entries)) {
-    return data.entries.map(normalizeEntry);
-  }
-  throw new Error("Format impor jurnal tidak dikenali");
+  const invalid = Symbol("invalid-json");
+  const data = safeParse(text, invalid);
+  if (data === invalid) throw new Error("JSON jurnal rusak atau tidak valid");
+  return validateJournalPayload(data).entries;
 }
 
 export async function importJournalJSON(raw, options = {}) {

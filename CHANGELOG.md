@@ -1,5 +1,28 @@
 # Changelog
 
+## PR-005 Data Validation & Import Safety
+
+### Perubahan
+- `js/safe-store.js`: helper reusable `safeParse` / `safeStringify`, pemeriksaan tipe/date/ukuran UTF-8, schema placeholder, dan konstanta batas validasi.
+- `js/store.js`: sanitasi bentuk progress dan bookmark pada load/save, termasuk batas 500 bookmark.
+- `js/journal/schema.js`: validasi envelope/schema v4, struktur entri, tanggal, tipe field, panjang field, array, unknown field, data legacy, dan deduplikasi ID.
+- `js/journal/import.js` + `js/ui/library.js`: menolak file di atas 2 MiB sebelum parse/read serta membatasi impor hingga 2.000 entri.
+- `js/journal/export.js`: sanitasi payload dan serialisasi aman agar circular/invalid object tetap menghasilkan JSON UTF-8 valid.
+- `scripts/test-validation.mjs` + `npm run test-validation`: regresi untuk JSON rusak, ukuran/jumlah berlebih, tipe salah, legacy/future schema, unknown field, duplikat, tanggal, dan circular export.
+
+### Alasan
+Data valid secara sintaks JSON belum tentu memiliki struktur aman. Validasi boundary mencegah persisted/imported data yang rusak atau terlalu besar menyebabkan crash maupun browser freeze.
+
+### Dampak
+- Import invalid dibatalkan dengan pesan yang jelas; aplikasi tetap berjalan.
+- Data tersimpan disanitasi dan unknown field diabaikan.
+- Tidak ada perubahan visual, UX, routing, service worker, AI, database, atau business flow.
+
+### Kompatibilitas
+- Public API dan format `version: 4` tetap tersedia; `schemaVersion` dan `dataVersion` ditambahkan secara backward-compatible.
+- Array export legacy dan object export versi lama yang kompatibel tetap dapat dibaca.
+- Future schema ditolak secara aman agar data tidak ditafsirkan keliru.
+
 ## PR-004 Router & Navigation
 
 ### Perubahan
