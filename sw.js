@@ -1,12 +1,18 @@
 /* Bible Time — Service Worker
-   Strategi:
-   - HTML, JS, CSS, data/*.js  -> network-first (update kode langsung tampil)
-   - Aset lain (ikon, gambar)  -> cache-first (cepat & hemat data)
-   - Font Google               -> stale-while-revalidate
+   Strategi (PR-002):
+   - HTML, JS, CSS, data/*.js  -> network-first (hanya cache response.ok)
+   - Aset lain (ikon, gambar, knowledge) -> cache-first (hanya status 200/ok)
+   - Font Google               -> stale-while-revalidate (hanya response.ok)
    - Audio (Range req)         -> bypass (browser handle native streaming)
-   - Proxy teks /bible/*        -> selalu jaringan (tidak di-cache)
+   - Proxy /bible/* dan /api/ai/* -> selalu jaringan, tidak di-cache
+
+   Versioning:
+   - CACHE_VERSION adalah sumber tunggal; bump ini saat app shell berubah.
+   - CACHE_STATIC menyimpan shell + aset offline; cache lama dihapus di activate.
 */
-const VERSION = "bibletime-v8-cil-ci01";
+const CACHE_VERSION = "bibletime-v9-sw-pr002";
+const CACHE_STATIC = `static-${CACHE_VERSION}`;
+
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -150,25 +156,31 @@ const APP_SHELL = [
   "./knowledge/situations/situations.json",
   "./knowledge/synonyms/synonyms.json",
 ];
+
 const OPTIONAL_ASSETS = [
   "./assets/audio/bgm.mp3",
 ];
 
 self.addEventListener("install", (event) => {
   event.waitUntil((async () => {
-    const cache = await caches.open(VERSION);
-    await cache.addAll(APP_SHELL);
-    await Promise.all(OPTIONAL_ASSETS.map((url) => cache.add(url).catch(() => {})));
+    const cache = await caches.open(CACHE_STATIC);
+    // Tolerant precache: satu asset gagal tidak membatalkan install SW.
+    await precacheUrls(cache, APP_SHELL);
+    await precacheUrls(cache, OPTIONAL_ASSETS);
     return self.skipWaiting();
   })());
 });
 
 self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(keys.filter((k) => k !== VERSION).map((k) => caches.delete(k)))
-    ).then(() => self.clients.claim())
-  );
+  event.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(
+      keys
+        .filter((key) => key !== CACHE_STATIC)
+        .map((key) => caches.delete(key)),
+    );
+    return self.clients.claim();
+  })());
 });
 
 self.addEventListener("fetch", (event) => {
@@ -177,11 +189,13 @@ self.addEventListener("fetch", (event) => {
   if (req.headers.get("range")) return; // audio/video streaming — biar browser handle
 
   const url = new URL(req.url);
-  // Teks Alkitab paralel (proxy ke API eksternal) — selalu ambil dari jaringan
-  if (url.pathname.startsWith("/bible/") || url.pathname.startsWith("/api/ai/")) return;
+
+  // Proxy teks Alkitab & endpoint AI — selalu jaringan, tidak di-cache.
+  if (shouldBypassCache(url)) return;
 
   const isSameOrigin = url.origin === self.location.origin;
-  const isHTML = req.mode === "navigate" || (req.headers.get("accept") || "").includes("text/html");
+  const isNavigation = req.mode === "navigate";
+  const isHTML = isNavigation || (req.headers.get("accept") || "").includes("text/html");
   const isCode = isSameOrigin && /\.(js|css)(\?|$)/.test(url.pathname);
   const isFont = url.hostname.includes("fonts.googleapis.com") || url.hostname.includes("fonts.gstatic.com");
 
@@ -198,16 +212,61 @@ self.addEventListener("fetch", (event) => {
   }
 });
 
+function shouldBypassCache(url) {
+  return (
+    url.pathname.startsWith("/bible/") ||
+    url.pathname.startsWith("/api/ai/") ||
+    url.pathname.startsWith("/api/")
+  );
+}
+
+async function precacheUrls(cache, urls) {
+  await Promise.all(
+    urls.map(async (url) => {
+      try {
+        await cache.add(url);
+      } catch {
+        // Asset hilang/404: lanjutkan install agar SW tetap aktif.
+      }
+    }),
+  );
+}
+
+async function putIfOk(cache, req, res) {
+  if (!res || !res.ok) return;
+  try {
+    await cache.put(req, res.clone());
+  } catch {
+    // Quota/abort: jangan gagalkan response ke klien.
+  }
+}
+
+async function offlineFallback(req) {
+  const cached = await caches.match(req);
+  if (cached) return cached;
+
+  // Hanya navigasi/HTML yang boleh fallback ke index.html (hindari MIME error).
+  if (req.mode === "navigate") {
+    const shell = await caches.match("./index.html");
+    if (shell) return shell;
+  }
+  return Response.error();
+}
+
 async function networkFirst(req) {
+  const cache = await caches.open(CACHE_STATIC);
   try {
     const fresh = await fetch(req);
-    const cache = await caches.open(VERSION);
-    cache.put(req, fresh.clone());
+    if (fresh.ok) {
+      await putIfOk(cache, req, fresh);
+      return fresh;
+    }
+    // Jangan overwrite cache lama dengan 4xx/5xx; pakai cache bila ada.
+    const cached = await cache.match(req);
+    if (cached) return cached;
     return fresh;
   } catch {
-    const cached = await caches.match(req);
-    if (cached) return cached;
-    return caches.match("./index.html");
+    return offlineFallback(req);
   }
 }
 
@@ -216,17 +275,24 @@ async function cacheFirst(req) {
   if (cached) return cached;
   try {
     const res = await fetch(req);
-    const cache = await caches.open(VERSION);
-    if (res && res.status === 200) cache.put(req, res.clone());
+    if (res && res.ok) {
+      const cache = await caches.open(CACHE_STATIC);
+      await putIfOk(cache, req, res);
+    }
     return res;
   } catch {
-    return caches.match("./index.html");
+    return offlineFallback(req);
   }
 }
 
 async function staleWhileRevalidate(req) {
-  const cache = await caches.open(VERSION);
+  const cache = await caches.open(CACHE_STATIC);
   const cached = await cache.match(req);
-  const network = fetch(req).then((res) => { cache.put(req, res.clone()); return res; }).catch(() => null);
-  return cached || network;
+  const network = fetch(req)
+    .then(async (res) => {
+      if (res && res.ok) await putIfOk(cache, req, res);
+      return res;
+    })
+    .catch(() => null);
+  return cached || network || Response.error();
 }
