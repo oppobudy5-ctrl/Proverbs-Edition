@@ -1,5 +1,32 @@
 # Changelog
 
+## Phase 006B — Production AI Provider Integration
+
+### Perubahan
+- Provider layer production-ready: interchangeable adapters untuk Mock, OpenAI,
+  Gemini, Claude (Anthropic), Azure OpenAI, dan Ollama.
+- `config/ai.config.js`: model registry, failover order, env-driven defaults
+  (tanpa credential di client).
+- `src/ai/providers/provider-selector.js`: prioritas configured → healthy → mock,
+  plus failover untuk timeout / quota / offline / 429 / 500 / auth.
+- Health check seragam (`reachable`, `authentication`, `modelExists`, `latency`,
+  `status`, `healthTimestamp`).
+- Streaming: proxy SSE + Ollama native, dengan fallback non-stream.
+- Server proxy aman: `scripts/ai-proxy.mjs`, di-wire ke `scripts/dev-server.mjs`
+  dan Cloudflare Pages `functions/api/ai/[[path]].js`.
+- `AISettings`: provider, model, streaming, temperature, offlineMode, debugMode
+  (+ UI di panel Pengaturan).
+- Observability: log provider / model / latency / retries / tokens / streaming /
+  failover reason melalui `AILogger`.
+- Tes: `scripts/test-production-providers.mjs`.
+- Dokumentasi: `docs/ai/PRODUCTION_PROVIDER.md`, `.env.example`.
+
+### Batas perubahan
+Tidak mengubah Bible Knowledge Base, Canonical Intelligence Layer, Biblical
+Reasoning Engine, dataset editorial, AI Prompt Builder, AI Validation, atau
+kontrak publik AIService. Perubahan berada di layer Provider, konfigurasi,
+proxy server, dan settings.
+
 ## Phase 006A — End-to-End AI Execution Audit
 
 ### Perubahan

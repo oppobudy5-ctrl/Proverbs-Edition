@@ -19,7 +19,10 @@ import { MockProvider } from "./providers/mock-provider.js";
 import { OpenAIProvider } from "./providers/openai-provider.js";
 import { GeminiProvider } from "./providers/gemini-provider.js";
 import { ClaudeProvider } from "./providers/claude-provider.js";
+import { AzureOpenAIProvider } from "./providers/azure-provider.js";
 import { OllamaProvider } from "./providers/ollama-provider.js";
+import { isFailoverWorthy, selectProviders, probeProviderHealth } from "./providers/provider-selector.js";
+import { ModelRegistry } from "./providers/model-registry.js";
 import { canonicalContextGateway, initCIL } from "./cil/index.js";
 import { theologicalGuardrails } from "./cil/theological-guardrails.js";
 
@@ -39,6 +42,7 @@ export class AIController {
     this.registerProvider("openai", dependencies.openaiProvider || new OpenAIProvider());
     this.registerProvider("gemini", dependencies.geminiProvider || new GeminiProvider());
     this.registerProvider("claude", dependencies.claudeProvider || new ClaudeProvider());
+    this.registerProvider("azure", dependencies.azureProvider || new AzureOpenAIProvider());
     this.registerProvider("ollama", dependencies.ollamaProvider || new OllamaProvider());
   }
 
@@ -62,6 +66,7 @@ export class AIController {
       id,
       model: provider.model,
       capabilities: provider.capabilities,
+      models: ModelRegistry.forProvider(id),
     }));
   }
 
@@ -75,14 +80,14 @@ export class AIController {
     this.#active.set(requestId, abortController);
 
     const settings = Object.freeze({ ...AISettings.get(), ...(payload.settings || {}) });
-    const provider = this.getProvider(settings.provider);
     const question = String(payload.question || "").trim();
     const conversationId = payload.conversationId || createConversationId();
     const startedAt = performanceNow();
+    let activeProviderId = settings.provider;
 
-    AIEvents.emit(AI_EVENTS.STARTED, { requestId, intent, provider: provider.id, conversationId });
-    AILogger.debug("request started", { requestId, intent, provider: provider.id });
-    AIDebug.log("Gateway Called", `provider=${provider.id} intent=${intent}`);
+    AIEvents.emit(AI_EVENTS.STARTED, { requestId, intent, provider: activeProviderId, conversationId });
+    AILogger.debug("request started", { requestId, intent, provider: activeProviderId });
+    AIDebug.log("Gateway Called", `provider=${activeProviderId} intent=${intent}`);
 
     try {
       await initCIL(payload.cilInit || {});
@@ -118,10 +123,14 @@ export class AIController {
         settings,
         metadata: { requestId, conversationId, ...(payload.metadata || {}) },
       });
+
+      const candidates = await selectProviders(this, settings);
+      const preferredId = candidates[0]?.id || settings.provider;
       const cacheInput = {
         prompt: prompt.messages.map((message) => `${message.role}:${message.content}`).join("\n"),
         chapter: context.chapter,
-        provider: provider.id,
+        provider: preferredId,
+        model: settings.model || "",
       };
 
       if (payload.cache !== false) {
@@ -137,7 +146,7 @@ export class AIController {
               question: question || defaultQuestion(intent, context),
               answer: response.content,
               chapter: context.chapter,
-              provider: provider.id,
+              provider: response.provider || preferredId,
               conversationId,
               metadata: { intent, requestId, responseId: response.id, cached: true },
             });
@@ -157,20 +166,63 @@ export class AIController {
       }
 
       const guarded = theologicalGuardrails.isGuardedIntent(intent);
+      const failoverLog = [];
+      let providerResult = null;
+      let used = null;
+      let lastError = null;
 
-      const providerResult = await this.#runProvider(provider, prompt, settings, {
-        ...callbacks,
-        requestId,
-        signal: abortController.signal,
-        timeoutMs: payload.timeoutMs,
-        bufferUntilValidated: guarded,
-      });
+      for (const candidate of candidates) {
+        activeProviderId = candidate.id;
+        const runSettings = Object.freeze({
+          ...settings,
+          provider: candidate.id,
+          model: candidate.model || settings.model,
+        });
+        try {
+          AILogger.info("provider attempt", {
+            requestId,
+            provider: candidate.id,
+            model: runSettings.model,
+            streaming: runSettings.streaming,
+            attempt: failoverLog.length + 1,
+          });
+          providerResult = await this.#runProvider(candidate.provider, prompt, runSettings, {
+            ...callbacks,
+            requestId,
+            signal: abortController.signal,
+            timeoutMs: payload.timeoutMs,
+            bufferUntilValidated: guarded,
+          });
+          used = candidate;
+          break;
+        } catch (error) {
+          lastError = toAIError(error);
+          failoverLog.push({
+            provider: candidate.id,
+            code: lastError.code,
+            reason: classifyGatewayFailure(lastError),
+          });
+          AILogger.warn("provider failover", {
+            requestId,
+            provider: candidate.id,
+            code: lastError.code,
+            reason: classifyGatewayFailure(lastError),
+          });
+          if (!isFailoverWorthy(lastError)) break;
+        }
+      }
+
+      if (!providerResult || !used) {
+        throw lastError || new AIError(AI_ERROR_CODES.PROVIDER_OFFLINE, "All AI providers failed", {
+          userMessage: "Layanan AI sedang tidak tersedia. Jawaban offline kanonik akan digunakan bila memungkinkan.",
+        });
+      }
 
       const validation = this.gateway.validateResponse(providerResult.content, canonical, { intent });
       const response = createAIResponse({
         content: validation.content,
-        provider: provider.id,
-        model: providerResult.model || provider.model,
+        provider: used.id,
+        model: providerResult.model || used.model || settings.model,
         usage: providerResult.usage,
         citations: validation.citations,
         confidence: validation.confidence,
@@ -192,6 +244,10 @@ export class AIController {
           cil: true,
           degraded: Boolean(canonical.degraded),
           usedFallback: validation.usedFallback,
+          failover: Object.freeze(failoverLog),
+          offlineMode: Boolean(settings.offlineMode),
+          streamed: Boolean(providerResult.metadata?.streamed),
+          retries: failoverLog.length,
         },
       });
 
@@ -212,16 +268,25 @@ export class AIController {
           question: question || defaultQuestion(intent, context),
           answer: response.content,
           chapter: context.chapter,
-          provider: provider.id,
+          provider: used.id,
           conversationId,
-          metadata: { intent, requestId, responseId: response.id },
+          metadata: { intent, requestId, responseId: response.id, failover: failoverLog },
         });
       }
 
-      AIDebug.log("Provider Returned", `${provider.id} · ${response.metadata.durationMs}ms · guardrails=${validation.status}`);
+      AIDebug.log("Provider Returned", `${used.id} · ${response.metadata.durationMs}ms · guardrails=${validation.status}`);
+      AILogger.info("request finished", {
+        requestId,
+        provider: used.id,
+        model: response.model,
+        latencyMs: response.metadata.durationMs,
+        retries: failoverLog.length,
+        streaming: Boolean(response.metadata.streamed),
+        tokens: response.usage || null,
+        fallback: failoverLog.length > 0,
+      });
       callbacks.onFinish?.(response);
       AIEvents.emit(AI_EVENTS.FINISHED, { requestId, response, cached: false });
-      AILogger.info("request finished", { requestId, provider: provider.id, durationMs: response.metadata.durationMs });
       return response;
     } catch (error) {
       const aiError = toAIError(error);
@@ -231,7 +296,7 @@ export class AIController {
         AIEvents.emit(AI_EVENTS.ERROR, { requestId, error: aiError });
         AILogger.error("request failed", { requestId, code: aiError.code, error });
       }
-      AIDebug.log("Gateway Failed", `${provider.id} · ${classifyGatewayFailure(aiError)}`);
+      AIDebug.log("Gateway Failed", `${activeProviderId} · ${classifyGatewayFailure(aiError)}`);
       callbacks.onError?.(aiError);
       throw aiError;
     } finally {
@@ -256,14 +321,20 @@ export class AIController {
     return this.getProvider(providerId).healthCheck();
   }
 
+  async healthCheckAll() {
+    return probeProviderHealth(this, this.listProviders().map((item) => item.id));
+  }
+
   async #runProvider(provider, prompt, settings, callbacks) {
     const options = {
       ...settings,
       signal: callbacks.signal,
       timeoutMs: callbacks.timeoutMs || AI_CONFIG.timeoutMs,
+      retry: AI_CONFIG.retry,
     };
     const buffer = Boolean(callbacks.bufferUntilValidated);
-    if (settings.streaming && provider.capabilities.streaming) {
+    const canStream = settings.streaming && provider.capabilities.streaming;
+    if (canStream) {
       let content = "";
       for await (const token of provider.stream(prompt, options)) {
         content += token;
@@ -272,7 +343,12 @@ export class AIController {
           AIEvents.emit(AI_EVENTS.PROGRESS, { requestId: callbacks.requestId, token, content });
         }
       }
-      return { content, model: provider.model, metadata: { streamed: true, buffered: buffer } };
+      return {
+        content,
+        model: options.model || provider.model,
+        usage: null,
+        metadata: { streamed: true, buffered: buffer },
+      };
     }
     const result = await provider.sendPrompt(prompt, options);
     if (result.content && !buffer) {
@@ -284,7 +360,10 @@ export class AIController {
         completeChunk: true,
       });
     }
-    return result;
+    return {
+      ...result,
+      metadata: { ...(result.metadata || {}), streamed: false },
+    };
   }
 
   async #safeCacheGet(input) {
@@ -303,15 +382,14 @@ export class AIController {
   }
 }
 
-/** Map an AIError to the human-readable failure reasons required by TASK 6. */
 function classifyGatewayFailure(error) {
   switch (error?.code) {
     case AI_ERROR_CODES.PROVIDER_OFFLINE: return "offline / provider unavailable";
     case AI_ERROR_CODES.TIMEOUT: return "timeout";
-    case AI_ERROR_CODES.RATE_LIMIT: return "rate limit";
+    case AI_ERROR_CODES.RATE_LIMIT: return "rate limit / 429";
     case AI_ERROR_CODES.QUOTA_EXCEEDED: return "quota exceeded";
-    case AI_ERROR_CODES.API_ERROR: return "provider API error";
-    case AI_ERROR_CODES.INVALID_REQUEST: return "configuration / missing key or context";
+    case AI_ERROR_CODES.API_ERROR: return "provider API error / 500";
+    case AI_ERROR_CODES.INVALID_REQUEST: return "configuration / authentication / missing key";
     default: return error?.message || "unknown";
   }
 }

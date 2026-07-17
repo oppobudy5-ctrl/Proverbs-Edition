@@ -89,7 +89,7 @@ export function mountAiLessonAssist(host, { plan, content } = {}) {
       el("div", { class: "ai-assist-intro" },
         el("span", { class: "eyebrow" }, "Bantuan AI"),
         el("p", { class: "ai-assist-note" },
-          "Fitur ini memakai Canonical Intelligence Layer lokal. Provider default bisa berupa contoh (mock) bila kunci cloud belum dikonfigurasi.",
+          "Fitur ini memakai Canonical Intelligence Layer lokal. Provider production (OpenAI / Gemini / Ollama / Claude / Azure) dipilih lewat Pengaturan; tanpa kunci server, sistem memakai mock/offline kanonik.",
         ),
       ),
       toolbar,

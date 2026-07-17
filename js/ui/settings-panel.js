@@ -1,5 +1,5 @@
 // =============================================================================
-// settings-panel.js — Drawer preferensi membaca: reading mode, tema, tipografi.
+// settings-panel.js — Drawer preferensi membaca: reading mode, tema, tipografi, AI.
 // =============================================================================
 import { el } from "../dom.js";
 import { trapFocus, announce } from "../a11y.js";
@@ -8,6 +8,9 @@ import {
   FONT_SIZES, LINE_HEIGHTS, COMFORT_WIDTHS, FONT_FAMILIES,
 } from "../settings.js";
 import { THEMES, getTheme, setTheme } from "../theme.js";
+import { AISettings } from "../../src/ai/ai-settings.js";
+import { AI_PROVIDER_IDS } from "../../config/ai.config.js";
+import { ModelRegistry } from "../../src/ai/providers/model-registry.js";
 
 let openEl = null;
 
@@ -37,9 +40,30 @@ function field(label, control) {
   return el("div", { class: "sp-field" }, el("div", { class: "sp-label" }, label), control);
 }
 
+function aiToggle(label, checked, onChange, ariaLabel) {
+  const btn = el("button", {
+    class: "sp-toggle" + (checked ? " is-on" : ""),
+    type: "button",
+    role: "switch",
+    "aria-checked": checked ? "true" : "false",
+    "aria-label": ariaLabel || label,
+    onclick: () => {
+      const next = !btn.classList.contains("is-on");
+      btn.classList.toggle("is-on", next);
+      btn.setAttribute("aria-checked", next ? "true" : "false");
+      onChange(next);
+    },
+  }, el("span", { class: "sp-toggle-track", "aria-hidden": "true" }, el("span", { class: "sp-toggle-thumb" })));
+  return el("div", { class: "sp-row" },
+    el("div", {}, el("div", { class: "sp-label" }, label)),
+    btn,
+  );
+}
+
 export function openSettingsPanel() {
   if (openEl) return;
   const s = getSettings();
+  let ai = AISettings.get();
 
   const readingToggle = el("button", {
     class: "sp-toggle" + (s.readingMode ? " is-on" : ""),
@@ -78,6 +102,66 @@ export function openSettingsPanel() {
     themeGrid.append(btn);
   });
 
+  const modelHost = el("div", { class: "sp-field" });
+  function renderModelPicker(providerId, activeModel) {
+    const models = ModelRegistry.forProvider(providerId);
+    modelHost.replaceChildren(
+      el("div", { class: "sp-label" }, "Model AI"),
+      segmented({
+        options: models,
+        activeId: activeModel || models[0]?.id,
+        ariaLabel: "Model AI",
+        onPick: (id) => {
+          ai = AISettings.update({ model: id });
+          announce(`Model ${id}`);
+        },
+      }),
+    );
+  }
+  renderModelPicker(ai.provider, ai.model);
+
+  const providerOptions = AI_PROVIDER_IDS.map((id) => ({ id, label: id }));
+  const aiSection = el("div", { class: "sp-section", "aria-label": "Pengaturan AI" },
+    el("h3", { class: "sp-label" }, "AI Provider"),
+    el("p", { class: "sp-hint" }, "Kunci API hanya disimpan di server. UI hanya memilih provider dan model."),
+    field("Provider", segmented({
+      options: providerOptions,
+      activeId: ai.provider,
+      ariaLabel: "AI Provider",
+      onPick: (id) => {
+        const nextModel = ModelRegistry.defaultModel(id);
+        ai = AISettings.update({ provider: id, model: nextModel });
+        renderModelPicker(id, nextModel);
+        announce(`Provider ${id}`);
+      },
+    })),
+    modelHost,
+    aiToggle("Streaming", ai.streaming, (on) => {
+      ai = AISettings.update({ streaming: on });
+      announce(on ? "Streaming aktif" : "Streaming nonaktif");
+    }, "Streaming AI"),
+    aiToggle("Mode Offline", ai.offlineMode, (on) => {
+      ai = AISettings.update({ offlineMode: on });
+      announce(on ? "Mode offline AI aktif" : "Mode offline AI nonaktif");
+    }, "Mode Offline AI"),
+    aiToggle("Debug AI", ai.debugMode, (on) => {
+      ai = AISettings.update({ debugMode: on });
+      announce(on ? "Debug AI aktif" : "Debug AI nonaktif");
+    }, "Debug Mode AI"),
+    field("Temperature", segmented({
+      options: [
+        { id: "0.2", label: "Fokus" },
+        { id: "0.35", label: "Seimbang" },
+        { id: "0.7", label: "Kreatif" },
+      ],
+      activeId: String(ai.temperature),
+      ariaLabel: "Temperature AI",
+      onPick: (id) => {
+        ai = AISettings.update({ temperature: Number(id) });
+      },
+    })),
+  );
+
   const body = el("div", { class: "sp-body" },
     el("div", { class: "sp-row" },
       el("div", {},
@@ -102,7 +186,8 @@ export function openSettingsPanel() {
     field("Jenis huruf", segmented({
       options: FONT_FAMILIES, activeId: s.fontFamily, ariaLabel: "Jenis huruf",
       onPick: (id) => updateSettings({ fontFamily: id }),
-    }))
+    })),
+    aiSection,
   );
 
   const closeBtn = el("button", { class: "sp-close", type: "button", "aria-label": "Tutup pengaturan", onclick: close }, "\u2715");

@@ -21,7 +21,7 @@ const { promptBuilder } = await import("../src/ai/prompt-builder.js");
 const { semanticIndex } = await import("../src/ai/semantic-index.js");
 const { AISettings } = await import("../src/ai/ai-settings.js");
 
-assert.equal(aiController.listProviders().length, 5);
+assert.equal(aiController.listProviders().length, 6);
 for (const provider of aiController.listProviders()) {
   for (const capability of ["prompt", "streaming", "embeddings"]) {
     assert.equal(typeof provider.capabilities[capability], "boolean");

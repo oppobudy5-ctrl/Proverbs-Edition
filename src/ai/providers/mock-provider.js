@@ -1,5 +1,5 @@
 import { AI_CONFIG } from "../../../config/ai.config.js";
-import { ProviderBase } from "./provider-base.js";
+import { ProviderBase, createHealthResult } from "./provider-base.js";
 import { AIError, AI_ERROR_CODES, sleep } from "../ai-utils.js";
 
 export class MockProvider extends ProviderBase {
@@ -35,7 +35,17 @@ export class MockProvider extends ProviderBase {
   }
 
   async healthCheck() {
-    return { ok: true, provider: this.id, model: this.model, mode: "mock", latencyMs: this.latencyMs };
+    return createHealthResult({
+      ok: true,
+      provider: this.id,
+      model: this.model,
+      reachable: true,
+      authentication: "not_required",
+      modelExists: true,
+      latencyMs: this.latencyMs,
+      status: "healthy",
+      reason: "mock",
+    });
   }
 
   get capabilities() {
